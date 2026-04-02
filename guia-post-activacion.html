@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Regular cuerpo y emociones después de un disparador · Karla Moraga</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Whisper&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #FAF7F2; --warm-white: #FAF7F2;
+      --sage: #a8c4a2; --sage-light: #a8c4a2; --sage-dark: #5F7B5C;
+      --earth: #C4956A; --earth-light: #dbb899;
+      --text: #2e2b28; --text-soft: #6b6560; --text-muted: #B7B0B0;
+      --line: rgba(196,149,106,0.2);
+      --accent: #4A5C7A; --accent-light: #a8b8d4; --accent-pale: #eef0f5;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Jost', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--warm-white); color: var(--text); font-family: var(--font-body); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    .sidebar { position: fixed; top: 0; left: 0; width: 240px; height: 100vh; background: var(--cream); border-right: 1px solid var(--line); display: flex; flex-direction: column; padding: 2.5rem 2rem; z-index: 100; transform: translateX(-100%); transition: transform 0.4s ease; }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar nav ul { display: flex; flex-direction: column; gap: 0.2rem; }
+    .sidebar nav a { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-soft); padding: 0.55rem 0; transition: color 0.2s; display: block; }
+    .sidebar nav a:hover { color: var(--sage-dark); }
+    .sidebar-foot { font-size: 0.72rem; color: var(--text-muted); line-height: 1.6; margin-top: auto; }
+    .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 90; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 3rem; background: rgba(250,247,242,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+    .topbar-logo .name { font-family: 'Whisper', cursive; font-size: 1.9rem; color: var(--text); display: block; }
+    .topbar-logo .title { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); display: block; }
+    .menu-toggle { background: transparent; border: 1px solid var(--line); width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 5px; cursor: pointer; }
+    .menu-toggle span { display: block; width: 20px; height: 1.5px; background: var(--text); }
+    .main { padding-top: 72px; }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 88vh;
+      overflow: hidden;
+    }
+    .hero-cover {
+      background: var(--accent);
+      position: relative;
+      overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-cover::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 70% at 20% 20%, rgba(168,196,162,0.5) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 85% 85%, rgba(45,65,43,0.6) 0%, transparent 55%);
+    }
+    .cover-inner {
+      position: relative; z-index: 2;
+      text-align: center; padding: 3rem;
+    }
+    .cover-eyebrow {
+      font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5); margin-bottom: 1.5rem;
+    }
+    .cover-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      font-weight: 300; font-style: italic;
+      color: var(--warm-white); line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    .cover-divider {
+      width: 40px; height: 1px; background: rgba(255,255,255,0.3);
+      margin: 0 auto 1.5rem;
+    }
+    .cover-sub {
+      font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+    .cover-deco {
+      position: absolute; bottom: -1rem; right: -1rem;
+      font-family: var(--font-display);
+      font-size: 14rem; font-weight: 300; font-style: italic;
+      color: rgba(255,255,255,0.04); line-height: 1;
+      pointer-events: none; user-select: none;
+    }
+    /* Precio flotante */
+    .cover-price-badge {
+      position: absolute; bottom: 2.5rem; left: 2.5rem;
+      background: rgba(0,0,0,0.25); backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 1rem 1.5rem;
+    }
+    .badge-original {
+      font-size: 0.72rem; color: rgba(255,255,255,0.4);
+      text-decoration: line-through; letter-spacing: 0.06em;
+    }
+    .badge-price {
+      font-family: var(--font-display);
+      font-size: 1.8rem; font-weight: 300;
+      color: var(--warm-white); line-height: 1;
+      margin: 0.2rem 0;
+    }
+    .badge-label {
+      font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--earth-light);
+    }
+
+    .hero-info {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 6rem 5rem;
+      background: var(--cream);
+    }
+    .breadcrumb {
+      font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: 2.5rem;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .breadcrumb a { color: var(--earth); }
+    .guide-tag {
+      font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 1.2rem;
+    }
+    .guide-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 300; line-height: 1.15; color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+    .guide-title em { font-style: italic; color: var(--accent); }
+    .guide-desc {
+      font-size: 0.93rem; color: var(--text-soft);
+      line-height: 1.9; margin-bottom: 2.5rem; max-width: 50ch;
+    }
+    .btn-cta {
+      display: inline-flex; align-items: center; gap: 0.8rem;
+      background: var(--accent); color: var(--warm-white);
+      font-family: var(--font-body); font-size: 0.75rem; font-weight: 400;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 1.1rem 2.4rem; border: 1px solid var(--accent);
+      transition: background 0.25s, color 0.25s; width: fit-content;
+    }
+    .btn-cta:hover { background: transparent; color: var(--accent); }
+
+    /* CONTENIDO */
+    .content-section {
+      padding: 6rem 6rem;
+      background: var(--warm-white);
+      position: relative; overflow: hidden;
+    }
+    .content-section::before {
+      content: '';
+      position: absolute; right: 0; top: 0; bottom: 0; width: 4px;
+      background: linear-gradient(to bottom, var(--accent) 0%, transparent 100%);
+      opacity: 0.3;
+    }
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 6rem; align-items: start;
+    }
+    .content-label {
+      font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--earth); margin-bottom: 1.2rem;
+    }
+    .content-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+      font-weight: 300; color: var(--text); line-height: 1.15; margin-bottom: 1.8rem;
+    }
+    .content-title em { font-style: italic; color: var(--accent); }
+    .content-body p {
+      font-size: 0.93rem; color: var(--text-soft);
+      line-height: 1.95; margin-bottom: 1.2rem;
+    }
+    .content-highlight {
+      background: var(--accent-pale);
+      border-left: 3px solid var(--accent);
+      padding: 1.2rem 1.5rem; margin: 1.8rem 0;
+      font-family: var(--font-display);
+      font-size: 1.1rem; font-style: italic;
+      color: var(--text); line-height: 1.55;
+    }
+    .aside-box {
+      position: sticky; top: 6rem;
+      background: var(--cream);
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--accent);
+      padding: 2.5rem 2rem;
+    }
+    .aside-box-label {
+      font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: 1.5rem;
+    }
+    .aside-includes {
+      display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 2rem;
+    }
+    .aside-inc-item {
+      display: flex; align-items: flex-start; gap: 0.8rem;
+      font-size: 0.85rem; color: var(--text-soft); line-height: 1.5;
+    }
+    .aside-inc-dot {
+      width: 5px; height: 5px; background: var(--accent);
+      border-radius: 50%; flex-shrink: 0; margin-top: 0.5rem;
+    }
+    .aside-price-block {
+      padding-top: 1.5rem; border-top: 1px solid var(--line);
+      margin-bottom: 1.5rem;
+    }
+    .aside-price-original {
+      font-size: 0.78rem; color: var(--text-muted);
+      text-decoration: line-through; margin-bottom: 0.2rem;
+    }
+    .aside-price-main {
+      font-family: var(--font-display);
+      font-size: 2.4rem; font-weight: 300; color: var(--text); line-height: 1;
+    }
+    .aside-price-tag {
+      font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--accent); margin-top: 0.3rem;
+    }
+
+    /* CTA FINAL */
+    .cta-section {
+      padding: 6rem 6rem;
+      background: var(--accent);
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(168,196,162,0.2) 0%, transparent 65%);
+    }
+    .cta-inner { position: relative; z-index: 2; }
+    .cta-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 1.2rem; }
+    .cta-title { font-family: var(--font-display); font-size: clamp(2rem,3.5vw,3rem); font-weight: 300; color: var(--warm-white); line-height: 1.15; margin-bottom: 1rem; }
+    .cta-title em { font-style: italic; color: var(--earth-light); }
+    .cta-body { font-size: 0.9rem; color: rgba(255,255,255,0.6); max-width: 44ch; margin: 0 auto 2.5rem; line-height: 1.85; }
+    .btn-cta-light {
+      display: inline-flex; align-items: center; gap: 0.8rem;
+      background: var(--warm-white); color: var(--accent);
+      font-family: var(--font-body); font-size: 0.75rem; font-weight: 400;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 1.1rem 2.6rem; border: 1px solid var(--warm-white);
+      transition: background 0.25s, color 0.25s;
+    }
+    .btn-cta-light:hover { background: transparent; color: var(--warm-white); }
+
+    footer { background: var(--text); color: rgba(255,255,255,0.4); padding: 2.5rem 6rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; }
+    footer strong { color: rgba(255,255,255,0.7); font-family: var(--font-display); font-size: 1rem; font-weight: 300; }
+    footer a { color: var(--sage-light); font-size: 0.72rem; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .guide-tag   { animation: fadeUp 0.7s ease 0.1s both; }
+    .guide-title { animation: fadeUp 0.8s ease 0.2s both; }
+    .guide-desc  { animation: fadeUp 0.8s ease 0.32s both; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-cover { min-height: 55vw; }
+      .hero-info { padding: 4rem 2rem; }
+      .content-section { padding: 4rem 2rem; }
+      .content-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .aside-box { position: static; }
+      .cta-section { padding: 4rem 2rem; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 2rem; }
+      .topbar { padding: 1.2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <div style="margin-bottom:3rem;">
+      <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:1.25rem; font-weight:400; font-style:italic; color:var(--text); display:block; margin-bottom:0.2rem;">Karla Moraga Aguilera</span>
+      <span style="font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-soft);">Terapeuta Somática &amp; Docente</span>
+    </div>
+    <nav><ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="sobre-mi.html">Sobre mí</a></li>
+      <li><a href="mi-trabajo.html">Mi trabajo</a></li>
+      <li><a href="programas.html">Programas</a></li>
+      <li><a href="index.html#guias">Guías somáticas</a></li>
+      <li><a href="index.html#recursos">Recursos gratuitos</a></li>
+      <li><a href="https://wa.me/56956305069" target="_blank">Agendar</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul></nav>
+    <div class="sidebar-foot">© 2025 Karla Moraga<br/>Todos los derechos reservados</div>
+  </aside>
+
+  <header class="topbar">
+    <div class="topbar-logo">
+      <span class="name">Karla Moraga</span>
+      <span class="title">Terapeuta Somática &amp; Docente</span>
+    </div>
+    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+  </header>
+
+  <main class="main">
+    <section class="hero" style="padding:0;">
+      <div class="hero-cover">
+        <div class="cover-inner">
+          <div class="cover-eyebrow">Guía somática · Material digital</div>
+          <div class="cover-title">Regular<br/>cuerpo y<br/>emociones</div>
+          <div class="cover-divider"></div>
+          <div class="cover-sub">Karla Moraga · Terapia Somática</div>
+        </div>
+        <div class="cover-deco">01</div>
+        <div class="cover-price-badge">
+          <div class="badge-original">$20.000 CLP</div>
+          <div class="badge-price">$14.000</div>
+          <div class="badge-label">CLP · 30% descuento</div>
+        </div>
+      </div>
+
+      <div class="hero-info">
+        <div class="breadcrumb">
+          <a href="index.html#guias">← Guías somáticas</a>
+          <span>/</span>
+          <span>Regulación para el día a día</span>
+        </div>
+        <p class="guide-tag">Guía somática · Post activación</p>
+        <h1 class="guide-title">Volver a la calma<br/>después de un <em>disparador</em></h1>
+        <p class="guide-desc">Una guía práctica para ayudarte a reconocer y regular lo que ocurre en tu cuerpo después de un episodio de estrés o activación emocional, acompañándote a volver, poco a poco, a un estado de mayor calma y seguridad.</p>
+        <a href="https://wa.me/56956305069?text=Hola%20Karla!%20%C2%BFc%C3%B3mo%20lo%20hago%20para%20comprar%20la%20gu%C3%ADa%20Regular%20cuerpo%20y%20emociones%20despu%C3%A9s%20de%20un%20disparador%3F%20Me%20gustar%C3%ADa%20recibir%20la%20informaci%C3%B3n%20para%20realizar%20la%20transferencia." target="_blank" class="btn-cta">
+          Recibir este recurso por WhatsApp
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="content-grid">
+        <div class="content-body">
+          <p class="content-label">Sobre esta guía</p>
+          <h2 class="content-title">Acompañamiento para los momentos más <em>difíciles</em></h2>
+          <p>Después de una activación intensa, el cuerpo necesita tiempo y orientación para volver a la calma. Esta guía te acompaña exactamente en ese proceso: desde reconocer lo que está ocurriendo hasta encontrar herramientas concretas para regularte.</p>
+          <div class="content-highlight">
+            Diseñada para usarse en los momentos difíciles, con un lenguaje comprensivo y herramientas somáticas que respetan el ritmo de tu sistema nervioso.
+          </div>
+          <p>No necesitas experiencia previa. Solo necesitas este recurso y la disposición de acompañarte a ti misma en los momentos más difíciles.</p>
+          <p>Este recurso fue creado con el mismo enfoque que guía todos los procesos terapéuticos: partir del cuerpo, trabajar con el sistema nervioso y construir seguridad desde adentro.</p>
+        </div>
+
+        <div>
+          <div class="aside-box">
+            <div class="aside-box-label">Este material incluye</div>
+            <div class="aside-includes">
+              <div class="aside-inc-item"><div class="aside-inc-dot"></div><span>Qué ocurre en tu cuerpo tras un disparador</span></div>
+              <div class="aside-inc-item"><div class="aside-inc-dot"></div><span>Técnicas de regulación post activación</span></div>
+              <div class="aside-inc-item"><div class="aside-inc-dot"></div><span>Herramientas somáticas para volver a la calma</span></div>
+              <div class="aside-inc-item"><div class="aside-inc-dot"></div><span>Acompañamiento escrito paso a paso</span></div>
+              <div class="aside-inc-item"><div class="aside-inc-dot"></div><span>Prácticas somáticas guiadas</span></div>
+              <div class="aside-inc-item"><div class="aside-inc-dot"></div><span>Formato digital descargable</span></div>
+            </div>
+            <div class="aside-price-block">
+              <div class="aside-price-original">Valor: $20.000 CLP</div>
+              <div class="aside-price-main">$14.000</div>
+              <div class="aside-price-tag">CLP · Precio especial 30% dcto.</div>
+            </div>
+            <a href="https://wa.me/56956305069?text=Hola%20Karla!%20%C2%BFc%C3%B3mo%20lo%20hago%20para%20comprar%20la%20gu%C3%ADa%20Regular%20cuerpo%20y%20emociones%20despu%C3%A9s%20de%20un%20disparador%3F%20Me%20gustar%C3%ADa%20recibir%20la%20informaci%C3%B3n%20para%20realizar%20la%20transferencia." target="_blank" class="btn-cta" style="width:100%; justify-content:center;">
+              Escribir por WhatsApp
+              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="cta-inner">
+        <p class="cta-label">¿Lista para comenzar?</p>
+        <h2 class="cta-title">Después de la tormenta,<br/><em>hay un camino de regreso</em></h2>
+        <p class="cta-body">Este recurso te acompaña exactamente en ese camino: de la activación a la calma, paso a paso. Escríbeme por WhatsApp y te comparto los datos de transferencia y el enlace de descarga.</p>
+        <a href="https://wa.me/56956305069?text=Hola%20Karla!%20%C2%BFc%C3%B3mo%20lo%20hago%20para%20comprar%20la%20gu%C3%ADa%20Regular%20cuerpo%20y%20emociones%20despu%C3%A9s%20de%20un%20disparador%3F%20Me%20gustar%C3%ADa%20recibir%20la%20informaci%C3%B3n%20para%20realizar%20la%20transferencia." target="_blank" class="btn-cta-light">
+          Recibir este recurso por WhatsApp
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Karla Moraga Aguilera · Terapeuta Somática &amp; Docente</strong>
+    <a href="index.html#guias">← Volver a guías</a>
+    <span>© 2025 · Todos los derechos reservados</span>
+  </footer>
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    toggle.addEventListener('click', () => sidebar.classList.toggle('open'));
+    document.addEventListener('click', (e) => { if (!sidebar.contains(e.target) && !toggle.contains(e.target)) sidebar.classList.remove('open'); });
+  </script>
+</body>
+</html>

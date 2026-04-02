@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sostener más · Karla Moraga</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Whisper&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --cream:       #FAF7F2;
+      --warm-white:  #FAF7F2;
+      --sage:        #a8c4a2;
+      --sage-light:  #a8c4a2;
+      --sage-dark:   #5F7B5C;
+      --earth:       #C4956A;
+      --earth-light: #dbb899;
+      --earth-dark:  #5C6E5A;
+      --text:        #2e2b28;
+      --text-soft:   #6b6560;
+      --text-muted:  #B7B0B0;
+      --line:        rgba(196, 149, 106, 0.2);
+
+      /* Acento exclusivo: ámbar dorado tierra */
+      --gold:        #B08D57;
+      --gold-light:  #d4b888;
+      --gold-dark:   #7A5F35;
+      --gold-pale:   #F5EFE4;
+
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Jost', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--warm-white); color: var(--text); font-family: var(--font-body); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ─── Sidebar ── */
+    .sidebar { position: fixed; top: 0; left: 0; width: 240px; height: 100vh; background: var(--cream); border-right: 1px solid var(--line); display: flex; flex-direction: column; padding: 2.5rem 2rem; z-index: 100; transform: translateX(-100%); transition: transform 0.4s ease; }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar-logo { line-height: 1.3; margin-bottom: 3rem; }
+    .sidebar-logo span { display: block; font-size: 0.72rem; font-family: var(--font-body); font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-soft); margin-top: 0.3rem; }
+    .sidebar nav ul { display: flex; flex-direction: column; gap: 0.2rem; }
+    .sidebar nav a { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-soft); padding: 0.55rem 0; border-bottom: 1px solid transparent; transition: color 0.2s; display: block; }
+    .sidebar nav a:hover { color: var(--gold-dark); }
+    .sidebar-foot { font-size: 0.72rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* ─── Topbar ── */
+    .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 90; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 3rem; background: rgba(250,247,242,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+    .topbar-logo .name { font-family: 'Whisper', cursive; font-size: 1.9rem; color: var(--text); display: block; }
+    .topbar-logo .title { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); display: block; }
+    .menu-toggle { background: transparent; border: 1px solid var(--line); width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 5px; cursor: pointer; }
+    .menu-toggle span { display: block; width: 20px; height: 1.5px; background: var(--text); }
+
+    .main { padding-top: 72px; }
+
+    /* ═══════════════════════════════
+       HERO — asimétrico, vertical y tenso
+    ═══════════════════════════════ */
+    .hero {
+      min-height: 92vh;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 7rem 4.5rem 6rem 6rem;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-breadcrumb {
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .hero-breadcrumb a { color: var(--earth); transition: color 0.2s; }
+    .hero-breadcrumb a:hover { color: var(--gold-dark); }
+    .hero-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3.4rem, 6vw, 6.2rem);
+      font-weight: 300;
+      line-height: 0.92;
+      color: var(--text);
+      margin-bottom: 1.4rem;
+      letter-spacing: -0.02em;
+    }
+    .hero-title em { font-style: italic; color: var(--gold); display: block; }
+    .hero-sub {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--text-soft);
+      line-height: 1.55;
+      padding-left: 1.2rem;
+      border-left: 2px solid var(--gold-light);
+      margin-bottom: 2rem;
+    }
+    .hero-body {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      line-height: 1.9;
+      margin-bottom: 3rem;
+      max-width: 44ch;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: var(--gold-dark);
+      color: var(--warm-white);
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 1.1rem 2.4rem;
+      border: 1px solid var(--gold-dark);
+      transition: background 0.25s, color 0.25s;
+      width: fit-content;
+    }
+    .btn-primary:hover { background: transparent; color: var(--gold-dark); }
+    .btn-primary svg { width: 14px; height: 14px; }
+
+    /* Hero right — textura dorada oscura */
+    .hero-right {
+      position: relative;
+      background: #2C2418;
+      overflow: hidden;
+    }
+    .hero-right::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 75% 60% at 25% 25%, #8B6B3A 0%, transparent 58%),
+        radial-gradient(ellipse 55% 70% at 80% 80%, #4A3820 0%, transparent 55%);
+      opacity: 0.75;
+    }
+
+    /* Líneas diagonales decorativas — como un gráfico de crecimiento */
+    .hero-lines {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      opacity: 0.07;
+    }
+    .hero-lines svg { width: 100%; height: 100%; }
+
+    .hero-deco-num {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-display);
+      font-size: clamp(10rem, 18vw, 20rem);
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+      user-select: none;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .hero-quote {
+      position: absolute;
+      bottom: 3rem;
+      left: 2.5rem;
+      right: 2.5rem;
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.62);
+      line-height: 1.6;
+      text-align: center;
+      z-index: 3;
+    }
+    .hero-quote::before {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 1px;
+      background: rgba(255,255,255,0.25);
+      margin: 0 auto 0.9rem;
+    }
+
+    /* ═══════════════════════════════
+       Señales del cuerpo — grid visual
+    ═══════════════════════════════ */
+    .signals-section {
+      padding: 6rem 6rem;
+      background: var(--gold-pale);
+      position: relative;
+      overflow: hidden;
+    }
+    .signals-section::after {
+      content: 'más';
+      position: absolute;
+      right: -1rem;
+      bottom: -2rem;
+      font-family: var(--font-display);
+      font-size: 12rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(176,141,87,0.07);
+      line-height: 1;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    .signals-intro {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 5rem;
+      align-items: start;
+      margin-top: 3rem;
+    }
+    .signals-aside {
+      border: 1px solid rgba(176,141,87,0.3);
+      border-top: 3px solid var(--gold);
+      padding: 2.5rem 2rem;
+      background: var(--warm-white);
+    }
+    .signals-aside p {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--text-soft);
+      line-height: 1.65;
+    }
+    .signals-aside strong { font-weight: 400; color: var(--gold-dark); font-style: normal; }
+    .signals-text p {
+      font-size: 0.93rem;
+      color: var(--text-soft);
+      line-height: 1.9;
+      margin-bottom: 1.2rem;
+    }
+    /* Chips de señales del cuerpo */
+    .signal-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin: 1.5rem 0;
+    }
+    .signal-chip {
+      font-size: 0.78rem;
+      color: var(--gold-dark);
+      border: 1px solid rgba(176,141,87,0.35);
+      background: var(--warm-white);
+      padding: 0.45rem 1rem;
+      letter-spacing: 0.04em;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .signal-chip:hover { background: var(--gold-pale); border-color: var(--gold); }
+    .signals-highlight {
+      background: rgba(176,141,87,0.08);
+      border-left: 3px solid var(--gold);
+      padding: 1.2rem 1.5rem;
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.6;
+      margin-top: 1.5rem;
+    }
+
+    /* ═══════════════════════════════
+       "No te falta capacidad"
+    ═══════════════════════════════ */
+    .empathy-section {
+      padding: 6rem 6rem;
+      background: var(--cream);
+    }
+    .empathy-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      margin-top: 3rem;
+    }
+    .empathy-text p {
+      font-size: 0.93rem;
+      color: var(--text-soft);
+      line-height: 1.9;
+      margin-bottom: 1.1rem;
+    }
+    .empathy-denied {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin: 1.8rem 0;
+    }
+    .denied-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.2rem;
+      background: var(--warm-white);
+      border: 1px solid var(--line);
+    }
+    .denied-x {
+      width: 20px; height: 20px;
+      flex-shrink: 0;
+      background: rgba(176,141,87,0.12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.68rem;
+      color: var(--gold-dark);
+    }
+    .denied-text { font-size: 0.85rem; color: var(--text-soft); text-decoration: line-through; opacity: 0.65; }
+    .empathy-visual {
+      background: var(--gold-dark);
+      padding: 3rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .empathy-visual::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 90% 70% at 20% 80%, rgba(212,184,136,0.25) 0%, transparent 65%);
+    }
+    .empathy-visual p {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.5;
+      position: relative;
+      z-index: 2;
+    }
+    .empathy-visual-caption {
+      margin-top: 1.5rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.38);
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ═══════════════════════════════
+       "Es para ti si"
+    ═══════════════════════════════ */
+    .for-you-section {
+      padding: 6rem 6rem;
+      background: var(--warm-white);
+    }
+    .for-you-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    .for-you-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      padding: 1.6rem 1.8rem;
+      border: 1px solid var(--line);
+      background: var(--gold-pale);
+      transition: box-shadow 0.25s, border-color 0.25s, transform 0.25s;
+    }
+    .for-you-item:hover {
+      box-shadow: 0 6px 24px rgba(176,141,87,0.12);
+      border-color: var(--gold-light);
+      transform: translateY(-2px);
+    }
+    .for-you-dot {
+      width: 8px; height: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 0.55rem;
+    }
+    .for-you-text {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    /* ═══════════════════════════════
+       Qué hace diferente — panel oscuro
+    ═══════════════════════════════ */
+    .diff-section {
+      padding: 6rem 6rem;
+      background: #1E1A12;
+      color: var(--warm-white);
+      position: relative;
+      overflow: hidden;
+    }
+    .diff-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 65% 70% at 100% 0%,  rgba(176,141,87,0.18) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 55% at 0%  100%, rgba(122,95,53,0.22)  0%, transparent 55%);
+    }
+    .diff-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 1rem; position: relative; z-index: 2; }
+    .diff-title { font-family: var(--font-display); font-size: clamp(2rem,3.2vw,2.8rem); font-weight: 300; color: var(--warm-white); margin-bottom: 1.5rem; line-height: 1.15; position: relative; z-index: 2; }
+    .diff-title em { font-style: italic; color: var(--gold-light); }
+    .diff-intro { font-size: 0.93rem; color: rgba(255,255,255,0.52); max-width: 54ch; line-height: 1.9; margin-bottom: 3.5rem; position: relative; z-index: 2; }
+    .diff-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.06);
+      margin-bottom: 4rem;
+      position: relative; z-index: 2;
+    }
+    .diff-item { background: #1E1A12; padding: 2.2rem 2rem; transition: background 0.3s; }
+    .diff-item:hover { background: rgba(176,141,87,0.1); }
+    .diff-num {
+      font-family: var(--font-display);
+      font-size: 3rem; font-weight: 300; font-style: italic;
+      color: rgba(212,184,136,0.22);
+      display: block; line-height: 1; margin-bottom: 1rem;
+    }
+    .diff-item-title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 400; color: var(--warm-white); margin-bottom: 0.6rem; }
+    .diff-item-body { font-size: 0.83rem; color: rgba(255,255,255,0.46); line-height: 1.75; }
+    .diff-note {
+      font-family: var(--font-display);
+      font-size: 1.05rem; font-style: italic;
+      color: rgba(255,255,255,0.38);
+      line-height: 1.7;
+      padding-left: 1.5rem;
+      border-left: 2px solid var(--gold);
+      max-width: 54ch;
+      position: relative; z-index: 2;
+    }
+
+    /* ═══════════════════════════════
+       Las 8 sesiones — roadmap
+    ═══════════════════════════════ */
+    .roadmap-section {
+      padding: 6rem 6rem;
+      background: var(--gold-pale);
+    }
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(176,141,87,0.15);
+      margin-top: 3rem;
+    }
+    .roadmap-item {
+      background: var(--warm-white);
+      padding: 1.8rem 1.5rem;
+      position: relative;
+      transition: background 0.25s;
+    }
+    .roadmap-item:hover { background: var(--gold-pale); }
+    .roadmap-num {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(176,141,87,0.3);
+      line-height: 1;
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+    .roadmap-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.35;
+    }
+
+    /* ═══════════════════════════════
+       Transformaciones
+    ═══════════════════════════════ */
+    .transform-section {
+      padding: 6rem 6rem;
+      background: var(--cream);
+    }
+    .transform-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      margin-top: 3.5rem;
+      align-items: start;
+    }
+    .transform-list { display: flex; flex-direction: column; gap: 0.8rem; }
+    .transform-item {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1.2rem 1.5rem;
+      background: var(--warm-white);
+      border: 1px solid var(--line);
+    }
+    .transform-check {
+      width: 22px; height: 22px; flex-shrink: 0;
+      background: var(--gold-dark); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 0.1rem;
+    }
+    .transform-check svg { width: 10px; height: 10px; stroke: white; fill: none; stroke-width: 2.5; }
+    .transform-text { font-size: 0.9rem; color: var(--text-soft); line-height: 1.6; }
+    .transform-aside { position: sticky; top: 6rem; }
+    .transform-box {
+      background: var(--warm-white);
+      border: 1px solid rgba(176,141,87,0.22);
+      border-left: 4px solid var(--gold);
+      padding: 2.5rem 2rem;
+    }
+    .transform-box h4 {
+      font-family: var(--font-display);
+      font-size: 1.45rem; font-weight: 300; font-style: italic;
+      color: var(--text); margin-bottom: 1rem; line-height: 1.35;
+    }
+    .transform-box p { font-size: 0.88rem; color: var(--text-soft); line-height: 1.85; }
+    .choice-block { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+    .choice-versus {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      align-items: center;
+      text-align: center;
+    }
+    .choice-old { font-family: var(--font-display); font-size: 1rem; font-style: italic; color: var(--text-muted); text-decoration: line-through; }
+    .choice-sep { font-size: 0.68rem; letter-spacing: 0.12em; color: var(--text-muted); margin: 0.3rem 0; }
+    .choice-new { font-family: var(--font-display); font-size: 1rem; font-style: italic; color: var(--gold-dark); }
+    .choice-caption { margin-top: 0.9rem; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); text-align: center; }
+
+    /* ═══════════════════════════════
+       Inversión
+    ═══════════════════════════════ */
+    .invest-section {
+      padding: 6rem 6rem;
+      background: var(--warm-white);
+    }
+    .invest-cards {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .invest-card {
+      border: 1px solid var(--line);
+      padding: 2.5rem 2.2rem;
+      background: var(--cream);
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .invest-card:hover { box-shadow: 0 10px 36px rgba(60,50,40,0.08); transform: translateY(-3px); }
+    .invest-card.featured { border-color: var(--gold); border-top: 3px solid var(--gold); background: var(--warm-white); }
+    .invest-tag {
+      font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--warm-white); background: var(--gold-dark);
+      padding: 0.25rem 0.7rem; display: inline-block; margin-bottom: 1.2rem;
+    }
+    .invest-mode { font-family: var(--font-display); font-size: 1.3rem; font-weight: 400; color: var(--text); margin-bottom: 0.5rem; }
+    .invest-mode-desc { font-size: 0.78rem; color: var(--text-muted); letter-spacing: 0.05em; margin-bottom: 1.8rem; }
+    .invest-price { font-family: var(--font-display); font-size: 2.6rem; font-weight: 300; color: var(--text); line-height: 1; margin-bottom: 0.3rem; }
+    .invest-currency { font-size: 0.78rem; color: var(--text-muted); letter-spacing: 0.08em; text-transform: uppercase; }
+    .invest-divider { height: 1px; background: var(--line); margin: 1.8rem 0; }
+    .invest-includes { display: flex; flex-direction: column; gap: 0.6rem; }
+    .invest-inc-item { display: flex; align-items: flex-start; gap: 0.8rem; font-size: 0.83rem; color: var(--text-soft); line-height: 1.5; }
+    .invest-inc-dot { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; flex-shrink: 0; margin-top: 0.5rem; }
+
+    /* ═══════════════════════════════
+       CTA Final
+    ═══════════════════════════════ */
+    .cta-section {
+      padding: 7rem 6rem;
+      background: linear-gradient(140deg, #1E1A12 0%, #3A2E1A 50%, #5C4A22 100%) !important;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 65% 70% at 15% 50%, rgba(176,141,87,0.2) 0%, transparent 55%),
+        radial-gradient(ellipse 55% 50% at 88% 50%, rgba(90,70,30,0.4)  0%, transparent 55%);
+    }
+    .cta-inner { position: relative; z-index: 2; }
+    .cta-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1.5rem; }
+    .cta-title { font-family: var(--font-display); font-size: clamp(2.2rem,3.5vw,3.2rem); font-weight: 300; color: var(--warm-white); margin-bottom: 1rem; line-height: 1.15; }
+    .cta-title em { font-style: italic; color: var(--gold-light); }
+    .cta-body { font-size: 0.93rem; color: rgba(255,255,255,0.55); max-width: 48ch; margin: 0 auto 0.8rem; line-height: 1.85; }
+    .cta-note { font-family: var(--font-display); font-size: 1rem; font-style: italic; color: rgba(255,255,255,0.38); margin-bottom: 3rem; }
+    .cta-buttons { display: flex; align-items: center; justify-content: center; gap: 1.2rem; flex-wrap: wrap; }
+    .btn-outline-gold {
+      display: inline-flex; align-items: center; gap: 0.8rem;
+      background: transparent;
+      color: rgba(255,255,255,0.85);
+      font-family: var(--font-body);
+      font-size: 0.75rem; font-weight: 400;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 1.1rem 2.4rem;
+      border: 1px solid rgba(212,184,136,0.5);
+      transition: background 0.25s, color 0.25s, border-color 0.25s;
+    }
+    .btn-outline-gold:hover { background: var(--gold-dark); border-color: var(--gold-dark); color: white; }
+
+    /* ─── Footer ── */
+    footer { background: var(--text); color: rgba(255,255,255,0.4); padding: 2.5rem 6rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; letter-spacing: 0.06em; }
+    footer strong { color: rgba(255,255,255,0.7); font-family: var(--font-display); font-size: 1rem; font-weight: 300; }
+    footer a { color: var(--gold-light); font-size: 0.72rem; }
+
+    /* ─── Animaciones ── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-label  { animation: fadeUp 0.7s ease 0.1s  both; }
+    .hero-title  { animation: fadeUp 0.8s ease 0.2s  both; }
+    .hero-sub    { animation: fadeUp 0.8s ease 0.32s both; }
+    .hero-body   { animation: fadeUp 0.8s ease 0.42s both; }
+    .btn-primary { animation: fadeUp 0.8s ease 0.52s both; }
+
+    /* ─── Responsive ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 6rem 2rem 3rem; }
+      .hero-right { min-height: 55vw; }
+      .signals-section, .empathy-section, .for-you-section, .diff-section,
+      .roadmap-section, .transform-section, .invest-section, .cta-section { padding: 4rem 2rem; }
+      .signals-intro, .empathy-cols, .transform-cols, .invest-cards { grid-template-columns: 1fr; gap: 2.5rem; }
+      .for-you-grid, .diff-grid { grid-template-columns: 1fr; }
+      .roadmap-grid { grid-template-columns: 1fr 1fr; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 2rem; }
+      .topbar { padding: 1.2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <span style="font-family:'Whisper', cursive; font-size:1.6rem; color:var(--text); display:block; margin-bottom:0.2rem;">Karla Moraga Aguilera</span>
+      <span>Terapeuta Somática &amp; Docente</span>
+    </div>
+    <nav><ul>
+      <li><a href="index.html" onclick="closeSidebar()">Inicio</a></li>
+      <li><a href="index.html#sobre-mi" onclick="closeSidebar()">Sobre mí</a></li>
+      <li><a href="index.html#trabajo" onclick="closeSidebar()">Mi trabajo</a></li>
+      <li><a href="programas.html" onclick="closeSidebar()">Programas</a></li>
+      <li><a href="index.html#guias" onclick="closeSidebar()">Guías somáticas</a></li>
+      <li><a href="index.html#recursos" onclick="closeSidebar()">Recursos gratuitos</a></li>
+      <li><a href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20me%20interesa%20comenzar%20el%20programa%20de%20acompa%C3%B1amiento%20de%208%20sesiones%20%E2%80%9CSostener%20m%C3%A1s%E2%80%9D.%20%C2%BFPodr%C3%ADas%20darme%20informaci%C3%B3n%20para%20iniciar%20este%20camino%3F" target="_blank" onclick="closeSidebar()">Agendar</a></li>
+      <li><a href="index.html#contacto" onclick="closeSidebar()">Contacto</a></li>
+    </ul></nav>
+    <div class="sidebar-foot">© 2025 Karla Moraga<br/>Todos los derechos reservados</div>
+  </aside>
+
+  <header class="topbar">
+    <div class="topbar-logo">
+      <span class="name">Karla Moraga</span>
+      <span class="title">Terapeuta Somática &amp; Docente</span>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main class="main">
+
+    <!-- ══ HERO ══ -->
+    <section class="hero" style="padding:0;">
+      <div class="hero-left">
+        <div class="hero-breadcrumb">
+          <a href="programas.html">← Programas</a>
+          <span>/</span>
+          <span>Sostener más</span>
+        </div>
+        <p class="hero-label">Programa 03 · Proceso terapéutico</p>
+        <h1 class="hero-title">
+          Sostener<br/>
+          <em>más</em>
+        </h1>
+        <p class="hero-sub">
+          Expandir tus ingresos<br/>sin colapsar
+        </p>
+        <p class="hero-body">
+          Hay una forma de crecer que no se siente peligrosa. Un proceso terapéutico de 8 sesiones para dejar de autosabotear tus ingresos, regular tu sistema nervioso y expandir tu capacidad de sostener más dinero, visibilidad y éxito con seguridad interna.
+        </p>
+        <a href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20me%20interesa%20comenzar%20el%20programa%20de%20acompa%C3%B1amiento%20de%208%20sesiones%20%E2%80%9CSostener%20m%C3%A1s%E2%80%9D.%20%C2%BFPodr%C3%ADas%20darme%20informaci%C3%B3n%20para%20iniciar%20este%20camino%3F" target="_blank" class="btn-primary">
+          Quiero entrar
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+        </a>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-lines">
+          <svg viewBox="0 0 400 600" preserveAspectRatio="none">
+            <line x1="0" y1="600" x2="400" y2="200" stroke="white" stroke-width="1"/>
+            <line x1="0" y1="600" x2="400" y2="100" stroke="white" stroke-width="0.5"/>
+            <line x1="50" y1="600" x2="400" y2="300" stroke="white" stroke-width="0.5"/>
+            <polyline points="20,580 80,520 140,490 200,420 260,370 320,280 380,180" stroke="white" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+        <div class="hero-deco-num">∞</div>
+        <div class="hero-quote">
+          "No te falta capacidad.<br/>
+          Te falta sentirte segura<br/>mientras creces."
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ SEÑALES DEL CUERPO ══ -->
+    <section class="signals-section">
+      <p style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem;">Tu cuerpo tiene un rango de seguridad</p>
+      <h2 style="font-family:var(--font-display); font-size:clamp(2rem,3.2vw,2.8rem); font-weight:300; line-height:1.15; color:var(--text); margin-bottom:1.5rem;">Hay una forma de expandirte sin que tu cuerpo <em style="font-style:italic; color:var(--gold);">entre en alarma</em></h2>
+
+      <div class="signals-intro">
+        <div>
+          <div class="signals-aside">
+            <p>Cuando sobrepasas ese rango, puede aparecer <strong>algo que parece sabotaje</strong>, pero en realidad es protección.</p>
+          </div>
+        </div>
+        <div class="signals-text">
+          <p>Tu cuerpo tiene un límite interno para lo que siente como "seguro" sostener. Cuando el dinero, el éxito o la visibilidad comienzan a crecer más allá de ese límite, el sistema nervioso activa respuestas automáticas para volverte al punto conocido.</p>
+          <div class="signal-chips">
+            <span class="signal-chip">ansiedad</span>
+            <span class="signal-chip">procrastinación</span>
+            <span class="signal-chip">desorden financiero</span>
+            <span class="signal-chip">gasto impulsivo</span>
+            <span class="signal-chip">bloqueo ante oportunidades</span>
+            <span class="signal-chip">desconexión</span>
+          </div>
+          <div class="signals-highlight">
+            Esto no es falta de disciplina. No es falta de estrategia.<br/>
+            Es tu sistema nervioso intentando protegerte.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ EMPATHY ══ -->
+    <section class="empathy-section">
+      <p style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--earth); margin-bottom:1rem;">Antes de comenzar</p>
+      <h2 style="font-family:var(--font-display); font-size:clamp(2rem,3.2vw,2.8rem); font-weight:300; line-height:1.15; color:var(--text); margin-bottom:1.5rem;">No significa que no <em style="font-style:italic; color:var(--gold);">sepas hacerlo</em></h2>
+
+      <div class="empathy-cols">
+        <div class="empathy-text">
+          <p>No eres mala con el dinero. No te falta fuerza de voluntad. No te falta capacidad. Aprendiste a relacionarte con el crecimiento desde la supervivencia.</p>
+          <div class="empathy-denied">
+            <div class="denied-item"><div class="denied-x">✕</div><span class="denied-text">No te falta fuerza de voluntad</span></div>
+            <div class="denied-item"><div class="denied-x">✕</div><span class="denied-text">No eres mala con el dinero</span></div>
+            <div class="denied-item"><div class="denied-x">✕</div><span class="denied-text">No te falta capacidad ni disciplina</span></div>
+          </div>
+          <p>Si creciste viendo que el dinero generaba estrés, conflicto, carencia o sacrificio, es completamente esperable que hoy el éxito se sienta como bloqueo, miedo o agotamiento.</p>
+          <p>Aquí trabajaremos en ampliar tu capacidad interna para recibir, sostener y crecer sin activar respuestas automáticas de evitación.</p>
+        </div>
+        <div>
+          <div class="empathy-visual">
+            <p>"Dejar de autosabotear tus ingresos no es solo disciplina.<br/><br/>Es seguridad interna."</p>
+            <div class="empathy-visual-caption">Terapia Somática · Dinero y expansión</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ ES PARA TI SI ══ -->
+    <section class="for-you-section">
+      <p style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--earth); margin-bottom:1rem;">Señales de reconocimiento</p>
+      <h2 style="font-family:var(--font-display); font-size:clamp(2rem,3.2vw,2.8rem); font-weight:300; line-height:1.15; color:var(--text); margin-bottom:0.5rem;">Este proceso es para ti <em style="font-style:italic; color:var(--gold);">si…</em></h2>
+
+      <div class="for-you-grid">
+        <div class="for-you-item"><div class="for-you-dot"></div><div class="for-you-text">Sientes que ganas más, pero nunca se queda</div></div>
+        <div class="for-you-item"><div class="for-you-dot"></div><div class="for-you-text">Te bloqueas justo cuando aparece una oportunidad real</div></div>
+        <div class="for-you-item"><div class="for-you-dot"></div><div class="for-you-text">Te cuesta cobrar lo que realmente vale tu trabajo</div></div>
+        <div class="for-you-item"><div class="for-you-dot"></div><div class="for-you-text">Te da miedo mostrarte o crecer, aunque lo deseas</div></div>
+        <div class="for-you-item"><div class="for-you-dot"></div><div class="for-you-text">Sabes lo que tienes que hacer, pero no logras hacerlo</div></div>
+        <div class="for-you-item"><div class="for-you-dot"></div><div class="for-you-text">Te sobreexiges, pero no ves ese esfuerzo reflejado en tus ingresos</div></div>
+      </div>
+    </section>
+
+    <!-- ══ CTA MEDIO ══ -->
+    <div style="background:var(--gold-pale); padding:3rem 6rem; display:flex; justify-content:center; border-top:1px solid rgba(176,141,87,0.2); border-bottom:1px solid rgba(176,141,87,0.2);">
+      <a href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20me%20interesa%20comenzar%20el%20programa%20de%20acompa%C3%B1amiento%20de%208%20sesiones%20%E2%80%9CSostener%20m%C3%A1s%E2%80%9D.%20%C2%BFPodr%C3%ADas%20darme%20informaci%C3%B3n%20para%20iniciar%20este%20camino%3F" target="_blank" class="btn-primary">
+        Quiero entrar
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+      </a>
+    </div>
+
+    <!-- ══ QUÉ HACE DIFERENTE ══ -->
+    <section class="diff-section">
+      <p class="diff-label">Lo que hace diferente este proceso</p>
+      <h2 class="diff-title">Más que productividad:<br/><em>seguridad interna</em></h2>
+      <p class="diff-intro">Este no es un espacio para obligarte a pensar en abundancia ni para exigirte más productividad. Aquí no trabajamos solo con la mente. Trabajamos con el cuerpo, el sistema nervioso y la historia emocional que construyó tu relación con el dinero.</p>
+
+      <div class="diff-grid">
+        <div class="diff-item">
+          <span class="diff-num">01</span>
+          <div class="diff-item-title">Sentir seguridad con el crecimiento</div>
+          <div class="diff-item-body">Que expandirte deje de activar alarmas en tu cuerpo y empiece a sentirse como territorio conocido.</div>
+        </div>
+        <div class="diff-item">
+          <span class="diff-num">02</span>
+          <div class="diff-item-title">Dejar de elegir desde el miedo</div>
+          <div class="diff-item-body">Tomar decisiones financieras desde la claridad y la confianza interna, no desde la urgencia o el bloqueo.</div>
+        </div>
+        <div class="diff-item">
+          <span class="diff-num">03</span>
+          <div class="diff-item-title">Sostener más sin colapsar</div>
+          <div class="diff-item-body">Ampliar tu rango de seguridad interno para que el éxito no active el impulso automático de retroceder.</div>
+        </div>
+        <div class="diff-item">
+          <span class="diff-num">04</span>
+          <div class="diff-item-title">Transformar el autosabotaje</div>
+          <div class="diff-item-body">Comprenderlo como protección, no como falla, y desde ahí desactivarlo con regulación real.</div>
+        </div>
+      </div>
+
+      <p class="diff-note">
+        "La expansión no tiene por qué sentirse como amenaza.<br/>
+        Se trata de ampliar lo que tu cuerpo puede sostener."
+      </p>
+    </section>
+
+    <!-- ══ LAS 8 SESIONES ══ -->
+    <section class="roadmap-section">
+      <p style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold-dark); margin-bottom:1rem;">Cómo funciona</p>
+      <h2 style="font-family:var(--font-display); font-size:clamp(2rem,3.2vw,2.8rem); font-weight:300; line-height:1.15; color:var(--text); margin-bottom:0.5rem;">El camino de las <em style="font-style:italic; color:var(--gold);">8 sesiones</em></h2>
+
+      <div class="roadmap-grid">
+        <div class="roadmap-item"><span class="roadmap-num">01</span><div class="roadmap-title">Tu patrón actual con el dinero</div></div>
+        <div class="roadmap-item"><span class="roadmap-num">02</span><div class="roadmap-title">Historia y programación temprana</div></div>
+        <div class="roadmap-item"><span class="roadmap-num">03</span><div class="roadmap-title">Miedo a perder vínculo al crecer</div></div>
+        <div class="roadmap-item"><span class="roadmap-num">04</span><div class="roadmap-title">Activación del sistema nervioso</div></div>
+        <div class="roadmap-item"><span class="roadmap-num">05</span><div class="roadmap-title">Autosabotaje como protección</div></div>
+        <div class="roadmap-item"><span class="roadmap-num">06</span><div class="roadmap-title">Regulación y sostén real</div></div>
+        <div class="roadmap-item"><span class="roadmap-num">07</span><div class="roadmap-title">Expansión progresiva</div></div>
+        <div class="roadmap-item"><span class="roadmap-num">08</span><div class="roadmap-title">Integración y nueva identidad</div></div>
+      </div>
+    </section>
+
+    <!-- ══ TRANSFORMACIONES ══ -->
+    <section class="transform-section">
+      <p style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--earth); margin-bottom:1rem;">Al finalizar este proceso</p>
+      <h2 style="font-family:var(--font-display); font-size:clamp(2rem,3.2vw,2.8rem); font-weight:300; line-height:1.15; color:var(--text); margin-bottom:1.5rem;">Lo que vas a <em style="font-style:italic; color:var(--gold);">transformar</em></h2>
+
+      <div class="transform-cols">
+        <div class="transform-list">
+          <div class="transform-item"><div class="transform-check"><svg viewBox="0 0 10 8"><polyline points="1,4 4,7 9,1"/></svg></div><div class="transform-text">Entender por qué te pasa lo que te pasa con el dinero</div></div>
+          <div class="transform-item"><div class="transform-check"><svg viewBox="0 0 10 8"><polyline points="1,4 4,7 9,1"/></svg></div><div class="transform-text">Regular la ansiedad, el bloqueo o el impulso de retroceder</div></div>
+          <div class="transform-item"><div class="transform-check"><svg viewBox="0 0 10 8"><polyline points="1,4 4,7 9,1"/></svg></div><div class="transform-text">Salir del patrón de autosabotaje financiero desde la comprensión</div></div>
+          <div class="transform-item"><div class="transform-check"><svg viewBox="0 0 10 8"><polyline points="1,4 4,7 9,1"/></svg></div><div class="transform-text">Expandir tu capacidad de recibir y sostener más</div></div>
+          <div class="transform-item"><div class="transform-check"><svg viewBox="0 0 10 8"><polyline points="1,4 4,7 9,1"/></svg></div><div class="transform-text">Construir una relación más segura con la abundancia, la visibilidad y el éxito</div></div>
+        </div>
+
+        <div class="transform-aside">
+          <div class="transform-box">
+            <h4>Para que sostener más deje de sentirse como una lucha constante.</h4>
+            <p>Para que no tengas que elegir entre crecer o sentirte segura. La expansión no tiene por qué sentirse como amenaza.</p>
+            <div class="choice-block">
+              <div class="choice-versus">
+                <span class="choice-old">crecer</span>
+                <span class="choice-sep">o</span>
+                <span class="choice-old">sentirte segura</span>
+              </div>
+              <div class="choice-caption">Ya no tienes que elegir entre las dos.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- ══ INVERSIÓN ══ -->
+    <section class="invest-section">
+      <p style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--earth); margin-bottom:1rem;">Inversión</p>
+      <h2 style="font-family:var(--font-display); font-size:clamp(2rem,3.2vw,2.8rem); font-weight:300; line-height:1.15; color:var(--text); margin-bottom:0.5rem;">El programa <em style="font-style:italic; color:var(--gold);">incluye</em></h2>
+
+      <div class="invest-cards">
+
+        <!-- 1:1 -->
+        <div class="invest-card featured">
+          <span class="invest-tag">Modalidad 1:1</span>
+          <div class="invest-mode">Proceso individual online</div>
+          <div class="invest-mode-desc">Acompañamiento personalizado · Sesiones privadas</div>
+          <div style="margin-bottom:0.3rem;">
+            <span style="font-size:0.78rem; color:var(--text-muted); text-decoration:line-through;">$470.000 CLP</span>
+          </div>
+          <div class="invest-price">$330.000</div>
+          <div class="invest-currency">CLP · Valor de lanzamiento</div>
+          <div class="invest-divider"></div>
+          <div class="invest-includes">
+            <div class="invest-inc-item"><div class="invest-inc-dot"></div><span>8 sesiones terapéuticas 1:1</span></div>
+            <div class="invest-inc-item"><div class="invest-inc-dot"></div><span>Acompañamiento profundo y guiado</span></div>
+            <div class="invest-inc-item"><div class="invest-inc-dot"></div><span>Trabajo somático y relacional</span></div>
+            <div class="invest-inc-item"><div class="invest-inc-dot"></div><span>Ejercicios integrativos entre sesiones</span></div>
+            <div class="invest-inc-item"><div class="invest-inc-dot"></div><span>Material de apoyo y recursos digitales</span></div>
+          </div>
+          <div class="invest-divider"></div>
+          <a href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20me%20interesa%20comenzar%20el%20programa%20de%20acompa%C3%B1amiento%20de%208%20sesiones%20%E2%80%9CSostener%20m%C3%A1s%E2%80%9D.%20%C2%BFPodr%C3%ADas%20darme%20informaci%C3%B3n%20para%20iniciar%20este%20camino%3F" target="_blank" class="btn-primary" style="width:100%; justify-content:center; margin-top:0.5rem;">
+            Quiero iniciar este proceso
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+          </a>
+        </div>
+
+        <!-- Grupal -->
+        <div class="invest-card">
+          <span class="invest-tag" style="background:var(--sage-dark);">Modalidad grupal</span>
+          <div class="invest-mode">Proceso grupal online</div>
+          <div class="invest-mode-desc">Espacio compartido · Comunidad terapéutica</div>
+          <div style="margin-bottom:0.3rem;">
+            <span style="font-size:0.78rem; color:var(--text-muted); text-decoration:line-through;">$330.000 CLP</span>
+          </div>
+          <div class="invest-price">$230.000</div>
+          <div class="invest-currency">CLP · Valor de lanzamiento</div>
+          <div class="invest-divider"></div>
+          <div class="invest-includes">
+            <div class="invest-inc-item"><div class="invest-inc-dot" style="background:var(--sage-dark);"></div><span>8 sesiones grupales guiadas</span></div>
+            <div class="invest-inc-item"><div class="invest-inc-dot" style="background:var(--sage-dark);"></div><span>Proceso compartido con otras personas</span></div>
+            <div class="invest-inc-item"><div class="invest-inc-dot" style="background:var(--sage-dark);"></div><span>Trabajo somático y relacional</span></div>
+            <div class="invest-inc-item"><div class="invest-inc-dot" style="background:var(--sage-dark);"></div><span>Material de apoyo y recursos digitales</span></div>
+            <div class="invest-inc-item"><div class="invest-inc-dot" style="background:var(--sage-dark);"></div><span>Comunidad de apoyo durante el proceso</span></div>
+          </div>
+          <div style="background:rgba(95,123,92,0.07); border:1px solid rgba(95,123,92,0.15); padding:1rem 1.2rem; margin:1.2rem 0; font-size:0.82rem; color:var(--text-soft); line-height:1.6;">
+            <strong style="display:block; font-family:var(--font-display); font-size:0.95rem; color:var(--text); margin-bottom:0.3rem;">Ingreso mediante lista de espera</strong>
+            El programa grupal se abre en fechas específicas durante el año. Al inscribirte quedas en lista de espera para el próximo ciclo disponible.
+          </div>
+          <a href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20me%20gustar%C3%ADa%20sumarme%20a%20la%20lista%20de%20espera%20para%20el%20pr%C3%B3ximo%20ciclo%20grupal%20de%20Sostener%20m%C3%A1s.%20%C2%BFPodr%C3%ADas%20contarme%20cu%C3%A1ndo%20se%20abrir%C3%A1n%20los%20pr%C3%B3ximos%20cupos%3F" target="_blank" style="display:flex; align-items:center; justify-content:center; gap:0.8rem; background:transparent; color:var(--sage-dark); font-family:var(--font-body); font-size:0.75rem; font-weight:400; letter-spacing:0.14em; text-transform:uppercase; padding:1.1rem 1.5rem; border:1px solid var(--sage-dark); transition:background 0.25s, color 0.25s; text-decoration:none; margin-top:0.5rem;" onmouseover="this.style.background='var(--sage-dark)';this.style.color='white'" onmouseout="this.style.background='transparent';this.style.color='var(--sage-dark)'">
+            Unirme a la lista de espera
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Nota lanzamiento -->
+      <p style="margin-top:2rem; font-size:0.82rem; color:var(--text-muted); font-style:italic; text-align:center; letter-spacing:0.04em;">
+        Cupos de apertura con valor preferencial para quienes decidan comenzar este camino hoy.
+      </p>
+    </section>
+
+    <!-- ══ TÉRMINOS ══ -->
+    <section style="padding:5rem 6rem; background:var(--cream); border-top:1px solid var(--line);">
+      <p style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1rem;">Información importante</p>
+      <h2 style="font-family:var(--font-display); font-size:clamp(1.6rem,2.5vw,2.2rem); font-weight:300; color:var(--text); margin-bottom:2.5rem; line-height:1.2;">Términos del <em style="font-style:italic;">programa</em></h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; max-width:900px;">
+        <div style="padding:1.5rem 1.8rem; background:var(--warm-white); border:1px solid var(--line); border-top:2px solid var(--text-muted);">
+          <p style="font-family:var(--font-display); font-size:1rem; font-weight:400; color:var(--text); margin-bottom:0.5rem;">Duración y frecuencia</p>
+          <p style="font-size:0.83rem; color:var(--text-soft); line-height:1.75;">8 sesiones con frecuencia semanal y horario previamente acordado entre las partes.</p>
+        </div>
+        <div style="padding:1.5rem 1.8rem; background:var(--warm-white); border:1px solid var(--line); border-top:2px solid var(--text-muted);">
+          <p style="font-family:var(--font-display); font-size:1rem; font-weight:400; color:var(--text); margin-bottom:0.5rem;">Reserva del cupo</p>
+          <p style="font-size:0.83rem; color:var(--text-soft); line-height:1.75;">Se confirma una vez realizado el pago: en 1 transferencia bancaria o en cuotas vía PayPal con tarjeta de crédito.</p>
+        </div>
+        <div style="padding:1.5rem 1.8rem; background:var(--warm-white); border:1px solid var(--line); border-top:2px solid var(--text-muted);">
+          <p style="font-family:var(--font-display); font-size:1rem; font-weight:400; color:var(--text); margin-bottom:0.5rem;">Uso personal e intransferible</p>
+          <p style="font-size:0.83rem; color:var(--text-soft); line-height:1.75;">Este proceso es de uso exclusivo para la participante y no puede ser cedido ni transferido a terceras personas.</p>
+        </div>
+        <div style="padding:1.5rem 1.8rem; background:var(--warm-white); border:1px solid var(--line); border-top:2px solid var(--text-muted);">
+          <p style="font-family:var(--font-display); font-size:1rem; font-weight:400; color:var(--text); margin-bottom:0.5rem;">Política de devolución</p>
+          <p style="font-size:0.83rem; color:var(--text-soft); line-height:1.75;">Una vez iniciado el programa no se realizan devoluciones, ya que el cupo queda reservado exclusivamente para tu proceso.</p>
+        </div>
+        <div style="padding:1.5rem 1.8rem; background:var(--warm-white); border:1px solid var(--line); border-top:2px solid var(--text-muted); grid-column:1/-1;">
+          <p style="font-family:var(--font-display); font-size:1rem; font-weight:400; color:var(--text); margin-bottom:0.5rem;">Propiedad del material</p>
+          <p style="font-size:0.83rem; color:var(--text-soft); line-height:1.75;">Todo el material entregado durante el acompañamiento —guías, ejercicios y recursos digitales— es de uso exclusivo para la participante y no puede ser reproducido, compartido ni distribuido sin autorización previa. Al iniciar el proceso, se entiende que la participante ha leído y aceptado estos términos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CTA FINAL ══ -->
+    <section class="cta-section">
+      <div class="cta-inner">
+        <p class="cta-label">Un camino de expansión interna</p>
+        <h2 class="cta-title">¿Lista para<br/><em>sostener más?</em></h2>
+        <p class="cta-body">
+          No necesitas convertirte en otra persona. Necesitas aprender a sostenerte de una forma distinta. Este es un proceso para reconstruir tu relación con el dinero, el éxito y la visibilidad desde la seguridad interna.
+        </p>
+        <p class="cta-note">Nos vemos dentro.</p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20me%20interesa%20comenzar%20el%20programa%20de%20acompa%C3%B1amiento%20de%208%20sesiones%20%E2%80%9CSostener%20m%C3%A1s%E2%80%9D.%20%C2%BFPodr%C3%ADas%20darme%20informaci%C3%B3n%20para%20iniciar%20este%20camino%3F" target="_blank" class="btn-outline-gold">
+            Quiero entrar
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+          </a>
+          <a href="programas.html" class="btn-outline-gold" style="border-color:rgba(255,255,255,0.18); color:rgba(255,255,255,0.4);">
+            Ver otros programas
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <strong>Karla Moraga Aguilera · Terapeuta Somática &amp; Docente</strong>
+    <a href="programas.html">← Volver a programas</a>
+    <span>© 2025 · Todos los derechos reservados</span>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    toggle.addEventListener('click', () => sidebar.classList.toggle('open'));
+    function closeSidebar() { sidebar.classList.remove('open'); }
+    document.addEventListener('click', (e) => {
+      if (!sidebar.contains(e.target) && !toggle.contains(e.target)) sidebar.classList.remove('open');
+    });
+  </script>
+
+</body>
+</html>

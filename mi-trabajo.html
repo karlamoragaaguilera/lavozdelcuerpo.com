@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi trabajo · Karla Moraga</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Whisper&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream:      #FAF7F2;
+      --warm-white: #FAF7F2;
+      --sage:       #a8c4a2;
+      --sage-light: #a8c4a2;
+      --sage-dark:  #5F7B5C;
+      --earth:      #C4956A;
+      --earth-light:#dbb899;
+      --text:       #2e2b28;
+      --text-soft:  #6b6560;
+      --text-muted: #B7B0B0;
+      --line:       rgba(196,149,106,0.2);
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Jost', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--warm-white); color: var(--text); font-family: var(--font-body); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ─── Sidebar ── */
+    .sidebar { position: fixed; top: 0; left: 0; width: 240px; height: 100vh; background: var(--cream); border-right: 1px solid var(--line); display: flex; flex-direction: column; padding: 2.5rem 2rem; z-index: 100; transform: translateX(-100%); transition: transform 0.4s ease; }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar-logo { line-height: 1.3; margin-bottom: 3rem; }
+    .sidebar-logo span { display: block; font-size: 0.72rem; font-family: var(--font-body); font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-soft); margin-top: 0.3rem; }
+    .sidebar nav ul { display: flex; flex-direction: column; gap: 0.2rem; }
+    .sidebar nav a { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-soft); padding: 0.55rem 0; border-bottom: 1px solid transparent; transition: color 0.2s; display: block; }
+    .sidebar nav a:hover, .sidebar nav a.active { color: var(--sage-dark); }
+    .sidebar-foot { font-size: 0.72rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* ─── Topbar ── */
+    .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 90; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 3rem; background: rgba(250,247,242,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+    .topbar-logo .name { font-family: 'Whisper', cursive; font-size: 1.9rem; color: var(--text); display: block; }
+    .topbar-logo .title { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); display: block; }
+    .menu-toggle { background: transparent; border: 1px solid var(--line); width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 5px; cursor: pointer; }
+    .menu-toggle span { display: block; width: 20px; height: 1.5px; background: var(--text); }
+    .main { padding-top: 72px; }
+
+    /* ══════════════════════════════════
+       HERO — texto gigante + franja lateral
+    ══════════════════════════════════ */
+    .hero {
+      min-height: 80vh;
+      display: grid;
+      grid-template-columns: 5fr 2fr;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-main {
+      padding: 7rem 6rem 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      background: var(--cream);
+    }
+    /* Palabra decorativa enorme al fondo */
+    .hero-bg-word {
+      position: absolute;
+      top: 3rem; left: 4rem;
+      font-family: var(--font-display);
+      font-size: clamp(7rem, 14vw, 16rem);
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(95,123,92,0.05);
+      line-height: 1;
+      user-select: none;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    .hero-breadcrumb {
+      position: absolute;
+      top: 5rem; left: 6rem;
+      font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-muted);
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .hero-breadcrumb a { color: var(--earth); }
+    .hero-label {
+      font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--sage-dark); margin-bottom: 1.2rem; position: relative; z-index: 2;
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 6vw, 6.5rem);
+      font-weight: 300;
+      line-height: 0.92;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 2.5rem;
+    }
+    .hero-title em { font-style: italic; color: var(--sage-dark); }
+
+    /* Franja lateral derecha — columna de valores */
+    .hero-sidebar-col {
+      background: var(--sage-dark);
+      padding: 7rem 2rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-sidebar-col::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 100% 60% at 50% 0%, rgba(168,200,162,0.2) 0%, transparent 60%);
+    }
+    .hero-col-item {
+      padding: 1.2rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      position: relative;
+      z-index: 2;
+    }
+    .hero-col-item:first-child { border-top: 1px solid rgba(255,255,255,0.1); }
+    .hero-col-num {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.35);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .hero-col-word {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* ══════════════════════════════════
+       ORIGEN — 3 columnas editoriales
+    ══════════════════════════════════ */
+    .origen-section {
+      padding: 7rem 6rem;
+      background: var(--warm-white);
+      position: relative;
+    }
+    .origen-section::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 6rem; right: 6rem;
+      height: 1px;
+      background: var(--line);
+    }
+    .origen-header {
+      display: flex;
+      align-items: baseline;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+    .origen-header-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.15;
+      flex: 1;
+    }
+    .origen-header-title em { font-style: italic; color: var(--sage-dark); }
+    .origen-header-line {
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+      align-self: center;
+    }
+    .origen-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 3rem;
+    }
+    .origen-col {
+      position: relative;
+      padding-top: 1.5rem;
+      border-top: 2px solid var(--line);
+      transition: border-color 0.3s;
+    }
+    .origen-col:hover { border-top-color: var(--sage-dark); }
+    .origen-col-num {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(95,123,92,0.18);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .origen-col-title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.8rem;
+    }
+    .origen-col-text {
+      font-size: 0.88rem;
+      color: var(--text-soft);
+      line-height: 1.85;
+    }
+
+    /* ══════════════════════════════════
+       FORMACIÓN — timeline horizontal
+    ══════════════════════════════════ */
+    .formacion-section {
+      padding: 7rem 6rem;
+      background: var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+    .formacion-section::before {
+      content: 'formación';
+      position: absolute;
+      right: 3rem; top: 3rem;
+      font-family: var(--font-display);
+      font-size: 9rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(196,149,106,0.06);
+      line-height: 1;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    .formacion-header {
+      margin-bottom: 4rem;
+    }
+    .formacion-label {
+      font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--earth); margin-bottom: 1rem;
+    }
+    .formacion-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.15;
+    }
+    .formacion-title em { font-style: italic; color: var(--sage-dark); }
+
+    /* Grid de especialidades */
+    .formacion-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+    }
+    .formacion-item {
+      background: var(--cream);
+      padding: 2rem 1.8rem;
+      transition: background 0.25s;
+    }
+    .formacion-item:hover { background: var(--warm-white); }
+    .formacion-item-dot {
+      width: 8px; height: 8px;
+      background: var(--sage-dark);
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+    .formacion-item-text {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    /* Texto de cierre formación */
+    .formacion-cierre {
+      margin-top: 3.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .formacion-cierre-text p {
+      font-size: 0.93rem;
+      color: var(--text-soft);
+      line-height: 1.9;
+    }
+    .formacion-cierre-quote {
+      background: var(--warm-white);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--sage-dark);
+      padding: 2rem 2rem;
+    }
+    .formacion-cierre-quote p {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* ══════════════════════════════════
+       A QUIÉN ACOMPAÑO — fondo oscuro
+    ══════════════════════════════════ */
+    .acompano-section {
+      padding: 7rem 6rem;
+      background: var(--text);
+      position: relative;
+      overflow: hidden;
+    }
+    .acompano-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 65% 70% at 0% 100%, rgba(168,196,162,0.12) 0%, transparent 55%),
+        radial-gradient(ellipse 55% 55% at 100% 0%, rgba(196,149,106,0.1) 0%, transparent 55%);
+    }
+    .acompano-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 6rem;
+      align-items: start;
+      position: relative;
+      z-index: 2;
+    }
+    .acompano-aside-label {
+      font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--sage-light); margin-bottom: 1.5rem;
+    }
+    .acompano-aside-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 300;
+      color: var(--warm-white);
+      line-height: 1.15;
+      margin-bottom: 2rem;
+    }
+    .acompano-aside-title em { font-style: italic; color: var(--earth-light); }
+    .acompano-aside-text {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.9;
+    }
+    .acompano-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .acompano-item {
+      background: rgba(255,255,255,0.04);
+      padding: 1.6rem 2rem;
+      border-left: 2px solid rgba(255,255,255,0.06);
+      transition: background 0.25s, border-color 0.25s;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+    }
+    .acompano-item:hover {
+      background: rgba(168,196,162,0.08);
+      border-left-color: var(--sage-light);
+    }
+    .acompano-arrow {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--sage-light);
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .acompano-item-text {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+    }
+    .acompano-item-text strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--warm-white);
+      margin-bottom: 0.25rem;
+    }
+
+    /* ══════════════════════════════════
+       MODALIDADES — cards limpias
+    ══════════════════════════════════ */
+    .modal-section {
+      padding: 7rem 6rem;
+      background: var(--warm-white);
+    }
+    .modal-header {
+      margin-bottom: 3.5rem;
+    }
+    .modal-label {
+      font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--earth); margin-bottom: 1rem;
+    }
+    .modal-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 300; color: var(--text); line-height: 1.15;
+    }
+    .modal-title em { font-style: italic; color: var(--sage-dark); }
+    .modal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .modal-card {
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--sage-dark);
+      padding: 2.5rem 2rem;
+      background: var(--cream);
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .modal-card:hover { box-shadow: 0 10px 36px rgba(60,50,40,0.08); transform: translateY(-3px); }
+    .modal-card-icon {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-style: italic;
+      color: rgba(95,123,92,0.25);
+      line-height: 1;
+      margin-bottom: 1.2rem;
+    }
+    .modal-card-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.8rem;
+    }
+    .modal-card-text {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      line-height: 1.8;
+    }
+
+    /* ── CTA strip ── */
+    .cta-strip {
+      padding: 4rem 6rem;
+      background: var(--cream);
+      border-top: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .cta-strip-text {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--text);
+    }
+    .btn-sage {
+      display: inline-flex; align-items: center; gap: 0.8rem;
+      background: var(--sage-dark); color: var(--warm-white);
+      font-family: var(--font-body); font-size: 0.75rem; font-weight: 400;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 1.1rem 2.4rem; border: 1px solid var(--sage-dark);
+      transition: background 0.25s, color 0.25s; white-space: nowrap;
+    }
+    .btn-sage:hover { background: transparent; color: var(--sage-dark); }
+
+    /* ─── Footer ── */
+    footer { background: var(--text); color: rgba(255,255,255,0.4); padding: 2.5rem 6rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; letter-spacing: 0.06em; }
+    footer strong { color: rgba(255,255,255,0.7); font-family: var(--font-display); font-size: 1rem; font-weight: 300; }
+    footer a { color: var(--sage-light); font-size: 0.72rem; }
+
+    /* ─── Animaciones ── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-label  { animation: fadeUp 0.7s ease 0.1s both; }
+    .hero-title  { animation: fadeUp 0.8s ease 0.2s both; }
+
+    /* ─── Responsive ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-sidebar-col { display: none; }
+      .hero-main { padding: 6rem 2rem 3rem; min-height: 60vh; }
+      .hero-breadcrumb { left: 2rem; }
+      .origen-section, .formacion-section, .acompano-section,
+      .modal-section { padding: 4rem 2rem; }
+      .origen-cols, .modal-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .formacion-grid { grid-template-columns: 1fr 1fr; }
+      .formacion-cierre, .acompano-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .origen-header { flex-direction: column; gap: 1rem; }
+      .origen-header-line { display: none; }
+      .cta-strip { padding: 3rem 2rem; flex-direction: column; align-items: flex-start; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 2rem; }
+      .topbar { padding: 1.2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:1.25rem; font-weight:400; font-style:italic; color:var(--text); display:block; margin-bottom:0.2rem;">Karla Moraga Aguilera</span>
+      <span>Terapeuta Somática &amp; Docente</span>
+    </div>
+    <nav><ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="sobre-mi.html">Sobre mí</a></li>
+      <li><a href="mi-trabajo.html" class="active">Mi trabajo</a></li>
+      <li><a href="programas.html">Programas</a></li>
+      <li><a href="index.html#guias">Guías somáticas</a></li>
+      <li><a href="index.html#recursos">Recursos gratuitos</a></li>
+      <li><a href="https://wa.me/56956305069" target="_blank">Agendar</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul></nav>
+    <div class="sidebar-foot">© 2025 Karla Moraga<br/>Todos los derechos reservados</div>
+  </aside>
+
+  <header class="topbar">
+    <div class="topbar-logo">
+      <span class="name">Karla Moraga</span>
+      <span class="title">Terapeuta Somática &amp; Docente</span>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main class="main">
+
+    <!-- ══ HERO ══ -->
+    <section class="hero" style="padding:0;">
+      <div class="hero-main">
+        <div class="hero-bg-word">trabajo</div>
+        <div class="hero-breadcrumb">
+          <a href="index.html">← Inicio</a>
+          <span>/</span>
+          <span>Mi trabajo</span>
+        </div>
+        <p class="hero-label">Enfoque · Formación · Acompañamiento</p>
+        <h1 class="hero-title">
+          Mi forma<br/>de <em>acompañar</em>
+        </h1>
+      </div>
+
+      <div class="hero-sidebar-col">
+        <div class="hero-col-item">
+          <span class="hero-col-num">01</span>
+          <span class="hero-col-word">Cuerpo</span>
+        </div>
+        <div class="hero-col-item">
+          <span class="hero-col-num">02</span>
+          <span class="hero-col-word">Sistema nervioso</span>
+        </div>
+        <div class="hero-col-item">
+          <span class="hero-col-num">03</span>
+          <span class="hero-col-word">Vínculo</span>
+        </div>
+        <div class="hero-col-item">
+          <span class="hero-col-num">04</span>
+          <span class="hero-col-word">Historia emocional</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ ORIGEN ══ -->
+    <section class="origen-section">
+      <div class="origen-header">
+        <h2 class="origen-header-title">Una mirada <em>integrativa</em><br/>que une todo</h2>
+        <div class="origen-header-line"></div>
+      </div>
+
+      <div class="origen-cols">
+        <div class="origen-col">
+          <div class="origen-col-num">01</div>
+          <div class="origen-col-title">El comienzo en educación</div>
+          <div class="origen-col-text">Mi camino profesional comenzó en la educación. Como profesora titulada con distinción de la Universidad de Concepción, fui observando de cerca cómo muchos dolores que atraviesan a niñas, niños y adolescentes responden a problemáticas profundas: a nivel del sistema, los vínculos y las formas en que aprendemos a habitar el mundo.</div>
+        </div>
+        <div class="origen-col">
+          <div class="origen-col-num">02</div>
+          <div class="origen-col-title">La búsqueda de la raíz</div>
+          <div class="origen-col-text">Esa observación, junto con la necesidad de desarrollar mi propio proceso de sanación, fue lo que me impulsó a convertirme en terapeuta. Mi recorrido ha sido, en muchos sentidos, una búsqueda constante por comprender la raíz de las cosas: por qué funcionamos como funcionamos, cómo se organiza el dolor y qué hace posible la transformación.</div>
+        </div>
+        <div class="origen-col">
+          <div class="origen-col-num">03</div>
+          <div class="origen-col-title">Una mirada amplia e integradora</div>
+          <div class="origen-col-text">Creo profundamente en la importancia de una mirada que no reduzca. No somos solo mente, ni solo historia, ni solo cuerpo: somos un entramado vivo donde emociones, memoria corporal, relaciones y biología se entrelazan. Por eso, mi trabajo busca acompañarte a comprender lo que te ocurre también desde aquello que tu cuerpo y sistema nervioso aprendieron.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ FORMACIÓN ══ -->
+    <section class="formacion-section">
+      <div class="formacion-header">
+        <p class="formacion-label">Especialización</p>
+        <h2 class="formacion-title">Enfoques que <em>integra mi trabajo</em></h2>
+      </div>
+
+      <div class="formacion-grid">
+        <div class="formacion-item">
+          <div class="formacion-item-dot"></div>
+          <div class="formacion-item-text">Terapia somática integrativa</div>
+        </div>
+        <div class="formacion-item">
+          <div class="formacion-item-dot"></div>
+          <div class="formacion-item-text">Teoría polivagal</div>
+        </div>
+        <div class="formacion-item">
+          <div class="formacion-item-dot"></div>
+          <div class="formacion-item-text">Trauma relacional y complejo</div>
+        </div>
+        <div class="formacion-item">
+          <div class="formacion-item-dot"></div>
+          <div class="formacion-item-text">Teoría del apego</div>
+        </div>
+        <div class="formacion-item">
+          <div class="formacion-item-dot"></div>
+          <div class="formacion-item-text">Psicoanálisis relacional</div>
+        </div>
+        <div class="formacion-item">
+          <div class="formacion-item-dot"></div>
+          <div class="formacion-item-text">TRE · Liberación de tensión y trauma</div>
+        </div>
+        <div class="formacion-item">
+          <div class="formacion-item-dot"></div>
+          <div class="formacion-item-text">Yoga sensible al trauma</div>
+        </div>
+        <div class="formacion-item">
+          <div class="formacion-item-dot"></div>
+          <div class="formacion-item-text">Estudios en sexualidad y vínculo</div>
+        </div>
+        <div class="formacion-item">
+          <div class="formacion-item-dot"></div>
+          <div class="formacion-item-text">Psicoterapia transpersonal · Terapia floral</div>
+        </div>
+      </div>
+
+      <div class="formacion-cierre">
+        <div class="formacion-cierre-text">
+          <p>Estas distintas formaciones dialogan entre sí, no coexisten por separado. Mi trabajo busca integrarlas en un acompañamiento vivo, que se adapta a lo que cada proceso necesita.</p>
+        </div>
+        <div class="formacion-cierre-quote">
+          <p>"No somos solo mente, ni solo historia, ni solo cuerpo: somos un entramado vivo donde todo se entrelaza."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ A QUIÉN ACOMPAÑO ══ -->
+    <section class="acompano-section">
+      <div class="acompano-grid">
+        <div>
+          <p class="acompano-aside-label">A quién acompaño</p>
+          <h2 class="acompano-aside-title">Mujeres que sienten que algo necesita <em>transformarse</em></h2>
+          <p class="acompano-aside-text">Acompaño principalmente a mujeres adultas que sienten que algo en sus vidas necesita transformarse: la forma en que se vinculan, la ansiedad que sostienen, el impacto de experiencias traumáticas o la sensación de haberse perdido de sí mismas.</p>
+        </div>
+
+        <div class="acompano-list">
+          <div class="acompano-item">
+            <span class="acompano-arrow">→</span>
+            <div class="acompano-item-text">
+              <strong>Trauma complejo y relacional</strong>
+              Procesos de sanación para heridas de larga data que viven en el cuerpo y en los vínculos.
+            </div>
+          </div>
+          <div class="acompano-item">
+            <span class="acompano-arrow">→</span>
+            <div class="acompano-item-text">
+              <strong>Ansiedad y regulación del sistema nervioso</strong>
+              Aprender a salir del estado de alerta constante y reconstruir seguridad interna.
+            </div>
+          </div>
+          <div class="acompano-item">
+            <span class="acompano-arrow">→</span>
+            <div class="acompano-item-text">
+              <strong>Codependencia y heridas vinculares</strong>
+              Reconocer los patrones que se repiten y comenzar a habitar el vínculo de otra manera.
+            </div>
+          </div>
+          <div class="acompano-item">
+            <span class="acompano-arrow">→</span>
+            <div class="acompano-item-text">
+              <strong>Abuso sexual y soberanía corporal</strong>
+              Acompañamiento especializado para el retorno al cuerpo y a la propia historia.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ MODALIDADES ══ -->
+    <section class="modal-section">
+      <div class="modal-header">
+        <p class="modal-label">Cómo trabajo</p>
+        <h2 class="modal-title">Formas de <em>acompañamiento</em></h2>
+      </div>
+
+      <div class="modal-grid">
+        <div class="modal-card">
+          <div class="modal-card-icon">01</div>
+          <div class="modal-card-title">Sesiones individuales</div>
+          <div class="modal-card-text">Sesiones de una hora para trabajar con lo que está vivo en tu cuerpo y en tu historia. Disponibles en modalidad presencial y online.</div>
+        </div>
+        <div class="modal-card">
+          <div class="modal-card-icon">02</div>
+          <div class="modal-card-title">Programas terapéuticos</div>
+          <div class="modal-card-text">Procesos de mayor profundidad y continuidad para trabajar temáticas específicas con soporte constante y acompañamiento guiado.</div>
+        </div>
+        <div class="modal-card">
+          <div class="modal-card-icon">03</div>
+          <div class="modal-card-title">Recursos digitales</div>
+          <div class="modal-card-text">Materiales para sostener tu proceso en tu propio tiempo: guías somáticas, audios y herramientas prácticas para trabajar de forma autónoma.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CTA ══ -->
+    <div class="cta-strip">
+      <p class="cta-strip-text">¿Quieres comenzar tu proceso?</p>
+      <a href="https://wa.me/56956305069" target="_blank" class="btn-sage">
+        Agendar sesión
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+      </a>
+    </div>
+
+  </main>
+
+  <footer>
+    <strong>Karla Moraga Aguilera · Terapeuta Somática &amp; Docente</strong>
+    <a href="index.html">← Volver al inicio</a>
+    <span>© 2025 · Todos los derechos reservados</span>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    toggle.addEventListener('click', () => sidebar.classList.toggle('open'));
+    function closeSidebar() { sidebar.classList.remove('open'); }
+    document.addEventListener('click', (e) => {
+      if (!sidebar.contains(e.target) && !toggle.contains(e.target)) sidebar.classList.remove('open');
+    });
+  </script>
+</body>
+</html>

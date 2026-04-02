@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programas · Karla Moraga</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Whisper&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --cream:      #FAF7F2;
+      --warm-white: #FAF7F2;
+      --sage:       #a8c4a2;
+      --sage-light: #a8c4a2;
+      --sage-dark:  #5F7B5C;
+      --earth:      #C4956A;
+      --earth-light:#dbb899;
+      --earth-dark: #5C6E5A;
+      --text:       #2e2b28;
+      --text-soft:  #6b6560;
+      --text-muted: #B7B0B0;
+      --line:       rgba(196, 149, 106, 0.2);
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Jost', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--warm-white); color: var(--text); font-family: var(--font-body); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ─── Sidebar ── */
+    .sidebar { position: fixed; top: 0; left: 0; width: 240px; height: 100vh; background: var(--cream); border-right: 1px solid var(--line); display: flex; flex-direction: column; padding: 2.5rem 2rem; z-index: 100; transform: translateX(-100%); transition: transform 0.4s ease; }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar-logo { line-height: 1.3; margin-bottom: 3rem; }
+    .sidebar-logo span { display: block; font-size: 0.72rem; font-family: var(--font-body); font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-soft); margin-top: 0.3rem; }
+    .sidebar nav ul { display: flex; flex-direction: column; gap: 0.2rem; }
+    .sidebar nav a { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-soft); padding: 0.55rem 0; border-bottom: 1px solid transparent; transition: color 0.2s; display: block; }
+    .sidebar nav a:hover { color: var(--sage-dark); }
+    .sidebar-foot { font-size: 0.72rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* ─── Topbar ── */
+    .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 90; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 3rem; background: rgba(250,247,242,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+    .topbar-logo .name { font-family: 'Whisper', cursive; font-size: 1.9rem; color: var(--text); display: block; }
+    .topbar-logo .title { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); display: block; }
+    .menu-toggle { background: transparent; border: 1px solid var(--line); width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 5px; cursor: pointer; }
+    .menu-toggle span { display: block; width: 20px; height: 1.5px; background: var(--text); }
+
+    .main { padding-top: 72px; }
+
+    /* ─── Hero ── */
+    .page-hero {
+      padding: 5rem 8rem 4.5rem;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::after {
+      content: 'programas';
+      position: absolute;
+      bottom: -1rem; right: 4rem;
+      font-family: var(--font-display);
+      font-size: 9rem;
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(196,149,106,0.06);
+      pointer-events: none;
+      white-space: nowrap;
+      line-height: 1;
+    }
+    .breadcrumb { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.6rem; }
+    .breadcrumb a { color: var(--earth); }
+    .page-label { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--earth); margin-bottom: 1.2rem; }
+    .page-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 1.8rem;
+      max-width: 55ch;
+    }
+    .page-intro { max-width: 62ch; font-size: 0.92rem; color: var(--text-soft); line-height: 1.9; }
+    .page-intro p + p { margin-top: 1rem; }
+
+    /* ─── Separador entre programas ── */
+    .prog-wrap {
+      position: relative;
+    }
+
+    /* Programa 1 — fondo ivory, acento verde */
+    .programa-1 {
+      padding: 6rem 8rem;
+      background: var(--warm-white);
+      border-bottom: 3px solid var(--sage-dark);
+      position: relative;
+      overflow: hidden;
+    }
+    .programa-1::before {
+      content: '01';
+      position: absolute;
+      top: 1.5rem; right: 6rem;
+      font-family: var(--font-display);
+      font-size: 14rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(95,123,92,0.06);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    /* Programa 2 — fondo sage muy suave */
+    .programa-2 {
+      padding: 6rem 8rem;
+      background: #eef3ed;
+      border-bottom: 3px solid var(--earth);
+      position: relative;
+      overflow: hidden;
+    }
+    .programa-2::before {
+      content: '02';
+      position: absolute;
+      top: 1.5rem; right: 6rem;
+      font-family: var(--font-display);
+      font-size: 14rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(196,149,106,0.07);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    /* Programa 3 — fondo tierra muy suave */
+    .programa-3 {
+      padding: 6rem 8rem;
+      background: #f7f0e8;
+      border-bottom: 3px solid var(--earth-dark);
+      position: relative;
+      overflow: hidden;
+    }
+    .programa-3::before {
+      content: '03';
+      position: absolute;
+      top: 1.5rem; right: 6rem;
+      font-family: var(--font-display);
+      font-size: 14rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(92,110,90,0.06);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    /* Etiqueta de programa */
+    .prog-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+    .prog-tag::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--text-muted);
+    }
+
+    /* NOMBRE DEL PROGRAMA — protagonista total */
+    .prog-name {
+      font-family: var(--font-display);
+      font-size: clamp(4rem, 7vw, 7rem);
+      font-weight: 300;
+      line-height: 0.95;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    .prog-name em {
+      font-style: italic;
+      display: block;
+    }
+    .programa-1 .prog-name em { color: var(--sage-dark); }
+    .programa-2 .prog-name em { color: var(--earth); }
+    .programa-3 .prog-name em { color: var(--earth-dark); }
+
+    .prog-tagline {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--text-soft);
+      margin-bottom: 2rem;
+      margin-top: 0.8rem;
+    }
+
+    /* línea divisora interna */
+    .prog-divider {
+      width: 60px;
+      height: 1px;
+      margin-bottom: 2rem;
+    }
+    .programa-1 .prog-divider { background: var(--sage-dark); }
+    .programa-2 .prog-divider { background: var(--earth); }
+    .programa-3 .prog-divider { background: var(--earth-dark); }
+
+    .prog-desc {
+      font-size: 0.93rem;
+      color: var(--text-soft);
+      line-height: 1.9;
+      max-width: 58ch;
+      margin-bottom: 3rem;
+    }
+
+    /* listas */
+    .prog-lists { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-bottom: 3rem; }
+    .prog-list-block h4 {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .programa-1 .prog-list-block h4 { color: var(--sage-dark); }
+    .programa-2 .prog-list-block h4 { color: var(--earth); }
+    .programa-3 .prog-list-block h4 { color: var(--earth-dark); }
+
+    .prog-list-block ul { display: flex; flex-direction: column; gap: 0.6rem; }
+    .prog-list-block li { font-size: 0.87rem; color: var(--text-soft); line-height: 1.6; padding-left: 1.1rem; position: relative; }
+    .prog-list-block li::before { content: '·'; position: absolute; left: 0; }
+    .programa-1 .prog-list-block li::before { color: var(--sage-dark); }
+    .programa-2 .prog-list-block li::before { color: var(--earth); }
+    .programa-3 .prog-list-block li::before { color: var(--earth-dark); }
+
+    /* detalles */
+    .prog-details {
+      display: flex;
+      gap: 0;
+      margin-bottom: 2.5rem;
+      width: fit-content;
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+    .prog-detail-item {
+      font-size: 0.78rem;
+      color: var(--text-soft);
+      padding: 1rem 1.8rem;
+      border-right: 1px solid var(--line);
+    }
+    .prog-detail-item:last-child { border-right: none; }
+    .prog-detail-item strong { display: block; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); font-weight: 400; margin-bottom: 0.3rem; }
+
+    /* CTA */
+    .prog-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 1rem 2.2rem;
+      border: 1px solid;
+      transition: background 0.25s, color 0.25s;
+    }
+    .programa-1 .prog-cta { background: var(--sage-dark); color: var(--warm-white); border-color: var(--sage-dark); }
+    .programa-1 .prog-cta:hover { background: transparent; color: var(--sage-dark); }
+    .programa-2 .prog-cta { background: var(--earth); color: var(--warm-white); border-color: var(--earth); }
+    .programa-2 .prog-cta:hover { background: transparent; color: var(--earth); }
+    .programa-3 .prog-cta { background: var(--earth-dark); color: var(--warm-white); border-color: var(--earth-dark); }
+    .programa-3 .prog-cta:hover { background: transparent; color: var(--earth-dark); }
+
+    /* ─── Cierre ── */
+    .closing { background: var(--sage-dark); padding: 5rem 8rem; text-align: center; }
+    .closing-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage-light); margin-bottom: 1rem; }
+    .closing-title { font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 3.2rem); font-weight: 300; color: var(--warm-white); margin-bottom: 1rem; line-height: 1.15; }
+    .closing-title em { font-style: italic; color: var(--earth-light); }
+    .closing-body { font-size: 0.92rem; color: rgba(255,255,255,0.6); max-width: 46ch; margin: 0 auto 2.5rem; line-height: 1.85; }
+    .closing-btn { display: inline-flex; align-items: center; gap: 0.8rem; background: var(--warm-white); color: var(--sage-dark); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 1.1rem 2.6rem; border: 1px solid var(--warm-white); transition: background 0.25s, color 0.25s; }
+    .closing-btn:hover { background: transparent; color: var(--warm-white); }
+
+    footer { background: var(--text); color: rgba(255,255,255,0.4); padding: 2.5rem 8rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; }
+    footer strong { color: rgba(255,255,255,0.7); font-family: var(--font-display); font-size: 1rem; font-weight: 300; }
+    footer a { color: var(--sage-light); font-size: 0.72rem; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .page-label { animation: fadeUp 0.7s ease 0.1s both; }
+    .page-title { animation: fadeUp 0.7s ease 0.2s both; }
+    .page-intro { animation: fadeUp 0.7s ease 0.3s both; }
+
+    @media (max-width: 900px) {
+      .page-hero, .programa-1, .programa-2, .programa-3, .closing, footer { padding-left: 2rem; padding-right: 2rem; }
+      .prog-name { font-size: 3.5rem; }
+      .prog-lists { grid-template-columns: 1fr; gap: 1.5rem; }
+      .prog-details { flex-direction: column; }
+      .prog-detail-item { border-right: none; border-bottom: 1px solid var(--line); }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <span style="font-family:'Whisper', cursive; font-size:1.6rem; color:var(--text); display:block; margin-bottom:0.2rem;">Karla Moraga Aguilera</span>
+      <span>Terapeuta Somática &amp; Docente</span>
+    </div>
+    <nav><ul>
+      <li><a href="index.html" onclick="closeSidebar()">Inicio</a></li>
+      <li><a href="index.html#sobre-mi" onclick="closeSidebar()">Sobre mí</a></li>
+      <li><a href="index.html#trabajo" onclick="closeSidebar()">Mi trabajo</a></li>
+      <li><a href="programas.html" onclick="closeSidebar()">Programas</a></li>
+      <li><a href="index.html#guias" onclick="closeSidebar()">Guías somáticas</a></li>
+      <li><a href="index.html#recursos" onclick="closeSidebar()">Recursos gratuitos</a></li>
+      <li><a href="https://wa.me/56956305069" target="_blank" onclick="closeSidebar()">Agendar</a></li>
+      <li><a href="index.html#contacto" onclick="closeSidebar()">Contacto</a></li>
+    </ul></nav>
+    <div class="sidebar-foot">© 2025 Karla Moraga<br/>Todos los derechos reservados</div>
+  </aside>
+
+  <header class="topbar">
+    <div class="topbar-logo">
+      <span class="name">Karla Moraga</span>
+      <span class="title">Terapeuta Somática &amp; Docente</span>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main class="main">
+
+    <!-- HERO -->
+    <section class="page-hero">
+      <div class="breadcrumb"><a href="index.html">← Volver al inicio</a><span>/</span><span>Programas</span></div>
+      <p class="page-label">Programas de acompañamiento</p>
+      <h1 class="page-title">Un camino terapéutico para volver a ti</h1>
+      <div class="page-intro">
+        <p>Espacios de acompañamiento profundo para sanar trauma relacional, codependencia y heridas vinculares desde el cuerpo, la conciencia y la reconexión contigo misma.</p>
+        <p>Cada programa está pensado como un proceso, no como una solución rápida: un espacio seguro para volver a tu autenticidad, restaurar la confianza interna y construir una vida con más libertad.</p>
+      </div>
+    </section>
+
+    <div class="prog-wrap">
+
+      <!-- PROGRAMA 1 -->
+      <section class="programa-1" id="amar-sin-perderte">
+        <span class="prog-tag">Programa 01</span>
+        <h2 class="prog-name">Amar sin<br/><em>perderte</em></h2>
+        <p class="prog-tagline">Sanación de la codependencia y reconexión con tu centro</p>
+        <div class="prog-divider"></div>
+        <p class="prog-desc">Un proceso terapéutico para mujeres que sienten que se pierden en sus vínculos, les cuesta poner límites o viven en función de la validación externa.</p>
+        <div class="prog-lists">
+          <div class="prog-list-block">
+            <h4>El camino de vuelta a ti</h4>
+            <ul>
+              <li>Dejar de sobrepensar y sobreentregar en tus vínculos</li>
+              <li>Aprender a elegirte sin culpa</li>
+              <li>Dejar de amar desde la herida y la necesidad</li>
+              <li>Recuperar tu centro y tu autenticidad</li>
+              <li>Construir relaciones que no te hagan perderte</li>
+            </ul>
+          </div>
+          <div class="prog-list-block">
+            <h4>El camino que recorreremos</h4>
+            <ul>
+              <li>Comprender patrones de apego y trauma relacional</li>
+              <li>Regular la ansiedad en los vínculos</li>
+              <li>Fortalecer límites y autonomía emocional</li>
+              <li>Reconectar con la escucha corporal</li>
+              <li>Volver a tu autenticidad y centro</li>
+            </ul>
+          </div>
+        </div>
+        <div class="prog-details">
+          <div class="prog-detail-item"><strong>Duración</strong>8 sesiones</div>
+          <div class="prog-detail-item"><strong>Modalidad</strong>Online 1:1</div>
+          <div class="prog-detail-item"><strong>Incluye</strong>Material de apoyo + ejercicios somáticos</div>
+        </div>
+        <a href="amar-sin-perderte.html" class="prog-cta">Comenzar este camino <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg></a>
+      </section>
+
+      <!-- PROGRAMA 2 -->
+      <section class="programa-2" id="volver-a-la-calma">
+        <span class="prog-tag">Programa 02</span>
+        <h2 class="prog-name">Volver a<br/><em>la calma</em></h2>
+        <p class="prog-tagline">Regulación de la ansiedad y reconexión con la seguridad interna</p>
+        <div class="prog-divider"></div>
+        <p class="prog-desc">Un proceso terapéutico para personas que viven en alerta constante, sobrepiensan, anticipan lo peor o llevan demasiado tiempo sosteniendo tensión por dentro.</p>
+        <div class="prog-lists">
+          <div class="prog-list-block">
+            <h4>El camino de vuelta a ti</h4>
+            <ul>
+              <li>Dejar de vivir en anticipación constante</li>
+              <li>Disminuir el sobrepensamiento y la hiperalerta</li>
+              <li>Volver a sentir seguridad dentro de tu cuerpo</li>
+              <li>Recuperar descanso, presencia y confianza</li>
+              <li>Aprender a vivir sin que la ansiedad te gobierne</li>
+              <li>Comprender tu ansiedad sin juzgarte</li>
+            </ul>
+          </div>
+          <div class="prog-list-block">
+            <h4>El camino que recorreremos</h4>
+            <ul>
+              <li>Reconocer detonantes y patrones de ansiedad</li>
+              <li>Regular tu sistema nervioso desde el cuerpo</li>
+              <li>Disminuir la tensión física y mental</li>
+              <li>Transformar la relación con el miedo y el control</li>
+              <li>Construir una sensación interna de seguridad</li>
+            </ul>
+          </div>
+        </div>
+        <div class="prog-details">
+          <div class="prog-detail-item"><strong>Duración</strong>8 sesiones</div>
+          <div class="prog-detail-item"><strong>Modalidad</strong>Online 1:1</div>
+          <div class="prog-detail-item"><strong>Incluye</strong>Material de apoyo + ejercicios somáticos</div>
+        </div>
+        <a href="volver-a-la-calma.html" class="prog-cta">Comenzar este camino <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg></a>
+      </section>
+
+      <!-- PROGRAMA 3 -->
+      <section class="programa-3" id="sostener-mas">
+        <span class="prog-tag">Programa 03</span>
+        <h2 class="prog-name">Sostener<br/><em>más</em></h2>
+        <p class="prog-tagline">Sanación de la relación con el dinero, la visibilidad y el crecimiento</p>
+        <div class="prog-divider"></div>
+        <p class="prog-desc">Un proceso terapéutico para personas que sienten que se autosabotean con el dinero, se sobreexigen sin ver resultados o se bloquean justo cuando aparece una oportunidad de crecer.</p>
+        <div class="prog-lists">
+          <div class="prog-list-block">
+            <h4>El camino de vuelta a la expansión</h4>
+            <ul>
+              <li>Dejar de retroceder cada vez que avanzas</li>
+              <li>Sostener más dinero sin ansiedad ni culpa</li>
+              <li>Disminuir el autosabotaje y el bloqueo financiero</li>
+              <li>Sentir más seguridad frente a la visibilidad y el éxito</li>
+              <li>Construir una relación estable con la abundancia</li>
+            </ul>
+          </div>
+          <div class="prog-list-block">
+            <h4>Lo que iremos transformando</h4>
+            <ul>
+              <li>La ansiedad frente al crecimiento</li>
+              <li>El miedo a cobrar, mostrarse o expandirse</li>
+              <li>Los patrones de carencia y sobreesfuerzo</li>
+              <li>El impulso de volver a lo conocido</li>
+              <li>La capacidad de recibir y sostener más</li>
+            </ul>
+          </div>
+        </div>
+        <div class="prog-details">
+          <div class="prog-detail-item"><strong>Duración</strong>8 sesiones</div>
+          <div class="prog-detail-item"><strong>Modalidad</strong>Online 1:1</div>
+          <div class="prog-detail-item"><strong>Incluye</strong>Material de apoyo + ejercicios somáticos</div>
+        </div>
+        <a href="sostener-mas.html" class="prog-cta">Comenzar este camino <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg></a>
+      </section>
+
+    </div>
+
+    <!-- CIERRE -->
+    <section class="closing">
+      <p class="closing-label">¿No sabes cuál es para ti?</p>
+      <h2 class="closing-title">Hablemos y lo<br/><em>descubrimos juntas</em></h2>
+      <p class="closing-body">Si no tienes claridad sobre qué programa se ajusta mejor a tu proceso, puedes agendar una primera conversación de orientación. Sin compromiso.</p>
+      <a href="https://wa.me/56956305069" target="_blank" class="closing-btn">Hablemos <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg></a>
+    </section>
+
+  </main>
+
+  <footer>
+    <strong>Karla Moraga · Terapeuta Somática</strong>
+    <a href="index.html">← Volver al inicio</a>
+    <span>© 2025 · Todos los derechos reservados</span>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    toggle.addEventListener('click', () => sidebar.classList.toggle('open'));
+    function closeSidebar() { sidebar.classList.remove('open'); }
+    document.addEventListener('click', (e) => {
+      if (!sidebar.contains(e.target) && !toggle.contains(e.target)) sidebar.classList.remove('open');
+    });
+  </script>
+
+</body>
+</html>
