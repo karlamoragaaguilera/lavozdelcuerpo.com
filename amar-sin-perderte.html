@@ -442,6 +442,57 @@
       max-width: 56ch;
     }
 
+    /* ─── Las 8 sesiones — roadmap ── */
+    .roadmap-section {
+      padding: 6rem 6rem;
+      background: rgba(201,137,122,0.06);
+    }
+    .roadmap-intro {
+      font-size: 0.93rem;
+      color: var(--text-soft);
+      line-height: 1.9;
+      max-width: 56ch;
+      margin-bottom: 3rem;
+    }
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(201,137,122,0.18);
+    }
+    .roadmap-item {
+      background: var(--warm-white);
+      padding: 1.8rem 1.5rem;
+      position: relative;
+      transition: background 0.25s;
+    }
+    .roadmap-item:hover { background: rgba(201,137,122,0.07); }
+    .roadmap-num {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(201,137,122,0.28);
+      line-height: 1;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .roadmap-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.35;
+      margin-bottom: 0.4rem;
+    }
+    .roadmap-phase {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--rose);
+      opacity: 0.7;
+    }
+
     /* ─── Transformaciones ── */
     .transform-section {
       padding: 6rem 6rem;
@@ -691,6 +742,7 @@
       .hero-right { min-height: 50vw; }
       section, .empathy-section, .for-you-section, .diff-section,
       .transform-section, .invest-section, .cta-section { padding: 4rem 2rem; }
+      .roadmap-grid { grid-template-columns: 1fr 1fr; }
       .empathy-grid, .transform-cols, .invest-cards { grid-template-columns: 1fr; gap: 2.5rem; }
       .diff-grid { grid-template-columns: 1fr; }
       .for-you-grid { grid-template-columns: 1fr; }
@@ -866,6 +918,56 @@
         "Aquí el cambio no es solo entender.<br/>
         Es sentir, reconocer y transformar desde la raíz."
       </p>
+    </section>
+
+    <!-- ══ LAS 8 SESIONES ══ -->
+    <section class="roadmap-section">
+      <p style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--rose); margin-bottom:1rem;">Cómo funciona</p>
+      <h2 style="font-family:var(--font-display); font-size:clamp(2rem,3.2vw,2.8rem); font-weight:300; line-height:1.15; color:var(--text); margin-bottom:0.8rem;">El camino de las <em style="font-style:italic; color:var(--rose);">8 sesiones</em></h2>
+      <p class="roadmap-intro">Un proceso grupal con estructura y profundidad clínica. Cada sesión construye sobre la anterior — desde la seguridad hasta la libertad.</p>
+
+      <div class="roadmap-grid">
+        <div class="roadmap-item">
+          <span class="roadmap-num">01</span>
+          <div class="roadmap-title">Mapa del problema</div>
+          <div class="roadmap-phase">Fase 1 · Estabilización</div>
+        </div>
+        <div class="roadmap-item">
+          <span class="roadmap-num">02</span>
+          <div class="roadmap-title">Sistema nervioso y regulación</div>
+          <div class="roadmap-phase">Fase 1 · Estabilización</div>
+        </div>
+        <div class="roadmap-item">
+          <span class="roadmap-num">03</span>
+          <div class="roadmap-title">Patrones vinculares</div>
+          <div class="roadmap-phase">Fase 1 · Estabilización</div>
+        </div>
+        <div class="roadmap-item">
+          <span class="roadmap-num">04</span>
+          <div class="roadmap-title">Límites como regulación</div>
+          <div class="roadmap-phase">Fase 2 · Exploración profunda</div>
+        </div>
+        <div class="roadmap-item">
+          <span class="roadmap-num">05</span>
+          <div class="roadmap-title">Heridas de infancia y partes internas</div>
+          <div class="roadmap-phase">Fase 2 · Exploración profunda</div>
+        </div>
+        <div class="roadmap-item">
+          <span class="roadmap-num">06</span>
+          <div class="roadmap-title">Regulación en vínculo</div>
+          <div class="roadmap-phase">Fase 2 · Exploración profunda</div>
+        </div>
+        <div class="roadmap-item">
+          <span class="roadmap-num">07</span>
+          <div class="roadmap-title">Identidad y autonomía</div>
+          <div class="roadmap-phase">Fase 3 · Integración</div>
+        </div>
+        <div class="roadmap-item">
+          <span class="roadmap-num">08</span>
+          <div class="roadmap-title">Integración y cierre</div>
+          <div class="roadmap-phase">Fase 3 · Integración</div>
+        </div>
+      </div>
     </section>
 
     <!-- ══ TRANSFORMACIONES ══ -->
