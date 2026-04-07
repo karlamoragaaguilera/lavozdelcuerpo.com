@@ -24,10 +24,10 @@
       --line:         rgba(196, 149, 106, 0.2);
 
       /* Acento de este programa: azul-verde pizarra */
-      --teal:         #5E8A85;
-      --teal-light:   #a8c8c4;
-      --teal-dark:    #3D6661;
-      --teal-pale:    #e8f0ef;
+      --teal:         #7B6FA0;
+      --teal-light:   #C4BAD8;
+      --teal-dark:    #5A5075;
+      --teal-pale:    #F2F0F7;
 
       --font-display: 'Cormorant Garamond', Georgia, serif;
       --font-body:    'Jost', sans-serif;
@@ -170,7 +170,7 @@
     /* Hero right — panel visual teal */
     .hero-right {
       position: relative;
-      background: #3D6661;
+      background: #3D3060;
       overflow: hidden;
     }
     .hero-right::before {
@@ -178,8 +178,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 80% 60% at 20% 20%, #6AABA5 0%, transparent 60%),
-        radial-gradient(ellipse 60% 70% at 85% 85%, #2a4a46 0%, transparent 55%);
+        radial-gradient(ellipse 80% 60% at 20% 20%, #9B8DC0 0%, transparent 60%),
+        radial-gradient(ellipse 60% 70% at 85% 85%, #2a2040 0%, transparent 55%);
       opacity: 0.7;
     }
 
@@ -464,7 +464,7 @@
     ════════════════════════════════ */
     .diff-section {
       padding: 6rem 6rem;
-      background: #2B3D3B;
+      background: #3D3060;
       color: var(--warm-white);
       position: relative;
       overflow: hidden;
@@ -492,7 +492,7 @@
       z-index: 2;
     }
     .diff-item {
-      background: #2B3D3B;
+      background: #3D3060;
       padding: 2.2rem 2rem;
       transition: background 0.3s;
     }
@@ -536,57 +536,6 @@
     /* ════════════════════════════════
        Transformaciones
     ════════════════════════════════ */
-    /* ─── Las 8 sesiones — roadmap ── */
-    .roadmap-section {
-      padding: 6rem 6rem;
-      background: var(--teal-pale);
-    }
-    .roadmap-intro {
-      font-size: 0.93rem;
-      color: var(--text-soft);
-      line-height: 1.9;
-      max-width: 56ch;
-      margin-bottom: 3rem;
-    }
-    .roadmap-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: rgba(94,138,133,0.18);
-    }
-    .roadmap-item {
-      background: var(--warm-white);
-      padding: 1.8rem 1.5rem;
-      position: relative;
-      transition: background 0.25s;
-    }
-    .roadmap-item:hover { background: var(--teal-pale); }
-    .roadmap-num {
-      font-family: var(--font-display);
-      font-size: 2.4rem;
-      font-weight: 300;
-      font-style: italic;
-      color: rgba(94,138,133,0.28);
-      line-height: 1;
-      margin-bottom: 0.6rem;
-      display: block;
-    }
-    .roadmap-title {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      font-weight: 400;
-      color: var(--text);
-      line-height: 1.35;
-      margin-bottom: 0.4rem;
-    }
-    .roadmap-phase {
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--teal-dark);
-      opacity: 0.75;
-    }
-
     .transform-section {
       padding: 6rem 6rem;
       background: var(--teal-pale);
@@ -719,7 +668,7 @@
     ════════════════════════════════ */
     .cta-section {
       padding: 7rem 6rem;
-      background: linear-gradient(140deg, #2B3D3B 0%, #3D6661 50%, #5E8A85 100%);
+      background: linear-gradient(140deg, #1E1830 0%, #3D3060 50%, #7B6FA0 100%);
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -767,10 +716,9 @@
       .hero-left { padding: 6rem 2rem 3rem; }
       .hero-right { min-height: 55vw; }
       .intro-section, .empathy-section, .for-you-section, .diff-section,
-      .roadmap-section, .transform-section, .invest-section, .cta-section { padding: 4rem 2rem; }
+      .transform-section, .invest-section, .cta-section { padding: 4rem 2rem; }
       .intro-grid, .empathy-cols, .transform-cols, .invest-cards { grid-template-columns: 1fr; gap: 2.5rem; }
       .diff-grid, .for-you-list { grid-template-columns: 1fr; }
-      .roadmap-grid { grid-template-columns: 1fr 1fr; }
       footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 2rem; }
       .topbar { padding: 1.2rem 1.5rem; }
     }
@@ -961,7 +909,7 @@
         <div class="diff-item">
           <span class="diff-num">01</span>
           <div class="diff-item-title">Escuchar lo que la ansiedad dice</div>
-          <div class="diff-item-body">Comprender de qué está intentando protegerte tu sistema nervioso, en lugar de luchar contra él.</div>
+          <div class="diff-item-body">Comprender qué está intentando protegerte tu sistema nervioso, en lugar de luchar contra él.</div>
         </div>
         <div class="diff-item">
           <span class="diff-num">02</span>
@@ -984,56 +932,6 @@
         "El cambio no está en eliminar la ansiedad.<br/>
         Está en dejar de vivir dominada por ella."
       </p>
-    </section>
-
-    <!-- ══ LAS 8 SESIONES ══ -->
-    <section class="roadmap-section">
-      <p style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--teal-dark); margin-bottom:1rem;">Cómo funciona</p>
-      <h2 style="font-family:var(--font-display); font-size:clamp(2rem,3.2vw,2.8rem); font-weight:300; line-height:1.15; color:var(--text); margin-bottom:0.8rem;">El camino de las <em style="font-style:italic; color:var(--teal);">8 sesiones</em></h2>
-      <p class="roadmap-intro">Un proceso grupal con estructura clínica y enfoque somático. Cada sesión construye sobre la anterior — desde entender la ansiedad hasta vivir sin que te gobierne.</p>
-
-      <div class="roadmap-grid">
-        <div class="roadmap-item">
-          <span class="roadmap-num">01</span>
-          <div class="roadmap-title">Mapa de la Ansiedad</div>
-          <div class="roadmap-phase">Fase 1 · Estabilización</div>
-        </div>
-        <div class="roadmap-item">
-          <span class="roadmap-num">02</span>
-          <div class="roadmap-title">Sistema Nervioso y Seguridad</div>
-          <div class="roadmap-phase">Fase 1 · Estabilización</div>
-        </div>
-        <div class="roadmap-item">
-          <span class="roadmap-num">03</span>
-          <div class="roadmap-title">Recursos de Regulación</div>
-          <div class="roadmap-phase">Fase 1 · Estabilización</div>
-        </div>
-        <div class="roadmap-item">
-          <span class="roadmap-num">04</span>
-          <div class="roadmap-title">La Ansiedad en el Cuerpo</div>
-          <div class="roadmap-phase">Fase 2 · Exploración profunda</div>
-        </div>
-        <div class="roadmap-item">
-          <span class="roadmap-num">05</span>
-          <div class="roadmap-title">Historia Emocional</div>
-          <div class="roadmap-phase">Fase 2 · Exploración profunda</div>
-        </div>
-        <div class="roadmap-item">
-          <span class="roadmap-num">06</span>
-          <div class="roadmap-title">Creencias y Narrativa</div>
-          <div class="roadmap-phase">Fase 2 · Exploración profunda</div>
-        </div>
-        <div class="roadmap-item">
-          <span class="roadmap-num">07</span>
-          <div class="roadmap-title">Exposición y Nueva Respuesta</div>
-          <div class="roadmap-phase">Fase 3 · Integración y autonomía</div>
-        </div>
-        <div class="roadmap-item">
-          <span class="roadmap-num">08</span>
-          <div class="roadmap-title">Integración y Cierre</div>
-          <div class="roadmap-phase">Fase 3 · Integración y autonomía</div>
-        </div>
-      </div>
     </section>
 
     <!-- ══ TRANSFORMACIONES ══ -->

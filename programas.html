@@ -86,16 +86,43 @@
     .page-intro { max-width: 62ch; font-size: 0.92rem; color: var(--text-soft); line-height: 1.9; }
     .page-intro p + p { margin-top: 1rem; }
 
+    /* Programa 4 — fondo musgo muy suave */
+    .programa-4 {
+      padding: 6rem 8rem;
+      background: #F8EDE8;
+      border-bottom: 3px solid #C4714A;
+      position: relative;
+      overflow: hidden;
+    }
+    .programa-4::before {
+      content: '04';
+      position: absolute;
+      top: 1.5rem; right: 6rem;
+      font-family: var(--font-display);
+      font-size: 14rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(196,113,74,0.07);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .programa-4 .prog-name em { color: #C4714A; }
+    .programa-4 .prog-list-block h4 { color: #C4714A; }
+    .programa-4 .prog-list-block li::before { color: #C4714A; }
+    .programa-4 .prog-divider { background: #C4714A; }
+    .programa-4 .prog-cta { background: #C4714A; color: var(--warm-white); border-color: #4A6741; }
+    .programa-4 .prog-cta:hover { background: transparent; color: #C4714A; }
+
     /* ─── Separador entre programas ── */
     .prog-wrap {
       position: relative;
     }
 
-    /* Programa 1 — fondo ivory, acento verde */
+    /* Programa 1 — Volver a la calma — violeta */
     .programa-1 {
       padding: 6rem 8rem;
-      background: var(--warm-white);
-      border-bottom: 3px solid var(--sage-dark);
+      background: #F2F0F7;
+      border-bottom: 3px solid #7B6FA0;
       position: relative;
       overflow: hidden;
     }
@@ -107,16 +134,16 @@
       font-size: 14rem;
       font-weight: 300;
       font-style: italic;
-      color: rgba(95,123,92,0.06);
+      color: rgba(123,111,160,0.07);
       line-height: 1;
       pointer-events: none;
     }
 
-    /* Programa 2 — fondo sage muy suave */
+    /* Programa 2 — Donde empiezo yo — teal */
     .programa-2 {
       padding: 6rem 8rem;
-      background: #eef3ed;
-      border-bottom: 3px solid var(--earth);
+      background: #e8f0ef;
+      border-bottom: 3px solid #5E8A85;
       position: relative;
       overflow: hidden;
     }
@@ -128,16 +155,16 @@
       font-size: 14rem;
       font-weight: 300;
       font-style: italic;
-      color: rgba(196,149,106,0.07);
+      color: rgba(94,138,133,0.07);
       line-height: 1;
       pointer-events: none;
     }
 
-    /* Programa 3 — fondo tierra muy suave */
+    /* Programa 3 — Amar sin perderte — rosa */
     .programa-3 {
       padding: 6rem 8rem;
-      background: #f7f0e8;
-      border-bottom: 3px solid var(--earth-dark);
+      background: var(--warm-white);
+      border-bottom: 3px solid #C9897A;
       position: relative;
       overflow: hidden;
     }
@@ -149,7 +176,7 @@
       font-size: 14rem;
       font-weight: 300;
       font-style: italic;
-      color: rgba(92,110,90,0.06);
+      color: rgba(201,137,122,0.07);
       line-height: 1;
       pointer-events: none;
     }
@@ -187,9 +214,9 @@
       font-style: italic;
       display: block;
     }
-    .programa-1 .prog-name em { color: var(--sage-dark); }
-    .programa-2 .prog-name em { color: var(--earth); }
-    .programa-3 .prog-name em { color: var(--earth-dark); }
+    .programa-1 .prog-name em { color: #7B6FA0; }
+    .programa-2 .prog-name em { color: #5E8A85; }
+    .programa-3 .prog-name em { color: #C9897A; }
 
     .prog-tagline {
       font-family: var(--font-display);
@@ -206,9 +233,9 @@
       height: 1px;
       margin-bottom: 2rem;
     }
-    .programa-1 .prog-divider { background: var(--sage-dark); }
-    .programa-2 .prog-divider { background: var(--earth); }
-    .programa-3 .prog-divider { background: var(--earth-dark); }
+    .programa-1 .prog-divider { background: #7B6FA0; }
+    .programa-2 .prog-divider { background: #5E8A85; }
+    .programa-3 .prog-divider { background: #C9897A; }
 
     .prog-desc {
       font-size: 0.93rem;
@@ -228,16 +255,16 @@
       padding-bottom: 0.6rem;
       border-bottom: 1px solid var(--line);
     }
-    .programa-1 .prog-list-block h4 { color: var(--sage-dark); }
-    .programa-2 .prog-list-block h4 { color: var(--earth); }
-    .programa-3 .prog-list-block h4 { color: var(--earth-dark); }
+    .programa-1 .prog-list-block h4 { color: #7B6FA0; }
+    .programa-2 .prog-list-block h4 { color: #5E8A85; }
+    .programa-3 .prog-list-block h4 { color: #C9897A; }
 
     .prog-list-block ul { display: flex; flex-direction: column; gap: 0.6rem; }
     .prog-list-block li { font-size: 0.87rem; color: var(--text-soft); line-height: 1.6; padding-left: 1.1rem; position: relative; }
     .prog-list-block li::before { content: '·'; position: absolute; left: 0; }
-    .programa-1 .prog-list-block li::before { color: var(--sage-dark); }
-    .programa-2 .prog-list-block li::before { color: var(--earth); }
-    .programa-3 .prog-list-block li::before { color: var(--earth-dark); }
+    .programa-1 .prog-list-block li::before { color: #7B6FA0; }
+    .programa-2 .prog-list-block li::before { color: #5E8A85; }
+    .programa-3 .prog-list-block li::before { color: #C9897A; }
 
     /* detalles */
     .prog-details {
@@ -271,12 +298,12 @@
       border: 1px solid;
       transition: background 0.25s, color 0.25s;
     }
-    .programa-1 .prog-cta { background: var(--sage-dark); color: var(--warm-white); border-color: var(--sage-dark); }
-    .programa-1 .prog-cta:hover { background: transparent; color: var(--sage-dark); }
-    .programa-2 .prog-cta { background: var(--earth); color: var(--warm-white); border-color: var(--earth); }
-    .programa-2 .prog-cta:hover { background: transparent; color: var(--earth); }
-    .programa-3 .prog-cta { background: var(--earth-dark); color: var(--warm-white); border-color: var(--earth-dark); }
-    .programa-3 .prog-cta:hover { background: transparent; color: var(--earth-dark); }
+    .programa-1 .prog-cta { background: #7B6FA0; color: var(--warm-white); border-color: #7B6FA0; }
+    .programa-1 .prog-cta:hover { background: transparent; color: #7B6FA0; }
+    .programa-2 .prog-cta { background: #5E8A85; color: var(--warm-white); border-color: #5E8A85; }
+    .programa-2 .prog-cta:hover { background: transparent; color: #5E8A85; }
+    .programa-3 .prog-cta { background: #C9897A; color: var(--warm-white); border-color: #C9897A; }
+    .programa-3 .prog-cta:hover { background: transparent; color: #C9897A; }
 
     /* ─── Cierre ── */
     .closing { background: var(--sage-dark); padding: 5rem 8rem; text-align: center; }
@@ -351,46 +378,9 @@
 
     <div class="prog-wrap">
 
-      <!-- PROGRAMA 1 -->
-      <section class="programa-1" id="amar-sin-perderte">
-        <span class="prog-tag">Programa 01</span>
-        <h2 class="prog-name">Amar sin<br/><em>perderte</em></h2>
-        <p class="prog-tagline">Sanación de la codependencia y reconexión con tu centro</p>
-        <div class="prog-divider"></div>
-        <p class="prog-desc">Un proceso terapéutico para mujeres que sienten que se pierden en sus vínculos, les cuesta poner límites o viven en función de la validación externa.</p>
-        <div class="prog-lists">
-          <div class="prog-list-block">
-            <h4>El camino de vuelta a ti</h4>
-            <ul>
-              <li>Dejar de sobrepensar y sobreentregar en tus vínculos</li>
-              <li>Aprender a elegirte sin culpa</li>
-              <li>Dejar de amar desde la herida y la necesidad</li>
-              <li>Recuperar tu centro y tu autenticidad</li>
-              <li>Construir relaciones que no te hagan perderte</li>
-            </ul>
-          </div>
-          <div class="prog-list-block">
-            <h4>El camino que recorreremos</h4>
-            <ul>
-              <li>Comprender patrones de apego y trauma relacional</li>
-              <li>Regular la ansiedad en los vínculos</li>
-              <li>Fortalecer límites y autonomía emocional</li>
-              <li>Reconectar con la escucha corporal</li>
-              <li>Volver a tu autenticidad y centro</li>
-            </ul>
-          </div>
-        </div>
-        <div class="prog-details">
-          <div class="prog-detail-item"><strong>Duración</strong>8 sesiones</div>
-          <div class="prog-detail-item"><strong>Modalidad</strong>Online 1:1</div>
-          <div class="prog-detail-item"><strong>Incluye</strong>Material de apoyo + ejercicios somáticos</div>
-        </div>
-        <a href="amar-sin-perderte.html" class="prog-cta">Comenzar este camino <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg></a>
-      </section>
-
       <!-- PROGRAMA 2 -->
-      <section class="programa-2" id="volver-a-la-calma">
-        <span class="prog-tag">Programa 02</span>
+      <section class="programa-1" id="volver-a-la-calma">
+        <span class="prog-tag">Programa 01</span>
         <h2 class="prog-name">Volver a<br/><em>la calma</em></h2>
         <p class="prog-tagline">Regulación de la ansiedad y reconexión con la seguridad interna</p>
         <div class="prog-divider"></div>
@@ -426,9 +416,88 @@
         <a href="volver-a-la-calma.html" class="prog-cta">Comenzar este camino <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg></a>
       </section>
 
-      <!-- PROGRAMA 3 -->
-      <section class="programa-3" id="sostener-mas">
+
+
+      <!-- PROGRAMA 4 -->
+      <section class="programa-2" id="donde-empiezo-yo">
+        <span class="prog-tag">Programa 02</span>
+        <h2 class="prog-name">Donde<br/><em>empiezo yo</em></h2>
+        <p class="prog-tagline">Límites, cuerpo y presencia</p>
+        <div class="prog-divider"></div>
+        <p class="prog-desc">Un proceso terapéutico para personas que sienten que se borran en sus vínculos, les cuesta sostener un "no" o llevan demasiado tiempo sin saber bien dónde terminan ellas y dónde empieza el otro.</p>
+        <div class="prog-lists">
+          <div class="prog-list-block">
+            <h4>El camino de vuelta a tu territorio</h4>
+            <ul>
+              <li>Sentir tu límite antes de que la mente lo racionalice</li>
+              <li>Decir que no sin culpa y sin sobre-explicar</li>
+              <li>Sostener un límite incluso cuando el otro reacciona</li>
+              <li>Habitar tu espacio con presencia y sin desaparecer</li>
+              <li>Elegir desde la claridad, no desde el miedo al abandono</li>
+            </ul>
+          </div>
+          <div class="prog-list-block">
+            <h4>El camino que recorreremos</h4>
+            <ul>
+              <li>Conciencia somática del límite y el espacio propio</li>
+              <li>Historia y origen de los patrones de límite</li>
+              <li>Regulación del sistema nervioso como base</li>
+              <li>El límite en presencia real del otro</li>
+              <li>Redibujar el territorio desde la seguridad interna</li>
+            </ul>
+          </div>
+        </div>
+        <div class="prog-details">
+          <div class="prog-detail-item"><strong>Duración</strong>8 sesiones</div>
+          <div class="prog-detail-item"><strong>Modalidad</strong>Online 1:1 · Grupal</div>
+          <div class="prog-detail-item"><strong>Incluye</strong>Material por sesión + ejercicios somáticos</div>
+        </div>
+        <a href="donde-empiezo-yo.html" class="prog-cta">Comenzar este camino <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg></a>
+      </section>
+
+
+
+      <!-- PROGRAMA 1 -->
+      <section class="programa-1" id="amar-sin-perderte">
         <span class="prog-tag">Programa 03</span>
+        <h2 class="prog-name">Amar sin<br/><em>perderte</em></h2>
+        <p class="prog-tagline">Sanación de la codependencia y reconexión con tu centro</p>
+        <div class="prog-divider"></div>
+        <p class="prog-desc">Un proceso terapéutico para mujeres que sienten que se pierden en sus vínculos, les cuesta poner límites o viven en función de la validación externa.</p>
+        <div class="prog-lists">
+          <div class="prog-list-block">
+            <h4>El camino de vuelta a ti</h4>
+            <ul>
+              <li>Dejar de sobrepensar y sobreentregar en tus vínculos</li>
+              <li>Aprender a elegirte sin culpa</li>
+              <li>Dejar de amar desde la herida y la necesidad</li>
+              <li>Recuperar tu centro y tu autenticidad</li>
+              <li>Construir relaciones que no te hagan perderte</li>
+            </ul>
+          </div>
+          <div class="prog-list-block">
+            <h4>El camino que recorreremos</h4>
+            <ul>
+              <li>Comprender patrones de apego y trauma relacional</li>
+              <li>Regular la ansiedad en los vínculos</li>
+              <li>Fortalecer límites y autonomía emocional</li>
+              <li>Reconectar con la escucha corporal</li>
+              <li>Volver a tu autenticidad y centro</li>
+            </ul>
+          </div>
+        </div>
+        <div class="prog-details">
+          <div class="prog-detail-item"><strong>Duración</strong>8 sesiones</div>
+          <div class="prog-detail-item"><strong>Modalidad</strong>Online 1:1</div>
+          <div class="prog-detail-item"><strong>Incluye</strong>Material de apoyo + ejercicios somáticos</div>
+        </div>
+        <a href="amar-sin-perderte.html" class="prog-cta">Comenzar este camino <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg></a>
+      </section>
+
+
+      <!-- PROGRAMA 3 -->
+      <section class="programa-2" id="sostener-mas">
+        <span class="prog-tag">Programa 04</span>
         <h2 class="prog-name">Sostener<br/><em>más</em></h2>
         <p class="prog-tagline">Sanación de la relación con el dinero, la visibilidad y el crecimiento</p>
         <div class="prog-divider"></div>
