@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sesiones individuales · Karla Moraga</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Whisper&display=swap" rel="stylesheet" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-33PZ0L65JL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-33PZ0L65JL');
+  </script>
+  <style>
+    :root {
+      --cream:      #FAF7F2;
+      --warm-white: #FAF7F2;
+      --sage-light: #a8c4a2;
+      --sage-dark:  #5F7B5C;
+      --earth:      #C4956A;
+      --earth-light:#dbb899;
+      --text:       #2e2b28;
+      --text-soft:  #6b6560;
+      --text-muted: #B7B0B0;
+      --line:       rgba(196,149,106,0.2);
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Jost', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--warm-white); color: var(--text); font-family: var(--font-body); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ─── Sidebar ── */
+    .sidebar { position: fixed; top: 0; left: 0; width: 240px; height: 100vh; background: var(--cream); border-right: 1px solid var(--line); display: flex; flex-direction: column; padding: 2.5rem 2rem; z-index: 100; transform: translateX(-100%); transition: transform 0.4s ease; }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar nav ul { display: flex; flex-direction: column; gap: 0.2rem; }
+    .sidebar nav a { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-soft); padding: 0.55rem 0; transition: color 0.2s; display: block; }
+    .sidebar nav a:hover { color: var(--sage-dark); }
+    .sidebar-foot { font-size: 0.72rem; color: var(--text-muted); line-height: 1.6; margin-top: auto; }
+    .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 90; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 3rem; background: rgba(250,247,242,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+    .topbar-logo .name { font-family: 'Whisper', cursive; font-size: 1.9rem; color: var(--text); display: block; }
+    .topbar-logo .title { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); display: block; }
+    .menu-toggle { background: transparent; border: 1px solid var(--line); width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 5px; cursor: pointer; }
+    .menu-toggle span { display: block; width: 20px; height: 1.5px; background: var(--text); }
+    .main { padding-top: 72px; }
+
+    /* ══ HERO ══ */
+    .hero {
+      padding: 6rem 6rem 5rem;
+      background: var(--cream);
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero::after {
+      content: 'sesión';
+      position: absolute;
+      right: 3rem; bottom: -2rem;
+      font-family: var(--font-display);
+      font-size: 11rem; font-weight: 300; font-style: italic;
+      color: rgba(95,123,92,0.05);
+      line-height: 1; pointer-events: none; white-space: nowrap;
+    }
+    .breadcrumb {
+      font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: 2.5rem;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .breadcrumb a { color: var(--earth); }
+    .hero-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage-dark); margin-bottom: 1.2rem; }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      font-weight: 300; line-height: 0.95; color: var(--text);
+      margin-bottom: 1.5rem; letter-spacing: -0.02em;
+    }
+    .hero-title em { font-style: italic; color: var(--sage-dark); display: block; }
+    .hero-sub {
+      font-family: var(--font-display);
+      font-size: 1.2rem; font-style: italic; font-weight: 300;
+      color: var(--text-soft); line-height: 1.55;
+      padding-left: 1.2rem; border-left: 2px solid var(--earth-light);
+      max-width: 52ch; margin-bottom: 2.5rem;
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+      margin-top: 3rem; max-width: 640px;
+    }
+    .hero-stat {
+      background: var(--warm-white);
+      border: 1px solid var(--line);
+      padding: 1.4rem 1.6rem;
+    }
+    .hero-stat-num {
+      font-family: var(--font-display);
+      font-size: 2rem; font-weight: 300; font-style: italic;
+      color: var(--sage-dark); line-height: 1; margin-bottom: 0.3rem;
+    }
+    .hero-stat-label {
+      font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* ══ QUÉ ES ══ */
+    .que-section {
+      padding: 6rem 6rem;
+      background: var(--warm-white);
+    }
+    .que-grid {
+      display: grid; grid-template-columns: 1.3fr 1fr;
+      gap: 6rem; align-items: start; margin-top: 3rem;
+    }
+    .que-text p {
+      font-size: 0.95rem; color: var(--text-soft);
+      line-height: 1.95; margin-bottom: 1.2rem;
+    }
+    .que-highlight {
+      background: rgba(122,79,90,0.06);
+      border-left: 3px solid #7A4F5A;
+      padding: 1.3rem 1.6rem; margin: 1.8rem 0;
+      font-family: var(--font-display);
+      font-size: 1.1rem; font-style: italic;
+      color: var(--text); line-height: 1.6;
+    }
+    .que-aside { position: sticky; top: 6rem; }
+    .que-aside-box {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      border-top: 3px solid #7A4F5A;
+      padding: 2.5rem 2rem;
+    }
+    .que-aside-label {
+      font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: 1.5rem;
+    }
+    .que-aside-list { display: flex; flex-direction: column; gap: 0.8rem; }
+    .que-aside-item {
+      display: flex; align-items: flex-start; gap: 0.8rem;
+      font-size: 0.88rem; color: var(--text-soft); line-height: 1.5;
+    }
+    .que-aside-dot {
+      width: 5px; height: 5px; background: #7A4F5A;
+      border-radius: 50%; flex-shrink: 0; margin-top: 0.5rem;
+    }
+
+    /* ══ MODALIDADES ══ */
+    .modal-section {
+      padding: 6rem 6rem;
+      background: var(--cream);
+      position: relative; overflow: hidden;
+    }
+    .modal-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .modal-card {
+      background: var(--warm-white);
+      border: 1px solid var(--line);
+      padding: 2.5rem 2.2rem;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .modal-card:hover { box-shadow: 0 10px 36px rgba(60,50,40,0.08); transform: translateY(-3px); }
+    .modal-card.presencial { border-top: 3px solid #7A4F5A; }
+    .modal-card.online     { border-top: 3px solid #9B8DC0; }
+    .modal-icon { font-size: 1.8rem; margin-bottom: 1.2rem; display: block; }
+    .modal-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; color: var(--text); margin-bottom: 0.5rem; }
+    .modal-sub { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.5rem; }
+    .modal-body { font-size: 0.9rem; color: var(--text-soft); line-height: 1.85; }
+
+    /* ══ PARA QUIEN ══ */
+    .quien-section {
+      padding: 6rem 6rem;
+      background: #5C6640;
+      position: relative; overflow: hidden;
+    }
+    .quien-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 0% 100%, rgba(220,195,160,0.2) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 50% at 100% 0%, rgba(45,65,43,0.4) 0%, transparent 55%);
+    }
+    .quien-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage-light); margin-bottom: 1rem; position: relative; z-index: 2; }
+    .quien-title { font-family: var(--font-display); font-size: clamp(2rem,3.2vw,2.8rem); font-weight: 300; color: var(--warm-white); margin-bottom: 3rem; line-height: 1.15; position: relative; z-index: 2; }
+    .quien-title em { font-style: italic; color: var(--earth-light); }
+    .quien-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1px; background: rgba(255,255,255,0.08);
+      position: relative; z-index: 2;
+    }
+    .quien-item {
+      background: var(--sage-dark); padding: 2rem 1.8rem;
+      transition: background 0.25s;
+    }
+    .quien-item:hover { background: rgba(168,196,162,0.12); }
+    .quien-item-dot {
+      width: 7px; height: 7px; background: var(--earth-light);
+      border-radius: 50%; margin-bottom: 1rem;
+    }
+    .quien-item-text { font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.65; }
+
+    /* ══ PROCESO ══ */
+    .proceso-section {
+      padding: 6rem 6rem;
+      background: var(--warm-white);
+    }
+    .proceso-steps {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      gap: 1px; background: var(--line);
+      margin-top: 3rem;
+    }
+    .proceso-step {
+      background: var(--warm-white); padding: 2rem 1.8rem;
+      transition: background 0.25s;
+    }
+    .proceso-step:hover { background: #FBF5EC; }
+    .proceso-num {
+      font-family: var(--font-display); font-size: 2.5rem;
+      font-weight: 300; font-style: italic;
+      color: rgba(122,79,90,0.2); line-height: 1; margin-bottom: 0.8rem; display: block;
+    }
+    .proceso-title { font-family: var(--font-display); font-size: 1.05rem; font-weight: 400; color: var(--text); margin-bottom: 0.5rem; }
+    .proceso-body { font-size: 0.83rem; color: var(--text-soft); line-height: 1.7; }
+
+    /* ══ CTA ══ */
+    .cta-section {
+      padding: 6rem 6rem;
+      background: linear-gradient(140deg, #3D1E2A 0%, #5C3040 50%, #8B5E6A 100%) !important;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(168,196,162,0.15) 0%, transparent 65%);
+    }
+    .cta-inner { position: relative; z-index: 2; }
+    .cta-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1.2rem; }
+    .cta-title { font-family: var(--font-display); font-size: clamp(2rem,3.5vw,3rem); font-weight: 300; color: var(--warm-white); margin-bottom: 1rem; line-height: 1.15; }
+    .cta-title em { font-style: italic; color: var(--earth-light); }
+    .cta-body { font-size: 0.93rem; color: rgba(255,255,255,0.55); max-width: 44ch; margin: 0 auto 2.5rem; line-height: 1.85; }
+    .btn-cta {
+      display: inline-flex; align-items: center; gap: 0.8rem;
+      background: var(--warm-white); color: var(--sage-dark);
+      font-family: var(--font-body); font-size: 0.75rem; font-weight: 400;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 1.1rem 2.6rem; border: 1px solid var(--warm-white);
+      transition: background 0.25s, color 0.25s;
+    }
+    .btn-cta:hover { background: transparent; color: var(--warm-white); }
+
+    footer { background: var(--text); color: rgba(255,255,255,0.4); padding: 2.5rem 6rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; }
+    footer strong { color: rgba(255,255,255,0.7); font-family: var(--font-display); font-size: 1rem; font-weight: 300; }
+    footer a { color: var(--sage-light); font-size: 0.72rem; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-label { animation: fadeUp 0.7s ease 0.1s both; }
+    .hero-title  { animation: fadeUp 0.8s ease 0.2s both; }
+    .hero-sub    { animation: fadeUp 0.8s ease 0.32s both; }
+
+    @media (max-width: 900px) {
+      .hero, .que-section, .modal-section, .quien-section, .proceso-section, .cta-section { padding: 4rem 2rem; }
+      .que-grid, .modal-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .quien-grid, .proceso-steps { grid-template-columns: 1fr; }
+      .que-aside { position: static; }
+      .hero-grid { grid-template-columns: 1fr 1fr; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 2rem; }
+      .topbar { padding: 1.2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <aside class="sidebar" id="sidebar">
+    <div style="margin-bottom:3rem;">
+      <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:1.25rem; font-weight:400; font-style:italic; color:var(--text); display:block; margin-bottom:0.2rem;">Karla Moraga</span>
+      <span style="font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-soft);">Terapeuta Somática &amp; Docente</span>
+    </div>
+    <nav><ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="sobre-mi.html">Sobre mí</a></li>
+      <li><a href="mi-trabajo.html">Mi trabajo</a></li>
+      <li><a href="programas.html">Programas</a></li>
+      <li><a href="index.html#guias">Guías somáticas</a></li>
+      <li><a href="index.html#recursos">Recursos gratuitos</a></li>
+      <li><a href="https://wa.me/56956305069" target="_blank">Agendar</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul></nav>
+    <div class="sidebar-foot">© 2025 · Karla Moraga</div>
+  </aside>
+
+  <header class="topbar">
+    <div class="topbar-logo">
+      <span class="name">Karla Moraga</span>
+      <span class="title">Terapeuta Somática &amp; Docente</span>
+    </div>
+    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+  </header>
+
+  <main class="main">
+
+    <!-- ══ HERO ══ -->
+    <section class="hero">
+      <div class="breadcrumb">
+        <a href="index.html">← Inicio</a><span>/</span><span>Sesiones individuales</span>
+      </div>
+      <p class="hero-label">Acompañamiento · 01</p>
+      <h1 class="hero-title">
+        Sesiones<br/>
+        <em>individuales</em>
+      </h1>
+      <p class="hero-sub">
+        Un espacio para volver a ti — a tu cuerpo, a tu historia y a lo que está vivo en este momento de tu proceso.
+      </p>
+
+      <div class="hero-grid">
+        <div class="hero-stat">
+          <div class="hero-stat-num">60 min</div>
+          <div class="hero-stat-label">Duración por sesión</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">1:1</div>
+          <div class="hero-stat-label">Acompañamiento individual</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">Online</div>
+          <div class="hero-stat-label">o presencial en Los Ángeles, Chile</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">Flexible</div>
+          <div class="hero-stat-label">Frecuencia según tu proceso</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ QUÉ ES ══ -->
+    <section class="que-section">
+      <p style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--earth); margin-bottom:1rem;">El espacio</p>
+      <h2 style="font-family:var(--font-display); font-size:clamp(2rem,3.2vw,2.8rem); font-weight:300; line-height:1.15; color:var(--text); margin-bottom:1.5rem;">¿Qué pasa en una <em style="font-style:italic; color:var(--sage-dark);">sesión?</em></h2>
+
+      <div class="que-grid">
+        <div class="que-text">
+          <p>Cada sesión es un espacio de una hora dedicado completamente a ti. No hay agenda rígida ni protocolo fijo — el punto de partida siempre es lo que está vivo en tu cuerpo y en tu historia en ese momento.</p>
+          <div class="que-highlight">
+            Trabajamos desde una mirada integrativa que une cuerpo, sistema nervioso, emoción e historia relacional. No solo hablamos — también escuchamos lo que el cuerpo tiene para decir.
+          </div>
+          <p>Dependiendo de lo que surja en la sesión, podemos trabajar con prácticas somáticas, exploración de partes internas (IFS), regulación del sistema nervioso, procesamiento de experiencias difíciles o simplemente estar presentes con lo que aparece.</p>
+          <p>Mi rol es acompañarte con presencia, sin apuro y sin juzgar. Cada proceso es único y merece su propio ritmo.</p>
+        </div>
+
+        <div class="que-aside">
+          <div class="que-aside-box">
+            <div class="que-aside-label">En las sesiones podemos trabajar</div>
+            <div class="que-aside-list">
+              <div class="que-aside-item"><div class="que-aside-dot"></div><span>Trauma relacional y complejo</span></div>
+              <div class="que-aside-item"><div class="que-aside-dot"></div><span>Ansiedad y regulación del sistema nervioso</span></div>
+              <div class="que-aside-item"><div class="que-aside-dot"></div><span>Codependencia y vínculos</span></div>
+              <div class="que-aside-item"><div class="que-aside-dot"></div><span>Límites y autonomía emocional</span></div>
+              <div class="que-aside-item"><div class="que-aside-dot"></div><span>Heridas de la infancia</span></div>
+              <div class="que-aside-item"><div class="que-aside-dot"></div><span>Reconexión con el cuerpo y la identidad</span></div>
+              <div class="que-aside-item"><div class="que-aside-dot"></div><span>Duelo y pérdidas</span></div>
+              <div class="que-aside-item"><div class="que-aside-dot"></div><span>Lo que necesites traer</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ MODALIDADES ══ -->
+    <section class="modal-section">
+      <p style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--earth); margin-bottom:1rem;">Modalidades</p>
+      <h2 style="font-family:var(--font-display); font-size:clamp(2rem,3.2vw,2.8rem); font-weight:300; line-height:1.15; color:var(--text); margin-bottom:0.5rem;">¿Cómo nos <em style="font-style:italic; color:var(--sage-dark);">encontramos?</em></h2>
+
+      <div class="modal-grid">
+        <div class="modal-card presencial">
+          <span class="modal-icon">🌿</span>
+          <div class="modal-title">Presencial</div>
+          <div class="modal-sub">Los Ángeles, Chile</div>
+          <p class="modal-body">Nos encontramos en persona en un espacio privado y seguro en Los Ángeles, Chile. El encuentro presencial permite un trabajo somático más directo — el cuerpo presente en el espacio compartido tiene algo que la pantalla no puede replicar del todo.</p>
+        </div>
+        <div class="modal-card online">
+          <span class="modal-icon">🖥️</span>
+          <div class="modal-title">Online</div>
+          <div class="modal-sub">Desde cualquier lugar</div>
+          <p class="modal-body">A través de videollamada, desde el lugar donde estés. Las sesiones online son igual de profundas y efectivas — y tienen la ventaja de que puedes hacer tu proceso desde la comodidad de tu propio espacio, sin importar dónde vivas.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══ CTA MEDIO ══ -->
+    <div style="background:var(--cream); padding:3rem 6rem; display:flex; justify-content:center; border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+      <a href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20llegu%C3%A9%20a%20tu%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20agendar%20una%20sesi%C3%B3n%20contigo.%20%C2%BFPodr%C3%ADas%20contarme%20sobre%20disponibilidad%2C%20modalidad%20y%20valor%3F"
+         target="_blank"
+         onclick="gtag('event','clic_agendar',{'event_category':'Sesiones','event_label':'Sesiones - CTA medio'})"
+         style="display:inline-flex; align-items:center; gap:0.8rem; background:var(--sage-dark); color:var(--warm-white); font-family:var(--font-body); font-size:0.75rem; font-weight:400; letter-spacing:0.14em; text-transform:uppercase; padding:1.1rem 2.4rem; border:1px solid var(--sage-dark); transition:background 0.25s, color 0.25s; text-decoration:none;"
+         onmouseover="this.style.background='transparent';this.style.color='var(--sage-dark)'"
+         onmouseout="this.style.background='var(--sage-dark)';this.style.color='var(--warm-white)'">
+        Agendar sesión
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+      </a>
+    </div>
+
+    <!-- ══ PARA QUIÉN ══ -->
+    <section class="quien-section">
+      <p class="quien-label">¿Es para ti?</p>
+      <h2 class="quien-title">Las sesiones son para ti si <em>sientes que…</em></h2>
+
+      <div class="quien-grid">
+        <div class="quien-item">
+          <div class="quien-item-dot"></div>
+          <div class="quien-item-text">Algo en tu vida necesita transformarse y no sabes bien por dónde empezar</div>
+        </div>
+        <div class="quien-item">
+          <div class="quien-item-dot"></div>
+          <div class="quien-item-text">Repites patrones en tus vínculos o en tu forma de relacionarte contigo misma</div>
+        </div>
+        <div class="quien-item">
+          <div class="quien-item-dot"></div>
+          <div class="quien-item-text">Cargas experiencias difíciles que siguen afectando tu presente</div>
+        </div>
+        <div class="quien-item">
+          <div class="quien-item-dot"></div>
+          <div class="quien-item-text">Quieres reconectar con tu cuerpo y recuperar la sensación de habitar tu propia vida</div>
+        </div>
+        <div class="quien-item">
+          <div class="quien-item-dot"></div>
+          <div class="quien-item-text">Buscas un espacio de acompañamiento profundo, sin apuro y sin juicio</div>
+        </div>
+        <div class="quien-item">
+          <div class="quien-item-dot"></div>
+          <div class="quien-item-text">Ya estás en otro proceso terapéutico y quieres complementarlo con trabajo somático</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ PROCESO ══ -->
+    <section class="proceso-section">
+      <p style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--earth); margin-bottom:1rem;">Cómo empezar</p>
+      <h2 style="font-family:var(--font-display); font-size:clamp(2rem,3.2vw,2.8rem); font-weight:300; line-height:1.15; color:var(--text); margin-bottom:0.5rem;">El camino para <em style="font-style:italic; color:var(--sage-dark);">comenzar</em></h2>
+
+      <div class="proceso-steps">
+        <div class="proceso-step">
+          <span class="proceso-num">01</span>
+          <div class="proceso-title">Me escribes</div>
+          <div class="proceso-body">Me contactas por WhatsApp contándome brevemente qué te trae y qué estás buscando.</div>
+        </div>
+        <div class="proceso-step">
+          <span class="proceso-num">02</span>
+          <div class="proceso-title">Conversamos</div>
+          <div class="proceso-body">Tenemos una breve conversación de orientación para ver si hay sintonía y respondo tus preguntas.</div>
+        </div>
+        <div class="proceso-step">
+          <span class="proceso-num">03</span>
+          <div class="proceso-title">Agendamos</div>
+          <div class="proceso-body">Elegimos juntas el día y horario que mejor funcione para ti, y confirmamos la primera sesión.</div>
+        </div>
+        <div class="proceso-step">
+          <span class="proceso-num">04</span>
+          <div class="proceso-title">Comenzamos</div>
+          <div class="proceso-body">La primera sesión es un espacio para conocernos, explorar tu proceso y sentir cómo es trabajar juntas.</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══ METODOLOGÍA ══ -->
+    <div style="padding:3rem 6rem; background:var(--cream); border-top:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap;">
+      <div>
+        <p style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.5rem;">¿Quieres saber más?</p>
+        <p style="font-family:var(--font-display); font-size:1.4rem; font-weight:300; font-style:italic; color:var(--text);">Conoce mi enfoque y metodología de trabajo</p>
+      </div>
+      <a href="mi-trabajo.html"
+         style="display:inline-flex; align-items:center; gap:0.8rem; background:transparent; color:var(--sage-dark); font-family:var(--font-body); font-size:0.75rem; font-weight:400; letter-spacing:0.14em; text-transform:uppercase; padding:1.1rem 2.4rem; border:1px solid var(--sage-dark); transition:background 0.25s, color 0.25s; text-decoration:none; white-space:nowrap;"
+         onmouseover="this.style.background='var(--sage-dark)';this.style.color='white'"
+         onmouseout="this.style.background='transparent';this.style.color='var(--sage-dark)'">
+        Ver mi trabajo
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+      </a>
+    </div>
+
+    <!-- ══ CTA ══ -->
+    <section class="cta-section">
+      <div class="cta-inner">
+        <p class="cta-label">¿Lista para empezar?</p>
+        <h2 class="cta-title">Agenda tu primera<br/><em>sesión</em></h2>
+        <p class="cta-body">Escríbeme por WhatsApp y cuéntame brevemente qué te trae. Podemos conversar antes de comprometerte con nada.</p>
+        <a href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20llegu%C3%A9%20a%20tu%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20agendar%20una%20sesi%C3%B3n%20contigo.%20%C2%BFPodr%C3%ADas%20contarme%20sobre%20disponibilidad%2C%20modalidad%20y%20valor%3F"
+           target="_blank" class="btn-cta"
+           onclick="gtag('event','clic_agendar',{'event_category':'Sesiones','event_label':'Sesiones individuales - CTA'})">
+          Agendar sesión por WhatsApp
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <strong>Karla Moraga · Terapeuta Somática &amp; Docente</strong>
+    <a href="index.html">← Volver al inicio</a>
+    <span>© 2025 · Todos los derechos reservados</span>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    toggle.addEventListener('click', function(e) { e.stopPropagation(); sidebar.classList.toggle('open'); });
+    document.addEventListener('click', function(e) { if (sidebar.classList.contains('open') && !sidebar.contains(e.target) && !toggle.contains(e.target)) sidebar.classList.remove('open'); });
+  </script>
+</body>
+</html>
