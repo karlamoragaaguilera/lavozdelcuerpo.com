@@ -22,13 +22,13 @@
   <style>
     :root {
       --cream:     #FAF7F2;
-      --sage:      #7ABFB5;
-      --sage-light:#B8DDD8;
-      --earth:     #C4956A;
-      --earth-light:#dbb899;
+      --sage:      #6B4F72;
+      --sage-light:#D8CEEA;
+      --earth:     #D9B6A9;
+      --earth-light:#D8CEEA;
       --text:      #2e2b28;
       --text-soft: #6b6560;
-      --text-muted:#B7B0B0;
+      --text-muted:#9E9890;
       --font-display: 'Cormorant Garamond', Georgia, serif;
       --font-body:    'Jost', sans-serif;
     }
@@ -41,8 +41,8 @@
       background: var(--cream);
       /* Textura sutil */
       background-image:
-        radial-gradient(ellipse 80% 60% at 20% 0%,   rgba(168,196,162,0.18) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 50% at 85% 100%,  rgba(196,149,106,0.12) 0%, transparent 55%);
+        radial-gradient(ellipse 80% 60% at 20% 0%,   rgba(197,182,210,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 85% 100%,  rgba(107,79,114,0.08) 0%, transparent 55%);
       font-family: var(--font-body);
       font-weight: 300;
       color: var(--text);
@@ -96,7 +96,7 @@
       font-size: 0.72rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--text-muted);
+      color: #9E9890;
       margin-bottom: 0.8rem;
       text-align: center;
     }
@@ -124,11 +124,11 @@
       content: '';
       flex: 1;
       height: 1px;
-      background: rgba(196,149,106,0.2);
+      background: linear-gradient(90deg, transparent, rgba(197,182,210,0.4), transparent);
     }
     .divider-dot {
       font-size: 0.6rem;
-      color: var(--earth-light);
+      color: #D9B6A9;
       letter-spacing: 0.3em;
     }
 
@@ -153,7 +153,8 @@
       gap: 1rem;
       padding: 1.1rem 1.4rem;
       background: white;
-      border: 1px solid rgba(196,149,106,0.18);
+      border: 1px solid rgba(197,182,210,0.2);
+      border-radius: 12px;
       margin-bottom: 0.7rem;
       text-decoration: none;
       color: var(--text);
@@ -166,7 +167,7 @@
       position: absolute;
       left: 0; top: 0; bottom: 0;
       width: 3px;
-      background: var(--sage);
+      background: #6B4F72;
       transform: scaleY(0);
       transition: transform 0.2s;
       transform-origin: bottom;
@@ -183,8 +184,8 @@
     .link-card.teal::before    { background: #5E8A85; }
     .link-card.rose::before    { background: #C9897A; }
     .link-card.terra::before   { background: #C4714A; }
-    .link-card.gold::before    { background: var(--earth); }
-    .link-card.green::before   { background: var(--sage); }
+    .link-card.gold::before    { background: #D9B6A9; }
+    .link-card.green::before   { background: #6B4F72; }
 
     .link-card.violet:hover  { border-color: rgba(123,111,160,0.3); }
     .link-card.teal:hover    { border-color: rgba(94,138,133,0.3); }
@@ -236,7 +237,7 @@
 
     /* ── Card especial — agendar ── */
     .link-card.featured {
-      background: var(--sage);
+      background: #6B4F72;
       border-color: var(--sage);
       color: white;
     }
@@ -246,8 +247,8 @@
     .link-card.featured .link-arrow { color: rgba(255,255,255,0.6); }
     .link-card.featured .link-icon  { background: rgba(255,255,255,0.15); }
     .link-card.featured:hover {
-      background: #5AAAA0;
-      border-color: #5AAAA0;
+      background: #4A3350;
+      border-color: #4A3350;
       box-shadow: 0 6px 24px rgba(95,123,92,0.3);
     }
 
@@ -260,7 +261,7 @@
       font-family: var(--font-display);
       font-size: 0.85rem;
       font-style: italic;
-      color: var(--text-muted);
+      color: #6B4F72;
       margin-bottom: 0.3rem;
     }
     .footer-copy {
@@ -317,8 +318,8 @@
        class="link-card featured"
        onclick="gtag('event','clic_links','{'event_category':'Bio links','event_label':'Agendar sesión'})">
       <div class="link-icon green"><svg width="26" height="26" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 20 C14 16 6 10 5 6 C4 2 8 1 12 4 C16 7 19 14 20 20Z" fill="rgba(255,255,255,0.35)" stroke="rgba(255,255,255,0.7)" stroke-width="1"/>
-          <path d="M20 20 C26 16 34 10 35 6 C36 2 32 1 28 4 C24 7 21 14 20 20Z" fill="rgba(255,255,255,0.35)" stroke="rgba(255,255,255,0.7)" stroke-width="1"/>
+          <path d="M20 20 C14 16 6 10 5 6 C4 2 8 1 12 4 C16 7 19 14 20 20Z" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.85)" stroke-width="1"/>
+          <path d="M20 20 C26 16 34 10 35 6 C36 2 32 1 28 4 C24 7 21 14 20 20Z" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.85)" stroke-width="1"/>
           <path d="M20 20 C14 24 6 30 5 34 C4 38 8 39 12 36 C16 33 19 26 20 20Z" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
           <path d="M20 20 C26 24 34 30 35 34 C36 38 32 39 28 36 C24 33 21 26 20 20Z" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
           <ellipse cx="20" cy="20" rx="1.5" ry="4" fill="rgba(255,255,255,0.8)"/>
