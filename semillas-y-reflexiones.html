@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Semillas y reflexiones · Karla Moraga</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Whisper&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-33PZ0L65JL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-33PZ0L65JL');
+  </script>
+  <style>
+    :root {
+      --cream:      #FAF7F2;
+      --warm-white: #FAF7F2;
+      --earth:      #D9B6A9;
+      --earth-dark: #8C5042;
+      --salvia:     #76886E;
+      --beige:      #D9D3B8;
+      --gris-verde: #848C77;
+      --text:       #2e2b28;
+      --text-soft:  #6b6560;
+      --text-muted: #9E9890;
+      --line:       rgba(217,182,169,0.25);
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Jost', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--warm-white); color: var(--text); font-family: var(--font-body); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* Sidebar */
+    .sidebar { position: fixed; top: 0; left: 0; width: 240px; height: 100vh; background: var(--cream); border-right: 1px solid var(--line); display: flex; flex-direction: column; padding: 2.5rem 2rem; z-index: 100; transform: translateX(-100%); transition: transform 0.4s ease; }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar nav ul { display: flex; flex-direction: column; gap: 0.2rem; }
+    .sidebar nav a { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-soft); padding: 0.55rem 0; transition: color 0.2s; display: block; }
+    .sidebar nav a:hover { color: #8C5042; }
+    .sidebar-foot { font-size: 0.72rem; color: var(--text-muted); line-height: 1.6; margin-top: auto; }
+    .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 90; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 3rem; background: rgba(250,247,242,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+    .topbar-logo .name { font-family: 'Whisper', cursive; font-size: 1.9rem; color: var(--text); display: block; }
+    .topbar-logo .title { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); display: block; }
+    .menu-toggle { background: transparent; border: 1px solid var(--line); width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 5px; cursor: pointer; }
+    .menu-toggle span { display: block; width: 20px; height: 1.5px; background: var(--text); }
+    .main { padding-top: 72px; }
+
+    /* Hero — próximamente */
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 3rem;
+      position: relative;
+      overflow: hidden;
+      background: var(--cream);
+    }
+    /* Círculo decorativo de fondo */
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      border: 1px solid rgba(217,182,169,0.2);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      border: 1px solid rgba(217,182,169,0.15);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 2; max-width: 580px; }
+    .hero-whisper {
+      font-family: 'Whisper', cursive;
+      font-size: 5rem;
+      color: rgba(140,80,66,0.15);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .hero-label {
+      font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: 2rem;
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 300; line-height: 1.1;
+      color: var(--text); margin-bottom: 1.5rem;
+    }
+    .hero-title em { font-style: italic; color: #8C5042; }
+    .hero-divider {
+      width: 60px; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(217,182,169,0.6), transparent);
+      margin: 0 auto 1.5rem;
+    }
+    .hero-body {
+      font-family: var(--font-display);
+      font-size: 1.15rem; font-style: italic; font-weight: 300;
+      color: var(--text-soft); line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+    /* Tarjeta próximamente */
+    .pronto-card {
+      display: inline-block;
+      background: var(--warm-white);
+      border: 1px solid rgba(217,182,169,0.35);
+      border-radius: 50% 50% 12px 12px / 8% 8% 0% 0%;
+      padding: 3rem 3.5rem 2.5rem;
+      margin-bottom: 3rem;
+    }
+    .pronto-badge {
+      font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: #8C5042; display: block; margin-bottom: 1rem;
+    }
+    .pronto-text {
+      font-family: var(--font-display);
+      font-size: 1.8rem; font-weight: 300; font-style: italic;
+      color: var(--text); line-height: 1.3;
+    }
+    /* Instagram CTA */
+    .ig-cta {
+      display: inline-flex; align-items: center; gap: 0.7rem;
+      font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-soft);
+      border-bottom: 1px solid rgba(217,182,169,0.4);
+      padding-bottom: 0.15rem;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .ig-cta:hover { color: #8C5042; border-color: #8C5042; }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #3A2820 0%, #2E2018 100%);
+      color: rgba(255,255,255,0.45);
+      padding: 2.5rem 6rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.75rem; letter-spacing: 0.06em;
+    }
+    footer strong { color: rgba(255,255,255,0.85); font-family: var(--font-display); font-size: 1rem; font-weight: 300; }
+    footer a { color: rgba(217,182,169,0.8); }
+
+    @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+    .hero-whisper { animation: fadeUp 0.7s ease 0.1s both; }
+    .hero-label    { animation: fadeUp 0.7s ease 0.2s both; }
+    .hero-title    { animation: fadeUp 0.7s ease 0.3s both; }
+    .hero-divider  { animation: fadeUp 0.7s ease 0.4s both; }
+    .hero-body     { animation: fadeUp 0.7s ease 0.5s both; }
+    .pronto-card   { animation: fadeUp 0.7s ease 0.6s both; }
+    .ig-cta        { animation: fadeUp 0.7s ease 0.7s both; }
+
+    @media (max-width: 768px) {
+      .hero { padding: 4rem 2rem; min-height: 80vh; }
+      .hero::before { width: 320px; height: 320px; }
+      .hero::after  { width: 200px; height: 200px; }
+      .pronto-card  { padding: 2rem 2rem 1.8rem; }
+      footer { flex-direction: column; gap: 0.6rem; text-align: center; padding: 2rem; }
+      .topbar { padding: 1rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <aside class="sidebar" id="sidebar">
+    <div style="margin-bottom:3rem;">
+      <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:1.25rem; font-weight:400; font-style:italic; color:var(--text); display:block; margin-bottom:0.2rem;">Karla Moraga</span>
+      <span style="font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-soft);">Terapeuta Somática &amp; Docente</span>
+    </div>
+    <nav><ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="sobre-mi.html">Sobre mí</a></li>
+      <li><a href="mi-trabajo.html">Mi trabajo</a></li>
+      <li><a href="sesiones-individuales.html">Sesiones individuales</a></li>
+      <li><a href="programas.html">Programas</a></li>
+      <li><a href="semillas-y-reflexiones.html">Semillas y reflexiones</a></li>
+      <li><a href="index.html#guias">Guías somáticas</a></li>
+      <li><a href="index.html#recursos">Recursos gratuitos</a></li>
+      <li><a href="https://wa.me/56956305069" target="_blank">Agendar</a></li>
+    </ul></nav>
+    <div class="sidebar-foot">© 2025 · Karla Moraga</div>
+  </aside>
+
+  <header class="topbar">
+    <div class="topbar-logo">
+      <span class="name">Karla Moraga</span>
+      <span class="title">Terapeuta Somática &amp; Docente</span>
+    </div>
+    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+  </header>
+
+  <main class="main">
+    <section class="hero">
+      <div class="hero-inner">
+        <span class="hero-whisper">semillas</span>
+        <p class="hero-label">Reflexiones · Escritura · Proceso</p>
+        <h1 class="hero-title">Semillas y<br/><em>reflexiones</em></h1>
+        <div class="hero-divider"></div>
+        <p class="hero-body">
+          Un espacio para compartir palabras sobre el cuerpo,<br/>
+          el trauma, la sanación y el camino de volver a una misma.
+        </p>
+
+        <div class="pronto-card">
+          <span class="pronto-badge">✦ Próximamente</span>
+          <div class="pronto-text">Este espacio está<br/>tomando forma.</div>
+        </div>
+
+        <br/>
+
+        <a href="https://www.instagram.com/semillas.de.sanacion" target="_blank" class="ig-cta">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          Mientras tanto, te espero en Instagram
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Karla Moraga · Terapeuta Somática &amp; Docente</strong>
+    <a href="https://www.instagram.com/semillas.de.sanacion" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      @semillas.de.sanacion
+    </a>
+    <a href="index.html">← Volver al inicio</a>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    toggle.addEventListener('click', e => { e.stopPropagation(); sidebar.classList.toggle('open'); });
+    document.addEventListener('click', e => { if (sidebar.classList.contains('open') && !sidebar.contains(e.target) && !toggle.contains(e.target)) sidebar.classList.remove('open'); });
+  </script>
+</body>
+</html>

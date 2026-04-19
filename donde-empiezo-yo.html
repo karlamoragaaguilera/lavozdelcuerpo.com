@@ -15,25 +15,23 @@
 
   <style>
     :root {
-      --cream:      #FAF7F2;
-      --warm-white: #FAF7F2;
-      --sage-light: #a8c4a2;
-      --sage-dark:  #5F7B5C;
-      --earth:      #C4956A;
-      --earth-light:#dbb899;
-      --text:       #2e2b28;
-      --text-soft:  #6b6560;
-      --text-muted: #B7B0B0;
-      --line:       rgba(196,149,106,0.2);
-
-      /* Acento exclusivo — verde musgo tierra, raíces, territorio */
-      --moss:       #5E8A85;
-      --moss-light: #a8c8c4;
-      --moss-pale:  #e8f0ef;
-      --moss-dark:  #2B3D3B;
-
-      --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-body:    'Jost', sans-serif;
+      --cream:       #FAF7F2;
+      --warm-white:  #FAF7F2;
+      --sage:        #76886E;
+      --sage-light:  #A8B8A0;
+      --sage-dark:   #76886E;
+      --earth:       #D9B6A9;
+      --earth-light: #EEE9DC;
+      --earth-dark:  #8C5042;
+      --text:        #2e2b28;
+      --text-soft:   #6b6560;
+      --text-muted:  #9E9890;
+      --line:        rgba(217,182,169,0.25);
+      --terracota:   #8C5042;
+      --salvia:      #76886E;
+      --rosa-polvo:  #D9B6A9;
+      --beige:       #EEE9DC;
+      --ciruela:     #6B4F72;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -53,7 +51,7 @@
     .topbar-logo .name { font-family: 'Whisper', cursive; font-size: 1.9rem; color: var(--text); display: block; }
     .topbar-logo .title { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); display: block; }
     .menu-toggle { background: transparent; border: 1px solid var(--line); width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 5px; cursor: pointer; }
-    .menu-toggle span { display: block; width: 20px; height: 1.5px; background: var(--text); }
+    .menu-toggle span { display: block; width: 20px; height: 1.5px; background: linear-gradient(135deg, #3A2820 0%, #2E2018 100%); }
     .main { padding-top: 72px; }
 
     /* ═══ HERO ═══ */
@@ -105,7 +103,7 @@
 
     /* Hero right */
     .hero-right {
-      position: relative; background: #2B3D3B; overflow: hidden;
+      position: relative; background: #6B3830; overflow: hidden;
     }
     .hero-right::before {
       content: '';
@@ -213,7 +211,7 @@
       transition: background 0.25s;
     }
     .fase-card:hover { background: var(--moss-pale); }
-    .fase-num { font-family: var(--font-display); font-size: 2.8rem; font-weight: 300; font-style: italic; color: rgba(94,138,133,0.25); line-height: 1; margin-bottom: 0.8rem; display: block; }
+    .fase-num { font-family: var(--font-display); font-size: 2.8rem; font-weight: 300; font-style: italic; color: rgba(140,80,66,0.25); line-height: 1; margin-bottom: 0.8rem; display: block; }
     .fase-title { font-family: var(--font-display); font-size: 1rem; font-weight: 400; color: var(--text); margin-bottom: 0.6rem; line-height: 1.3; }
     .fase-body { font-size: 0.83rem; color: var(--text-soft); line-height: 1.75; }
 
@@ -258,7 +256,7 @@
     /* ═══ CTA FINAL ═══ */
     .cta-section {
       padding: 7rem 6rem;
-      background: linear-gradient(140deg, #1A2E2B 0%, #2B3D3B 50%, #5E8A85 100%) !important;
+      background: linear-gradient(140deg, #1A2E2B 0%, #6B3830 50%, #8C5042 100%) !important;
       text-align: center; position: relative; overflow: hidden;
     }
     .cta-section::before {
@@ -284,9 +282,9 @@
     }
     .btn-outline-light:hover { background: var(--warm-white); color: var(--moss-dark); }
 
-    footer { background: var(--text); color: rgba(255,255,255,0.4); padding: 2.5rem 6rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; letter-spacing: 0.06em; }
-    footer strong { color: rgba(255,255,255,0.7); font-family: var(--font-display); font-size: 1rem; font-weight: 300; }
-    footer a { color: var(--moss-light); font-size: 0.72rem; }
+    footer { background: linear-gradient(135deg, #3A2820 0%, #2E2018 100%); color: rgba(255,255,255,0.45); padding: 2.5rem 6rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; letter-spacing: 0.06em; }
+    footer strong { color: rgba(255,255,255,0.85); font-family: var(--font-display); font-size: 1rem; font-weight: 300; }
+    footer a { color: rgba(217,182,169,0.8); font-size: 0.72rem; }
 
     @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
     .hero-label  { animation: fadeUp 0.7s ease 0.1s both; }
@@ -308,6 +306,11 @@
       footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 2rem; }
       .topbar { padding: 1.2rem 1.5rem; }
     }
+
+    /* ── Boho visual elements ── */
+    .linea-deco { height:1px; background:linear-gradient(90deg,transparent,rgba(217,182,169,0.5),transparent); margin:2rem 0; }
+    .btn-boho { display:inline-flex; align-items:center; gap:0.8rem; background:#8C5042; color:var(--warm-white); font-family:var(--font-body); font-size:0.75rem; font-weight:400; letter-spacing:0.14em; text-transform:uppercase; padding:1.1rem 2.6rem; border:1px solid #8C5042; transition:background 0.25s,color 0.25s; text-decoration:none; }
+    .btn-boho:hover { background:transparent; color:#8C5042; }
   </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-33PZ0L65JL"></script>
@@ -322,7 +325,7 @@
 
   <aside class="sidebar" id="sidebar">
     <div style="margin-bottom:3rem;">
-      <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:1.25rem; font-weight:400; font-style:italic; color:var(--text); display:block; margin-bottom:0.2rem;">Karla Moraga Aguilera</span>
+      <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:1.25rem; font-weight:400; font-style:italic; color:var(--text); display:block; margin-bottom:0.2rem;">Karla Moraga</span>
       <span style="font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-soft);">Terapeuta Somática &amp; Docente</span>
     </div>
     <nav><ul>
@@ -330,6 +333,7 @@
       <li><a href="sobre-mi.html">Sobre mí</a></li>
       <li><a href="mi-trabajo.html">Mi trabajo</a></li>
       <li><a href="programas.html">Programas</a></li>
+      <li><a href="semillas-y-reflexiones.html">Semillas y reflexiones</a></li>
       <li><a href="index.html#guias">Guías somáticas</a></li>
       <li><a href="index.html#recursos">Recursos gratuitos</a></li>
       <li><a href="https://wa.me/56956305069" target="_blank">Agendar</a></li>
@@ -584,11 +588,11 @@
             <div class="invest-inc-item"><div class="invest-inc-dot" style="background:var(--sage-dark);"></div><span>Material de apoyo por sesión</span></div>
             <div class="invest-inc-item"><div class="invest-inc-dot" style="background:var(--sage-dark);"></div><span>Comunidad de apoyo durante el proceso</span></div>
           </div>
-          <div style="background:rgba(95,123,92,0.07); border:1px solid rgba(95,123,92,0.15); padding:1rem 1.2rem; margin:1.2rem 0; font-size:0.82rem; color:var(--text-soft); line-height:1.6;">
+          <div style="background:rgba(118,136,110,0.07); border:1px solid rgba(118,136,110,0.15); padding:1rem 1.2rem; margin:1.2rem 0; font-size:0.82rem; color:var(--text-soft); line-height:1.6;">
             <strong style="display:block; font-family:var(--font-display); font-size:0.95rem; color:var(--text); margin-bottom:0.3rem;">Ingreso mediante lista de espera</strong>
             El programa grupal se abre en fechas específicas durante el año. Al inscribirte quedas en lista de espera para el próximo ciclo disponible.
           </div>
-          <a onclick="gtag('event', 'clic_iniciar_programa', {'event_category': 'Programas', 'event_label': 'Donde empiezo yo - Iniciar'})" href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20me%20gustar%C3%ADa%20sumarme%20a%20la%20lista%20de%20espera%20para%20el%20pr%C3%B3ximo%20ciclo%20grupal%20de%20Donde%20empiezo%20yo.%20%C2%BFPodr%C3%ADas%20contarme%20cu%C3%A1ndo%20se%20abrir%C3%A1n%20los%20pr%C3%B3ximos%20cupos%3F" target="_blank" style="display:flex; align-items:center; justify-content:center; gap:0.8rem; background:transparent; color:var(--sage-dark); font-family:var(--font-body); font-size:0.75rem; font-weight:400; letter-spacing:0.14em; text-transform:uppercase; padding:1.1rem 1.5rem; border:1px solid var(--sage-dark); transition:background 0.25s, color 0.25s; text-decoration:none; margin-top:0.5rem;" onmouseover="this.style.background='var(--sage-dark)';this.style.color='white'" onmouseout="this.style.background='transparent';this.style.color='var(--sage-dark)'">
+          <a onclick="gtag('event', 'clic_iniciar_programa', {'event_category': 'Programas', 'event_label': 'Donde empiezo yo - Iniciar'})" href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20me%20gustar%C3%ADa%20sumarme%20a%20la%20lista%20de%20espera%20para%20el%20pr%C3%B3ximo%20ciclo%20grupal%20de%20Donde%20empiezo%20yo.%20%C2%BFPodr%C3%ADas%20contarme%20cu%C3%A1ndo%20se%20abrir%C3%A1n%20los%20pr%C3%B3ximos%20cupos%3F" target="_blank" style="display:flex; align-items:center; justify-content:center; gap:0.8rem; background: transparent; color: #8C5042;; font-family:var(--font-body); font-size:0.75rem; font-weight:400; letter-spacing:0.14em; text-transform:uppercase; padding:1.1rem 1.5rem; border:1px solid var(--sage-dark); transition:background 0.25s, color 0.25s; text-decoration:none; margin-top:0.5rem;" onmouseover="this.style.background='var(--sage-dark)';this.style.color='white'" onmouseout="this.style.background='transparent';this.style.color='var(--sage-dark)'">
             Unirme a la lista de espera
             <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
           </a>
@@ -650,7 +654,8 @@
   </main>
 
   <footer>
-    <strong>Karla Moraga Aguilera · Terapeuta Somática &amp; Docente</strong>
+    <strong>Karla Moraga · Terapeuta Somática &amp; Docente</strong>
+    <a href="https://www.instagram.com/semillas.de.sanacion" target="_blank" style="display:inline-flex; align-items:center; gap:0.4rem; color:rgba(217,182,169,0.8); font-size:0.72rem; text-decoration:none; letter-spacing:0.06em;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:4px; opacity:0.7;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@semillas.de.sanacion</a>
     <a href="programas.html">← Volver a programas</a>
     <span>© 2025 · Todos los derechos reservados</span>
   </footer>

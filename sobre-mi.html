@@ -193,36 +193,29 @@
       min-height: 70vh;
     }
     .historia-aside {
-      background: var(--sage-dark);
-      padding: 6rem 4rem 6rem 6rem;
+      background: #FAF7F2;
+      border: 3px solid #76886E;
+      padding: 6rem 4rem 6rem 5.5rem;
       position: relative;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
-    .historia-aside::after {
-      content: '';
-      position: absolute;
-      top: 0; right: -60px; bottom: 0;
-      width: 120px;
-      background: var(--sage-dark);
-      clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
-      z-index: 2;
-    }
+    .historia-aside::after { display: none; }
     .historia-aside-label {
       font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
-      color: rgba(255,255,255,0.45); margin-bottom: 1.5rem;
+      color: var(--earth); margin-bottom: 1.5rem;
     }
     .historia-aside-title {
       font-family: var(--font-display);
       font-size: clamp(1.8rem, 2.8vw, 2.6rem);
       font-weight: 300;
-      color: var(--warm-white);
+      color: var(--text);
       line-height: 1.2;
       margin-bottom: 2rem;
     }
-    .historia-aside-title em { font-style: italic; color: var(--earth-light); display: block; }
+    .historia-aside-title em { font-style: italic; color: #8C5042; display: block; }
     /* Número grande decorativo */
     .historia-aside-bg {
       position: absolute;
@@ -231,12 +224,12 @@
       font-size: 14rem;
       font-weight: 300;
       font-style: italic;
-      color: rgba(255,255,255,0.05);
+      color: rgba(140,80,66,0.05);
       line-height: 1;
       pointer-events: none;
     }
     .historia-content {
-      padding: 6rem 6rem 6rem 8rem;
+      padding: 6rem 6rem 6rem 6rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -357,7 +350,7 @@
     ══════════════════════════════════ */
     .banner-section {
       padding: 5rem 6rem;
-      background: var(--text);
+      background: linear-gradient(135deg, #8C5042 0%, #7A3E32 100%);
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -365,27 +358,27 @@
     .banner-section::before {
       content: '';
       position: absolute; inset: 0;
-      background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(168,196,162,0.1) 0%, transparent 65%);
+      background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(255,255,255,0.06) 0%, transparent 65%);
     }
     .banner-text {
       font-family: var(--font-display);
       font-size: clamp(1.8rem, 3.5vw, 3rem);
       font-weight: 300;
       font-style: italic;
-      color: rgba(255,255,255,0.85);
+      color: rgba(255,255,255,0.92);
       line-height: 1.4;
       max-width: 22ch;
       margin: 0 auto;
       position: relative;
       z-index: 2;
     }
-    .banner-text em { color: var(--earth-light); font-style: normal; }
+    .banner-text em { color: #F2D5C8; font-style: italic; font-weight: 300; }
     .banner-attr {
       margin-top: 2rem;
       font-size: 0.68rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.4);
       position: relative;
       z-index: 2;
     }
@@ -411,9 +404,11 @@
       margin-bottom: 1.2rem;
     }
     .cierre-nacen {
-      background: var(--cream);
-      border: 1px solid var(--line);
+      background: #FDF7F5;
+      border: 1px solid rgba(140,80,66,0.2);
+      border-top: 4px solid #8C5042;
       padding: 2.5rem 2.5rem;
+      box-shadow: 0 6px 24px rgba(140,80,66,0.08);
     }
     .cierre-nacen-label {
       font-size: 0.62rem;
@@ -479,9 +474,9 @@
     .btn-sage:hover { background: transparent; color: var(--sage-dark); }
 
     /* ─── Footer ── */
-    footer { background: var(--text); color: rgba(255,255,255,0.4); padding: 2.5rem 6rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; letter-spacing: 0.06em; }
-    footer strong { color: rgba(255,255,255,0.7); font-family: var(--font-display); font-size: 1rem; font-weight: 300; }
-    footer a { color: var(--sage-light); font-size: 0.72rem; }
+    footer { background: linear-gradient(135deg, #3A2820 0%, #2E2018 100%); color: rgba(255,255,255,0.45); padding: 2.5rem 6rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; letter-spacing: 0.06em; }
+    footer strong { color: rgba(255,255,255,0.85); font-family: var(--font-display); font-size: 1rem; font-weight: 300; }
+    footer a { color: rgba(217,182,169,0.8); }
 
     /* ─── Animaciones ── */
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -633,7 +628,7 @@
       <p class="banner-text">
         "Creo profundamente que hay <em>vida después de la herida</em>."
       </p>
-      <p class="banner-attr">Karla Moraga · Desde la experiencia, la conciencia y la esperanza</p>
+      <p class="banner-attr">La experiencia me enseñó que es posible sanar, y esa esperanza es la que acompaña mi trabajo</p>
     </section>
 
     <!-- ══ DESDE DÓNDE NACE ══ -->
@@ -686,9 +681,12 @@
   </main>
 
   <footer>
-    <strong>Karla Moraga Aguilera · Terapeuta Somática &amp; Docente</strong>
+    <strong>Karla Moraga · Terapeuta Somática &amp; Docente</strong>
+    <a href="https://www.instagram.com/semillas.de.sanacion" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      @semillas.de.sanacion
+    </a>
     <a href="index.html">← Volver al inicio</a>
-    <span>© 2025 · Todos los derechos reservados</span>
   </footer>
 
   <script>

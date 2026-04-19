@@ -18,16 +18,20 @@
     :root {
       --cream:      #FAF7F2;
       --warm-white: #FAF7F2;
-      --sage:       #a8c4a2;
-      --sage-light: #a8c4a2;
-      --sage-dark:  #5F7B5C;
-      --earth:      #C4956A;
-      --earth-light:#dbb899;
-      --earth-dark: #5C6E5A;
+      --sage:       #76886E;
+      --sage-light: #D9D3B8;
+      --sage-dark:  #76886E;
+      --earth:      #D9B6A9;
+      --earth-light:#D8CEEA;
+      --earth-dark: #6B4F72;
       --text:       #2e2b28;
       --text-soft:  #6b6560;
-      --text-muted: #B7B0B0;
-      --line:       rgba(196, 149, 106, 0.2);
+      --text-muted: #9E9890;
+      --line:       rgba(217,179,169,0.25);
+      --boho-bg:    #F5F0E8;
+      --salvia:     #76886E;
+      --terracota:  #6B4F72;
+      --rosa-polvo: #D9B6A9;
 
       --font-display: 'Cormorant Garamond', Georgia, serif;
       --font-body:    'Jost', sans-serif;
@@ -102,8 +106,8 @@
       display: block;
     }
     .sidebar nav a:hover {
-      color: var(--sage-dark);
-      border-bottom-color: var(--sage-light);
+      color: #76886E;
+      border-bottom-color: #A8B8A0;
     }
 
     .sidebar-foot {
@@ -159,7 +163,7 @@
     }
     .hero-title em {
       font-style: italic;
-      color: var(--sage-dark);
+      color: #76886E;
     }
 
     .hero-tagline {
@@ -178,7 +182,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.8rem;
-      background: var(--sage-dark);
+      background: #76886E;
       color: var(--warm-white);
       font-family: var(--font-body);
       font-size: 0.78rem;
@@ -186,13 +190,13 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       padding: 1rem 2rem;
-      border: 1px solid var(--sage-dark);
+      border: 1px solid #76886E;
       transition: background 0.25s, color 0.25s;
       width: fit-content;
     }
     .hero-cta:hover {
       background: transparent;
-      color: var(--sage-dark);
+      color: #76886E;
     }
     .hero-cta svg { width: 14px; height: 14px; }
 
@@ -235,7 +239,7 @@
       width: 72%;
       max-width: 340px;
       aspect-ratio: 3/4;
-      background: linear-gradient(160deg, var(--earth-light) 0%, var(--sage-light) 100%);
+      background: linear-gradient(160deg, var(--earth-light) 0%, #A8B8A0 100%);
       border-radius: 50% 50% 0 0;
       display: flex;
       align-items: center;
@@ -294,7 +298,7 @@
       color: var(--text);
       margin-bottom: 1.5rem;
     }
-    .section-title em { font-style: italic; color: var(--sage-dark); }
+    .section-title em { font-style: italic; color: #8C5042; }
 
     .section-body {
       font-size: 0.95rem;
@@ -313,7 +317,7 @@
     }
     .about-img {
       aspect-ratio: 3/4;
-      background: linear-gradient(135deg, var(--sage-light) 0%, var(--earth-light) 100%);
+      background: linear-gradient(135deg, #D9D3B8 0%, rgba(217,182,169,0.3) 100%);
       border-radius: 4px;
       display: flex;
       align-items: center;
@@ -353,8 +357,8 @@
       font-size: 0.72rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--sage-dark);
-      border: 1px solid var(--sage-light);
+      color: #76886E;
+      border: 1px solid rgba(118,136,110,0.3);
       padding: 0.35rem 0.9rem;
       border-radius: 2px;
     }
@@ -367,29 +371,16 @@
     .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
+      gap: 2rem;
     }
     .card {
       background: var(--warm-white);
-      border: 1px solid var(--line);
-      border-top: 3px solid var(--sage-dark);
+      border: none;
       padding: 2.2rem 1.8rem;
-      transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
+      transition: box-shadow 0.3s, transform 0.3s;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 2px 12px rgba(95,123,92,0.08);
     }
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 3px;
-      height: 0;
-      background: var(--earth);
-      transition: height 0.3s ease;
-    }
-    .card:hover { box-shadow: 0 12px 40px rgba(60,50,40,0.13); transform: translateY(-4px); border-top-color: var(--earth); }
-    .card:hover::before { height: 100%; }
     .card-num {
       font-family: var(--font-display);
       font-size: 2.2rem;
@@ -417,11 +408,11 @@
       font-size: 0.72rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--sage-dark);
-      border-bottom: 1px solid var(--sage-light);
+      color: #76886E;
+      border-bottom: 1px solid #A8B8A0;
       transition: border-color 0.2s;
     }
-    .card-link:hover { border-color: var(--sage-dark); }
+    .card-link:hover { border-color: #76886E; }
 
     /* ─── Programs / Codependencia ───────────────────── */
     .program-feature {
@@ -436,7 +427,7 @@
       letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--warm-white);
-      background: var(--sage-dark);
+      background: #76886E;
       padding: 0.3rem 0.8rem;
       display: inline-block;
       margin-bottom: 1rem;
@@ -458,7 +449,7 @@
     }
     .program-img {
       aspect-ratio: 4/5;
-      background: linear-gradient(145deg, var(--earth-light) 0%, var(--sage-light) 100%);
+      background: linear-gradient(145deg, var(--earth-light) 0%, #A8B8A0 100%);
       border-radius: 4px;
       display: flex;
       align-items: center;
@@ -492,7 +483,7 @@
     .guide-card:hover { box-shadow: 0 4px 20px rgba(60,50,40,0.07); }
     .guide-cover {
       aspect-ratio: 3/4;
-      background: linear-gradient(160deg, var(--cream) 0%, var(--sage-light) 100%);
+      background: linear-gradient(160deg, var(--cream) 0%, #A8B8A0 100%);
       margin-bottom: 1rem;
       display: flex;
       align-items: center;
@@ -552,7 +543,7 @@
       width: 36px;
       height: 36px;
       flex-shrink: 0;
-      background: var(--sage-light);
+      background: #A8B8A0;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -575,10 +566,10 @@
 
     /* ─── Book / Schedule ────────────────────────────── */
     .book-section {
-      background: var(--sage-dark) !important;
+      background: #8C5042 !important;
       text-align: center;
     }
-    .book-section .section-label { color: var(--sage-light); }
+    .book-section .section-label { color: rgba(255,255,255,0.55); }
     .book-section .section-title { color: var(--warm-white); }
     .book-section .section-body { color: rgba(255,255,255,0.7); max-width: 45ch; margin: 0 auto 2.5rem; }
     .book-btn {
@@ -586,7 +577,7 @@
       align-items: center;
       gap: 0.7rem;
       background: var(--warm-white);
-      color: var(--sage-dark);
+      color: #8C5042;
       font-family: var(--font-body);
       font-size: 0.78rem;
       font-weight: 400;
@@ -649,7 +640,7 @@
       resize: vertical;
     }
     .form-group input:focus,
-    .form-group textarea:focus { border-color: var(--sage); }
+    .form-group textarea:focus { border-color: #76886E; }
     .form-submit {
       background: var(--earth);
       color: var(--warm-white);
@@ -668,7 +659,7 @@
 
     /* ─── Footer ─────────────────────────────────────── */
     footer {
-      background: var(--text);
+      background: linear-gradient(135deg, #3A2820 0%, #2E2018 100%);
       color: rgba(255,255,255,0.4);
       padding: 2.5rem 5rem;
       display: flex;
@@ -678,7 +669,7 @@
       letter-spacing: 0.06em;
     }
     footer strong {
-      color: rgba(255,255,255,0.7);
+      color: rgba(255,255,255,0.85);
       font-family: var(--font-display);
       font-size: 1rem;
       font-weight: 300;
@@ -738,7 +729,8 @@
       .program-feature,
       .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
 
-      .cards { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr !important; gap: 1.2rem !important; }
+      .cards > div { min-height: auto !important; border-radius: 80px 80px 16px 16px !important; }
       .guides-grid { grid-template-columns: 1fr 1fr; }
       .resources-list { grid-template-columns: 1fr; }
 
@@ -781,7 +773,7 @@
       height: 100%;
       max-height: 100%;
       object-fit: contain;
-      filter: drop-shadow(0 -6px 28px rgba(95,123,92,0.15));
+      filter: drop-shadow(0 -6px 28px rgba(118,136,110,0.15));
     }
 
     @media (max-width: 520px) {
@@ -902,7 +894,7 @@
               font-size="15"
               font-style="italic"
               font-weight="300"
-              fill="rgba(95,123,92,0.75)"
+              fill="rgba(118,136,110,0.75)"
               letter-spacing="2.5"
             >
               <textPath href="#portalArc" startOffset="1%">
@@ -916,7 +908,7 @@
       </div>
     </section>
 
-    <div class="divider"><span class="divider-icon">✦ ✦ ✦</span></div>
+    <div class="divider"><span class="divider-icon" style="font-family:var(--font-display); font-style:italic; font-size:0.9rem; color:rgba(217,182,169,0.6); letter-spacing:0.3em;">· · ·</span></div>
 
     <!-- ¿PARA QUIÉN ES ESTO? -->
     <section style="padding:5rem 5rem; background:var(--warm-white); border-bottom:1px solid var(--line);">
@@ -938,10 +930,10 @@
         <div style="background:var(--warm-white); padding:2.2rem 1.8rem; position:relative; overflow:hidden; transition:background 0.25s;"
              onmouseover="this.style.background='#FBF5EC'" onmouseout="this.style.background='var(--warm-white)'">
           <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:0.6rem; opacity:0.6;">
-            <circle cx="12" cy="16" r="7" stroke="#7A4F5A" stroke-width="1.5"/>
-            <circle cx="20" cy="16" r="7" stroke="#7A4F5A" stroke-width="1.5"/>
+            <circle cx="12" cy="16" r="7" stroke="#6B4F72" stroke-width="1.5"/>
+            <circle cx="20" cy="16" r="7" stroke="#6B4F72" stroke-width="1.5"/>
           </svg>
-          <div style="font-family:'Whisper',cursive; font-size:3.5rem; color:rgba(122,79,90,0.2); line-height:1; margin-bottom:0.8rem; display:block;">vínculo</div>
+          <div style="font-family:'Whisper',cursive; font-size:3.5rem; color:rgba(107,79,114,0.2); line-height:1; margin-bottom:0.8rem; display:block;">vínculo</div>
           <div style="font-family:var(--font-display); font-size:1.05rem; font-weight:400; color:var(--text); margin-bottom:0.5rem; line-height:1.3;">Te pierdes en tus vínculos</div>
           <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.65;">Te cuesta poner límites o siempre terminas cuidando a otros antes que a ti.</p>
         </div>
@@ -949,10 +941,10 @@
         <div style="background:var(--warm-white); padding:2.2rem 1.8rem; position:relative; overflow:hidden; transition:background 0.25s;"
              onmouseover="this.style.background='#FBF5EC'" onmouseout="this.style.background='var(--warm-white)'">
           <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:0.6rem; opacity:0.6;">
-            <path d="M16 4 C22 8 28 12 26 18 C24 24 18 28 16 28 C14 28 8 24 6 18 C4 12 10 8 16 4Z" stroke="#C4956A" stroke-width="1.5" fill="none"/>
-            <path d="M16 8 L16 24" stroke="#C4956A" stroke-width="1" stroke-dasharray="2 2"/>
+            <path d="M16 4 C22 8 28 12 26 18 C24 24 18 28 16 28 C14 28 8 24 6 18 C4 12 10 8 16 4Z" stroke="#D9B6A9" stroke-width="1.5" fill="none"/>
+            <path d="M16 8 L16 24" stroke="#D9B6A9" stroke-width="1" stroke-dasharray="2 2"/>
           </svg>
-          <div style="font-family:'Whisper',cursive; font-size:3.5rem; color:rgba(196,149,106,0.2); line-height:1; margin-bottom:0.8rem; display:block;">herida</div>
+          <div style="font-family:'Whisper',cursive; font-size:3.5rem; color:rgba(197,182,210,0.2); line-height:1; margin-bottom:0.8rem; display:block;">herida</div>
           <div style="font-family:var(--font-display); font-size:1.05rem; font-weight:400; color:var(--text); margin-bottom:0.5rem; line-height:1.3;">Cargas experiencias difíciles</div>
           <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.65;">Heridas del pasado que siguen afectando tu presente aunque haya pasado tiempo.</p>
         </div>
@@ -960,10 +952,10 @@
         <div style="background:var(--warm-white); padding:2.2rem 1.8rem; position:relative; overflow:hidden; transition:background 0.25s;"
              onmouseover="this.style.background='#FBF5EC'" onmouseout="this.style.background='var(--warm-white)'">
           <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:0.6rem; opacity:0.6;">
-            <path d="M24 10 C20 6 13 5 8 10 C3 15 4 23 10 26 C16 29 23 26 26 20" stroke="#7A9E8E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-            <path d="M24 10 L20 7 M24 10 L27 7" stroke="#7A9E8E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M24 10 C20 6 13 5 8 10 C3 15 4 23 10 26 C16 29 23 26 26 20" stroke="#76886E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <path d="M24 10 L20 7 M24 10 L27 7" stroke="#76886E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <div style="font-family:'Whisper',cursive; font-size:3.5rem; color:rgba(122,158,142,0.25); line-height:1; margin-bottom:0.8rem; display:block;">volver</div>
+          <div style="font-family:'Whisper',cursive; font-size:3.5rem; color:rgba(118,136,110,0.2); line-height:1; margin-bottom:0.8rem; display:block;">volver</div>
           <div style="font-family:var(--font-display); font-size:1.05rem; font-weight:400; color:var(--text); margin-bottom:0.5rem; line-height:1.3;">Quieres volver a ti</div>
           <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.65;">Sientes que te perdiste de ti misma y buscas reconectar con tu cuerpo y tu vida.</p>
         </div>
@@ -975,7 +967,7 @@
     <!-- SOBRE MÍ -->
     <section id="sobre-mi">
       <p class="section-label">Sobre mí</p>
-      <h2 class="section-title">Hola, soy<br/><span style="font-family:'Whisper', cursive; font-size:1.8em; font-weight:400; color:var(--sage-dark);">Karla</span></h2>
+      <h2 class="section-title">Hola, soy<br/><span style="font-family:'Whisper', cursive; font-size:1.8em; font-weight:400; color:#76886E;">Karla</span></h2>
 
       <div class="about-grid">
         <div class="about-img" style="background:none; padding:0; overflow:hidden;">
@@ -1009,56 +1001,46 @@
         <p class="section-body">Ofrezco distintos formatos de acompañamiento según dónde estés en tu proceso y lo que necesitas en este momento.</p>
       </div>
 
-      <div class="cards">
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; align-items:end;" class="cards">
 
-        <!-- Card 01 — verde sage oscuro -->
-        <div style="background:#7A4F5A; padding:2.5rem 2rem; border-radius:18px 4px 18px 4px; position:relative; overflow:hidden; transition:transform 0.3s, box-shadow 0.3s; border:2px solid rgba(219,172,185,0.4);"
-             onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 40px rgba(30,45,28,0.25)'"
+        <!-- 01 Sesiones — #D9B6A9 rosa polvos -->
+        <div style="background:#D9B6A9; border-radius:50% 50% 12px 12px / 12% 12% 0% 0%; padding:3.5rem 2.2rem 2.5rem; position:relative; overflow:hidden; display:flex; flex-direction:column; min-height:420px; transition:box-shadow 0.3s, transform 0.3s;"
+             onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 12px 36px rgba(217,182,169,0.4)'"
              onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
-          <div style="position:absolute; top:1rem; right:1.5rem; font-family:var(--font-display); font-size:6rem; font-weight:300; font-style:italic; color:rgba(255,255,255,0.06); line-height:1; pointer-events:none;">01</div>
-          <div style="font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:1rem;">Acompañamiento individual</div>
-          <div style="font-family:var(--font-display); font-size:1.6rem; font-weight:400; color:var(--warm-white); margin-bottom:0.8rem; line-height:1.2;">Sesiones<br/>individuales</div>
-          <p style="font-size:0.85rem; color:rgba(255,255,255,0.65); line-height:1.8; margin-bottom:1.8rem;">Un espacio de una hora para trabajar con lo que está vivo en tu cuerpo y en tu historia. Presencial en Los Ángeles, Chile u online.</p>
-          <div style="display:flex; flex-direction:column; gap:0.7rem;">
-            <a href="sesiones-individuales.html"
-               style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--earth-light); text-decoration:none; border-bottom:1px solid rgba(219,184,153,0.35); padding-bottom:0.15rem; width:fit-content;">
-              Conocer más →
-            </a>
-            <a onclick="gtag('event','clic_agendar',{'event_category':'Agendar','event_label':'Card sesiones individuales'})"
-               href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20llegu%C3%A9%20a%20tu%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20agendar%20una%20sesi%C3%B3n%20contigo.%20%C2%BFPodr%C3%ADas%20contarme%20sobre%20disponibilidad%2C%20modalidad%20y%20valor%3F"
-               target="_blank"
-               style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.5); text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.18); padding-bottom:0.15rem; width:fit-content;">
-              Agendar →
-            </a>
+          <div style="position:absolute; top:1.5rem; right:2rem; font-family:var(--font-display); font-size:5rem; font-weight:300; font-style:italic; color:rgba(255,255,255,0.2); line-height:1; pointer-events:none; user-select:none;">01</div>
+          <div style="font-size:0.6rem; letter-spacing:0.22em; text-transform:uppercase; color:rgba(80,50,50,0.55); margin-bottom:1.4rem;">Acompañamiento individual</div>
+          <div style="font-family:var(--font-display); font-size:1.9rem; font-weight:300; color:#3D2520; margin-bottom:1.2rem; line-height:1.2;">Sesiones<br/>individuales</div>
+          <p style="font-size:0.85rem; color:rgba(60,35,30,0.7); line-height:1.85; flex:1; margin-bottom:2rem;">Un espacio de una hora para trabajar con lo que está vivo en tu cuerpo y en tu historia. Presencial en Los Ángeles, Chile u online.</p>
+          <div style="display:flex; flex-direction:column; gap:0.5rem; border-top:1px solid rgba(255,255,255,0.4); padding-top:1.2rem;">
+            <a href="sesiones-individuales.html" style="font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(60,35,30,0.65); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#3D2520'" onmouseout="this.style.color='rgba(60,35,30,0.65)'">Conocer más →</a>
+            <a onclick="gtag('event','clic_agendar',{'event_category':'Agendar','event_label':'Card sesiones'})" href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20llegu%C3%A9%20a%20tu%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20agendar%20una%20sesi%C3%B3n%20contigo.%20%C2%BFPodr%C3%ADas%20contarme%20sobre%20disponibilidad%2C%20modalidad%20y%20valor%3F" target="_blank" style="font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(60,35,30,0.45); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#3D2520'" onmouseout="this.style.color='rgba(60,35,30,0.45)'">Agendar →</a>
           </div>
         </div>
 
-        <!-- Card 02 — tierra cálido -->
-        <div style="background:#FBF5EC; border-radius:4px 18px 4px 18px; border:2px solid rgba(155,141,192,0.35); border-top:4px solid #9B8DC0; padding:2.5rem 2rem; position:relative; overflow:hidden; transition:transform 0.3s, box-shadow 0.3s;"
-             onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 40px rgba(196,149,106,0.2)'"
+        <!-- 02 Programas — #8C5042 terracota -->
+        <div style="background:#D9D3B8; border-radius:50% 50% 12px 12px / 12% 12% 0% 0%; padding:3.5rem 2.2rem 2.5rem; position:relative; overflow:hidden; display:flex; flex-direction:column; min-height:460px; transition:box-shadow 0.3s, transform 0.3s;"
+             onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 12px 36px rgba(217,211,184,0.5)'"
              onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
-          <div style="position:absolute; top:1rem; right:1.5rem; font-family:var(--font-display); font-size:6rem; font-weight:300; font-style:italic; color:rgba(155,141,192,0.1); line-height:1; pointer-events:none;">02</div>
-          <div style="font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:#9B8DC0; margin-bottom:1rem;">Procesos de 8 sesiones</div>
-          <div style="font-family:var(--font-display); font-size:1.6rem; font-weight:400; color:var(--text); margin-bottom:0.8rem; line-height:1.2;">Programas<br/>terapéuticos</div>
-          <p style="font-size:0.85rem; color:var(--text-soft); line-height:1.8; margin-bottom:1.8rem;">Procesos de mayor profundidad para trabajar temáticas específicas — ansiedad, límites, codependencia o expansión — con soporte constante.</p>
-          <a href="programas.html"
-             style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:#9B8DC0; text-decoration:none; border-bottom:1px solid rgba(155,141,192,0.4); padding-bottom:0.15rem; width:fit-content;">
-            Ver programas →
-          </a>
+          <div style="position:absolute; top:1.5rem; right:2rem; font-family:var(--font-display); font-size:5rem; font-weight:300; font-style:italic; color:rgba(80,70,50,0.15); line-height:1; pointer-events:none; user-select:none;">02</div>
+          <div style="font-size:0.6rem; letter-spacing:0.22em; text-transform:uppercase; color:rgba(80,70,50,0.55); margin-bottom:1.4rem;">Procesos de 8 sesiones</div>
+          <div style="font-family:var(--font-display); font-size:1.9rem; font-weight:300; color:#3D3020; margin-bottom:1.2rem; line-height:1.2;">Programas<br/>terapéuticos</div>
+          <p style="font-size:0.85rem; color:rgba(60,50,30,0.7); line-height:1.85; flex:1; margin-bottom:2rem;">Procesos de mayor profundidad para trabajar temáticas específicas — ansiedad, límites, codependencia o expansión — con soporte constante.</p>
+          <div style="border-top:1px solid rgba(80,70,50,0.2); padding-top:1.2rem;">
+            <a href="programas.html" style="font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(60,50,30,0.6); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#3D3020'" onmouseout="this.style.color='rgba(60,50,30,0.6)'">Ver programas →</a>
+          </div>
         </div>
 
-        <!-- Card 03 — oscuro profundo -->
-        <div style="background:#7A9E8E; padding:2.5rem 2rem; border-radius:18px 4px 4px 18px; position:relative; overflow:hidden; transition:transform 0.3s, box-shadow 0.3s; border:2px solid rgba(122,158,142,0.3);"
-             onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 40px rgba(20,18,16,0.3)'"
+        <!-- 03 Guías — #76886E verde salvia -->
+        <div style="background:#848C77; border-radius:50% 50% 12px 12px / 12% 12% 0% 0%; padding:3.5rem 2.2rem 2.5rem; position:relative; overflow:hidden; display:flex; flex-direction:column; min-height:420px; transition:box-shadow 0.3s, transform 0.3s;"
+             onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 12px 36px rgba(132,140,119,0.4)'"
              onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
-          <div style="position:absolute; top:1rem; right:1.5rem; font-family:var(--font-display); font-size:6rem; font-weight:300; font-style:italic; color:rgba(255,255,255,0.08); line-height:1; pointer-events:none;">03</div>
-          <div style="font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--sage-light); margin-bottom:1rem;">A tu propio ritmo</div>
-          <div style="font-family:var(--font-display); font-size:1.6rem; font-weight:400; color:var(--warm-white); margin-bottom:0.8rem; line-height:1.2;">Guías y<br/>recursos</div>
-          <p style="font-size:0.85rem; color:rgba(255,255,255,0.6); line-height:1.8; margin-bottom:1.8rem;">Materiales para trabajar de forma autónoma: guías somáticas de pago y recursos completamente gratuitos para empezar hoy.</p>
-          <a href="#guias"
-             style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--sage-light); text-decoration:none; border-bottom:1px solid rgba(168,196,162,0.3); padding-bottom:0.15rem; width:fit-content;">
-            Explorar →
-          </a>
+          <div style="position:absolute; top:1.5rem; right:2rem; font-family:var(--font-display); font-size:5rem; font-weight:300; font-style:italic; color:rgba(255,255,255,0.12); line-height:1; pointer-events:none; user-select:none;">03</div>
+          <div style="font-size:0.6rem; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:1.4rem;">A tu propio ritmo</div>
+          <div style="font-family:var(--font-display); font-size:1.9rem; font-weight:300; color:var(--warm-white); margin-bottom:1.2rem; line-height:1.2;">Guías y<br/>recursos</div>
+          <p style="font-size:0.85rem; color:rgba(255,255,255,0.7); line-height:1.85; flex:1; margin-bottom:2rem;">Materiales para trabajar de forma autónoma: guías somáticas de pago y recursos completamente gratuitos para empezar hoy.</p>
+          <div style="border-top:1px solid rgba(255,255,255,0.2); padding-top:1.2rem;">
+            <a href="#guias" style="font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.65); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">Explorar →</a>
+          </div>
         </div>
 
       </div>
@@ -1091,7 +1073,7 @@
       <div style="position:absolute; right:2rem; bottom:-1rem; font-family:var(--font-display); font-size:10rem; font-weight:300; font-style:italic; color:rgba(196,149,106,0.05); line-height:1; pointer-events:none;">voces</div>
 
       <p style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--earth); margin-bottom:1rem;">Testimonios</p>
-      <h2 style="font-family:var(--font-display); font-size:clamp(2rem,3vw,2.8rem); font-weight:300; color:var(--text); margin-bottom:3rem; line-height:1.15;">Lo que dicen quienes <em style="font-style:italic; color:var(--sage-dark);">han recorrido este camino</em></h2>
+      <h2 style="font-family:var(--font-display); font-size:clamp(2rem,3vw,2.8rem); font-weight:300; color:var(--text); margin-bottom:3rem; line-height:1.15;">Lo que dicen quienes <em style="font-style:italic; color:#76886E;">han recorrido este camino</em></h2>
 
       <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem;" class="testimonios-grid">
 
@@ -1107,7 +1089,7 @@
 
         <!-- Testimonio 2 -->
         <div style="background:var(--warm-white); border:1px solid var(--line); border-top:3px solid #7A4F5A; padding:2.2rem 2rem; position:relative;">
-          <div style="font-family:var(--font-display); font-size:3rem; color:rgba(122,79,90,0.2); line-height:0.8; margin-bottom:1rem;">"</div>
+          <div style="font-family:var(--font-display); font-size:3rem; color:rgba(107,79,114,0.2); line-height:0.8; margin-bottom:1rem;">"</div>
           <p style="font-size:0.88rem; color:var(--text-soft); line-height:1.85; margin-bottom:1.5rem; font-style:italic;">Una profesional 100% entregada a sus pacientes, con un carisma único. Llevo casi 4 años en terapia con ella y es indescriptible todo lo que he logrado emocional y físicamente. Ha sido un ángel en mi camino.</p>
           <div style="border-top:1px solid var(--line); padding-top:1rem;">
             <div style="font-family:var(--font-display); font-weight:400; color:var(--text); font-size:0.95rem;">Verónica T.</div>
@@ -1116,8 +1098,8 @@
         </div>
 
         <!-- Testimonio 3 -->
-        <div style="background:var(--warm-white); border:1px solid var(--line); border-top:3px solid var(--sage-dark); padding:2.2rem 2rem; position:relative;">
-          <div style="font-family:var(--font-display); font-size:3rem; color:rgba(95,123,92,0.2); line-height:0.8; margin-bottom:1rem;">"</div>
+        <div style="background:var(--warm-white); border:1px solid var(--line); border-top:3px solid #76886E; padding:2.2rem 2rem; position:relative;">
+          <div style="font-family:var(--font-display); font-size:3rem; color:rgba(118,136,110,0.2); line-height:0.8; margin-bottom:1rem;">"</div>
           <p style="font-size:0.88rem; color:var(--text-soft); line-height:1.85; margin-bottom:1.5rem; font-style:italic;">Es una terapeuta muy clara y orientadora en el proceso. Me sentí acompañado en mi proceso. Las estrategias corporales que utilizó me siguen acompañando cuando las necesito. ¡Gran profesional!</p>
           <div style="border-top:1px solid var(--line); padding-top:1rem;">
             <div style="font-family:var(--font-display); font-weight:400; color:var(--text); font-size:0.95rem;">Luisa T.</div>
@@ -1142,7 +1124,7 @@
       <div class="guides-grid">
         <!-- Card 1 -->
         <a href="guia-regulacion-dia-a-dia.html" class="guide-card" style="display:block; cursor:pointer;">
-          <div class="guide-cover" style="background: linear-gradient(160deg, var(--sage-light) 0%, var(--sage-dark) 100%);">
+          <div class="guide-cover" style="background: linear-gradient(160deg, #A8B8A0 0%, #76886E 100%);">
             <div class="guide-cover-inner">
               <div class="guide-label">Regulación para el día a día</div>
               <div class="guide-sub">Guía somática</div>

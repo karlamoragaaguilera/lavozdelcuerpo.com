@@ -14,14 +14,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Whisper&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --cream: #FAF7F2; --warm-white: #FAF7F2;
-      --sage: #a8c4a2; --sage-light: #a8c4a2; --sage-dark: #5F7B5C;
-      --earth: #C4956A; --earth-light: #dbb899;
-      --text: #2e2b28; --text-soft: #6b6560; --text-muted: #B7B0B0;
-      --line: rgba(196,149,106,0.2);
-      --accent: #7A5C8A; --accent-light: #c4a8d4; --accent-pale: #f3eef8;
-      --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-body: 'Jost', sans-serif;
+      --cream:       #FAF7F2;
+      --warm-white:  #FAF7F2;
+      --sage:        #76886E;
+      --sage-light:  #A8B8A0;
+      --sage-dark:   #76886E;
+      --earth:       #D9B6A9;
+      --earth-light: #EEE9DC;
+      --earth-dark:  #8C5042;
+      --text:        #2e2b28;
+      --text-soft:   #6b6560;
+      --text-muted:  #9E9890;
+      --line:        rgba(217,182,169,0.25);
+      --terracota:   #8C5042;
+      --salvia:      #76886E;
+      --rosa-polvo:  #D9B6A9;
+      --beige:       #EEE9DC;
+      --ciruela:     #6B4F72;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -32,13 +41,13 @@
     .sidebar.open { transform: translateX(0); }
     .sidebar nav ul { display: flex; flex-direction: column; gap: 0.2rem; }
     .sidebar nav a { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-soft); padding: 0.55rem 0; transition: color 0.2s; display: block; }
-    .sidebar nav a:hover { color: var(--sage-dark); }
+    .sidebar nav a:hover { color: #8C5042; }
     .sidebar-foot { font-size: 0.72rem; color: var(--text-muted); line-height: 1.6; margin-top: auto; }
     .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 90; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 3rem; background: rgba(250,247,242,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
     .topbar-logo .name { font-family: 'Whisper', cursive; font-size: 1.9rem; color: var(--text); display: block; }
     .topbar-logo .title { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); display: block; }
     .menu-toggle { background: transparent; border: 1px solid var(--line); width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 5px; cursor: pointer; }
-    .menu-toggle span { display: block; width: 20px; height: 1.5px; background: var(--text); }
+    .menu-toggle span { display: block; width: 20px; height: 1.5px; background: linear-gradient(135deg, #3A2820 0%, #2E2018 100%); }
     .main { padding-top: 72px; }
 
     /* HERO */
@@ -58,7 +67,7 @@
       content: '';
       position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 80% 70% at 20% 20%, rgba(168,196,162,0.5) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 70% at 20% 20%, rgba(168,184,160,0.5) 0%, transparent 60%),
         radial-gradient(ellipse 60% 80% at 85% 85%, rgba(45,65,43,0.6) 0%, transparent 55%);
     }
     .cover-inner {
@@ -236,7 +245,7 @@
     .cta-section::before {
       content: '';
       position: absolute; inset: 0;
-      background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(168,196,162,0.2) 0%, transparent 65%);
+      background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(168,184,160,0.2) 0%, transparent 65%);
     }
     .cta-inner { position: relative; z-index: 2; }
     .cta-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 1.2rem; }
@@ -253,9 +262,9 @@
     }
     .btn-cta-light:hover { background: transparent; color: var(--warm-white); }
 
-    footer { background: var(--text); color: rgba(255,255,255,0.4); padding: 2.5rem 6rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; }
-    footer strong { color: rgba(255,255,255,0.7); font-family: var(--font-display); font-size: 1rem; font-weight: 300; }
-    footer a { color: var(--sage-light); font-size: 0.72rem; }
+    footer { background: linear-gradient(135deg, #3A2820 0%, #2E2018 100%); color: rgba(255,255,255,0.45); padding: 2.5rem 6rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; }
+    footer strong { color: rgba(255,255,255,0.85); font-family: var(--font-display); font-size: 1rem; font-weight: 300; }
+    footer a { color: #D9B6A9; font-size: 0.72rem; }
 
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     .guide-tag   { animation: fadeUp 0.7s ease 0.1s both; }
@@ -273,6 +282,11 @@
       footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 2rem; }
       .topbar { padding: 1.2rem 1.5rem; }
     }
+
+    /* ── Boho visual elements ── */
+    .linea-deco { height:1px; background:linear-gradient(90deg,transparent,rgba(217,182,169,0.5),transparent); margin:2rem 0; }
+    .btn-boho { display:inline-flex; align-items:center; gap:0.8rem; background:#8C5042; color:var(--warm-white); font-family:var(--font-body); font-size:0.75rem; font-weight:400; letter-spacing:0.14em; text-transform:uppercase; padding:1.1rem 2.6rem; border:1px solid #8C5042; transition:background 0.25s,color 0.25s; text-decoration:none; }
+    .btn-boho:hover { background:transparent; color:#8C5042; }
   </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-33PZ0L65JL"></script>
@@ -286,7 +300,7 @@
 <body>
   <aside class="sidebar" id="sidebar">
     <div style="margin-bottom:3rem;">
-      <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:1.25rem; font-weight:400; font-style:italic; color:var(--text); display:block; margin-bottom:0.2rem;">Karla Moraga Aguilera</span>
+      <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:1.25rem; font-weight:400; font-style:italic; color:var(--text); display:block; margin-bottom:0.2rem;">Karla Moraga</span>
       <span style="font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-soft);">Terapeuta Somática &amp; Docente</span>
     </div>
     <nav><ul>
@@ -294,6 +308,7 @@
       <li><a href="sobre-mi.html">Sobre mí</a></li>
       <li><a href="mi-trabajo.html">Mi trabajo</a></li>
       <li><a href="programas.html">Programas</a></li>
+      <li><a href="semillas-y-reflexiones.html">Semillas y reflexiones</a></li>
       <li><a href="index.html#guias">Guías somáticas</a></li>
       <li><a href="index.html#recursos">Recursos gratuitos</a></li>
       <li><a href="https://wa.me/56956305069" target="_blank">Agendar</a></li>
@@ -395,7 +410,8 @@
   </main>
 
   <footer>
-    <strong>Karla Moraga Aguilera · Terapeuta Somática &amp; Docente</strong>
+    <strong>Karla Moraga · Terapeuta Somática &amp; Docente</strong>
+    <a href="https://www.instagram.com/semillas.de.sanacion" target="_blank" style="display:inline-flex; align-items:center; gap:0.4rem; color:rgba(217,182,169,0.8); font-size:0.72rem; text-decoration:none; letter-spacing:0.06em;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:4px; opacity:0.7;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@semillas.de.sanacion</a>
     <a href="index.html#guias">← Volver a guías</a>
     <span>© 2025 · Todos los derechos reservados</span>
   </footer>
