@@ -17,21 +17,30 @@
     :root {
       --cream:       #FAF7F2;
       --warm-white:  #FAF7F2;
-      --sage:        #76886E;
-      --sage-light:  #A8B8A0;
-      --sage-dark:   #76886E;
-      --earth:       #D9B6A9;
-      --earth-light: #EEE9DC;
-      --earth-dark:  #8C5042;
-      --text:        #2e2b28;
-      --text-soft:   #6b6560;
-      --text-muted:  #9E9890;
-      --line:        rgba(217,182,169,0.25);
-      --terracota:   #8C5042;
-      --salvia:      #76886E;
-      --rosa-polvo:  #D9B6A9;
-      --beige:       #EEE9DC;
-      --ciruela:     #6B4F72;
+      --sage:        #4A6E82;
+      --sage-light:  #8AAABB;
+      --sage-dark:   #2E5268;
+      --earth:       #B8A090;
+      --earth-light: #E8DDD5;
+      --earth-dark:  #7A5A4A;
+      --text:        #1E2830;
+      --text-soft:   #5A6068;
+      --text-muted:  #9AA0A8;
+      --line:        rgba(180,165,150,0.25);
+      --terracota:   #9A7060;
+      --salvia:      #4A6E82;
+      --rosa-polvo:  #C8B8A8;
+      --beige:       #EDE5DC;
+      --ciruela:     #2E5268;
+      /* Paleta 5to chakra — azul pizarra profundo + neutros cálidos */
+      --moss:        #3A6478;
+      --moss-light:  #7AAABB;
+      --moss-dark:   #1A3848;
+      --moss-pale:   #F0F4F6;
+      --warm-accent: #9A8070;
+      --warm-line:   rgba(154,128,112,0.2);
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Jost', sans-serif;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -103,14 +112,14 @@
 
     /* Hero right */
     .hero-right {
-      position: relative; background: #6B3830; overflow: hidden;
+      position: relative; background: #1A3848; overflow: hidden;
     }
     .hero-right::before {
       content: '';
       position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 75% 60% at 25% 25%, rgba(139,173,122,0.45) 0%, transparent 60%),
-        radial-gradient(ellipse 55% 70% at 80% 85%, rgba(30,45,25,0.6) 0%, transparent 55%);
+        radial-gradient(ellipse 75% 60% at 25% 25%, rgba(122,170,187,0.25) 0%, transparent 60%),
+        radial-gradient(ellipse 55% 70% at 80% 85%, rgba(10,20,30,0.55) 0%, transparent 55%);
     }
     /* Líneas orgánicas como raíces */
     .hero-roots {
@@ -137,13 +146,13 @@
 
     /* ═══ EMPATHY ═══ */
     .empathy-section {
-      padding: 6rem 6rem; background: var(--moss-pale); position: relative; overflow: hidden;
+      padding: 6rem 6rem; background: var(--cream); position: relative; overflow: hidden;
     }
     .empathy-section::after {
       content: 'territorio';
       position: absolute; right: -1rem; bottom: -2rem;
       font-family: var(--font-display); font-size: 10rem; font-weight: 300; font-style: italic;
-      color: rgba(74,103,65,0.06); line-height: 1; pointer-events: none; white-space: nowrap;
+      color: rgba(58,100,120,0.05); line-height: 1; pointer-events: none; white-space: nowrap;
     }
     .empathy-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 6rem; align-items: center; margin-top: 3rem; }
     .empathy-aside-inner {
@@ -157,7 +166,7 @@
     .empathy-aside-inner strong { font-weight: 400; color: var(--moss); font-style: normal; }
     .empathy-text p { font-size: 0.93rem; color: var(--text-soft); line-height: 1.9; margin-bottom: 1.2rem; }
     .empathy-highlight {
-      background: rgba(74,103,65,0.08); border-left: 3px solid var(--moss);
+      background: rgba(154,128,112,0.07); border-left: 3px solid var(--warm-accent);
       padding: 1.2rem 1.5rem; margin: 1.5rem 0;
       font-family: var(--font-display); font-size: 1.05rem; font-style: italic;
       color: var(--text); line-height: 1.6;
@@ -171,7 +180,7 @@
       padding: 1.6rem 1.8rem; border: 1px solid var(--line); background: var(--cream);
       transition: box-shadow 0.25s, border-color 0.25s, transform 0.25s;
     }
-    .for-you-item:hover { box-shadow: 0 6px 24px rgba(74,103,65,0.1); border-color: var(--moss-light); transform: translateY(-2px); }
+    .for-you-item:hover { box-shadow: 0 6px 24px rgba(58,100,120,0.08); border-color: var(--sage-light); transform: translateY(-2px); }
     .for-you-dot { width: 8px; height: 8px; background: var(--moss); border-radius: 50%; flex-shrink: 0; margin-top: 0.55rem; }
     .for-you-text { font-family: var(--font-display); font-size: 1.1rem; font-weight: 400; color: var(--text); line-height: 1.4; }
 
@@ -183,8 +192,8 @@
     .diff-section::before {
       content: ''; position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 65% 70% at 100% 0%, rgba(139,173,122,0.2) 0%, transparent 55%),
-        radial-gradient(ellipse 50% 55% at 0% 100%, rgba(74,103,65,0.3) 0%, transparent 55%);
+        radial-gradient(ellipse 65% 70% at 100% 0%, rgba(168,204,216,0.2) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 55% at 0% 100%, rgba(91,149,174,0.3) 0%, transparent 55%);
     }
     .diff-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--moss-light); margin-bottom: 1rem; position: relative; z-index: 2; }
     .diff-title { font-family: var(--font-display); font-size: clamp(2rem,3.2vw,2.8rem); font-weight: 300; color: var(--warm-white); margin-bottom: 1.5rem; line-height: 1.15; position: relative; z-index: 2; }
@@ -196,22 +205,22 @@
       margin-bottom: 4rem; position: relative; z-index: 2;
     }
     .diff-item { background: var(--moss-dark); padding: 2.2rem 2rem; transition: background 0.3s; }
-    .diff-item:hover { background: rgba(139,173,122,0.1); }
-    .diff-num { font-family: var(--font-display); font-size: 3rem; font-weight: 300; font-style: italic; color: rgba(139,173,122,0.25); display: block; line-height: 1; margin-bottom: 1rem; }
+    .diff-item:hover { background: rgba(168,204,216,0.1); }
+    .diff-num { font-family: var(--font-display); font-size: 3rem; font-weight: 300; font-style: italic; color: rgba(168,204,216,0.25); display: block; line-height: 1; margin-bottom: 1rem; }
     .diff-item-title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 400; color: var(--warm-white); margin-bottom: 0.6rem; }
     .diff-item-body { font-size: 0.83rem; color: rgba(255,255,255,0.48); line-height: 1.75; }
     .diff-note { font-family: var(--font-display); font-size: 1.05rem; font-style: italic; color: rgba(255,255,255,0.4); line-height: 1.7; padding-left: 1.5rem; border-left: 2px solid var(--moss-light); max-width: 54ch; position: relative; z-index: 2; }
 
     /* ═══ LAS 3 FASES ═══ */
-    .fases-section { padding: 6rem 6rem; background: var(--moss-pale); }
-    .fases-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(74,103,65,0.1); margin-top: 3rem; }
+    .fases-section { padding: 6rem 6rem; background: var(--beige); }
+    .fases-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(154,128,112,0.15); margin-top: 3rem; }
     .fase-card {
       background: var(--warm-white);
       padding: 2rem 1.8rem;
       transition: background 0.25s;
     }
     .fase-card:hover { background: var(--moss-pale); }
-    .fase-num { font-family: var(--font-display); font-size: 2.8rem; font-weight: 300; font-style: italic; color: rgba(140,80,66,0.25); line-height: 1; margin-bottom: 0.8rem; display: block; }
+    .fase-num { font-family: var(--font-display); font-size: 2.8rem; font-weight: 300; font-style: italic; color: rgba(75,126,150,0.25); line-height: 1; margin-bottom: 0.8rem; display: block; }
     .fase-title { font-family: var(--font-display); font-size: 1rem; font-weight: 400; color: var(--text); margin-bottom: 0.6rem; line-height: 1.3; }
     .fase-body { font-size: 0.83rem; color: var(--text-soft); line-height: 1.75; }
 
@@ -225,8 +234,8 @@
     .transform-text { font-size: 0.9rem; color: var(--text-soft); line-height: 1.6; }
     .transform-aside { position: sticky; top: 6rem; }
     .transform-aside-box {
-      background: var(--warm-white); border: 1px solid rgba(74,103,65,0.2);
-      border-left: 4px solid var(--moss); padding: 2.5rem 2rem;
+      background: var(--warm-white); border: 1px solid var(--warm-line);
+      border-left: 4px solid var(--warm-accent); padding: 2.5rem 2rem;
     }
     .transform-aside-box h4 { font-family: var(--font-display); font-size: 1.45rem; font-weight: 300; font-style: italic; color: var(--text); margin-bottom: 1rem; line-height: 1.35; }
     .transform-aside-box p { font-size: 0.88rem; color: var(--text-soft); line-height: 1.85; }
@@ -256,14 +265,14 @@
     /* ═══ CTA FINAL ═══ */
     .cta-section {
       padding: 7rem 6rem;
-      background: linear-gradient(140deg, #1A2E2B 0%, #6B3830 50%, #8C5042 100%) !important;
+      background: linear-gradient(140deg, #0E1E28 0%, #1A3848 60%, #2E5268 100%) !important;
       text-align: center; position: relative; overflow: hidden;
     }
     .cta-section::before {
       content: ''; position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 65% 70% at 15% 50%, rgba(139,173,122,0.2) 0%, transparent 55%),
-        radial-gradient(ellipse 55% 50% at 88% 50%, rgba(30,45,25,0.4) 0%, transparent 55%);
+        radial-gradient(ellipse 65% 70% at 15% 50%, rgba(122,170,187,0.12) 0%, transparent 55%),
+        radial-gradient(ellipse 55% 50% at 88% 50%, rgba(10,20,30,0.35) 0%, transparent 55%);
     }
     .cta-inner { position: relative; z-index: 2; }
     .cta-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1.5rem; }
@@ -308,9 +317,9 @@
     }
 
     /* ── Boho visual elements ── */
-    .linea-deco { height:1px; background:linear-gradient(90deg,transparent,rgba(217,182,169,0.5),transparent); margin:2rem 0; }
-    .btn-boho { display:inline-flex; align-items:center; gap:0.8rem; background:#8C5042; color:var(--warm-white); font-family:var(--font-body); font-size:0.75rem; font-weight:400; letter-spacing:0.14em; text-transform:uppercase; padding:1.1rem 2.6rem; border:1px solid #8C5042; transition:background 0.25s,color 0.25s; text-decoration:none; }
-    .btn-boho:hover { background:transparent; color:#8C5042; }
+    .linea-deco { height:1px; background:linear-gradient(90deg,transparent,rgba(118,136,110,0.5),transparent); margin:2rem 0; }
+    .btn-boho { display:inline-flex; align-items:center; gap:0.8rem; background:var(--moss); color:var(--warm-white); font-family:var(--font-body); font-size:0.75rem; font-weight:400; letter-spacing:0.14em; text-transform:uppercase; padding:1.1rem 2.6rem; border:1px solid var(--moss); transition:background 0.25s,color 0.25s; text-decoration:none; }
+    .btn-boho:hover { background:transparent; color:var(--moss); }
   </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-33PZ0L65JL"></script>
@@ -376,12 +385,26 @@
       <div class="hero-right">
         <div class="hero-roots">
           <svg viewBox="0 0 400 600" preserveAspectRatio="none">
-            <path d="M200,0 C200,150 120,200 80,350 C50,450 100,550 200,600" stroke="white" stroke-width="1" fill="none"/>
-            <path d="M200,0 C200,150 280,200 320,350 C350,450 300,550 200,600" stroke="white" stroke-width="0.7" fill="none"/>
-            <path d="M200,100 C150,180 100,220 60,300" stroke="white" stroke-width="0.5" fill="none"/>
-            <path d="M200,100 C250,180 300,220 340,300" stroke="white" stroke-width="0.5" fill="none"/>
-            <path d="M150,250 C100,300 80,380 60,450" stroke="white" stroke-width="0.4" fill="none"/>
-            <path d="M250,250 C300,300 320,380 340,450" stroke="white" stroke-width="0.4" fill="none"/>
+            <!-- Tronco central — baja desde arriba -->
+            <path d="M200,0 C198,80 202,140 200,200" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            <!-- Raíz principal izquierda -->
+            <path d="M200,200 C180,240 140,260 90,310 C60,350 45,410 40,480" stroke="white" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+            <!-- Raíz principal derecha -->
+            <path d="M200,200 C220,240 260,265 305,320 C335,360 348,415 355,490" stroke="white" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+            <!-- Raíz secundaria izquierda -->
+            <path d="M160,280 C130,310 100,340 70,390 C55,420 48,455 45,510" stroke="white" stroke-width="0.7" fill="none" stroke-linecap="round" opacity="0.7"/>
+            <!-- Raíz secundaria derecha -->
+            <path d="M240,285 C268,318 295,352 318,400 C332,430 340,468 342,520" stroke="white" stroke-width="0.6" fill="none" stroke-linecap="round" opacity="0.6"/>
+            <!-- Raíz fina izquierda profunda -->
+            <path d="M90,360 C70,390 55,430 50,490 C48,520 52,555 58,590" stroke="white" stroke-width="0.4" fill="none" stroke-linecap="round" opacity="0.4"/>
+            <!-- Raíz fina derecha profunda -->
+            <path d="M305,370 C325,405 340,448 345,500 C347,530 343,562 338,595" stroke="white" stroke-width="0.35" fill="none" stroke-linecap="round" opacity="0.35"/>
+            <!-- Raicilla izquierda -->
+            <path d="M40,480 C25,500 15,530 18,565" stroke="white" stroke-width="0.3" fill="none" stroke-linecap="round" opacity="0.3"/>
+            <!-- Raicilla derecha -->
+            <path d="M355,490 C370,512 378,545 372,575" stroke="white" stroke-width="0.28" fill="none" stroke-linecap="round" opacity="0.28"/>
+            <!-- Pequeña raíz cruzada -->
+            <path d="M120,420 C150,410 175,418 200,415 C225,412 250,405 280,415" stroke="white" stroke-width="0.3" fill="none" stroke-linecap="round" opacity="0.25"/>
           </svg>
         </div>
         <div class="hero-deco-word">territorio</div>
@@ -429,7 +452,7 @@
     </section>
 
     <!-- ══ CTA MEDIO ══ -->
-    <div style="background:var(--moss-pale); padding:3rem 6rem; display:flex; justify-content:center; border-top:1px solid rgba(74,103,65,0.2); border-bottom:1px solid rgba(74,103,65,0.2);">
+    <div style="background:var(--beige); padding:3rem 6rem; display:flex; justify-content:center; border-top:1px solid var(--warm-line); border-bottom:1px solid var(--warm-line);">
       <a onclick="gtag('event', 'clic_iniciar_programa', {'event_category': 'Programas', 'event_label': 'Donde empiezo yo - Iniciar'})" href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20me%20interesa%20comenzar%20el%20programa%20de%20acompa%C3%B1amiento%20de%208%20sesiones%20%E2%80%9CDonde%20empiezo%20yo%E2%80%9D.%20%C2%BFPodr%C3%ADas%20darme%20informaci%C3%B3n%20para%20iniciar%20este%20camino%3F" target="_blank" class="btn-primary">
         Quiero comenzar este proceso
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
@@ -588,11 +611,11 @@
             <div class="invest-inc-item"><div class="invest-inc-dot" style="background:var(--sage-dark);"></div><span>Material de apoyo por sesión</span></div>
             <div class="invest-inc-item"><div class="invest-inc-dot" style="background:var(--sage-dark);"></div><span>Comunidad de apoyo durante el proceso</span></div>
           </div>
-          <div style="background:rgba(118,136,110,0.07); border:1px solid rgba(118,136,110,0.15); padding:1rem 1.2rem; margin:1.2rem 0; font-size:0.82rem; color:var(--text-soft); line-height:1.6;">
+          <div style="background:rgba(154,128,112,0.07); border:1px solid rgba(154,128,112,0.15); padding:1rem 1.2rem; margin:1.2rem 0; font-size:0.82rem; color:var(--text-soft); line-height:1.6;">
             <strong style="display:block; font-family:var(--font-display); font-size:0.95rem; color:var(--text); margin-bottom:0.3rem;">Ingreso mediante lista de espera</strong>
             El programa grupal se abre en fechas específicas durante el año. Al inscribirte quedas en lista de espera para el próximo ciclo disponible.
           </div>
-          <a onclick="gtag('event', 'clic_iniciar_programa', {'event_category': 'Programas', 'event_label': 'Donde empiezo yo - Iniciar'})" href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20me%20gustar%C3%ADa%20sumarme%20a%20la%20lista%20de%20espera%20para%20el%20pr%C3%B3ximo%20ciclo%20grupal%20de%20Donde%20empiezo%20yo.%20%C2%BFPodr%C3%ADas%20contarme%20cu%C3%A1ndo%20se%20abrir%C3%A1n%20los%20pr%C3%B3ximos%20cupos%3F" target="_blank" style="display:flex; align-items:center; justify-content:center; gap:0.8rem; background: transparent; color: #8C5042;; font-family:var(--font-body); font-size:0.75rem; font-weight:400; letter-spacing:0.14em; text-transform:uppercase; padding:1.1rem 1.5rem; border:1px solid var(--sage-dark); transition:background 0.25s, color 0.25s; text-decoration:none; margin-top:0.5rem;" onmouseover="this.style.background='var(--sage-dark)';this.style.color='white'" onmouseout="this.style.background='transparent';this.style.color='var(--sage-dark)'">
+          <a onclick="gtag('event', 'clic_iniciar_programa', {'event_category': 'Programas', 'event_label': 'Donde empiezo yo - Iniciar'})" href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20me%20gustar%C3%ADa%20sumarme%20a%20la%20lista%20de%20espera%20para%20el%20pr%C3%B3ximo%20ciclo%20grupal%20de%20Donde%20empiezo%20yo.%20%C2%BFPodr%C3%ADas%20contarme%20cu%C3%A1ndo%20se%20abrir%C3%A1n%20los%20pr%C3%B3ximos%20cupos%3F" target="_blank" style="display:flex; align-items:center; justify-content:center; gap:0.8rem; background: transparent; color: var(--moss);; font-family:var(--font-body); font-size:0.75rem; font-weight:400; letter-spacing:0.14em; text-transform:uppercase; padding:1.1rem 1.5rem; border:1px solid var(--moss); transition:background 0.25s, color 0.25s; text-decoration:none; margin-top:0.5rem;" onmouseover="this.style.background='var(--sage-dark)';this.style.color='white'" onmouseout="this.style.background='transparent';this.style.color='var(--sage-dark)'">
             Unirme a la lista de espera
             <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
           </a>

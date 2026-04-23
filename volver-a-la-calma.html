@@ -22,17 +22,22 @@
       --sage-dark:    #5F7B5C;
       --earth:        #C4956A;
       --earth-light:  #dbb899;
-      --earth-dark:   #5C6E5A;
+      --earth-dark:   #7A5A4A;
       --text:         #2e2b28;
       --text-soft:    #6b6560;
-      --text-muted:   #B7B0B0;
-      --line:         rgba(196, 149, 106, 0.2);
+      --text-muted:   #9E9890;
+      --line:         rgba(180,165,148,0.22);
 
-      /* Acento de este programa: azul-verde pizarra */
-      --teal:         #7B6FA0;
-      --teal-light:   #C4BAD8;
-      --teal-dark:    #5A5075;
-      --teal-pale:    #F2F0F7;
+      /* Violeta ciruela cálido — sobrio, femenino, distinto del azul */
+      --teal:         #7A6088;
+      --teal-light:   #B0A0C0;
+      --teal-dark:    #4A3858;
+      --teal-pale:    #F3F0F6;
+
+      /* Neutros cálidos para elementos secundarios */
+      --warm-accent:  #9A8070;
+      --warm-line:    rgba(154,128,112,0.2);
+      --beige-alt:    #EDE5DC;
 
       --font-display: 'Cormorant Garamond', Georgia, serif;
       --font-body:    'Jost', sans-serif;
@@ -175,7 +180,7 @@
     /* Hero right — panel visual teal */
     .hero-right {
       position: relative;
-      background: #3D3060;
+      background: #3D2E48;
       overflow: hidden;
     }
     .hero-right::before {
@@ -183,7 +188,7 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 80% 60% at 20% 20%, #9B8DC0 0%, transparent 60%),
+        radial-gradient(ellipse 80% 60% at 20% 20%, rgba(176,160,192,0.3) 0%, transparent 60%),
         radial-gradient(ellipse 60% 70% at 85% 85%, #2a2040 0%, transparent 55%);
       opacity: 0.7;
     }
@@ -271,7 +276,7 @@
     ════════════════════════════════ */
     .intro-section {
       padding: 6rem 6rem;
-      background: var(--teal-pale);
+      background: var(--beige-alt);
       position: relative;
       overflow: hidden;
     }
@@ -469,7 +474,7 @@
     ════════════════════════════════ */
     .diff-section {
       padding: 6rem 6rem;
-      background: #3D3060;
+      background: #3D2E48;
       color: var(--warm-white);
       position: relative;
       overflow: hidden;
@@ -497,7 +502,7 @@
       z-index: 2;
     }
     .diff-item {
-      background: #3D3060;
+      background: #3D2E48;
       padding: 2.2rem 2rem;
       transition: background 0.3s;
     }
@@ -543,7 +548,7 @@
     ════════════════════════════════ */
     .transform-section {
       padding: 6rem 6rem;
-      background: var(--teal-pale);
+      background: var(--beige-alt);
     }
     .transform-cols {
       display: grid;
@@ -673,7 +678,7 @@
     ════════════════════════════════ */
     .cta-section {
       padding: 7rem 6rem;
-      background: linear-gradient(140deg, #1E1830 0%, #3D3060 50%, #7B6FA0 100%);
+      background: linear-gradient(140deg, #2A1E35 0%, #3D2E48 55%, #5A4468 100%);
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -905,7 +910,7 @@
 
 
     <!-- ══ CTA MEDIO ══ -->
-    <div style="background:var(--teal-pale); padding:3rem 6rem; display:flex; justify-content:center; border-top:1px solid rgba(94,138,133,0.2); border-bottom:1px solid rgba(94,138,133,0.2);">
+    <div style="background:var(--beige-alt); padding:3rem 6rem; display:flex; justify-content:center; border-top:1px solid rgba(94,138,133,0.2); border-bottom:1px solid rgba(94,138,133,0.2);">
       <a onclick="gtag('event', 'clic_iniciar_programa', {'event_category': 'Programas', 'event_label': 'Volver a la calma - Iniciar'})" href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20me%20interesa%20comenzar%20el%20programa%20de%20acompa%C3%B1amiento%20de%208%20sesiones%20%E2%80%9CVolver%20a%20la%20calma%E2%80%9D.%20%C2%BFPodr%C3%ADas%20darme%20informaci%C3%B3n%20para%20iniciar%20este%20camino%3F" target="_blank" class="btn-primary">
         Quiero comenzar este proceso
         <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M1 7h12M8 2l5 5-5 5"/></svg>

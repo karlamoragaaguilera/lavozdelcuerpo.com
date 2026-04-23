@@ -31,6 +31,11 @@
       --rosa-polvo:  #D9B6A9;
       --beige:       #EEE9DC;
       --ciruela:     #6B4F72;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Jost', sans-serif;
+      /* Tono tierra-rosa para etiquetas — reemplaza el verde sage */
+      --sage-dark:   #8C6050;
+      --sage-light:  #C8A090;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -116,7 +121,7 @@
 
     /* Franja lateral derecha — columna de valores */
     .hero-sidebar-col {
-      background: #7A4F5A;
+      background: #8C6050;
       padding: 7rem 2rem 3rem;
       display: flex;
       flex-direction: column;
@@ -302,9 +307,9 @@
       line-height: 1.9;
     }
     .formacion-cierre-quote {
-      background: var(--warm-white);
-      border: 1px solid var(--line);
-      border-left: 4px solid #7A4F5A;
+      background: #FAF6F3;
+      border: 1px solid rgba(140,96,80,0.2);
+      border-left: 4px solid #8C6050;
       padding: 2rem 2rem;
     }
     .formacion-cierre-quote p {
@@ -517,7 +522,7 @@
       div[style*="max-width:860px"] { max-width: 100% !important; }
 
       /* Frase de cierre — ancho completo */
-      div[style*="background:#7A4F5A"] { max-width: 100% !important; }
+      div[style*="background:#8C6050"] { max-width: 100% !important; }
       footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 2rem; }
       .topbar { padding: 1.2rem 1.5rem; }
     }
@@ -625,7 +630,7 @@
         <div class="origen-col">
           <div class="origen-col-num">03</div>
           <div class="origen-col-title">Una mirada amplia e integradora</div>
-          <div class="origen-col-text">Creo profundamente en la importancia de una mirada que no reduzca. No somos solo mente, ni solo historia, ni solo cuerpo: somos un entramado vivo donde emociones, memoria corporal, relaciones y biología se entrelazan. Por eso, mi trabajo busca acompañarte a comprender lo que te ocurre también desde aquello que tu cuerpo y sistema nervioso aprendieron.</div>
+          <div class="origen-col-text">Creo profundamente en la importancia de una mirada que no reduzca. No somos solo mente, ni solo historia, ni solo cuerpo: somos un ecosistema, un entramado vivo donde todo lo que existe se entrelaza. Por eso, mi trabajo busca acompañarte a comprender lo que te ocurre también desde aquello que tu cuerpo y sistema nervioso aprendieron.</div>
         </div>
       </div>
     </section>
@@ -689,7 +694,7 @@
           <p>Estas distintas formaciones dialogan entre sí, no coexisten por separado. Mi trabajo busca integrarlas en un acompañamiento vivo, que se adapta a lo que cada proceso necesita.</p>
         </div>
         <div class="formacion-cierre-quote">
-          <p>"No somos solo mente, ni solo historia, ni solo cuerpo: somos un entramado vivo donde todo se entrelaza."</p>
+          <p>"No somos solo mente, ni solo historia, ni solo cuerpo: somos un ecosistema, un entramado vivo donde todo lo que existe se entrelaza."</p>
         </div>
       </div>
     </section>
@@ -801,15 +806,15 @@
       <!-- Grid de enfoques — 2 columnas, centrado -->
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-bottom:4rem; max-width:860px;" class="metod-grid">
 
-        <div style="background:var(--warm-white); border:1px solid var(--line); border-left:4px solid #7A4F5A; padding:2rem 1.8rem; display:flex; align-items:flex-start; gap:1.2rem;">
+        <div style="background:var(--warm-white); border:1px solid var(--line); border-left:4px solid #8C6050; padding:2rem 1.8rem; display:flex; align-items:flex-start; gap:1.2rem;">
           <div style="flex-shrink:0; width:36px; height:36px; background:rgba(122,79,90,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A4F5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8C6050" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
               </svg>
             </div>
           <div>
             <div style="font-family:var(--font-display); font-size:1.1rem; font-weight:400; color:var(--text); margin-bottom:0.3rem;">Terapia somática</div>
-            <div style="font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:#7A4F5A; margin-bottom:0.7rem;">ISTT · Integrative Somatic Trauma Therapy</div>
+            <div style="font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:#8C6050; margin-bottom:0.7rem;">ISTT · Integrative Somatic Trauma Therapy</div>
             <p style="font-size:0.85rem; color:var(--text-soft); line-height:1.75;">Trabajamos con las sensaciones del cuerpo como puerta de entrada al proceso. El cuerpo guarda memoria de lo vivido — y también los recursos para sanar.</p>
           </div>
         </div>
@@ -862,8 +867,8 @@
       </div>
 
       <!-- Frase de cierre -->
-      <div style="background:#7A4F5A; padding:2.5rem 3rem; max-width:700px;">
-        <p style="font-family:var(--font-display); font-size:1.3rem; font-style:italic; font-weight:300; color:var(--warm-white); line-height:1.55;">"No somos solo mente, ni solo historia, ni solo cuerpo: somos un entramado vivo donde todo se entrelaza. Por eso, mi trabajo busca acompañarte desde ahí."</p>
+      <div style="background:#8C6050; padding:2.5rem 3rem; max-width:700px;">
+        <p style="font-family:var(--font-display); font-size:1.3rem; font-style:italic; font-weight:300; color:var(--warm-white); line-height:1.55;">"No somos solo mente, ni solo historia, ni solo cuerpo: somos un ecosistema, un entramado vivo donde todo lo que existe se entrelaza. Por eso, mi trabajo busca acompañarte desde ahí."</p>
         <p style="font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-top:1rem;">Karla Moraga · Terapeuta Somática</p>
       </div>
     </section>
