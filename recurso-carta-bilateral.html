@@ -19,7 +19,7 @@
       --earth: #C4956A; --earth-light: #dbb899;
       --text: #2e2b28; --text-soft: #6b6560; --text-muted: #B7B0B0;
       --line: rgba(196,149,106,0.2);
-      /* Acento: rosa palo — escritura y expresión emocional */
+      /* Acento: lavanda suave — contención y calma */
       --ac: #A06070; --ac-light: #D4A8B4; --ac-pale: #F7EFF2; --ac-dark: #6E3A48;
       --font-display: 'Cormorant Garamond', Georgia, serif;
       --font-body: 'Jost', sans-serif;
@@ -94,12 +94,14 @@
       padding-left: 1.2rem;
     }
     .hero-free-badge {
-      position: absolute; top: 7rem; right: 4rem;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
       background: rgba(255,255,255,0.1);
       backdrop-filter: blur(6px);
       border: 1px solid rgba(255,255,255,0.18);
-      padding: 0.8rem 1.4rem;
-      text-align: center; z-index: 3;
+      padding: 0.6rem 1.2rem;
+      text-align: center;
     }
     .badge-word {
       font-family: var(--font-display);
@@ -323,7 +325,7 @@
     @media (max-width: 900px) {
       .hero { padding: 5rem 2rem 3rem; min-height: auto; }
       .hero-emoji { display: none; }
-      .hero-free-badge { top: 8rem; right: 1.5rem; }
+      .hero-free-badge { }
       .body-section, .steps-section, .social-section, .cta-final { padding: 4rem 2rem; }
       .body-grid { grid-template-columns: 1fr; gap: 3rem; }
       .cta-box { position: static; }
@@ -375,15 +377,17 @@
 
     <!-- HERO -->
     <section class="hero">
-      <div class="hero-free-badge">
-        <span class="badge-word">Gratis</span>
-        <span class="badge-sub">Recurso gratuito</span>
-      </div>
       <div class="hero-emoji">🎧</div>
       <div class="hero-content">
         <div class="breadcrumb"><a href="index.html#recursos">← Recursos gratuitos</a><span>/</span><span>Carta bilateral</span></div>
         <p class="hero-tag">Recurso gratuito · Escritura terapéutica</p>
-        <h1 class="hero-title">Carta<br/><em>bilateral</em></h1>
+        <div style="margin-bottom:1.5rem;">
+          <h1 class="hero-title">Carta<br/><em>bilateral</em></h1>
+          <div class="hero-free-badge" style="display:inline-flex; margin-top:1rem;">
+            <span class="badge-word">Gratis</span>
+            <span class="badge-sub">Recurso gratuito</span>
+          </div>
+        </div>
         <p class="hero-sub">Escritura terapéutica con música de estimulación bilateral para procesar emociones, recuerdos y experiencias.</p>
       </div>
     </section>

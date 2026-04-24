@@ -29,10 +29,10 @@
       --line:        rgba(180,158,148,0.22);
 
       /* Rosa antiguo cálido — sobrio, femenino, 4to chakra */
-      --rose:        #B87870;
-      --rose-light:  #C89890;
-      --rose-dark:   #7A4840;
-      --rose-pale:   #F5EDEA;
+      --rose:        #C49088;
+      --rose-light:  #D8B0A8;
+      --rose-dark:   #8A5850;
+      --rose-pale:   #FAF2F0;
 
       /* Neutros cálidos para elementos secundarios */
       --warm-accent:  #9A8070;
@@ -124,7 +124,7 @@
     }
     .hero-title em {
       font-style: italic;
-      color: #9A5850;
+      color: #A87068;
       display: block;
     }
 
@@ -188,7 +188,7 @@
     /* Hero right — panel visual */
     .hero-right {
       position: relative;
-      background: #6A3A3A;
+      background: #7A4848;
       overflow: hidden;
     }
     .hero-right::before {
@@ -381,7 +381,7 @@
     /* ─── "Qué hace diferente" ── */
     .diff-section {
       padding: 6rem 6rem;
-      background: #5A3232;
+      background: #6A4040;
       color: var(--warm-white);
       position: relative;
       overflow: hidden;
@@ -640,7 +640,7 @@
     /* ─── CTA final ── */
     .cta-section {
       padding: 7rem 6rem;
-      background: linear-gradient(135deg, #4A2828 0%, #6A3A3A 55%, #8A5050 100%) !important;
+      background: linear-gradient(135deg, #5A3535 0%, #7A4848 55%, #9A6060 100%) !important;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -789,21 +789,46 @@
       <div class="hero-right">
         <!-- Palabra clave grande -->
         <div style="position:absolute; top:2.5rem; left:50%; transform:translateX(-50%); z-index:3; font-family:'Cormorant Garamond',Georgia,serif; font-size:clamp(4rem,8vw,9rem); font-weight:300; font-style:italic; color:rgba(255,255,255,0.13); letter-spacing:0.04em; white-space:nowrap; user-select:none;">amar</div>
-        <!-- Corazones concéntricos SVG -->
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-52%); z-index:2;">
-          <svg width="320" height="300" viewBox="0 0 320 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Corazón exterior -->
-            <path d="M160 260 C 160 260, 30 175, 30 95 C 30 55, 60 30, 95 30 C 122 30, 145 45, 160 65 C 175 45, 198 30, 225 30 C 260 30, 290 55, 290 95 C 290 175, 160 260, 160 260Z"
-                  stroke="rgba(255,255,255,0.07)" stroke-width="1" fill="none"/>
-            <!-- Corazón medio -->
-            <path d="M160 220 C 160 220, 65 155, 65 95 C 65 65, 85 48, 108 48 C 130 48, 148 60, 160 78 C 172 60, 190 48, 212 48 C 235 48, 255 65, 255 95 C 255 155, 160 220, 160 220Z"
-                  stroke="rgba(255,255,255,0.12)" stroke-width="1" fill="none"/>
-            <!-- Corazón interior -->
-            <path d="M160 178 C 160 178, 100 138, 100 100 C 100 78, 115 65, 132 65 C 146 65, 156 73, 160 85 C 164 73, 174 65, 188 65 C 205 65, 220 78, 220 100 C 220 138, 160 178, 160 178Z"
-                  stroke="rgba(255,255,255,0.18)" stroke-width="1" fill="none"/>
-            <!-- Corazón núcleo -->
-            <path d="M160 142 C 160 142, 128 120, 128 102 C 128 90, 136 82, 146 82 C 153 82, 158 87, 160 93 C 162 87, 167 82, 174 82 C 184 82, 192 90, 192 102 C 192 120, 160 142, 160 142Z"
-                  stroke="rgba(255,255,255,0.28)" stroke-width="1.2" fill="rgba(255,255,255,0.04)"/>
+        <!-- Flor de loto con anillos -->
+        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-55%); z-index:2;">
+          <svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Anillos concéntricos de fondo -->
+            <circle cx="150" cy="150" r="138" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+            <circle cx="150" cy="150" r="108" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <circle cx="150" cy="150" r="78"  stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+
+            <!-- Pétalos exteriores — 8 pétalos -->
+            <path d="M150,150 C138,118 138,85 150,68 C162,85 162,118 150,150Z"
+                  fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.3)" stroke-width="0.9" stroke-linejoin="round"/>
+            <path d="M150,150 C182,138 215,138 232,150 C215,162 182,162 150,150Z"
+                  fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.3)" stroke-width="0.9" stroke-linejoin="round"/>
+            <path d="M150,150 C162,182 162,215 150,232 C138,215 138,182 150,150Z"
+                  fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.3)" stroke-width="0.9" stroke-linejoin="round"/>
+            <path d="M150,150 C118,162 85,162 68,150 C85,138 118,138 150,150Z"
+                  fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.3)" stroke-width="0.9" stroke-linejoin="round"/>
+            <!-- Pétalos diagonales -->
+            <path d="M150,150 C165,120 185,102 200,98 C196,113 178,133 150,150Z"
+                  fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.22)" stroke-width="0.8" stroke-linejoin="round"/>
+            <path d="M150,150 C180,165 198,185 202,200 C187,196 167,178 150,150Z"
+                  fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.22)" stroke-width="0.8" stroke-linejoin="round"/>
+            <path d="M150,150 C135,180 115,198 100,202 C104,187 122,167 150,150Z"
+                  fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.22)" stroke-width="0.8" stroke-linejoin="round"/>
+            <path d="M150,150 C120,135 102,115 98,100 C113,104 133,122 150,150Z"
+                  fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.22)" stroke-width="0.8" stroke-linejoin="round"/>
+
+            <!-- Pétalos interiores — más luminosos -->
+            <path d="M150,150 C143,132 143,112 150,102 C157,112 157,132 150,150Z"
+                  fill="rgba(255,255,255,0.14)" stroke="rgba(255,255,255,0.45)" stroke-width="1" stroke-linejoin="round"/>
+            <path d="M150,150 C168,143 188,143 198,150 C188,157 168,157 150,150Z"
+                  fill="rgba(255,255,255,0.14)" stroke="rgba(255,255,255,0.45)" stroke-width="1" stroke-linejoin="round"/>
+            <path d="M150,150 C157,168 157,188 150,198 C143,188 143,168 150,150Z"
+                  fill="rgba(255,255,255,0.14)" stroke="rgba(255,255,255,0.45)" stroke-width="1" stroke-linejoin="round"/>
+            <path d="M150,150 C132,157 112,157 102,150 C112,143 132,143 150,150Z"
+                  fill="rgba(255,255,255,0.14)" stroke="rgba(255,255,255,0.45)" stroke-width="1" stroke-linejoin="round"/>
+
+            <!-- Centro -->
+            <circle cx="150" cy="150" r="10" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+            <circle cx="150" cy="150" r="4"  fill="rgba(255,255,255,0.5)"/>
           </svg>
         </div>
         <div class="hero-quote">

@@ -94,12 +94,14 @@
       padding-left: 1.2rem;
     }
     .hero-free-badge {
-      position: absolute; top: 7rem; right: 4rem;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
       background: rgba(255,255,255,0.1);
       backdrop-filter: blur(6px);
       border: 1px solid rgba(255,255,255,0.18);
-      padding: 0.8rem 1.4rem;
-      text-align: center; z-index: 3;
+      padding: 0.6rem 1.2rem;
+      text-align: center;
     }
     .badge-word {
       font-family: var(--font-display);
@@ -323,7 +325,7 @@
     @media (max-width: 900px) {
       .hero { padding: 5rem 2rem 3rem; min-height: auto; }
       .hero-emoji { display: none; }
-      .hero-free-badge { top: 8rem; right: 1.5rem; }
+      .hero-free-badge { }
       .body-section, .steps-section, .social-section, .cta-final { padding: 4rem 2rem; }
       .body-grid { grid-template-columns: 1fr; gap: 3rem; }
       .cta-box { position: static; }
@@ -375,15 +377,17 @@
 
     <!-- HERO -->
     <section class="hero">
-      <div class="hero-free-badge">
-        <span class="badge-word">Gratis</span>
-        <span class="badge-sub">Recurso gratuito</span>
-      </div>
       <div class="hero-emoji">🌿</div>
       <div class="hero-content">
         <div class="breadcrumb"><a href="index.html#recursos">← Recursos gratuitos</a><span>/</span><span>¿Qué es la terapia somática?</span></div>
         <p class="hero-tag">Recurso gratuito · Introducción a la terapia somática</p>
-        <h1 class="hero-title">¿Qué es la<br/><em>terapia somática?</em></h1>
+        <div style="margin-bottom:1.5rem;">
+          <h1 class="hero-title">¿Qué es la<br/><em>terapia somática?</em></h1>
+          <div class="hero-free-badge" style="display:inline-flex; margin-top:1rem;">
+            <span class="badge-word">Gratis</span>
+            <span class="badge-sub">Recurso gratuito</span>
+          </div>
+        </div>
         <p class="hero-sub">Una introducción honesta y sin tecnicismos a este enfoque y cómo puede apoyar tu proceso de sanación.</p>
       </div>
     </section>

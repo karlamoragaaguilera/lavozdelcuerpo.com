@@ -73,22 +73,24 @@
 
     /* ── Avatar / logo ── */
     .avatar-wrap {
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.4rem;
       position: relative;
+      display: inline-block;
     }
     .avatar {
-      width: 90px;
-      height: 90px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid rgba(118,136,110,0.25);
+      object-position: center 15%;
+      border: 2px solid rgba(196,149,106,0.3);
       display: block;
     }
     .avatar-ring {
       position: absolute;
-      inset: -5px;
+      inset: -6px;
       border-radius: 50%;
-      border: 1px solid rgba(118,136,110,0.15);
+      border: 1px solid rgba(196,149,106,0.15);
       pointer-events: none;
     }
 
@@ -518,20 +520,20 @@
 
     <a href="https://www.lavozdelcuerpo.com"
        class="link-card featured"
-       style="background: linear-gradient(135deg, #8C5042 0%, #C4956A 100%);"
+       style="background: linear-gradient(135deg, #C4A8B8 0%, #D8C0C8 50%, #E8D4C0 100%);"
        onclick="gtag('event','clic_links',{'event_category':'Bio links','event_label':'Sitio web'})">
-      <div class="link-icon" style="background:rgba(255,255,255,0.15);"><svg width="26" height="26" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="20" cy="20" r="13" stroke="rgba(255,255,255,0.8)" stroke-width="1.4" fill="rgba(255,255,255,0.08)"/>
-          <ellipse cx="20" cy="20" rx="6" ry="13" stroke="rgba(255,255,255,0.6)" stroke-width="1" fill="none"/>
-          <path d="M7 20 L33 20" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
-          <path d="M8 14 L32 14" stroke="rgba(255,255,255,0.35)" stroke-width="0.8"/>
-          <path d="M8 26 L32 26" stroke="rgba(255,255,255,0.35)" stroke-width="0.8"/>
+      <div class="link-icon" style="background:rgba(255,255,255,0.3);"><svg width="26" height="26" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="13" stroke="rgba(100,70,80,0.5)" stroke-width="1.4" fill="rgba(255,255,255,0.15)"/>
+          <ellipse cx="20" cy="20" rx="6" ry="13" stroke="rgba(100,70,80,0.4)" stroke-width="1" fill="none"/>
+          <path d="M7 20 L33 20" stroke="rgba(100,70,80,0.3)" stroke-width="1"/>
+          <path d="M8 14 L32 14" stroke="rgba(100,70,80,0.25)" stroke-width="0.8"/>
+          <path d="M8 26 L32 26" stroke="rgba(100,70,80,0.25)" stroke-width="0.8"/>
         </svg></div>
-      <div class="link-text">
-        <div class="link-title">lavozdelcuerpo.com</div>
-        <div class="link-sub">Mi sitio web completo</div>
+      <div class="link-text" style="color:#5A3840;">
+        <div class="link-title" style="color:#4A2830;">lavozdelcuerpo.com</div>
+        <div class="link-sub" style="color:#7A5860;">Mi sitio web completo</div>
       </div>
-      <div class="link-arrow">→</div>
+      <div class="link-arrow" style="color:#7A5860;">→</div>
     </a>
 
     <!-- Footer -->
