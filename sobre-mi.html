@@ -68,7 +68,7 @@
     .hero-visual {
       position: relative;
       background: #8A9E84;
-      overflow: hidden;
+      overflow: visible;
     }
     .hero-visual::before {
       content: '';
@@ -84,11 +84,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 2rem;
+      padding: 1rem;
+      overflow: visible;
     }
     .photo-placeholder {
-      width: 80%;
-      max-width: 340px;
+      width: 90%;
+      max-width: 380px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -98,6 +99,7 @@
       height: auto;
       object-fit: contain;
       display: block;
+      max-height: 85vh;
     }
     /* Número decorativo grande */
     .hero-visual-deco {
@@ -481,7 +483,7 @@
     /* ─── Responsive ── */
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; }
-      .hero-visual { min-height: 55vw; }
+      .hero-visual { min-height: 75vw; overflow: visible; }
       .hero-text { padding: 5rem 2rem 3rem; }
       .hero-breadcrumb { left: 2rem; }
       .historia-inner { grid-template-columns: 1fr; }

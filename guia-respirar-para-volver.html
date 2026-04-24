@@ -103,12 +103,13 @@
       color: rgba(255,255,255,0.04); line-height: 1;
       pointer-events: none; user-select: none;
     }
-    /* Precio flotante */
+    /* Precio — flujo normal al final del cover-inner */
     .cover-price-badge {
-      position: absolute; bottom: 2.5rem; left: 2.5rem;
+      display: inline-block;
       background: rgba(0,0,0,0.25); backdrop-filter: blur(6px);
       border: 1px solid rgba(255,255,255,0.15);
       padding: 1rem 1.5rem;
+      margin-top: 1.8rem;
     }
     .badge-original {
       font-size: 0.72rem; color: rgba(255,255,255,0.4);
@@ -336,13 +337,13 @@
           <div class="cover-title">Respirar<br/>para volver<br/>a ti</div>
           <div class="cover-divider"></div>
           <div class="cover-sub">Karla Moraga · Terapia Somática</div>
+          <div class="cover-price-badge">
+            <div class="badge-original">$11.000 CLP</div>
+            <div class="badge-price">$7.000</div>
+            <div class="badge-label">CLP · 36% descuento</div>
+          </div>
         </div>
         <div class="cover-deco">03</div>
-        <div class="cover-price-badge">
-          <div class="badge-original">$11.000 CLP</div>
-          <div class="badge-price">$7.000</div>
-          <div class="badge-label">CLP · 36% descuento</div>
-        </div>
       </div>
 
       <div class="hero-info">
