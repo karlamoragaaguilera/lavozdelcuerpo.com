@@ -745,7 +745,7 @@
       <li><a href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20me%20interesa%20comenzar%20el%20programa%20de%20acompa%C3%B1amiento%20de%208%20sesiones%20%E2%80%9CAmar%20sin%20perderte%E2%80%9D.%20%C2%BFPodr%C3%ADas%20darme%20informaci%C3%B3n%20para%20iniciar%20este%20camino%3F" target="_blank" onclick="closeSidebar()">Agendar</a></li>
       <li><a href="index.html#contacto" onclick="closeSidebar()">Contacto</a></li>
     </ul></nav>
-    <div class="sidebar-foot">© 2025 Karla Moraga<br/>Todos los derechos reservados</div>
+    <div class="sidebar-foot">© <span class="copy-year"></span> Karla Moraga<br/>Todos los derechos reservados</div>
   </aside>
 
   <!-- Topbar -->
@@ -1115,7 +1115,7 @@
     <strong>Karla Moraga · Terapeuta Somática &amp; Docente</strong>
     <a href="https://www.instagram.com/semillas.de.sanacion" target="_blank" style="display:inline-flex; align-items:center; gap:0.4rem; color:rgba(217,182,169,0.8); font-size:0.72rem; text-decoration:none; letter-spacing:0.06em;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:4px; opacity:0.7;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@semillas.de.sanacion</a>
     <a href="programas.html">← Volver a programas</a>
-    <span>© 2025 · Todos los derechos reservados</span>
+    <span>© <span class="copy-year"></span> · Todos los derechos reservados</span>
   </footer>
 
   <script>
@@ -1128,5 +1128,6 @@
     });
   </script>
 
+<script>document.querySelectorAll(".copy-year").forEach(e=>e.textContent=new Date().getFullYear());</script>
 </body>
 </html>

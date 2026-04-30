@@ -350,7 +350,7 @@
       <li><a href="https://wa.me/56956305069" target="_blank">Agendar</a></li>
       <li><a href="index.html#contacto">Contacto</a></li>
     </ul></nav>
-    <div class="sidebar-foot">© 2025 Karla Moraga<br/>Todos los derechos reservados</div>
+    <div class="sidebar-foot">© <span class="copy-year"></span> Karla Moraga<br/>Todos los derechos reservados</div>
   </aside>
 
   <header class="topbar">
@@ -690,7 +690,7 @@
     <strong>Karla Moraga · Terapeuta Somática &amp; Docente</strong>
     <a href="https://www.instagram.com/semillas.de.sanacion" target="_blank" style="display:inline-flex; align-items:center; gap:0.4rem; color:rgba(217,182,169,0.8); font-size:0.72rem; text-decoration:none; letter-spacing:0.06em;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:4px; opacity:0.7;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@semillas.de.sanacion</a>
     <a href="programas.html">← Volver a programas</a>
-    <span>© 2025 · Todos los derechos reservados</span>
+    <span>© <span class="copy-year"></span> · Todos los derechos reservados</span>
   </footer>
 
   <script>
@@ -699,5 +699,6 @@
     toggle.addEventListener('click', function(e) { e.stopPropagation(); sidebar.classList.toggle('open'); });
     document.addEventListener('click', function(e) { if (sidebar.classList.contains('open') && !sidebar.contains(e.target) && !toggle.contains(e.target)) sidebar.classList.remove('open'); });
   </script>
+<script>document.querySelectorAll(".copy-year").forEach(e=>e.textContent=new Date().getFullYear());</script>
 </body>
 </html>

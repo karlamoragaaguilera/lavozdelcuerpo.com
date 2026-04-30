@@ -209,7 +209,7 @@
       <li><a href="index.html#recursos" onclick="closeSidebar()">Recursos gratuitos</a></li>
       <li><a href="https://wa.me/56956305069" target="_blank" onclick="closeSidebar()">Agendar</a></li>
     </ul></nav>
-    <div class="sidebar-foot">© 2025 · Karla Moraga</div>
+    <div class="sidebar-foot">© <span class="copy-year"></span> · Karla Moraga</div>
   </aside>
 
   <header class="topbar">
@@ -428,7 +428,7 @@
       @semillas.de.sanacion
     </a>
     <a href="index.html">← Volver al inicio</a>
-    <span>© 2025 · Todos los derechos reservados</span>
+    <span>© <span class="copy-year"></span> · Todos los derechos reservados</span>
   </footer>
 
   <script>
@@ -441,5 +441,6 @@
     });
   </script>
 
+<script>document.querySelectorAll(".copy-year").forEach(e=>e.textContent=new Date().getFullYear());</script>
 </body>
 </html>

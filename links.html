@@ -539,9 +539,10 @@
     <!-- Footer -->
     <div class="footer">
       <div class="footer-brand">"Somos un entramado vivo — mente, historia, cuerpo y ecosistema. Mi trabajo es acompañarte desde ahí."</div>
-      <div class="footer-copy">© 2025 · Karla Moraga Aguilera</div>
+      <div class="footer-copy">© <span class="copy-year"></span> · Karla Moraga Aguilera</div>
     </div>
 
   </div>
+<script>document.querySelectorAll(".copy-year").forEach(e=>e.textContent=new Date().getFullYear());</script>
 </body>
 </html>

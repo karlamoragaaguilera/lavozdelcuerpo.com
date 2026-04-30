@@ -366,7 +366,7 @@
       <li><a href="https://wa.me/56956305069" target="_blank">Agendar</a></li>
       <li><a href="index.html#contacto">Contacto</a></li>
     </ul></nav>
-    <div class="sidebar-foot">© 2025 · Karla Moraga</div>
+    <div class="sidebar-foot">© <span class="copy-year"></span> · Karla Moraga</div>
   </aside>
 
   <header class="topbar">
@@ -497,5 +497,6 @@
     toggle.addEventListener('click', () => sidebar.classList.toggle('open'));
     document.addEventListener('click', (e) => { if (!sidebar.contains(e.target) && !toggle.contains(e.target)) sidebar.classList.remove('open'); });
   </script>
+<script>document.querySelectorAll(".copy-year").forEach(e=>e.textContent=new Date().getFullYear());</script>
 </body>
 </html>

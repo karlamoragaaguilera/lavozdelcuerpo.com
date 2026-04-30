@@ -760,7 +760,7 @@
       <li><a href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20me%20interesa%20comenzar%20el%20programa%20de%20acompa%C3%B1amiento%20de%208%20sesiones%20%E2%80%9CVolver%20a%20la%20calma%E2%80%9D.%20%C2%BFPodr%C3%ADas%20darme%20informaci%C3%B3n%20para%20iniciar%20este%20camino%3F" target="_blank" onclick="closeSidebar()">Agendar</a></li>
       <li><a href="index.html#contacto" onclick="closeSidebar()">Contacto</a></li>
     </ul></nav>
-    <div class="sidebar-foot">© 2025 Karla Moraga<br/>Todos los derechos reservados</div>
+    <div class="sidebar-foot">© <span class="copy-year"></span> Karla Moraga<br/>Todos los derechos reservados</div>
   </aside>
 
   <!-- Topbar -->
@@ -1136,5 +1136,6 @@
     });
   </script>
 
+<script>document.querySelectorAll(".copy-year").forEach(e=>e.textContent=new Date().getFullYear());</script>
 </body>
 </html>
