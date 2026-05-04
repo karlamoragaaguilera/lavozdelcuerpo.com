@@ -27,9 +27,9 @@
       --line:       rgba(196,149,106,0.2);
       --font-display: 'Cormorant Garamond', Georgia, serif;
       --font-body:    'Jost', sans-serif;
-      /* page accent: soft golden-green */
-      --accent:     #7A8C5A;
-      --accent-bg:  rgba(122,140,90,0.07);
+      /* page accent: dusty rose */
+      --accent:     #B07A6E;
+      --accent-bg:  rgba(176,122,110,0.07);
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
@@ -60,16 +60,16 @@
     .hero-title{font-family:var(--font-display);font-size:clamp(2.4rem,4.5vw,4.5rem);font-weight:300;line-height:1;color:var(--text);margin-bottom:1.2rem;letter-spacing:-0.02em;}
     .hero-title em{font-style:italic;color:var(--accent);display:block;}
     .hero-sub{font-family:var(--font-display);font-size:1.2rem;font-style:italic;font-weight:300;color:var(--text-soft);line-height:1.55;padding-left:1.2rem;border-left:2px solid var(--earth-light);max-width:52ch;margin-bottom:2rem;}
-    .btn-primary{display:inline-flex;align-items:center;gap:0.8rem;background:var(--sage-dark);color:var(--warm-white);font-family:var(--font-body);font-size:0.75rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;padding:1.1rem 2.4rem;border:1px solid var(--sage-dark);transition:background 0.25s,color 0.25s;}
-    .btn-primary:hover{background:transparent;color:var(--sage-dark);}
-    .btn-outline{display:inline-flex;align-items:center;gap:0.8rem;background:transparent;color:var(--sage-dark);font-family:var(--font-body);font-size:0.75rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;padding:1.1rem 2.4rem;border:1px solid var(--sage-dark);transition:background 0.25s,color 0.25s;}
-    .btn-outline:hover{background:var(--sage-dark);color:var(--warm-white);}
+    .btn-primary{display:inline-flex;align-items:center;gap:0.8rem;background:#B07A6E;color:var(--warm-white);font-family:var(--font-body);font-size:0.75rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;padding:1.1rem 2.4rem;border:1px solid #B07A6E;transition:background 0.25s,color 0.25s;}
+    .btn-primary:hover{background:transparent;color:#B07A6E;}
+    .btn-outline{display:inline-flex;align-items:center;gap:0.8rem;background:transparent;color:#B07A6E;font-family:var(--font-body);font-size:0.75rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;padding:1.1rem 2.4rem;border:1px solid #B07A6E;transition:background 0.25s,color 0.25s;}
+    .btn-outline:hover{background:#B07A6E;color:var(--warm-white);}
 
     /* SECTIONS */
     .section{padding:5rem 6rem;}
     .section-label{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--earth);margin-bottom:1rem;}
     .section-title{font-family:var(--font-display);font-size:clamp(1.8rem,2.8vw,2.6rem);font-weight:300;line-height:1.15;color:var(--text);margin-bottom:1.5rem;}
-    .section-title em{font-style:italic;color:var(--sage-dark);}
+    .section-title em{font-style:italic;color:#B07A6E;}
     .prose{font-size:0.95rem;color:var(--text-soft);line-height:1.9;max-width:62ch;}
     .prose p{margin-bottom:1.1rem;}
     .highlight-box{background:var(--accent-bg);border-left:3px solid var(--accent);padding:1.4rem 1.6rem;font-family:var(--font-display);font-size:1.05rem;font-style:italic;color:var(--text);line-height:1.65;margin:1.8rem 0;max-width:62ch;}
@@ -87,7 +87,7 @@
     .item-text{font-size:0.9rem;color:var(--text-soft);line-height:1.65;}
 
     /* BRIDGE BANNER */
-    .bridge{padding:3.5rem 6rem;background:#EEF0EB;border-top:1px solid rgba(140,155,125,0.25);border-bottom:1px solid rgba(140,155,125,0.25);display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+    .bridge{padding:3.5rem 6rem;background:#F5E8E3;border-top:1px solid rgba(217,182,169,0.4);border-bottom:1px solid rgba(217,182,169,0.4);display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
 
     /* CTA */
     .cta-section{padding:6rem;background:linear-gradient(135deg,#8C5042 0%,#A0604E 50%,#B87060 100%);text-align:center;position:relative;overflow:hidden;}
@@ -97,7 +97,7 @@
     .cta-title{font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3rem);font-weight:300;color:var(--warm-white);margin-bottom:1rem;line-height:1.15;}
     .cta-title em{font-style:italic;color:#F2D5C8;}
     .cta-body{font-size:0.93rem;color:rgba(255,255,255,0.7);max-width:44ch;margin:0 auto 2.5rem;line-height:1.85;}
-    .btn-cta{display:inline-flex;align-items:center;gap:0.8rem;background:var(--warm-white);color:var(--sage-dark);font-family:var(--font-body);font-size:0.75rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;padding:1.1rem 2.6rem;border:1px solid var(--warm-white);transition:background 0.25s,color 0.25s;}
+    .btn-cta{display:inline-flex;align-items:center;gap:0.8rem;background:var(--warm-white);color:#B07A6E;font-family:var(--font-body);font-size:0.75rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;padding:1.1rem 2.6rem;border:1px solid var(--warm-white);transition:background 0.25s,color 0.25s;}
     .btn-cta:hover{background:transparent;color:var(--warm-white);}
 
     footer{background:linear-gradient(135deg,#3A2820 0%,#2E2018 100%);color:rgba(255,255,255,0.45);padding:2.5rem 6rem;display:flex;justify-content:space-between;align-items:center;font-size:0.75rem;letter-spacing:0.06em;}
@@ -115,6 +115,9 @@
       .bridge{flex-direction:column;}
       footer{flex-direction:column;gap:0.5rem;text-align:center;padding:2rem;}
       .topbar{padding:1.2rem 1.5rem;}
+    }
+    @media(max-width:600px){
+      div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr !important;}
     }
   </style>
 </head>
@@ -193,6 +196,7 @@
           <div class="item"><div class="item-dot"></div><div class="item-text">Estrés crónico o agotamiento emocional</div></div>
           <div class="item"><div class="item-dot"></div><div class="item-text">Momentos de cambio o transición vital</div></div>
           <div class="item"><div class="item-dot"></div><div class="item-text">Sobrecarga emocional sin saber bien por qué</div></div>
+          <div class="item"><div class="item-dot"></div><div class="item-text">Apoyo para niños, bebés, adultos y mascotas</div></div>
         </div>
         <div class="item-list">
           <div class="item"><div class="item-dot"></div><div class="item-text">Dificultad para soltar el control o el miedo</div></div>
@@ -203,38 +207,69 @@
       </div>
     </section>
 
-    <!-- CÓMO LAS INTEGRO -->
+    <!-- CONSULTA PUNTUAL -->
     <section class="section" style="background:var(--warm-white); border-top:1px solid var(--line);">
+      <p class="section-label">Si buscas algo más puntual</p>
+      <h2 class="section-title">Consulta breve de <em>Flores de Bach</em></h2>
+      <div class="prose">
+        <p>No siempre es necesario un proceso terapéutico completo. Si buscas orientación específica — para ti, tu hijo, bebé o mascota — puedes agendar una consulta breve enfocada exclusivamente en Flores de Bach.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:2rem 0;max-width:620px;width:100%;">
+        <div style="background:var(--cream);border:1px solid var(--line);border-top:3px solid var(--accent);padding:1.5rem 1.4rem;">
+          <div style="font-family:var(--font-display);font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.3rem;">Duración</div>
+          <div style="font-family:var(--font-display);font-size:1.6rem;font-style:italic;font-weight:300;color:var(--accent);">30 min</div>
+        </div>
+        <div style="background:var(--cream);border:1px solid var(--line);border-top:3px solid var(--accent);padding:1.5rem 1.4rem;">
+          <div style="font-family:var(--font-display);font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.3rem;">Valor</div>
+          <div style="font-family:var(--font-display);font-size:1.6rem;font-style:italic;font-weight:300;color:var(--accent);">$20.000 CLP</div>
+        </div>
+        <div style="background:var(--cream);border:1px solid var(--line);border-top:3px solid var(--accent);padding:1.5rem 1.4rem;">
+          <div style="font-family:var(--font-display);font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.3rem;">Enfoque</div>
+          <div style="font-size:0.85rem;color:var(--text-soft);line-height:1.5;margin-top:0.3rem;">Orientación + selección de flores</div>
+        </div>
+      </div>
+      <p style="font-size:0.85rem;color:var(--text-soft);max-width:52ch;line-height:1.75;margin-bottom:2rem;">Incluye la preparación del floral personalizado según lo que conversemos. Disponible online o presencial en Los Ángeles.</p>
+      <a href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20quisiera%20agendar%20una%20consulta%20de%20Flores%20de%20Bach%20de%2030%20minutos."
+         target="_blank"
+         onclick="gtag('event','clic_agendar',{'event_category':'Flores de Bach','event_label':'Consulta puntual'})"
+         class="btn-primary">
+        Agendar consulta breve
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+      </a>
+    </section>
+
+    <!-- CÓMO LAS INTEGRO EN PROCESO -->
+    <section class="section" style="background:var(--cream); border-top:1px solid var(--line);">
       <p class="section-label">Mi forma de trabajarlas</p>
       <h2 class="section-title">Cómo las integro <em>en sesión</em></h2>
       <div class="prose">
-        <p>Las Flores de Bach no son un servicio aislado dentro de mi práctica. Las incorporo como parte de un acompañamiento terapéutico más amplio, cuando considero que pueden ser útiles para el proceso de la persona.</p>
+        <p>Dentro de mis procesos terapéuticos, las Flores de Bach forman parte de un acompañamiento somático más amplio. Las incorporo cuando considero que pueden ser útiles para lo que está emergiendo en el proceso de la persona.</p>
       </div>
       <div class="highlight-box">
-        No trabajo con las flores como receta independiente, sino como un apoyo que cobra sentido dentro de un vínculo terapéutico y de un proceso que ya está en movimiento.
+        En este contexto, la selección no surge de una receta aislada, sino de lo que aparece en el cuerpo, en el vínculo y en el proceso que ya está en movimiento.
       </div>
       <div class="prose">
-        <p>La selección de las flores emerge de lo que aparece en sesión: el estado emocional, los patrones que se observan en el cuerpo, lo que la persona trae. No hay una fórmula fija — el acompañamiento determina qué florales pueden tener sentido y en qué momento.</p>
+        <p>La selección emerge de lo que observo en sesión: el estado emocional, los patrones corporales, lo que la persona trae. No hay fórmula fija — el acompañamiento determina qué florales tienen sentido y en qué momento.</p>
       </div>
     </section>
 
     <!-- ES PARA TI SI -->
-    <section class="section" style="background:var(--cream); border-top:1px solid var(--line);">
+    <section class="section" style="background:var(--warm-white); border-top:1px solid var(--line);">
       <p class="section-label">¿Es para ti?</p>
       <h2 class="section-title">¿Es para ti <em>este enfoque?</em></h2>
       <div class="item-list" style="max-width:56ch;">
         <div class="item"><div class="item-dot"></div><div class="item-text">Tus emociones se sienten más intensas o difíciles de manejar de lo habitual</div></div>
         <div class="item"><div class="item-dot"></div><div class="item-text">Estás en un momento de mucho cambio y necesitas un apoyo adicional</div></div>
-        <div class="item"><div class="item-dot"></div><div class="item-text">Quieres complementar tu proceso terapéutico con algo más suave y corporal</div></div>
-        <div class="item"><div class="item-dot"></div><div class="item-text">Buscas algo que acompañe tu regulación entre sesiones</div></div>
+        <div class="item"><div class="item-dot"></div><div class="item-text">Buscas un apoyo puntual para ti, tu hijo, bebé o mascota</div></div>
+        <div class="item"><div class="item-dot"></div><div class="item-text">Quieres algo que acompañe tu regulación emocional sin comprometerte a un proceso largo</div></div>
       </div>
     </section>
 
     <!-- BRIDGE -->
     <div class="bridge">
       <div>
-        <p style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.5rem;">¿Buscas algo más profundo?</p>
-        <p style="font-family:var(--font-display);font-size:1.4rem;font-weight:300;font-style:italic;color:var(--text);line-height:1.3;">Un acompañamiento más profundo:<br/>las sesiones individuales pueden ser tu camino.</p>
+        <p style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.5rem;">Un acompañamiento más profundo</p>
+        <p style="font-family:var(--font-display);font-size:1.4rem;font-weight:300;font-style:italic;color:var(--text);line-height:1.3;">Si lo que buscas es un proceso terapéutico,<br/>las sesiones individuales pueden ser tu camino.</p>
       </div>
       <a href="sesiones-individuales.html" class="btn-outline" style="white-space:nowrap;">
         Ver sesiones individuales
@@ -247,11 +282,11 @@
       <div class="cta-inner">
         <p class="cta-label">¿Lista para comenzar?</p>
         <h2 class="cta-title">Un primer paso <em>siempre es posible</em></h2>
-        <p class="cta-body">Escríbeme y conversamos si las Flores de Bach pueden tener un lugar dentro de tu proceso.</p>
-        <a href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20quisiera%20saber%20m%C3%A1s%20sobre%20las%20Flores%20de%20Bach%20y%20c%C3%B3mo%20las%20integras%20en%20sesi%C3%B3n."
+        <p class="cta-body">Escríbeme — ya sea para una consulta puntual o para saber si las flores pueden acompañar tu proceso.</p>
+        <a href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20quisiera%20saber%20m%C3%A1s%20sobre%20las%20Flores%20de%20Bach."
            target="_blank" class="btn-cta"
            onclick="gtag('event','clic_agendar',{'event_category':'Flores de Bach','event_label':'CTA final'})">
-          Agendar sesión por WhatsApp
+          Agendar por WhatsApp
           <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
         </a>
       </div>
