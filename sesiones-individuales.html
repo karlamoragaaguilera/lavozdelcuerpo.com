@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <link rel="canonical" href="https://lavozdelcuerpo.com/sesiones-individuales.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sesiones individuales · Karla Moraga</title>
+  <title>Terapia Somática en Los Ángeles, Chile y online | Ansiedad, estrés, trauma y regulación emocional · Karla Moraga</title>
+  <meta name="description" content="Acompañamiento somático para ansiedad, estrés, trauma y desregulación emocional. Sesiones individuales enfocadas en el cuerpo y el sistema nervioso." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Whisper&display=swap" rel="stylesheet" />
@@ -173,7 +174,7 @@
     }
     .modal-card:hover { box-shadow: 0 10px 36px rgba(60,50,40,0.08); transform: translateY(-3px); }
     .modal-card.presencial { border-top: none; border-left: 4px solid #C9897A; background: #FDF5F3; }
-    .modal-card.online     { border-top: none; border-left: 4px solid #76886E; background: #F2F4F0; }
+    .modal-card.online     { border-top: none; border-left: 4px solid #9B7FA8; background: #F5F0F7; }
     .modal-icon { font-size: 1.8rem; margin-bottom: 1.2rem; display: block; }
     .modal-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; color: var(--text); margin-bottom: 0.5rem; }
     .modal-sub { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.5rem; }
@@ -278,6 +279,10 @@
       .hero-grid { grid-template-columns: 1fr 1fr; }
       footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 2rem; }
       .topbar { padding: 1.2rem 1.5rem; }
+      /* new sections responsive */
+      section[style*="grid-template-columns:1fr 1fr"], section[style*="grid-template-columns:repeat(2,1fr)"], section[style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: 1fr !important; }
+      div[style*="grid-template-columns:repeat(2,1fr)"], div[style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: 1fr !important; }
+      section[style*="padding:5rem 6rem"], div[style*="padding:4rem 6rem"] { padding: 3rem 2rem !important; }
     }
   </style>
 </head>
@@ -293,6 +298,9 @@
       <li><a href="sobre-mi.html">Sobre mí</a></li>
       <li><a href="mi-trabajo.html">Mi trabajo</a></li>
       <li><a href="programas.html">Programas</a></li>
+      <li><a href="sesiones-individuales.html">Sesiones individuales</a></li>
+      <li><a href="tre-trauma-los-angeles.html">TRE</a></li>
+      <li><a href="flores-de-bach-los-angeles.html">Flores de Bach</a></li>
       <li><a href="index.html#guias">Guías somáticas</a></li>
       <li><a href="index.html#recursos">Recursos gratuitos</a></li>
       <li><a href="https://wa.me/56956305069" target="_blank">Agendar</a></li>
@@ -324,6 +332,18 @@
       <p class="hero-sub">
         Un espacio para volver a ti — a tu cuerpo, a tu historia y a lo que está vivo en este momento de tu proceso.
       </p>
+      <p style="font-size:0.9rem; color:var(--text-soft); margin-bottom:2.5rem; line-height:1.7; max-width:52ch;">
+        Cada proceso es único. Según lo que emerja, puedo integrar herramientas como <a href="tre-trauma-los-angeles.html" style="color:var(--sage-dark); border-bottom:1px solid rgba(95,123,92,0.3);">TRE</a> o <a href="flores-de-bach-los-angeles.html" style="color:var(--sage-dark); border-bottom:1px solid rgba(95,123,92,0.3);">Flores de Bach</a>, entre otras, dentro del acompañamiento.
+      </p>
+      <a href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20llegu%C3%A9%20a%20tu%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20agendar%20una%20sesi%C3%B3n%20contigo.%20%C2%BFPodr%C3%ADas%20contarme%20sobre%20disponibilidad%2C%20modalidad%20y%20valor%3F"
+         target="_blank"
+         onclick="gtag('event','clic_agendar',{'event_category':'Sesiones','event_label':'Sesiones - Hero CTA'})"
+         style="display:inline-flex; align-items:center; gap:0.8rem; background:var(--sage-dark); color:var(--warm-white); font-family:var(--font-body); font-size:0.75rem; font-weight:400; letter-spacing:0.14em; text-transform:uppercase; padding:1.1rem 2.4rem; border:1px solid var(--sage-dark); transition:background 0.25s, color 0.25s; text-decoration:none; margin-bottom:3rem;"
+         onmouseover="this.style.background='transparent';this.style.color='var(--sage-dark)'"
+         onmouseout="this.style.background='var(--sage-dark)';this.style.color='var(--warm-white)'">
+        Agendar sesión
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+      </a>
 
       <div class="hero-grid">
         <div class="hero-stat">
@@ -345,10 +365,57 @@
       </div>
     </section>
 
+    <!-- ══ ¿ES PARA TI? ══ -->
+    <section style="padding:5rem 6rem; background:var(--warm-white); display:grid; grid-template-columns:1fr 1fr; gap:4rem;">
+      <div>
+        <p style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--sage-dark); margin-bottom:1.2rem;">¿Esto es para ti si…</p>
+        <div style="display:flex; flex-direction:column; gap:1rem;">
+          <div style="display:flex; gap:1rem; align-items:flex-start;"><div style="width:6px; height:6px; background:var(--sage-dark); border-radius:50%; flex-shrink:0; margin-top:0.55rem;"></div><span style="font-size:0.9rem; color:var(--text-soft); line-height:1.65;">Sientes ansiedad o activación constante que no cedes a pesar de intentarlo</span></div>
+          <div style="display:flex; gap:1rem; align-items:flex-start;"><div style="width:6px; height:6px; background:var(--sage-dark); border-radius:50%; flex-shrink:0; margin-top:0.55rem;"></div><span style="font-size:0.9rem; color:var(--text-soft); line-height:1.65;">Sientes desconexión de tu cuerpo o de lo que sientes</span></div>
+          <div style="display:flex; gap:1rem; align-items:flex-start;"><div style="width:6px; height:6px; background:var(--sage-dark); border-radius:50%; flex-shrink:0; margin-top:0.55rem;"></div><span style="font-size:0.9rem; color:var(--text-soft); line-height:1.65;">Cargues estrés acumulado que ya no sabes cómo sostener</span></div>
+          <div style="display:flex; gap:1rem; align-items:flex-start;"><div style="width:6px; height:6px; background:var(--sage-dark); border-radius:50%; flex-shrink:0; margin-top:0.55rem;"></div><span style="font-size:0.9rem; color:var(--text-soft); line-height:1.65;">Has hecho terapia muy mental y sientes que algo todavía no cambia</span></div>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:#8C5042; margin-bottom:1.2rem;">No es para ti si…</p>
+        <div style="display:flex; flex-direction:column; gap:1rem;">
+          <div style="display:flex; gap:1rem; align-items:flex-start;"><div style="width:6px; height:6px; background:rgba(140,80,66,0.4); border-radius:50%; flex-shrink:0; margin-top:0.55rem;"></div><span style="font-size:0.9rem; color:var(--text-soft); line-height:1.65;">Quieres resultados concretos sin atravesar un proceso interno</span></div>
+          <div style="display:flex; gap:1rem; align-items:flex-start;"><div style="width:6px; height:6px; background:rgba(140,80,66,0.4); border-radius:50%; flex-shrink:0; margin-top:0.55rem;"></div><span style="font-size:0.9rem; color:var(--text-soft); line-height:1.65;">Trabajar con el cuerpo no es algo disponible para ti en este momento</span></div>
+          <div style="display:flex; gap:1rem; align-items:flex-start;"><div style="width:6px; height:6px; background:rgba(140,80,66,0.4); border-radius:50%; flex-shrink:0; margin-top:0.55rem;"></div><span style="font-size:0.9rem; color:var(--text-soft); line-height:1.65;">No estás en un momento de vida donde puedas sostener un proceso terapéutico</span></div>
+          <div style="display:flex; gap:1rem; align-items:flex-start;"><div style="width:6px; height:6px; background:rgba(140,80,66,0.4); border-radius:50%; flex-shrink:0; margin-top:0.55rem;"></div><span style="font-size:0.9rem; color:var(--text-soft); line-height:1.65;">Lo que buscas es orientación puntual, no un acompañamiento continuo</span></div>
+          <p style="font-family:var(--font-display); font-size:0.95rem; font-style:italic; color:var(--text-soft); line-height:1.65; margin-top:0.5rem;">Ninguna de estas razones dice algo malo de ti — solo que quizás este no es tu momento, o este no es tu lugar.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ QUÉ PUEDES EXPERIMENTAR ══ -->
+    <section style="padding:5rem 6rem; background:var(--warm-white);">
+      <p style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--earth); margin-bottom:1rem;">Lo que puede abrirse</p>
+      <h2 style="font-family:var(--font-display); font-size:clamp(1.8rem,2.8vw,2.5rem); font-weight:300; line-height:1.15; color:var(--text); margin-bottom:2.5rem;">Qué puedes empezar a <em style="font-style:italic; color:var(--sage-dark);">experimentar</em></h2>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line);">
+        <div style="background:var(--warm-white); padding:2rem 1.8rem;">
+          <div style="font-family:var(--font-display); font-size:1.4rem; font-style:italic; font-weight:300; color:var(--sage-dark); margin-bottom:0.6rem;">Regulación</div>
+          <div style="font-size:0.85rem; color:var(--text-soft); line-height:1.65;">Mayor capacidad de volver a la calma sin tanto esfuerzo consciente.</div>
+        </div>
+        <div style="background:var(--warm-white); padding:2rem 1.8rem;">
+          <div style="font-family:var(--font-display); font-size:1.4rem; font-style:italic; font-weight:300; color:var(--sage-dark); margin-bottom:0.6rem;">Seguridad</div>
+          <div style="font-size:0.85rem; color:var(--text-soft); line-height:1.65;">Sensación creciente de habitar tu propio cuerpo sin miedo.</div>
+        </div>
+        <div style="background:var(--warm-white); padding:2rem 1.8rem;">
+          <div style="font-family:var(--font-display); font-size:1.4rem; font-style:italic; font-weight:300; color:var(--sage-dark); margin-bottom:0.6rem;">Menos reactividad</div>
+          <div style="font-size:0.85rem; color:var(--text-soft); line-height:1.65;">Respuestas más conscientes ante lo que antes te desbordaba.</div>
+        </div>
+        <div style="background:var(--warm-white); padding:2rem 1.8rem;">
+          <div style="font-family:var(--font-display); font-size:1.4rem; font-style:italic; font-weight:300; color:var(--sage-dark); margin-bottom:0.6rem;">Conexión</div>
+          <div style="font-size:0.85rem; color:var(--text-soft); line-height:1.65;">Reconexión con lo que tu cuerpo siente, quiere y necesita.</div>
+        </div>
+      </div>
+    </section>
+
     <!-- ══ QUÉ ES ══ -->
     <section class="que-section">
       <p style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--earth); margin-bottom:1rem;">El espacio</p>
-      <h2 style="font-family:var(--font-display); font-size:clamp(2rem,3.2vw,2.8rem); font-weight:300; line-height:1.15; color:var(--text); margin-bottom:1.5rem;">¿Qué pasa en una <em style="font-style:italic; color:var(--sage-dark);">sesión?</em></h2>
+      <h2 style="font-family:var(--font-display); font-size:clamp(2rem,3.2vw,2.8rem); font-weight:300; line-height:1.15; color:var(--text); margin-bottom:1.5rem;">Cómo es una <em style="font-style:italic; color:var(--sage-dark);">sesión</em></h2>
 
       <div class="que-grid">
         <div class="que-text">
@@ -398,11 +465,11 @@
         <div class="modal-card online">
           <div style="margin-bottom:1.2rem;">
             <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
-              <rect x="6" y="8" width="28" height="18" rx="2" stroke="#76886E" stroke-width="1.5" fill="rgba(118,136,110,0.08)"/>
-              <path d="M14 26 L12 34 M26 26 L28 34" stroke="#76886E" stroke-width="1.3" stroke-linecap="round"/>
-              <path d="M10 34 L30 34" stroke="#76886E" stroke-width="1.3" stroke-linecap="round"/>
-              <circle cx="20" cy="17" r="4" stroke="#76886E" stroke-width="1" fill="rgba(118,136,110,0.1)"/>
-              <path d="M17 17 C17 14 20 12 23 14" stroke="#76886E" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+              <rect x="6" y="8" width="28" height="18" rx="2" stroke="#9B7FA8" stroke-width="1.5" fill="rgba(155,127,168,0.08)"/>
+              <path d="M14 26 L12 34 M26 26 L28 34" stroke="#9B7FA8" stroke-width="1.3" stroke-linecap="round"/>
+              <path d="M10 34 L30 34" stroke="#9B7FA8" stroke-width="1.3" stroke-linecap="round"/>
+              <circle cx="20" cy="17" r="4" stroke="#9B7FA8" stroke-width="1" fill="rgba(155,127,168,0.1)"/>
+              <path d="M17 17 C17 14 20 12 23 14" stroke="#9B7FA8" stroke-width="0.8" fill="none" stroke-linecap="round"/>
             </svg>
           </div>
           <div class="modal-title">Online</div>
@@ -504,6 +571,24 @@
       </a>
     </div>
 
+    <!-- ══ INVERSIÓN ══ -->
+    <div style="padding:4rem 6rem; background:var(--cream); border-top:1px solid var(--line); border-bottom:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap;">
+      <div>
+        <p style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.6rem;">Valor</p>
+        <p style="font-family:var(--font-display); font-size:2rem; font-weight:300; font-style:italic; color:var(--text); line-height:1.1; margin-bottom:0.4rem;">$30.000 CLP</p>
+        <p style="font-size:0.85rem; color:var(--text-soft);">por sesión · Escríbeme si tienes preguntas antes de decidir.</p>
+      </div>
+      <a href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20el%20valor%20y%20disponibilidad%20de%20las%20sesiones%20individuales."
+         target="_blank"
+         onclick="gtag('event','clic_agendar',{'event_category':'Sesiones','event_label':'Sesiones - Valor CTA'})"
+         style="display:inline-flex; align-items:center; gap:0.8rem; background:transparent; color:var(--sage-dark); font-family:var(--font-body); font-size:0.75rem; font-weight:400; letter-spacing:0.14em; text-transform:uppercase; padding:1.1rem 2.4rem; border:1px solid var(--sage-dark); transition:background 0.25s, color 0.25s; text-decoration:none; white-space:nowrap;"
+         onmouseover="this.style.background='var(--sage-dark)';this.style.color='white'"
+         onmouseout="this.style.background='transparent';this.style.color='var(--sage-dark)'">
+        Agendar primera sesión
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+      </a>
+    </div>
+
     <!-- ══ CTA ══ -->
     <section class="cta-section">
       <div class="cta-inner">
@@ -522,12 +607,17 @@
   </main>
 
   <footer>
-    <strong>Karla Moraga · Terapeuta Somática &amp; Docente</strong>
-    <a href="https://www.instagram.com/semillas.de.sanacion" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-      @semillas.de.sanacion
-    </a>
-    <a href="index.html">← Volver al inicio</a>
+    <div style="display:flex;flex-direction:column;gap:0.4rem;">
+      <strong>Karla Moraga · Terapeuta Somática &amp; Docente</strong>
+      <a href="https://www.instagram.com/semillas.de.sanacion" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        @semillas.de.sanacion
+      </a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.3rem;">
+      <a href="index.html">← Volver al inicio</a>
+      <span>© <span class="copy-year"></span> · Todos los derechos reservados</span>
+    </div>
   </footer>
 
   <script>
