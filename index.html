@@ -24,6 +24,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&family=Whisper&display=swap" rel="stylesheet" />
 
   <style>
+    @font-face {
+      font-family: 'High Spirited';
+      src: url('High_Spirited.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Billie James';
+      src: url('BillieJames-Regular.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Brittany';
+      src: url('BrittanySignature.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
     /* ─── Design Tokens ─────────────────────────────── */
     :root {
       --cream:      #FAF7F2;
@@ -79,6 +98,10 @@
       z-index: 100;
       transform: translateX(-100%);
       transition: transform 0.4s ease;
+    }
+
+    .sidebar.open {
+      transform: translateX(0);
     }
 
     .sidebar-logo {
@@ -825,7 +848,7 @@
   <!-- ── Sidebar ── -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-logo">
-      <span style="font-family:'Cormorant Garamond', Georgia, serif; font-size:1.25rem; font-weight:400; font-style:italic; color:var(--text); letter-spacing:0.01em; display:block; margin-bottom:0.2rem;">Karla Moraga Aguilera</span>
+      <span style="font-family:'High Spirited', cursive; font-size:1.25rem; font-weight:400; font-style:normal; color:var(--text); letter-spacing:0.01em; display:block; margin-bottom:0.2rem; text-transform:none;">Karla Moraga Aguilera</span>
       <span>Terapeuta Somática &amp; Docente</span>
     </div>
 
@@ -851,13 +874,13 @@
   <main class="main">
 
     <!-- TOP LOGO BAR -->
-    <header style="position:fixed; top:0; right:0; left:0; z-index:90; display:flex; justify-content:space-between; align-items:center; padding:1.2rem 3rem; background:rgba(253,250,246,0.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);">
-      <div style="text-align:left; line-height:1.3;">
-        <span style="font-family:'Whisper', cursive; font-size:1.9rem; color:var(--text); display:block; letter-spacing:0.02em;">Karla Moraga</span>
+    <header style="position:fixed; top:0; right:0; left:0; z-index:90; display:flex; justify-content:space-between; align-items:center; padding:1.2rem 3rem; background-image:url('1000049723.jpg'); background-size:cover; background-position:center top; border-bottom:1px solid var(--line);">
+      <div style="text-align:left; line-height:1.5;">
+        <span style="font-family:'Brittany', cursive; font-size:2.2rem; color:#7a5c4a; display:block; letter-spacing:0.02em; line-height:1; margin-bottom:0.4rem;">Karla Moraga</span>
         <span style="font-family:var(--font-body); font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--text-muted); display:block;">Terapeuta Somática &amp; Docente</span>
       </div>
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" style="position:static; display:flex;">
-        <span></span><span></span><span></span>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" style="position:static; display:flex; background:#c4a882; padding:0.55rem 0.65rem; border-radius:4px; border:none;">
+        <span style="background:#fff8f2;"></span><span style="background:#fff8f2;"></span><span style="background:#fff8f2;"></span>
       </button>
     </header>
 
@@ -870,8 +893,7 @@
           <em>después de<br/>la herida</em>
         </h1>
         <p class="hero-tagline">
-          El cuerpo tiene su propia voz.<br/>
-          Mi trabajo es acompañarte a escucharla.<br/><br/>
+          <em style="font-family:var(--font-body); font-size:0.95rem; color:var(--text-muted); font-style:italic; font-weight:400; display:block; margin-bottom:1.2rem; white-space:nowrap;">El cuerpo tiene su propia voz. Mi trabajo es acompañarte a escucharla.</em>
           Acompañamiento somático para ansiedad, estrés, trauma,<br/>
           regulación emocional y procesos emocionales,<br/>
           integrando el trabajo con el cuerpo y el sistema nervioso.
