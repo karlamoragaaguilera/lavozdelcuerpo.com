@@ -215,7 +215,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.8rem;
-      background: #76886E;
+      background: #8A7B8C;
       color: var(--warm-white);
       font-family: var(--font-body);
       font-size: 0.78rem;
@@ -223,13 +223,13 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       padding: 1rem 2rem;
-      border: 1px solid #76886E;
+      border: 1px solid #8A7B8C;
       transition: background 0.25s, color 0.25s;
       width: fit-content;
     }
     .hero-cta:hover {
       background: transparent;
-      color: #76886E;
+      color: #8A7B8C;
     }
     .hero-cta svg { width: 14px; height: 14px; }
 
@@ -821,6 +821,28 @@
       .topbar-logo .name { font-size: 1.5rem; }
       .card-word { font-size: 4.5rem !important; }
       .card-word--lg { font-size: 3rem !important; }
+
+      /* Hero — evitar desborde */
+      .hero-left { padding: 5rem 1.2rem 2.5rem !important; }
+      .hero-eyebrow { font-size: 0.6rem !important; letter-spacing: 0.1em !important; white-space: normal !important; }
+      .hero-title { font-size: clamp(3rem,14vw,4.5rem) !important; }
+      .hero-tagline { font-size: 0.82rem !important; }
+      .hero-tagline em { white-space: normal !important; font-size: 0.82rem !important; }
+      .hero-cta { width: 100% !important; justify-content: center; box-sizing: border-box; }
+
+      /* About img — centrar */
+      .about-img { width: 100% !important; margin: 0 auto !important; }
+      .about-grid { gap: 2rem !important; }
+
+      /* Guides — 1 col en móvil muy pequeño, sin overflow */
+      .guides-grid { grid-template-columns: 1fr 1fr !important; gap: 0.8rem !important; overflow: hidden; }
+      .guide-card { min-width: 0 !important; }
+
+      /* Masterclass section en index */
+      .masterclass-grid > div:last-child { padding: 3rem 1.2rem !important; }
+
+      /* Overflow global */
+      section { overflow-x: hidden !important; }
     }
   </style>
   <!-- Google Analytics -->
@@ -896,13 +918,13 @@
     <!-- HERO -->
     <section id="inicio" class="hero" style="padding:0;">
       <div class="hero-left">
-        <p class="hero-eyebrow" style="text-align:center;">Terapia Somática Online · Los Ángeles, Chile &amp; Latinoamérica</p>
+        <p class="hero-eyebrow" style="text-align:center;">Terapia Somática · Presencial Los Ángeles, Chile · Online Chile y Latinoamérica</p>
         <h1 class="hero-title">
           Hay vida<br/>
           <em>después de<br/>la herida</em>
         </h1>
         <p class="hero-tagline">
-          <em style="font-family:var(--font-body); font-size:0.95rem; color:var(--text-muted); font-style:italic; font-weight:400; display:block; margin-bottom:1.2rem; white-space:nowrap;">El cuerpo tiene su propia voz. Mi trabajo es acompañarte a escucharla.</em>
+          <em style="font-family:var(--font-body); font-size:0.95rem; color:var(--text-muted); font-style:italic; font-weight:400; display:block; margin-bottom:1.2rem; white-space:normal;">El cuerpo tiene su propia voz. Mi trabajo es acompañarte a escucharla.</em>
           Acompañamiento somático para ansiedad, estrés, trauma,<br/>
           regulación emocional y procesos emocionales,<br/>
           integrando el trabajo con el cuerpo y el sistema nervioso.
