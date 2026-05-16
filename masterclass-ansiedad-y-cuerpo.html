@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="canonical" href="https://lavozdelcuerpo.com/masterclass-ansiedad-y-cuerpo.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ansiedad y cuerpo: una primera escucha · Masterclass gratuita · Karla Moraga</title>
+  <meta name="description" content="Masterclass gratuita de Karla Moraga. Entiende tu ansiedad desde el sistema nervioso, con prácticas de regulación somática. 60 minutos + guía descargable." />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Whisper&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream:       #FAF7F2;
+      --warm-white:  #FAF7F2;
+      --earth:       #D9B6A9;
+      --earth-dark:  #8C5042;
+      --text:        #2e2b28;
+      --text-soft:   #6b6560;
+      --text-muted:  #9E9890;
+      --line:        rgba(217,179,169,0.25);
+      --accent:      #7A6088;
+      --accent-dark: #4A3858;
+      --accent-pale: #F3F0F6;
+      --panel:       #3D2E48;
+      --font-display:'Cormorant Garamond', Georgia, serif;
+      --font-body:   'Jost', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--warm-white); color: var(--text); font-family: var(--font-body); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    .sidebar { position: fixed; top: 0; left: 0; width: 240px; height: 100vh; background: var(--cream); border-right: 1px solid var(--line); display: flex; flex-direction: column; padding: 2.5rem 2rem; z-index: 100; transform: translateX(-100%); transition: transform 0.4s ease; }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar-logo { line-height: 1.3; margin-bottom: 3rem; }
+    .sidebar-logo span { display: block; font-size: 0.72rem; font-family: var(--font-body); font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-soft); margin-top: 0.3rem; }
+    .sidebar nav ul { display: flex; flex-direction: column; gap: 0.2rem; }
+    .sidebar nav a { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-soft); padding: 0.55rem 0; transition: color 0.2s; display: block; }
+    .sidebar nav a:hover { color: var(--accent-dark); }
+    .sidebar-foot { font-size: 0.72rem; color: var(--text-muted); line-height: 1.6; margin-top: auto; }
+    .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.35); z-index: 99; }
+    .overlay.show { display: block; }
+
+    .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 90; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 3rem; background: rgba(250,247,242,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+    .topbar-logo .name { font-family: 'Whisper', cursive; font-size: 1.9rem; color: var(--text); display: block; }
+    .topbar-logo .title { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); display: block; }
+    .menu-toggle { background: transparent; border: 1px solid var(--line); width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 5px; cursor: pointer; }
+    .menu-toggle span { display: block; width: 20px; height: 1.5px; background: var(--text); }
+    .main { padding-top: 72px; }
+
+    /* PORTADA */
+    .portada { min-height: 92vh; background: var(--panel); position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; }
+    .portada-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 15% 30%, rgba(176,160,192,0.18) 0%, transparent 60%), radial-gradient(ellipse 50% 60% at 90% 80%, rgba(42,32,64,0.6) 0%, transparent 55%); }
+    .portada-rings { position: absolute; top: 40%; right: 8%; width: 480px; height: 480px; transform: translateY(-50%); }
+    .portada-ring { position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,0.06); top: 50%; left: 50%; transform: translate(-50%,-50%); }
+    .portada-ring:nth-child(1) { width: 110px; height: 110px; border-color: rgba(255,255,255,0.14); }
+    .portada-ring:nth-child(2) { width: 210px; height: 210px; border-color: rgba(255,255,255,0.09); }
+    .portada-ring:nth-child(3) { width: 320px; height: 320px; }
+    .portada-ring:nth-child(4) { width: 440px; height: 440px; border-color: rgba(255,255,255,0.04); }
+    .portada-ring-word { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: var(--font-display); font-style: italic; font-size: 1rem; color: rgba(255,255,255,0.28); letter-spacing: 0.14em; white-space: nowrap; z-index: 1; }
+    .portada-deco { position: absolute; bottom: -2rem; left: -2rem; font-family: var(--font-display); font-size: clamp(10rem,20vw,22rem); font-weight: 300; font-style: italic; color: rgba(255,255,255,0.03); line-height: 1; user-select: none; pointer-events: none; white-space: nowrap; }
+    .portada-content { position: relative; z-index: 2; padding: 6rem 7rem 5rem; max-width: 820px; }
+    .portada-marca { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 2.8rem; }
+    .portada-badge { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(217,182,169,0.85); border: 1px solid rgba(217,182,169,0.3); padding: 0.4rem 1rem; margin-bottom: 2rem; }
+    .portada-title { font-family: var(--font-display); font-size: clamp(3rem,6vw,6rem); font-weight: 300; line-height: 0.95; color: rgba(255,255,255,0.92); letter-spacing: -0.02em; margin-bottom: 0.8rem; }
+    .portada-title em { font-style: italic; color: rgba(217,182,169,0.85); display: block; }
+    .portada-subtitle { font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.28); margin-bottom: 2.2rem; }
+    .portada-quote { font-family: var(--font-display); font-style: italic; font-size: 1.05rem; color: rgba(255,255,255,0.48); line-height: 1.7; max-width: 52ch; margin-bottom: 3rem; border-left: 1px solid rgba(217,182,169,0.3); padding-left: 1.5rem; }
+    .portada-pills { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 3.5rem; }
+    .portada-pill { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); border: 1px solid rgba(255,255,255,0.1); padding: 0.35rem 0.9rem; }
+    .btn-main { display: inline-flex; align-items: center; gap: 0.8rem; background: rgba(217,182,169,0.15); color: rgba(255,255,255,0.85); font-family: var(--font-body); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 1.1rem 2.4rem; border: 1px solid rgba(217,182,169,0.35); transition: background 0.25s, border-color 0.25s; }
+    .btn-main:hover { background: rgba(217,182,169,0.28); border-color: rgba(217,182,169,0.6); }
+
+    /* VIDEO */
+    .video-section { background: var(--panel); padding: 0 3rem 4rem; }
+    .video-inner { max-width: 880px; margin: 0 auto; }
+    .video-embed { position: relative; padding-bottom: 56.25%; background: #2a1e38; border: 1px solid rgba(255,255,255,0.08); }
+    .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+    .video-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.2rem; }
+    .video-placeholder p { font-family: var(--font-display); font-style: italic; color: rgba(255,255,255,0.28); font-size: 1rem; }
+
+    /* PDF */
+    .pdf-section { background: var(--panel); padding: 0 3rem 6rem; }
+    .pdf-strip { max-width: 880px; margin: 0 auto; background: rgba(176,160,192,0.18); border: 1px solid rgba(176,160,192,0.3); display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2rem; padding: 2rem 2.5rem; }
+    .pdf-label { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(217,182,169,0.55); margin-bottom: 0.4rem; }
+    .pdf-title { font-family: var(--font-display); font-style: italic; font-size: 1.5rem; color: rgba(255,255,255,0.78); margin-bottom: 0.4rem; line-height: 1.2; }
+    .pdf-desc { font-size: 0.78rem; color: rgba(255,255,255,0.32); }
+    .btn-dl { display: inline-flex; flex-direction: column; align-items: center; gap: 0.3rem; background: rgba(176,160,192,0.18); color: rgba(220,210,235,0.9); border: 1px solid rgba(176,160,192,0.4); padding: 1.1rem 1.6rem; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap; transition: background 0.25s, border-color 0.25s; }
+    .btn-dl:hover { background: rgba(176,160,192,0.32); border-color: rgba(176,160,192,0.7); }
+    .btn-dl svg { width: 18px; height: 18px; margin-bottom: 0.2rem; }
+
+    /* BLOQUES */
+    .bloques-section { background: var(--warm-white); padding: 6rem 5rem; border-bottom: 1px solid var(--line); }
+    .section-label { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--earth-dark); margin-bottom: 0.8rem; }
+    .section-title { font-family: var(--font-display); font-size: clamp(2rem,3.5vw,3rem); font-weight: 300; font-style: italic; color: var(--text); margin-bottom: 3.5rem; line-height: 1.2; }
+    .bloques-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 1px; background: var(--line); }
+    .bloque-card { background: var(--warm-white); padding: 2.5rem 1.6rem; transition: background 0.2s; }
+    .bloque-card:hover { background: var(--accent-pale); }
+    .bloque-tiempo { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.4rem; display: block; }
+    .bloque-num { font-family: var(--font-display); font-size: 3.5rem; font-weight: 300; font-style: italic; color: rgba(122,96,136,0.13); line-height: 1; margin-bottom: 0.6rem; }
+    .bloque-tag { display: inline-block; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); border: 1px solid rgba(122,96,136,0.25); padding: 0.2rem 0.6rem; margin-bottom: 0.7rem; }
+    .bloque-title { font-family: var(--font-display); font-size: 1.25rem; font-style: italic; font-weight: 300; color: var(--text-soft); margin-bottom: 0.6rem; line-height: 1.25; }
+    .bloque-body { font-size: 0.76rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* QUOTE */
+    .quote-section { background: var(--cream); padding: 6rem 5rem; border-bottom: 1px solid var(--line); text-align: center; }
+    .quote-text { font-family: var(--font-display); font-size: clamp(1.5rem,3vw,2.4rem); font-weight: 300; font-style: italic; color: var(--text); line-height: 1.5; max-width: 680px; margin: 0 auto 1.2rem; }
+    .quote-attr { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); }
+
+    /* PROGRAMA */
+    .programa-section { background: var(--warm-white); padding: 6rem 5rem; border-bottom: 1px solid var(--line); }
+    .prog-inner { grid-template-columns: 1fr !important; }
+    .programa-inner { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 5rem; align-items: center; }
+    .programa-body { font-size: 0.88rem; color: var(--text-soft); line-height: 1.9; margin-bottom: 2rem; }
+    .programa-items { display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 2.5rem; }
+    .programa-item { display: flex; align-items: flex-start; gap: 0.8rem; font-size: 0.8rem; color: var(--text-soft); line-height: 1.6; }
+    .programa-item::before { content: '·'; color: var(--accent); font-size: 1.2rem; line-height: 1; flex-shrink: 0; }
+    .btn-outline { display: inline-flex; align-items: center; gap: 0.8rem; background: transparent; color: var(--text-soft); font-family: var(--font-body); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 1rem 2rem; border: 1px solid var(--line); transition: border-color 0.25s, color 0.25s; }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent-dark); }
+    .programa-panel { background: var(--panel); padding: 3rem 2.5rem; position: relative; overflow: hidden; }
+    .programa-panel::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 70% at 20% 20%, rgba(176,160,192,0.15) 0%, transparent 60%); }
+    .programa-panel > * { position: relative; z-index: 1; }
+    .pp-label { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(217,182,169,0.55); margin-bottom: 0.6rem; }
+    .pp-title { font-family: var(--font-display); font-style: italic; font-weight: 300; font-size: 1.9rem; color: rgba(255,255,255,0.72); margin-bottom: 1.2rem; line-height: 1.2; }
+    .pp-desc { font-size: 0.78rem; color: rgba(255,255,255,0.4); line-height: 1.7; margin-bottom: 2rem; }
+
+    /* WA */
+    .wa-section { background: #EDE8F4; padding: 5rem; text-align: center; }
+    .wa-title { font-family: var(--font-display); font-size: clamp(1.8rem,3vw,2.6rem); font-style: italic; font-weight: 300; color: var(--text); margin-bottom: 0.8rem; }
+    .wa-body { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 40ch; margin-left: auto; margin-right: auto; }
+    .btn-wa { display: inline-flex; align-items: center; gap: 0.8rem; background: transparent; color: var(--text-soft); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 1.1rem 2.4rem; border: 1px solid var(--line); transition: border-color 0.25s, color 0.25s; }
+    .btn-wa:hover { border-color: var(--accent); color: var(--accent-dark); }
+
+    footer { background: linear-gradient(135deg, #3A2820 0%, #2E2018 100%); padding: 2rem 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    footer strong { font-family: 'Whisper', cursive; font-size: 1.4rem; font-weight: 400; color: rgba(255,255,255,0.55); }
+    footer a { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); transition: color 0.2s; display: inline-flex; align-items: center; gap: 0.4rem; }
+    footer a:hover { color: rgba(255,255,255,0.85); }
+
+    @media (max-width: 900px) {
+      .topbar { padding: 1rem 1.5rem; }
+      .portada-content { padding: 5rem 2rem 3.5rem; }
+      .portada-rings { display: none; }
+      .video-section, .pdf-section { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .pdf-strip { grid-template-columns: 1fr; text-align: center; }
+      .btn-dl { margin: 0 auto; }
+      .bloques-section { padding: 4rem 2rem; }
+      .bloques-grid { grid-template-columns: 1fr 1fr; }
+      .quote-section { padding: 4rem 2rem; }
+      .programa-section { padding: 4rem 2rem; }
+      .programa-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .wa-section { padding: 4rem 2rem; background: #EDE8F4; }
+      footer { flex-direction: column; text-align: center; padding: 2rem; }
+    }
+    @media (max-width: 520px) {
+      .portada-content { padding: 4.5rem 1.2rem 3rem; }
+      .bloques-grid { grid-template-columns: 1fr; }
+      .video-section, .pdf-section { padding-left: 1rem; padding-right: 1rem; }
+      .topbar { padding: 1rem; }
+      .topbar-logo .name { font-size: 1.5rem; }
+    }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-33PZ0L65JL"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-33PZ0L65JL');</script>
+</head>
+<body>
+
+  <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <span style="font-family:'Whisper',cursive; font-size:1.6rem; color:var(--text); display:block; margin-bottom:0.2rem;">Karla Moraga Aguilera</span>
+      <span>Terapeuta Somática &amp; Docente</span>
+    </div>
+    <nav><ul>
+      <li><a href="index.html" onclick="closeSidebar()">Inicio</a></li>
+      <li><a href="sobre-mi.html" onclick="closeSidebar()">Sobre mí</a></li>
+      <li><a href="mi-trabajo.html" onclick="closeSidebar()">Mi trabajo</a></li>
+      <li><a href="programas.html" onclick="closeSidebar()">Programas</a></li>
+      <li><a href="sesiones-individuales.html" onclick="closeSidebar()">Sesiones individuales</a></li>
+      <li><a href="index.html#recursos" onclick="closeSidebar()">Recursos gratuitos</a></li>
+      <li><a href="https://wa.me/56956305069" target="_blank" onclick="closeSidebar()">Contacto</a></li>
+    </ul></nav>
+    <div class="sidebar-foot">© <span class="copy-year"></span> Karla Moraga<br/>Todos los derechos reservados</div>
+  </aside>
+
+  <header class="topbar">
+    <a href="index.html" class="topbar-logo">
+      <span class="name">Karla Moraga</span>
+      <span class="title">Terapeuta Somática &amp; Docente</span>
+    </a>
+    <button class="menu-toggle" aria-label="Abrir menú" onclick="toggleSidebar()">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main class="main">
+
+    <!-- PORTADA -->
+    <section class="portada">
+      <div class="portada-bg"></div>
+      <div class="portada-deco">calma</div>
+      <div class="portada-rings">
+        <div class="portada-ring"></div>
+        <div class="portada-ring"></div>
+        <div class="portada-ring"></div>
+        <div class="portada-ring"></div>
+        <div class="portada-ring-word">ansiedad · cuerpo · escucha</div>
+      </div>
+      <div class="portada-content">
+        <p class="portada-marca">La Voz del Cuerpo · Karla Moraga</p>
+        <div class="portada-badge">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Masterclass gratuita
+        </div>
+        <h1 class="portada-title">
+          Ansiedad y cuerpo:<br/>
+          <em>una primera escucha</em>
+        </h1>
+        <p class="portada-subtitle">Karla Moraga · Terapeuta Somática &amp; Docente</p>
+        <p class="portada-quote">"La ansiedad es la respuesta de un sistema nervioso que aprendió que el mundo no era seguro — y que todavía no recibió la señal de que las cosas cambiaron."</p>
+        <div class="portada-pills">
+          <span class="portada-pill">60 minutos</span>
+          <span class="portada-pill">Clase grabada</span>
+          <span class="portada-pill">2 prácticas guiadas</span>
+          <span class="portada-pill">Guía descargable</span>
+          <span class="portada-pill">Sin costo</span>
+        </div>
+        <a href="#masterclass-video" class="btn-main">
+          Ver la masterclass
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- VIDEO -->
+    <section class="video-section" id="masterclass-video">
+      <div class="video-inner">
+        <div class="video-embed">
+          <!-- PENDIENTE: reemplaza con tu URL de YouTube -->
+          <!-- <iframe src="https://www.youtube.com/embed/TU_VIDEO_ID" allowfullscreen></iframe> -->
+          <div class="video-placeholder">
+            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="rgba(255,255,255,0.15)" stroke="none"/></svg>
+            <p>Video próximamente</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PDF -->
+    <section class="pdf-section">
+      <div class="pdf-strip">
+        <div>
+          <p class="pdf-label">Material de acompañamiento</p>
+          <p class="pdf-title">Mini workbook descargable incluido</p>
+          <p class="pdf-desc">Tu escalera polivagal personal, el ancla somática en tres pasos y un registro semanal para seguir el proceso.</p>
+        </div>
+        <!-- PENDIENTE: reemplaza href con el link al PDF -->
+        <a href="#" class="btn-dl" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 15V3m0 12l-4-4m4 4l4-4"/><path d="M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
+          Descargar guía
+        </a>
+      </div>
+    </section>
+
+    <!-- BLOQUES -->
+    <section class="bloques-section">
+      <p class="section-label">Contenido de la clase</p>
+      <h2 class="section-title">Qué veremos juntas</h2>
+      <div class="bloques-grid">
+        <div class="bloque-card">
+          <span class="bloque-tiempo">00:00 — 05:00</span>
+          <div class="bloque-num">01</div>
+          <span class="bloque-tag">Encuadre</span>
+          <h3 class="bloque-title">Bienvenida y despatologización</h3>
+          <p class="bloque-body">Nombrar lo que la ansiedad es — y lo que no. Un lenguaje común que no te patologiza y que abre la posibilidad de cambio.</p>
+        </div>
+        <div class="bloque-card">
+          <span class="bloque-tiempo">05:00 — 17:00</span>
+          <div class="bloque-num">02</div>
+          <span class="bloque-tag">Práctica guiada</span>
+          <h3 class="bloque-title">Escaneo corporal de apertura</h3>
+          <p class="bloque-body">El cuerpo entra antes que el concepto. Sentir desde adentro cómo se siente no estar en alerta.</p>
+        </div>
+        <div class="bloque-card">
+          <span class="bloque-tiempo">17:00 — 42:00</span>
+          <div class="bloque-num">03</div>
+          <span class="bloque-tag">Psicoeducación</span>
+          <h3 class="bloque-title">Neurobiología de la ansiedad</h3>
+          <p class="bloque-body">Amígdala, hipocampo, corteza prefrontal y Teoría Polivagal — explicados desde tu experiencia, no desde la cátedra.</p>
+        </div>
+        <div class="bloque-card">
+          <span class="bloque-tiempo">42:00 — 52:00</span>
+          <div class="bloque-num">04</div>
+          <span class="bloque-tag">Práctica guiada</span>
+          <h3 class="bloque-title">Ancla somática en tres pasos</h3>
+          <p class="bloque-body">Una herramienta concreta de regulación para usar en el momento en que la ansiedad aparece.</p>
+        </div>
+        <div class="bloque-card">
+          <span class="bloque-tiempo">52:00 — 62:00</span>
+          <div class="bloque-num">05</div>
+          <span class="bloque-tag">Cierre</span>
+          <h3 class="bloque-title">Lo que acaba de pasar — y qué sigue</h3>
+          <p class="bloque-body">Hacer visible el recorrido y mostrar cómo profundizar este trabajo en el programa completo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section class="quote-section">
+      <p class="quote-text">"Tu sistema nervioso aprendió a sobrevivir en condiciones que no eran fáciles. Volver a la calma no es volver a cómo eras — es descubrir cómo puedes ser cuando el peligro ya pasó."</p>
+      <p class="quote-attr">— Karla Moraga</p>
+    </section>
+
+    <!-- PROGRAMA -->
+    <section style="background:#3D2E48; padding:0; overflow:hidden; position:relative;">
+
+      <!-- Título llamada -->
+      <div style="text-align:center; padding:5rem 3rem 3rem; position:relative; z-index:1;">
+        <p style="font-size:0.65rem; letter-spacing:0.25em; text-transform:uppercase; color:rgba(217,182,169,0.6); margin-bottom:1rem;">¿Quieres ir más lejos?</p>
+        <h2 style="font-family:var(--font-display); font-size:clamp(2rem,3.5vw,3rem); font-weight:300; font-style:italic; color:rgba(255,255,255,0.85); line-height:1.2; margin-bottom:1.2rem;">Esta masterclass es solo el inicio.</h2>
+        <p style="font-size:0.9rem; color:rgba(255,255,255,0.42); max-width:48ch; margin:0 auto; line-height:1.85;">Lo que viviste hoy es la puerta de entrada a un proceso real, sostenido, con otras personas atravesando lo mismo.</p>
+      </div>
+
+      <!-- Nombre del programa grande -->
+      <div style="text-align:center; padding:1rem 3rem 0; position:relative; z-index:1; overflow:hidden;">
+        <div style="font-family:var(--font-display); font-size:clamp(5rem,12vw,11rem); font-weight:300; font-style:italic; color:rgba(176,160,192,0.12); line-height:0.9; user-select:none; pointer-events:none; letter-spacing:-0.02em;">Volver a la calma</div>
+      </div>
+
+      <!-- Panel contenido -->
+      <div style="max-width:960px; margin:0 auto; padding:1rem 4rem 5rem; display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; position:relative; z-index:1;" class="prog-inner">
+
+        <div>
+          <p style="font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(217,182,169,0.55); margin-bottom:1.5rem;">En el programa completo vas a poder</p>
+          <div style="display:flex; flex-direction:column; gap:0.9rem;">
+            <div style="display:flex; gap:0.8rem; align-items:flex-start; font-size:0.82rem; color:rgba(255,255,255,0.55); line-height:1.6;"><span style="color:rgba(217,182,169,0.6); flex-shrink:0;">·</span>Construir tu perfil autonómico personal</div>
+            <div style="display:flex; gap:0.8rem; align-items:flex-start; font-size:0.82rem; color:rgba(255,255,255,0.55); line-height:1.6;"><span style="color:rgba(217,182,169,0.6); flex-shrink:0;">·</span>Armar tu kit de regulación propio — no uno genérico</div>
+            <div style="display:flex; gap:0.8rem; align-items:flex-start; font-size:0.82rem; color:rgba(255,255,255,0.55); line-height:1.6;"><span style="color:rgba(217,182,169,0.6); flex-shrink:0;">·</span>Explorar la historia emocional que sostiene tu ansiedad</div>
+            <div style="display:flex; gap:0.8rem; align-items:flex-start; font-size:0.82rem; color:rgba(255,255,255,0.55); line-height:1.6;"><span style="color:rgba(217,182,169,0.6); flex-shrink:0;">·</span>Trabajar tus disparadores con recursos, no solo aguantarlos</div>
+            <div style="display:flex; gap:0.8rem; align-items:flex-start; font-size:0.82rem; color:rgba(255,255,255,0.55); line-height:1.6;"><span style="color:rgba(217,182,169,0.6); flex-shrink:0;">·</span>Cerrar con un plan personal de regulación que te acompaña después</div>
+          </div>
+        </div>
+
+        <div style="border:1px solid rgba(176,160,192,0.2); padding:2.5rem; background:rgba(176,160,192,0.07);">
+          <p style="font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(217,182,169,0.55); margin-bottom:0.6rem;">Programa grupal</p>
+          <h3 style="font-family:var(--font-display); font-style:italic; font-weight:300; font-size:2rem; color:rgba(255,255,255,0.82); margin-bottom:0.5rem; line-height:1.15;">Volver a la calma</h3>
+          <p style="font-size:0.78rem; color:rgba(255,255,255,0.38); line-height:1.7; margin-bottom:2rem;">8 semanas · Proceso somático grupal · Acompañamiento real</p>
+          <a href="volver-a-la-calma.html" style="display:inline-flex; align-items:center; gap:0.8rem; background:rgba(217,182,169,0.15); color:rgba(255,255,255,0.82); font-family:var(--font-body); font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; padding:1rem 2rem; border:1px solid rgba(217,182,169,0.3); transition:background 0.25s, border-color 0.25s; margin-bottom:0.8rem; width:fit-content;" onmouseover="this.style.background='rgba(217,182,169,0.28)';this.style.borderColor='rgba(217,182,169,0.6)'" onmouseout="this.style.background='rgba(217,182,169,0.15)';this.style.borderColor='rgba(217,182,169,0.3)'">
+            Conocer el programa completo
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WHATSAPP -->
+    <!-- CTA FINAL -->
+    <section style="background:#EDE8F4; padding:5rem 3rem; text-align:center; border-top:1px solid rgba(122,96,136,0.12);">
+      <p style="font-size:0.65rem; letter-spacing:0.22em; text-transform:uppercase; color:#7A6088; margin-bottom:1rem;">¿Qué te generó?</p>
+      <h2 style="font-family:var(--font-display); font-size:clamp(1.8rem,3vw,2.6rem); font-style:italic; font-weight:300; color:var(--text); margin-bottom:0.8rem; line-height:1.2;">Escríbeme lo que te resonó</h2>
+      <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:2.2rem; max-width:40ch; margin-left:auto; margin-right:auto; line-height:1.8;">Me encanta saber cómo llega este material. Si algo te movió o te generó preguntas, aquí estoy.</p>
+      <a href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20Vi%20tu%20masterclass%20%22Ansiedad%20y%20cuerpo%22%20y%20quer%C3%ADa%20contarte..." target="_blank" style="display:inline-flex; align-items:center; gap:0.8rem; background:#7A6088; color:#FAF7F2; font-family:var(--font-body); font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; padding:1.1rem 2.4rem; border:1px solid #7A6088; transition:background 0.25s, color 0.25s;" onmouseover="this.style.background='transparent';this.style.color='#7A6088';" onmouseout="this.style.background='#7A6088';this.style.color='#FAF7F2';">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Escribirle a Karla
+      </a>
+    </section>
+
+  </main>
+
+  <footer>
+    <div style="display:flex; flex-direction:column; gap:0.2rem;">
+      <strong>Karla Moraga Aguilera</strong>
+      <span style="font-size:0.62rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.3);">Terapeuta Somática &amp; Docente</span>
+    </div>
+    <a href="https://www.instagram.com/lavozdelcuerpo.soma" target="_blank">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      @lavozdelcuerpo.soma
+    </a>
+    <span style="font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.3);">© 2026 · Todos los derechos reservados</span>
+  </footer>
+
+  <script>
+    document.querySelector('.copy-year').textContent = new Date().getFullYear();
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('overlay').classList.toggle('show');
+    }
+    function closeSidebar() {
+      document.getElementById('sidebar').classList.remove('open');
+      document.getElementById('overlay').classList.remove('show');
+    }
+  </script>
+</body>
+</html>

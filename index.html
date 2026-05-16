@@ -769,6 +769,12 @@
 
       /* ¿Esto es para ti? — 2 columnas en móvil */
       .para-quien-grid { grid-template-columns: 1fr 1fr !important; }
+      .masterclass-grid { grid-template-columns: 1fr !important; }
+      section[style*="padding:5rem 4rem"] { padding: 3rem 1.2rem !important; }
+
+      /* Palabras de cards — reducir tamaño */
+      .card-word { font-size: 4rem !important; }
+      .card-word--lg { font-size: 2.8rem !important; }
 
       /* Testimonios — 1 columna en móvil */
       .testimonios-grid { grid-template-columns: 1fr !important; }
@@ -813,6 +819,8 @@
       .para-quien-grid { grid-template-columns: 1fr !important; }
       .topbar { padding: 1rem; }
       .topbar-logo .name { font-size: 1.5rem; }
+      .card-word { font-size: 4.5rem !important; }
+      .card-word--lg { font-size: 3rem !important; }
     }
   </style>
   <!-- Google Analytics -->
@@ -831,7 +839,7 @@
     "name": "Karla Moraga Aguilera",
     "jobTitle": "Terapeuta Somática y Docente",
     "url": "https://www.lavozdelcuerpo.com",
-    "sameAs": ["https://instagram.com/semillas.de.sanacion"],
+    "sameAs": ["https://instagram.com/lavozdelcuerpo.soma"],
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Los Ángeles",
@@ -857,7 +865,8 @@
         <li><a href="#inicio" onclick="closeSidebar()">Inicio</a></li>
         <li><a href="sobre-mi.html" onclick="closeSidebar()">Sobre mí</a></li>
         <li><a href="mi-trabajo.html" onclick="closeSidebar()">Mi trabajo</a></li>
-        <li><a href="#programas" onclick="closeSidebar()">Programas</a></li>
+        <li><a href="programas.html" onclick="closeSidebar()">Programas</a></li>
+        <li><a href="masterclass-ansiedad-y-cuerpo.html" onclick="closeSidebar()" style="color:#9B8DC0;">Masterclass gratuita</a></li>
         <li><a href="#guias" onclick="closeSidebar()">Guías somáticas</a></li>
         <li><a href="#recursos" onclick="closeSidebar()">Recursos gratuitos</a></li>
         <li><a href="#agendar" onclick="closeSidebar()">Agendar</a></li>
@@ -961,53 +970,55 @@
     <div class="divider"><span class="divider-icon" style="font-family:var(--font-display); font-style:italic; font-size:0.9rem; color:rgba(217,182,169,0.6); letter-spacing:0.3em;">· · ·</span></div>
 
     <!-- ¿PARA QUIÉN ES ESTO? -->
-    <section style="padding:5rem 5rem; background:var(--warm-white); border-bottom:1px solid var(--line);">
-      <p style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--earth); margin-bottom:1.5rem; text-align:center;">¿Esto es para ti?</p>
-      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); max-width:1000px; margin:0 auto;" class="para-quien-grid">
+    <section style="padding:5rem 4rem 5.5rem; background:var(--warm-white); border-bottom:1px solid var(--line);">
+      <div style="text-align:center; margin-bottom:3.5rem;">
+        <p style="font-size:0.65rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--earth); margin-bottom:1rem;">¿Esto es para ti?</p>
+        <h2 style="font-family:var(--font-display); font-size:clamp(2.6rem,4.5vw,4rem); font-weight:400; font-style:italic; color:var(--text); line-height:1.15; margin:0;">Si algo de esto <span style="color:#8C5042;">te resuena,</span><br/>este es tu lugar</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; max-width:1060px; margin:0 auto; align-items:start;" class="para-quien-grid">
 
-        <div style="background:var(--warm-white); padding:2.2rem 1.8rem; position:relative; overflow:hidden; transition:background 0.25s;"
-             onmouseover="this.style.background='#FBF5EC'" onmouseout="this.style.background='var(--warm-white)'">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:0.6rem; opacity:0.6;">
-            <path d="M4 16 C4 10 8 6 16 6 C24 6 28 10 28 16 C28 22 24 26 16 26 C10 26 7 22 9 18 C11 14 16 14 18 17" stroke="#9B8DC0" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-          </svg>
-          <div style="font-family:'Whisper',cursive; font-size:3.5rem; color:rgba(155,141,192,0.25); line-height:1; margin-bottom:0.8rem; display:block;">calma</div>
-          <div style="font-family:var(--font-display); font-size:1.05rem; font-weight:400; color:var(--text); margin-bottom:0.5rem; line-height:1.3;">Vives en alerta constante</div>
-          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.65;">La ansiedad o el estrés son parte de tu día a día y no sabes cómo salir.</p>
-          <div style="position:absolute; bottom:0; left:0; right:0; height:2px; background:#9B8DC0; transform:scaleX(0); transition:transform 0.3s;"
-               class="hover-line"></div>
+        <!-- calma -->
+        <div style="background:#F3EEF5; border-radius:50% 50% 14px 14px / 18% 18% 0 0; padding:2.8rem 1.6rem 2rem; display:flex; flex-direction:column; align-items:center; text-align:center; transition:transform 0.25s, box-shadow 0.25s;"
+             onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 28px rgba(107,79,114,0.12)'"
+             onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+          <div style="height:7.5rem; display:flex; align-items:center; justify-content:center;">
+            <span class="card-word" style="font-family:'Cormorant Garamond',Georgia,serif; font-style:italic; font-weight:300; font-size:5.5rem; color:rgba(107,79,114,0.38); line-height:1;">calma</span>
+          </div>
+          <div style="font-family:var(--font-display); font-size:1.05rem; font-style:italic; color:var(--text); margin-bottom:0.5rem; line-height:1.25;">Vives en alerta</div>
+          <p style="font-size:0.78rem; color:var(--text-muted); line-height:1.65; margin:0;">La ansiedad es tu estado habitual y no sabes cómo salir.</p>
         </div>
 
-        <div style="background:var(--warm-white); padding:2.2rem 1.8rem; position:relative; overflow:hidden; transition:background 0.25s;"
-             onmouseover="this.style.background='#FBF5EC'" onmouseout="this.style.background='var(--warm-white)'">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:0.6rem; opacity:0.6;">
-            <circle cx="12" cy="16" r="7" stroke="#6B4F72" stroke-width="1.5"/>
-            <circle cx="20" cy="16" r="7" stroke="#6B4F72" stroke-width="1.5"/>
-          </svg>
-          <div style="font-family:'Whisper',cursive; font-size:3.5rem; color:rgba(107,79,114,0.2); line-height:1; margin-bottom:0.8rem; display:block;">vínculo</div>
-          <div style="font-family:var(--font-display); font-size:1.05rem; font-weight:400; color:var(--text); margin-bottom:0.5rem; line-height:1.3;">Te pierdes en tus vínculos</div>
-          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.65;">Te cuesta poner límites o siempre terminas cuidando a otros antes que a ti.</p>
+        <!-- vínculo -->
+        <div style="background:#F7F0EC; border-radius:50% 50% 14px 14px / 18% 18% 0 0; padding:2.8rem 1.6rem 2rem; display:flex; flex-direction:column; align-items:center; text-align:center; transition:transform 0.25s, box-shadow 0.25s;"
+             onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 28px rgba(140,80,66,0.12)'"
+             onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+          <div style="height:7.5rem; display:flex; align-items:center; justify-content:center;">
+            <span class="card-word" style="font-family:'Cormorant Garamond',Georgia,serif; font-style:italic; font-weight:300; font-size:5.5rem; color:rgba(140,80,66,0.38); line-height:1;">vínculo</span>
+          </div>
+          <div style="font-family:var(--font-display); font-size:1.05rem; font-style:italic; color:var(--text); margin-bottom:0.5rem; line-height:1.25;">Te pierdes en otros</div>
+          <p style="font-size:0.78rem; color:var(--text-muted); line-height:1.65; margin:0;">Cuidas a todos menos a ti y no sabes cómo poner límites.</p>
         </div>
 
-        <div style="background:var(--warm-white); padding:2.2rem 1.8rem; position:relative; overflow:hidden; transition:background 0.25s;"
-             onmouseover="this.style.background='#FBF5EC'" onmouseout="this.style.background='var(--warm-white)'">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:0.6rem; opacity:0.6;">
-            <path d="M16 4 C22 8 28 12 26 18 C24 24 18 28 16 28 C14 28 8 24 6 18 C4 12 10 8 16 4Z" stroke="#D9B6A9" stroke-width="1.5" fill="none"/>
-            <path d="M16 8 L16 24" stroke="#D9B6A9" stroke-width="1" stroke-dasharray="2 2"/>
-          </svg>
-          <div style="font-family:'Whisper',cursive; font-size:3.5rem; color:rgba(197,182,210,0.2); line-height:1; margin-bottom:0.8rem; display:block;">herida</div>
-          <div style="font-family:var(--font-display); font-size:1.05rem; font-weight:400; color:var(--text); margin-bottom:0.5rem; line-height:1.3;">Cargas experiencias difíciles</div>
-          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.65;">Heridas del pasado que siguen afectando tu presente aunque haya pasado tiempo.</p>
+        <!-- herida -->
+        <div style="background:#F5EEE8; border-radius:50% 50% 14px 14px / 18% 18% 0 0; padding:2.8rem 1.6rem 2rem; display:flex; flex-direction:column; align-items:center; text-align:center; transition:transform 0.25s, box-shadow 0.25s;"
+             onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 28px rgba(217,182,169,0.2)'"
+             onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+          <div style="height:7.5rem; display:flex; align-items:center; justify-content:center;">
+            <span class="card-word" style="font-family:'Cormorant Garamond',Georgia,serif; font-style:italic; font-weight:300; font-size:5.5rem; color:rgba(217,182,169,0.85); line-height:1;">herida</span>
+          </div>
+          <div style="font-family:var(--font-display); font-size:1.05rem; font-style:italic; color:var(--text); margin-bottom:0.5rem; line-height:1.25;">El pasado pesa hoy</div>
+          <p style="font-size:0.78rem; color:var(--text-muted); line-height:1.65; margin:0;">Heridas antiguas que siguen vivas en el cuerpo.</p>
         </div>
 
-        <div style="background:var(--warm-white); padding:2.2rem 1.8rem; position:relative; overflow:hidden; transition:background 0.25s;"
-             onmouseover="this.style.background='#FBF5EC'" onmouseout="this.style.background='var(--warm-white)'">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:0.6rem; opacity:0.6;">
-            <path d="M24 10 C20 6 13 5 8 10 C3 15 4 23 10 26 C16 29 23 26 26 20" stroke="#76886E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-            <path d="M24 10 L20 7 M24 10 L27 7" stroke="#76886E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <div style="font-family:'Whisper',cursive; font-size:3.5rem; color:rgba(118,136,110,0.2); line-height:1; margin-bottom:0.8rem; display:block;">volver</div>
-          <div style="font-family:var(--font-display); font-size:1.05rem; font-weight:400; color:var(--text); margin-bottom:0.5rem; line-height:1.3;">Quieres volver a ti</div>
-          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.65;">Sientes que te perdiste de ti misma y buscas reconectar con tu cuerpo y tu vida.</p>
+        <!-- autenticidad -->
+        <div style="background:#EDF0EB; border-radius:50% 50% 14px 14px / 18% 18% 0 0; padding:2.8rem 1.6rem 2rem; display:flex; flex-direction:column; align-items:center; text-align:center; transition:transform 0.25s, box-shadow 0.25s;"
+             onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 28px rgba(118,136,110,0.15)'"
+             onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
+          <div style="height:7.5rem; display:flex; align-items:center; justify-content:center;">
+            <span class="card-word card-word--lg" style="font-family:'Cormorant Garamond',Georgia,serif; font-style:italic; font-weight:300; font-size:3.6rem; color:rgba(118,136,110,0.55); line-height:1.1; text-align:center;">autenticidad</span>
+          </div>
+          <div style="font-family:var(--font-display); font-size:1.05rem; font-style:italic; color:var(--text); margin-bottom:0.5rem; line-height:1.25;">Quieres volver a ti</div>
+          <p style="font-size:0.78rem; color:var(--text-muted); line-height:1.65; margin:0;">Reconectar con tu cuerpo, tu voz y tu vida.</p>
         </div>
 
       </div>
@@ -1096,23 +1107,41 @@
       </div>
     </section>
 
-    <!-- PROGRAMAS -->
-    <section id="programas">
-      <p class="section-label">Programas</p>
-      <h2 class="section-title">Procesos de <em>transformación</em></h2>
+    <!-- MASTERCLASS -->
+    <section id="programas" style="padding:0; overflow:hidden;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; min-height:88vh;" class="masterclass-grid">
 
-      <div class="program-feature">
-        <div>
-          <span class="program-badge">Programa destacado</span>
-          <h3 class="program-title">Volver a<br/><em>la calma</em></h3>
-          <p class="program-desc">Un proceso de 8 semanas para dejar de vivir en alerta constante, regular tu sistema nervioso y recuperar calma, presencia y seguridad interna. Trabajamos con el cuerpo, la historia emocional y las raíces de la ansiedad.</p>
-          <a href="volver-a-la-calma.html" class="hero-cta" style="font-size:0.72rem;">
-            Quiero saber más
-            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
-          </a>
+        <!-- Imagen -->
+        <div style="position:relative; overflow:hidden; min-height:520px;">
+          <img src="masterclass.png" alt="Ansiedad y cuerpo: una primera escucha" style="width:100%; height:100%; object-fit:cover; object-position:center top;" />
+          <div style="position:absolute; inset:0; background:linear-gradient(to right, transparent 60%, rgba(243,240,246,0.4) 100%);"></div>
         </div>
-        <div class="program-img" style="background:none; padding:0; overflow:hidden;">
-          <img src="imagencodependencia.jpeg" alt="Volver a ti: saliendo de la codependencia" style="width:100%; height:100%; object-fit:cover; object-position:center;" />
+
+        <!-- Texto -->
+        <div style="background:#F3F0F6; display:flex; flex-direction:column; justify-content:center; padding:6rem 5rem;">
+          <div style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.62rem; letter-spacing:0.22em; text-transform:uppercase; color:#7A6088; border:1px solid rgba(122,96,136,0.28); padding:0.38rem 0.9rem; width:fit-content; margin-bottom:2rem;">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Masterclass gratuita
+          </div>
+          <h2 style="font-family:var(--font-display); font-size:clamp(2.4rem,4vw,4rem); font-weight:300; line-height:0.95; color:var(--text); margin-bottom:0.6rem; letter-spacing:-0.02em;">
+            Ansiedad y cuerpo:<br/>
+            <em style="font-style:italic; color:#7A6088;">una primera escucha</em>
+          </h2>
+          <p style="font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); margin-bottom:2rem;">Karla Moraga · Terapeuta Somática</p>
+          <p style="font-size:0.9rem; color:var(--text-soft); line-height:1.9; margin-bottom:1.8rem; max-width:44ch;">Clase grabada de 60 minutos para entender qué le pasa a tu cuerpo cuando la ansiedad aparece — y cómo empezar a escucharlo de otra manera.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:2.5rem;">
+            <span style="font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; color:#7A6088; border:1px solid rgba(122,96,136,0.25); padding:0.3rem 0.8rem;">60 minutos</span>
+            <span style="font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; color:#7A6088; border:1px solid rgba(122,96,136,0.25); padding:0.3rem 0.8rem;">2 prácticas guiadas</span>
+            <span style="font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; color:#7A6088; border:1px solid rgba(122,96,136,0.25); padding:0.3rem 0.8rem;">Guía descargable</span>
+            <span style="font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; color:#7A6088; border:1px solid rgba(122,96,136,0.25); padding:0.3rem 0.8rem;">Sin costo</span>
+          </div>
+          <a href="masterclass-ansiedad-y-cuerpo.html" style="display:inline-flex; align-items:center; gap:0.8rem; background:#7A6088; color:#FAF7F2; font-family:var(--font-body); font-size:0.72rem; font-weight:400; letter-spacing:0.14em; text-transform:uppercase; padding:1.1rem 2.2rem; border:1px solid #7A6088; transition:background 0.25s, color 0.25s; width:fit-content;" onmouseover="this.style.background='transparent';this.style.color='#7A6088';" onmouseout="this.style.background='#7A6088';this.style.color='#FAF7F2';">
+            Ver la masterclass
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+          </a>
+          <a href="programas.html" style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-muted); margin-top:1.2rem; transition:color 0.2s;" onmouseover="this.style.color='#7A6088'" onmouseout="this.style.color='var(--text-muted)'">
+            Ver todos los programas →
+          </a>
         </div>
       </div>
     </section>
@@ -1284,7 +1313,7 @@
           </div>
           <div class="contact-detail">
             <span>📲</span>
-            <div><strong>Instagram</strong><br/><a href="https://instagram.com/semillas.de.sanacion" target="_blank">@semillas.de.sanacion</a></div>
+            <div><strong>Instagram</strong><br/><a href="https://instagram.com/lavozdelcuerpo.soma" target="_blank">@lavozdelcuerpo.soma</a></div>
           </div>
         </div>
 
@@ -1310,9 +1339,9 @@
     <footer>
       <div style="display:flex; flex-direction:column; gap:0.5rem;">
         <strong>Karla Moraga Aguilera · Terapeuta Somática &amp; Docente</strong>
-        <a href="https://instagram.com/semillas.de.sanacion" target="_blank" style="display:inline-flex; align-items:center; gap:0.5rem; color:rgba(255,255,255,0.5); font-size:0.72rem; letter-spacing:0.06em; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.8)'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">
+        <a href="https://instagram.com/lavozdelcuerpo.soma" target="_blank" style="display:inline-flex; align-items:center; gap:0.5rem; color:rgba(255,255,255,0.5); font-size:0.72rem; letter-spacing:0.06em; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.8)'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          @semillas.de.sanacion
+          @lavozdelcuerpo.soma
         </a>
       </div>
       <span>© <span class="copy-year"></span> · Todos los derechos reservados</span>
