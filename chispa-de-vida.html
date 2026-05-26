@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La chispa que permanece · Semillas y reflexiones | La Voz del Cuerpo</title>
+  <meta name="description" content="Sobre vulnerabilidad, resiliencia, pérdida de vitalidad y esperanza en el trauma. Una reflexión personal desde la práctica somática de Karla Moraga." />
+  <link rel="canonical" href="https://lavozdelcuerpo.com/chispa-de-vida.html" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    @font-face {
+      font-family: 'High Spirited';
+      src: url('High_Spirited.ttf') format('truetype');
+      font-weight: normal; font-style: normal;
+    }
+    @font-face {
+      font-family: 'Billie James';
+      src: url('BillieJames-Regular.otf') format('opentype');
+      font-weight: normal; font-style: normal;
+    }
+    @font-face {
+      font-family: 'Brittany';
+      src: url('BrittanySignature.ttf') format('truetype');
+      font-weight: normal; font-style: normal;
+    }
+
+    /* ─── Tokens ── */
+    :root {
+      --cream:      #FAF7F2;
+      --warm-white: #FAF7F2;
+      --sage:       #76886E;
+      --sage-light: #D9D3B8;
+      --earth:      #D9B6A9;
+      --earth-dark: #6B4F72;
+      --text:       #2e2b28;
+      --text-soft:  #6b6560;
+      --text-muted: #9E9890;
+      --line:       rgba(217,179,169,0.25);
+      --cinnamon:   #8C5042;
+      --terracota:  #6B4F72;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Jost', sans-serif;
+      --side-w: 240px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      background: var(--warm-white);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── Sidebar ── */
+    .sidebar {
+      position: fixed;
+      top: 0; left: 0;
+      width: var(--side-w);
+      height: 100vh;
+      background: var(--cream);
+      border-right: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      padding: 2.5rem 2rem;
+      z-index: 100;
+      transform: translateX(-100%);
+      transition: transform 0.4s ease;
+    }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar-logo {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      line-height: 1.3;
+      margin-bottom: 3rem;
+    }
+    .sidebar-logo span {
+      display: block;
+      font-size: 0.72rem;
+      font-family: var(--font-body);
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin-top: 0.3rem;
+    }
+    .sidebar nav { flex: 1; }
+    .sidebar nav ul { display: flex; flex-direction: column; gap: 0.2rem; }
+    .sidebar nav a {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      padding: 0.55rem 0;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      display: block;
+    }
+    .sidebar nav a:hover { color:#76886E; border-bottom-color:rgba(118,136,110,.3); }
+    .sidebar nav a.active { color: #76886E; }
+    .sidebar-foot {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      line-height: 1.6;
+    }
+
+    /* ─── Main ── */
+    .main { margin-left: 0; min-height: 100vh; padding-top: 72px; }
+
+    /* ─── Hamburger ── */
+    .menu-toggle { background:#c4a882; border:none; border-radius:4px; width:42px; height:42px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:5px; cursor:pointer; }
+    .menu-toggle span { display:block; width:20px; height:1.5px; background:#fff8f2; }
+
+    /* ─── Footer ── */
+    footer {
+      background: linear-gradient(135deg, #3A2820 0%, #2E2018 100%);
+      color: rgba(255,255,255,0.4);
+      padding: 2.5rem 5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+    }
+    footer strong {
+      color: rgba(255,255,255,0.85);
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 300;
+    }
+
+    /* ════════════════════════════════
+       BLOG: HERO DE ENTRADA
+    ════════════════════════════════ */
+    .blog-hero {
+      position: relative;
+      background: linear-gradient(160deg, #F5F0E8 0%, #EDE6DA 100%);
+      border-bottom: 1px solid var(--line);
+      padding: 5rem 5rem 4rem;
+      overflow: hidden;
+    }
+    .blog-hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -80px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(217,182,169,.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .blog-hero-inner {
+      max-width: 780px;
+      position: relative; z-index: 1;
+    }
+    .blog-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1.5rem;
+    }
+    .blog-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 28px; height: 1px;
+      background: var(--sage);
+    }
+    .blog-hero h1 {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      line-height: 1.12;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    .blog-hero h1 em {
+      font-style: italic;
+      color: var(--cinnamon);
+    }
+    .blog-subtitulo {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      color: var(--text-soft);
+      line-height: 1.6;
+      max-width: 56ch;
+    }
+
+    /* Rama SVG deco */
+    .hero-rama {
+      position: absolute;
+      right: 4rem; bottom: -20px;
+      width: 260px;
+      opacity: .12;
+      pointer-events: none;
+    }
+
+    /* ════════════════════════════════
+       ARTÍCULO CONTENEDOR
+    ════════════════════════════════ */
+    .blog-body { max-width: 1060px; margin: 0 auto; padding: 0 5rem; }
+
+    /* ─── Apertura con sidebar ── */
+    .apertura {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 4rem;
+      padding: 5rem 0 4rem;
+      border-bottom: 1px solid var(--line);
+      align-items: start;
+    }
+    .apertura p:first-child {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 1.9vw, 1.3rem);
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 1.4rem;
+    }
+    .apertura p { margin-bottom: 1.3rem; font-size: 0.95rem; color: var(--text-soft); }
+    .nota-lateral {
+      padding-top: 0.5rem;
+    }
+    .nota-lateral .inner {
+      position: sticky;
+      top: 5rem;
+      border-left: 2px solid var(--earth);
+      padding-left: 1.2rem;
+    }
+    .nota-lateral .inner p {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      line-height: 1.65;
+    }
+    .nota-lateral .leaf {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 0.6rem;
+    }
+
+    /* ─── Separador orgánico ── */
+    .sep {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 2rem 0;
+    }
+    .sep .linea { flex: 1; height: 1px; background: var(--line); }
+
+    /* ─── Preguntas en chips ── */
+    .preguntas-section { padding: 4rem 0; border-bottom: 1px solid var(--line); }
+    .preguntas-intro {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1rem, 1.7vw, 1.15rem);
+      color: var(--text-soft);
+      max-width: 60ch;
+      margin-bottom: 2rem;
+    }
+    .chips {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .chip {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 1.1rem 1.3rem;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(.88rem, 1.4vw, 1rem);
+      color: var(--text-soft);
+      line-height: 1.5;
+      position: relative;
+    }
+    .chip::before {
+      content: '¿';
+      display: block;
+      font-size: 1.3rem;
+      font-style: normal;
+      color: var(--earth);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .preguntas-cierre {
+      font-size: 0.93rem;
+      color: var(--text-soft);
+      max-width: 64ch;
+      line-height: 1.85;
+    }
+
+    /* ─── Bloque oscuro: reconciliación ── */
+    .bloque-oscuro {
+      margin: 0 -5rem;
+      padding: 5rem 5rem;
+      background: linear-gradient(135deg, #3a2e28 0%, #4d3d31 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .bloque-oscuro::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(217,182,169,.1), transparent 70%);
+    }
+    .bloque-oscuro-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative; z-index: 1;
+    }
+    .bloque-oscuro h2 {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+      line-height: 1.2;
+      color: #FAF7F2;
+      margin-bottom: 1rem;
+    }
+    .bloque-oscuro h2 em { font-style: italic; color: var(--earth); }
+    .bloque-oscuro .intro-p {
+      font-size: 0.92rem;
+      color: rgba(250,247,242,.65);
+      line-height: 1.85;
+      margin-bottom: 0;
+    }
+    .liberacion-items { display: flex; flex-direction: column; gap: 0.8rem; }
+    .lib-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      padding: 0.9rem 1.1rem;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(217,182,169,.15);
+      border-radius: 8px;
+    }
+    .lib-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--earth);
+      flex-shrink: 0;
+      margin-top: 0.55rem;
+    }
+    .lib-item p {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.92rem;
+      color: rgba(250,247,242,.75);
+      line-height: 1.55;
+    }
+
+    /* ─── Guía moral ── */
+    .guia-section {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--line);
+      align-items: start;
+    }
+    .guia-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sage);
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+    .guia-section h2 {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      line-height: 1.25;
+      color: var(--text);
+    }
+    .guia-section h2 em { font-style: italic; color: var(--cinnamon); }
+    .guia-cuerpo p { font-size: 0.93rem; color: var(--text-soft); margin-bottom: 1.3rem; line-height: 1.85; }
+
+    /* Frase flotante */
+    .frase-float {
+      float: right;
+      clear: right;
+      width: 40%;
+      margin: 0 0 1.2rem 1.8rem;
+      padding: 1.2rem 1.4rem;
+      border-top: 1.5px solid var(--earth);
+      border-bottom: 1.5px solid var(--earth);
+    }
+    .frase-float p {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(.95rem, 1.6vw, 1.1rem);
+      color: var(--text);
+      line-height: 1.55;
+      margin: 0 !important;
+    }
+    .clearfix::after { content: ''; display: table; clear: both; }
+
+    /* ─── Belleza & chispa ── */
+    .belleza-section {
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .belleza-intro {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .belleza-intro p { font-size: 0.93rem; color: var(--text-soft); margin-bottom: 1.1rem; line-height: 1.85; }
+    .belleza-intro p strong { font-weight: 400; color: var(--text); font-style: italic; }
+
+    /* Orbe animado */
+    .orbe-wrap { display: flex; flex-direction: column; align-items: center; gap: 0.6rem; }
+    .orbe {
+      width: 130px; height: 130px;
+      border-radius: 50% 42% 55% 45% / 48% 55% 42% 52%;
+      border: 1px solid rgba(217,182,169,.5);
+      display: flex; align-items: center; justify-content: center;
+      animation: morphOrbe 10s ease-in-out infinite alternate;
+      background: radial-gradient(circle, rgba(217,182,169,.12), transparent);
+    }
+    .orbe-inner {
+      width: 86px; height: 86px;
+      border-radius: 50% 42% 55% 45% / 48% 55% 42% 52%;
+      border: 1px dashed rgba(217,182,169,.4);
+      display: flex; align-items: center; justify-content: center;
+      animation: morphOrbe 8s ease-in-out infinite alternate-reverse;
+    }
+    .orbe-label {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      text-align: center;
+      opacity: 0.65;
+    }
+    @keyframes morphOrbe {
+      from { border-radius: 50% 42% 55% 45% / 48% 55% 42% 52%; }
+      to   { border-radius: 42% 55% 45% 55% / 55% 42% 55% 48%; }
+    }
+
+    .belleza-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+    .b-card {
+      padding: 1.8rem 1.5rem;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+    }
+    .b-card:nth-child(1) { background: #F7F2EC; }
+    .b-card:nth-child(2) { background: #EFF2ED; }
+    .b-card:nth-child(3) { background: #F5EEF0; }
+    .b-card .ico { font-size: 1.4rem; margin-bottom: 0.7rem; display: block; }
+    .b-card h3 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .b-card p { font-size: 0.82rem; color: var(--text-soft); line-height: 1.7; }
+
+    /* ─── Cita semilla ── */
+    .cita-semilla {
+      margin: 0 -5rem;
+      padding: 5rem 5rem;
+      background: #F0EBE3;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      text-align: center;
+    }
+    .cita-semilla .label {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1.8rem;
+      display: block;
+    }
+    .semilla-ico {
+      font-size: 2.4rem;
+      display: block;
+      margin-bottom: 1.2rem;
+      animation: mecerse 5s ease-in-out infinite;
+    }
+    @keyframes mecerse {
+      0%,100% { transform: rotate(-4deg); }
+      50% { transform: rotate(4deg); }
+    }
+    .cita-semilla blockquote {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+      color: var(--text);
+      line-height: 1.75;
+      max-width: 720px;
+      margin: 0 auto 1.8rem;
+    }
+    .cita-consuelo {
+      max-width: 640px;
+      margin: 0 auto;
+      font-size: 0.92rem;
+      color: var(--text-soft);
+      line-height: 1.85;
+      padding: 1.4rem 1.8rem;
+      background: rgba(255,255,255,.6);
+      border-radius: 8px;
+      font-style: italic;
+      font-family: var(--font-display);
+    }
+
+    /* ─── Cierre ── */
+    .cierre-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      padding: 5rem 0;
+      align-items: center;
+    }
+    .cierre-texto p {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+      color: var(--text);
+      line-height: 1.75;
+      margin-bottom: 1.1rem;
+    }
+    .cierre-texto a { color: var(--cinnamon); border-bottom: 1px solid rgba(140,80,66,.3); }
+    .cierre-texto a:hover { border-color: var(--cinnamon); }
+    .palabras {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.7rem;
+    }
+    .word-tag {
+      padding: 0.8rem 0.9rem;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      text-align: center;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      background: var(--cream);
+      transition: border-color .2s, color .2s;
+    }
+    .word-tag:hover { border-color: var(--earth); color: var(--cinnamon); }
+
+    /* ─── CTA ── */
+    .cta-section {
+      margin: 0 -5rem;
+      padding: 5rem 5rem;
+      background: linear-gradient(135deg, #4d3d31 0%, #3a2e28 100%);
+      text-align: center;
+    }
+    .cta-section .ico { font-size: 1.8rem; display: block; margin-bottom: 1rem; }
+    .cta-section h2 {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      color: #FAF7F2;
+      margin-bottom: 0.7rem;
+    }
+    .cta-section p {
+      font-size: 0.9rem;
+      color: rgba(250,247,242,.6);
+      margin-bottom: 2rem;
+      max-width: 48ch;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.75;
+    }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      background: var(--earth);
+      color: #2e2b28;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 1rem 2.2rem;
+      border: 1px solid var(--earth);
+      transition: background .25s, color .25s;
+    }
+    .cta-btn:hover { background: transparent; color: var(--earth); }
+    .cta-btn svg { width: 14px; height: 14px; }
+
+    /* ─── Responsive ── */
+    @media (max-width: 900px) {
+      .sidebar { transform: translateX(-100%); width: 260px; }
+      .sidebar.open { transform: translateX(0); }
+      .menu-toggle { background:#c4a882; border:none; border-radius:4px; width:42px; height:42px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:5px; cursor:pointer; }
+      .blog-hero { padding: 4rem 2rem 3rem; }
+      .blog-body { padding: 0 2rem; }
+      .apertura { grid-template-columns: 1fr; gap: 0; }
+      .nota-lateral { display: none; }
+      .chips { grid-template-columns: 1fr 1fr; }
+      .bloque-oscuro { margin: 0 -2rem; padding: 3.5rem 2rem; }
+      .bloque-oscuro-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .guia-section { grid-template-columns: 1fr; gap: 1.5rem; }
+      .frase-float { float: none; width: 100%; margin: 1rem 0; }
+      .belleza-intro { grid-template-columns: 1fr; }
+      .orbe-wrap { display: none; }
+      .belleza-cards { grid-template-columns: 1fr; }
+      .cita-semilla { margin: 0 -2rem; padding: 3.5rem 2rem; }
+      .cierre-section { grid-template-columns: 1fr; gap: 2rem; }
+      .cta-section { margin: 0 -2rem; padding: 3.5rem 2rem; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 2rem; }
+    }
+    @media (max-width: 560px) {
+      .chips { grid-template-columns: 1fr; }
+      .palabras { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ─── Fade-in ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .blog-hero-inner { animation: fadeUp .8s ease .1s both; }
+  </style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-33PZ0L65JL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-33PZ0L65JL');
+  </script>
+</head>
+<body>
+
+  <!-- ── Sidebar ── -->
+    <aside class="sidebar" id="sidebar">
+    <div style="margin-bottom:3rem;">
+      <span style="font-family:'High Spirited',cursive;font-size:1.4rem;color:var(--text);display:block;margin-bottom:.3rem;line-height:1.2;">Karla Moraga Aguilera</span>
+      <span style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-soft);display:block;">Terapeuta Somática &amp; Docente</span>
+    </div>
+    <nav><ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="sobre-mi.html">Sobre mí</a></li>
+      <li><a href="mi-trabajo.html">Mi trabajo</a></li>
+      <li><a href="sesiones-individuales.html">Sesiones individuales</a></li>
+      <li><a href="programas.html">Programas</a></li>
+      <li><a href="masterclass-ansiedad-y-cuerpo.html" style="color:#9B8DC0;">Masterclass gratuita</a></li>
+      <li><a href="semillas-y-reflexiones.html">Semillas y reflexiones</a></li>
+      <li><a href="index.html#guias">Guías somáticas</a></li>
+      <li><a href="index.html#recursos">Recursos gratuitos</a></li>
+      <li><a href="https://wa.me/56956305069" target="_blank">Agendar</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul></nav>
+    <div class="sidebar-foot">© <span class="copy-year"></span> · Karla Moraga Aguilera</div>
+  </aside>
+
+  <!-- ── Main ── -->
+  <main class="main">
+
+    <!-- HEADER fijo -->
+      <header class="topbar">
+    <a href="index.html" class="topbar-logo">
+      <span class="name">Karla Moraga</span>
+      <span class="title">Terapeuta Somática &amp; Docente</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+  </header>
+
+    <!-- ════ HERO DE ENTRADA ════ -->
+    <section class="blog-hero">
+      <!-- Rama decorativa SVG -->
+      <svg class="hero-rama" viewBox="0 0 260 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M130 290 C130 290 110 210 90 150 C70 90 40 55 10 20" stroke="#7a5c44" stroke-width="2" fill="none"/>
+        <path d="M90 150 C65 132 42 140 25 122" stroke="#7a5c44" stroke-width="1.5" fill="none"/>
+        <path d="M108 185 C85 170 72 176 55 162" stroke="#7a5c44" stroke-width="1.5" fill="none"/>
+        <ellipse cx="25" cy="120" rx="17" ry="10" transform="rotate(-30 25 120)" fill="#7a5c44"/>
+        <ellipse cx="55" cy="160" rx="15" ry="9" transform="rotate(-20 55 160)" fill="#7a5c44"/>
+        <ellipse cx="10" cy="20" rx="20" ry="12" transform="rotate(-45 10 20)" fill="#7a5c44"/>
+        <path d="M90 150 C108 128 115 110 125 92" stroke="#6b7c5e" stroke-width="1.2" fill="none"/>
+        <ellipse cx="125" cy="90" rx="14" ry="9" transform="rotate(15 125 90)" fill="#6b7c5e"/>
+        <path d="M108 185 C125 168 142 172 155 158" stroke="#6b7c5e" stroke-width="1.2" fill="none"/>
+        <ellipse cx="156" cy="156" rx="13" ry="8" transform="rotate(20 156 156)" fill="#6b7c5e"/>
+      </svg>
+
+      <div class="blog-hero-inner">
+        <span class="blog-eyebrow">Semillas y reflexiones · Trauma &amp; Resiliencia</span>
+        <h1>La chispa <em>que permanece</em></h1>
+        <p class="blog-subtitulo">Sobre vulnerabilidad, resiliencia, pérdida de vitalidad y esperanza en el trauma</p>
+      </div>
+    </section>
+
+    <!-- ════ CUERPO DEL ARTÍCULO ════ -->
+    <div class="blog-body">
+
+      <!-- Apertura -->
+      <div class="apertura">
+        <div>
+          <p>Quienes lo han vivido saben que, después de una experiencia traumática, se pierde todo sentido de esperanza y de vitalidad. Muchas veces no es inmediato, muchas veces es años después del —o los— sucesos, como en mi caso: el trauma acumulado llegó con su ola que lo inundó todo a mis 29 años, cuando me sentí segura, cuando había encontrado al fin un espacio de calma, seguridad vincular, económica y física.</p>
+          <p>Cuando llega, el cuerpo pareciera entrar en un estado de hibernación, de reposo casi absoluto. No hay anhelo, no hay esperanza, no hay fuerza. Se siente como que apenas quedara vida, como si la llama se apagara poco a poco, como una noche que pareciera eterna, apenas tolerable, casi intolerable a veces y, para muchas, intolerable.</p>
+        </div>
+        <aside class="nota-lateral">
+          <div class="inner">
+            <span class="leaf">🍃</span>
+            <p>"El cuerpo guarda la memoria del dolor... y también la del renacer."</p>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Sep -->
+      <div class="sep">
+        <div class="linea"></div>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="2.5" fill="#D9B6A9" opacity=".6"/>
+          <circle cx="12" cy="4" r="1.5" fill="#D9B6A9" opacity=".3"/>
+          <circle cx="12" cy="20" r="1.5" fill="#D9B6A9" opacity=".3"/>
+          <circle cx="4" cy="12" r="1.5" fill="#D9B6A9" opacity=".3"/>
+          <circle cx="20" cy="12" r="1.5" fill="#D9B6A9" opacity=".3"/>
+        </svg>
+        <div class="linea"></div>
+      </div>
+
+      <!-- Preguntas -->
+      <section class="preguntas-section">
+        <p class="preguntas-intro">Nos preguntamos, una y otra vez, buscando sentido donde no siempre hay respuesta:</p>
+        <div class="chips">
+          <div class="chip">qué sentido tuvo haber vivido eso</div>
+          <div class="chip">para qué, con qué fin</div>
+          <div class="chip">a todos les toca vivir esto</div>
+          <div class="chip">por qué a mí</div>
+          <div class="chip">para qué a mí</div>
+          <div class="chip">¿eso no tuvo sentido alguno?</div>
+        </div>
+        <p class="preguntas-cierre">Sinceramente, no he encontrado respuestas finales a estas interrogantes en estos años. Son misterios que he aceptado como tal. Lo que sí sé es que mi forma de ver la vida se transformó completamente. Ya no creo en que a la gente buena le pasan cosas buenas y a la mala le pasan cosas malas. Sencillamente no es así.</p>
+      </section>
+
+      <!-- Bloque oscuro -->
+      <div class="bloque-oscuro">
+        <div class="bloque-oscuro-inner">
+          <div>
+            <h2>Me reconcilié<br/><em>y fue liberador</em></h2>
+            <p class="intro-p">La vida no es tan fácil de entender. Pareciera que muchas veces es al contrario: que a la gente sensible le suceden atrocidades y aquellos enfermos de poder viven sin consecuencias. Sin embargo, me reconcilié con esto.</p>
+          </div>
+          <div class="liberacion-items">
+            <div class="lib-item"><div class="lib-dot"></div><p>Ya no estaba atada al día en que ocurriera la justicia para liberarme</p></div>
+            <div class="lib-item"><div class="lib-dot"></div><p>No necesitaba el castigo en el victimario para sentirme viva</p></div>
+            <div class="lib-item"><div class="lib-dot"></div><p>Solté toda expectativa de justicia — mi camino fue otro</p></div>
+            <div class="lib-item"><div class="lib-dot"></div><p>No digo que sea la única forma. Fue la mía, mi experiencia única y personal.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Guía moral -->
+      <div class="guia-section">
+        <div>
+          <span class="guia-label">Una nueva brújula</span>
+          <h2>Construir mi<br/>propia <em>guía moral</em></h2>
+        </div>
+        <div class="guia-cuerpo clearfix">
+          <div class="frase-float">
+            <p>"Hacer el bien porque es lo que quiero para mí y por mí, no por recompensa, no por castigo."</p>
+          </div>
+          <p>Comencé a reevaluar cómo me vivía yo el bien y el mal. Sí, son conceptos tremendos, gigantes, pero necesitaba que esa parte del mundo fuera mía. Comencé a creer en una forma de ver la vida siendo fiel a mí misma.</p>
+          <p>Construir un sentido de guía moral propia, anclada a mi cuerpo, a mis necesidades, sabiendo que no hay recompensas. Tal vez tampoco haya castigos justos, entendibles, lógicos en esta vida, al menos no entendibles para mí.</p>
+          <p>He ido necesitando soltar, soltar el control, aceptar que por ahora no entenderé todo. Y que quizás esa necesidad de entender es necesidad de consuelo — y el consuelo también se halla en el cuerpo, en el abrazo, en lo que me sigue pareciendo bello.</p>
+        </div>
+      </div>
+
+      <!-- Belleza -->
+      <section class="belleza-section">
+        <div class="belleza-intro">
+          <div>
+            <p>Reconectar con la belleza es toda una nueva etapa. Porque en el lugar del trauma todo se vuelve insípido, descolorido, displicente... pero <strong>siempre hay una chispa de vida, siempre. En ti, en tu cuerpo.</strong></p>
+            <p>Venimos cableadas biológicamente no solo para sentir y sobrevivir al gran dolor, sino también para sentir placer, destellos de seguridad, conexión, armonía, alegría, juego. Solo hay que saber encontrarlo, con la guía adecuada.</p>
+          </div>
+          <div class="orbe-wrap">
+            <div class="orbe">
+              <div class="orbe-inner">✨</div>
+            </div>
+            <p class="orbe-label">la chispa<br/>siempre está</p>
+          </div>
+        </div>
+        <div class="belleza-cards">
+          <div class="b-card">
+            <span class="ico">🌱</span>
+            <h3>Placer</h3>
+            <p>Destellos de seguridad y conexión que el sistema nervioso reconoce como hogar.</p>
+          </div>
+          <div class="b-card">
+            <span class="ico">🌊</span>
+            <h3>Armonía</h3>
+            <p>El ritmo natural del cuerpo que sabe cómo volver al equilibrio, siempre.</p>
+          </div>
+          <div class="b-card">
+            <span class="ico">🌿</span>
+            <h3>Juego</h3>
+            <p>Alegría que emerge cuando el sistema nervioso siente que es seguro.</p>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /blog-body -->
+
+    <!-- CITA SEMILLA (full-bleed) -->
+    <div class="blog-body">
+      <div class="cita-semilla">
+        <span class="label">✦ Una imagen que me sostuvo ✦</span>
+        <span class="semilla-ico">🌻</span>
+        <blockquote>
+          "Lo cierto es que cuanto más poder implícito tenga una semilla, más tardará en germinar. La semilla de un tejo y la de un girasol tienen un tamaño idéntico. Sin embargo, mientras que el girasol llega a su máximo desarrollo en unos meses, el tejo tiene una complejidad mayor, comienza a un ritmo diferente y sigue su propio reloj biológico. Puede que necesite diez años para alcanzar solo la altura de un girasol, pero puede vivir hasta 5.000 años. Y lo mismo sucede con todas las ideas y las acciones humanas."
+        </blockquote>
+        <p class="cita-consuelo">Si en algún momento te preguntas cuándo pasará el dolor, el silencio, la pausa — y cuándo llegará tu florecimiento, que es posible, es tu derecho, y está destinado a ser parte de tu camino — tal vez esto te traiga consuelo.</p>
+      </div>
+
+      <!-- Cierre -->
+      <div class="cierre-section">
+        <div class="cierre-texto">
+          <p>No estás sola. Somos muchas <em>supervivientes</em> — sí, supervivientes, no sobrevivientes.</p>
+          <p>Encuentra a tu terapeuta, a tu red, a tu aquelarre. Si crees que mi visión te representa, te invito a conocer mi trabajo en <a href="https://lavozdelcuerpo.com">lavozdelcuerpo.com</a>.</p>
+        </div>
+        <div class="palabras">
+          <div class="word-tag">Supervivencia</div>
+          <div class="word-tag">Cuerpo</div>
+          <div class="word-tag">Resiliencia</div>
+          <div class="word-tag">Comunidad</div>
+          <div class="word-tag">Vitalidad</div>
+          <div class="word-tag">Esperanza</div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-section">
+        <span class="ico">🌿</span>
+        <h2>Un pequeño ejercicio para ti</h2>
+        <p>Una práctica somática de reconexión con esa chispa, ese destello que siempre permanece en tu cuerpo.</p>
+        <a href="practica-somatica.html" class="cta-btn">
+          Ir a la práctica somática
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+        </a>
+      </div>
+
+    </div><!-- /blog-body -->
+
+    <!-- FOOTER -->
+      <footer>
+    <div style="display:flex;flex-direction:column;gap:.5rem;">
+      <strong>Karla Moraga Aguilera · Terapeuta Somática &amp; Docente</strong>
+      <a href="https://instagram.com/lavozdelcuerpo.soma" target="_blank" style="display:inline-flex;align-items:center;gap:.5rem;color:rgba(255,255,255,.5);font-size:.72rem;letter-spacing:.06em;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='rgba(255,255,255,.8)'" onmouseout="this.style.color='rgba(255,255,255,.5)'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        @lavozdelcuerpo.soma
+      </a>
+    </div>
+    <span>© <span class="copy-year"></span> · Todos los derechos reservados</span>
+  </footer>
+
+  </main>
+
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    toggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      sidebar.classList.toggle('open');
+    });
+    function closeSidebar() { sidebar.classList.remove('open'); }
+    document.addEventListener('click', function(e) {
+      if (sidebar.classList.contains('open') && !sidebar.contains(e.target) && !toggle.contains(e.target)) {
+        sidebar.classList.remove('open');
+      }
+    });
+  </script>
+  <script>document.querySelectorAll(".copy-year").forEach(e=>e.textContent=new Date().getFullYear());</script>
+</body>
+</html>

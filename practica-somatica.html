@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Práctica somática: Lugar seguro · La Voz del Cuerpo</title>
+  <meta name="description" content="Ejercicio guiado de reconexión corporal y lugar seguro. Inspirado en el recurso EMDR de lugar de calma. Una práctica somática de Karla Moraga." />
+  <link rel="canonical" href="https://lavozdelcuerpo.com/practica-somatica.html" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    @font-face { font-family:'High Spirited'; src:url('High_Spirited.ttf') format('truetype'); }
+    @font-face { font-family:'Billie James'; src:url('BillieJames-Regular.otf') format('opentype'); }
+    @font-face { font-family:'Brittany'; src:url('BrittanySignature.ttf') format('truetype'); }
+
+    :root {
+      --cream:      #FAF7F2;
+      --warm-white: #FAF7F2;
+      --sage:       #76886E;
+      --sage-light: #D9D3B8;
+      --earth:      #D9B6A9;
+      --earth-dark: #6B4F72;
+      --text:       #2e2b28;
+      --text-soft:  #6b6560;
+      --text-muted: #9E9890;
+      --line:       rgba(217,179,169,0.25);
+      --cinnamon:   #8C5042;
+      --font-display:'Cormorant Garamond', Georgia, serif;
+      --font-body:   'Jost', sans-serif;
+      --side-w: 240px;
+    }
+
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; font-size:16px; }
+    body { background:var(--warm-white); color:var(--text); font-family:var(--font-body); font-weight:300; line-height:1.7; overflow-x:hidden; }
+    a { color:inherit; text-decoration:none; }
+
+    /* ── Sidebar ── */
+    .sidebar { position:fixed; top:0; left:0; width:var(--side-w); height:100vh; background:var(--cream); border-right:1px solid var(--line); display:flex; flex-direction:column; padding:2.5rem 2rem; z-index:100; transform:translateX(-100%); transition:transform .4s ease; }
+    .sidebar.open { transform:translateX(0); }
+    .sidebar-logo { font-family:var(--font-display); font-size:1.15rem; color:var(--text); line-height:1.3; margin-bottom:3rem; }
+    .sidebar-logo span { display:block; font-size:.72rem; font-family:var(--font-body); font-weight:300; letter-spacing:.12em; text-transform:uppercase; color:var(--text-soft); margin-top:.3rem; }
+    .sidebar nav { flex:1; }
+    .sidebar nav ul { display:flex; flex-direction:column; gap:.2rem; }
+    .sidebar nav a { font-family:var(--font-body); font-size:.8rem; font-weight:400; letter-spacing:.1em; text-transform:uppercase; color:var(--text-soft); padding:.55rem 0; border-bottom:1px solid transparent; transition:color .2s, border-color .2s; display:block; }
+    .sidebar nav a:hover { color:#76886E; border-bottom-color:rgba(118,136,110,.3); }
+    .sidebar nav a.active { color:#76886E; }
+    .sidebar-foot { font-size:.72rem; color:var(--text-muted); letter-spacing:.05em; line-height:1.6; }
+
+    .main { margin-left:0; min-height:100vh; padding-top:72px; }
+
+    .menu-toggle { background:#c4a882; border:none; border-radius:4px; width:42px; height:42px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:5px; cursor:pointer; }
+    .menu-toggle span { display:block; width:20px; height:1.5px; background:#fff8f2; }
+
+    footer { background:linear-gradient(135deg,#3A2820 0%,#2E2018 100%); color:rgba(255,255,255,.4); padding:2.5rem 5rem; display:flex; justify-content:space-between; align-items:center; font-size:.75rem; letter-spacing:.06em; }
+    footer strong { color:rgba(255,255,255,.85); font-family:var(--font-display); font-size:1rem; font-weight:300; }
+
+    /* ══ HERO ══ */
+    .practica-hero {
+      background: linear-gradient(160deg, #EDF0EB 0%, #E6ECE4 100%);
+      border-bottom: 1px solid var(--line);
+      padding: 5rem 5rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .practica-hero::before {
+      content: '';
+      position: absolute;
+      bottom: -60px; right: -60px;
+      width: 360px; height: 360px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(118,136,110,.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .72rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 2rem;
+      transition: opacity .2s;
+    }
+    .back-link:hover { opacity: .7; }
+    .back-link svg { width: 12px; height: 12px; }
+    .hero-inner { max-width: 680px; position: relative; z-index: 1; }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: .68rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1.3rem;
+    }
+    .hero-tag::before { content: ''; display:inline-block; width:24px; height:1px; background:var(--sage); }
+    .practica-hero h1 {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: .9rem;
+    }
+    .practica-hero h1 em { font-style: italic; color: var(--sage); }
+    .hero-desc {
+      font-size: .93rem;
+      color: var(--text-soft);
+      line-height: 1.8;
+      max-width: 58ch;
+      margin-bottom: 1.5rem;
+    }
+    /* Chips de intención */
+    .intencion-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+    .i-chip {
+      font-size: .72rem;
+      letter-spacing: .08em;
+      color: var(--sage);
+      border: 1px solid rgba(118,136,110,.3);
+      padding: .3rem .85rem;
+      border-radius: 2px;
+    }
+
+    /* ══ CONTENIDO ══ */
+    .practica-body {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 5rem;
+    }
+
+    /* Intro contextual */
+    .contexto {
+      padding: 3.5rem 0 3rem;
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    .contexto p { font-size: .93rem; color: var(--text-soft); line-height: 1.85; margin-bottom: 1rem; }
+    .contexto p:last-child { margin: 0; }
+    .contexto-badge {
+      background: linear-gradient(135deg, rgba(118,136,110,.1), rgba(118,136,110,.04));
+      border: 1px solid rgba(118,136,110,.2);
+      border-radius: 10px;
+      padding: 1.6rem 1.4rem;
+      text-align: center;
+    }
+    .contexto-badge .badge-ico { font-size: 1.8rem; display: block; margin-bottom: .6rem; }
+    .contexto-badge p {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: .92rem;
+      color: var(--sage);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* ══ PASOS ══ */
+    .pasos { padding: 4rem 0; }
+
+    .paso {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 2rem;
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--line);
+      align-items: start;
+    }
+    .paso:last-child { border-bottom: none; }
+
+    .paso-num {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .4rem;
+      padding-top: .2rem;
+    }
+    .num-circle {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--text-soft);
+      flex-shrink: 0;
+    }
+    /* Color por fase */
+    .paso[data-fase="prep"] .num-circle    { border-color:rgba(118,136,110,.4); color:var(--sage); }
+    .paso[data-fase="cuerpo"] .num-circle  { border-color:rgba(217,182,169,.5); color:var(--cinnamon); }
+    .paso[data-fase="imagen"] .num-circle  { border-color:rgba(107,79,114,.3); color:#6B4F72; }
+    .paso[data-fase="refuerzo"] .num-circle{ border-color:rgba(217,179,169,.5); color:var(--text-soft); }
+    .paso[data-fase="cierre"] .num-circle  { border-color:rgba(118,136,110,.4); color:var(--sage); }
+
+    .paso-linea {
+      width: 1px;
+      flex: 1;
+      min-height: 24px;
+      background: var(--line);
+      margin-top: .3rem;
+    }
+
+    .paso-contenido h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+      color: var(--text);
+      margin-bottom: .7rem;
+      line-height: 1.3;
+    }
+    .paso-contenido h2 em { font-style: italic; color: var(--cinnamon); }
+    .paso-contenido > p { font-size: .92rem; color: var(--text-soft); line-height: 1.85; margin-bottom: .9rem; }
+    .paso-contenido > p:last-child { margin: 0; }
+
+    /* Lista de preguntas */
+    .preguntas-lista {
+      margin: 1rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: .35rem;
+    }
+    .preguntas-lista li {
+      display: flex;
+      align-items: baseline;
+      gap: .7rem;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: .92rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+    .preguntas-lista li::before {
+      content: '·';
+      color: var(--earth);
+      font-style: normal;
+      flex-shrink: 0;
+    }
+
+    /* Lista de ejemplos (lugares) */
+    .ejemplos-lista {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin: .8rem 0;
+    }
+    .ej-tag {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: .85rem;
+      color: var(--text-soft);
+      background: var(--cream);
+      border: 1px solid var(--line);
+      padding: .25rem .75rem;
+      border-radius: 4px;
+    }
+
+    /* Palabra clave highlight */
+    .palabras-clave {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin: .8rem 0;
+    }
+    .pkey {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: .88rem;
+      color: var(--sage);
+      background: rgba(118,136,110,.07);
+      border: 1px solid rgba(118,136,110,.2);
+      padding: .25rem .75rem;
+      border-radius: 4px;
+    }
+
+    /* ══ OPCIONES BILATERALES ══ */
+    .bilaterales {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      margin: 1.5rem 0;
+    }
+    .bilateral-card {
+      border-radius: 10px;
+      padding: 1.6rem 1.4rem;
+      border: 1px solid var(--line);
+    }
+    .bilateral-card:nth-child(1) { background: #F7F2EC; }
+    .bilateral-card:nth-child(2) { background: #EFF2ED; }
+    .bilateral-card:nth-child(3) { background: #F0EBF4; }
+    .bil-ico { font-size: 1.5rem; display: block; margin-bottom: .6rem; }
+    .bil-num {
+      font-size: .65rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: .3rem;
+    }
+    .bilateral-card h3 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: .5rem;
+    }
+    .bilateral-card p { font-size: .82rem; color: var(--text-soft); line-height: 1.7; }
+    .bilateral-card p + p { margin-top: .5rem; }
+    .bil-pausa {
+      display: inline-block;
+      margin-top: .8rem;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+
+    /* ══ CAJA DE OBSERVACIÓN ══ */
+    .obs-box {
+      background: rgba(217,182,169,.08);
+      border: 1px solid rgba(217,182,169,.3);
+      border-left: 3px solid var(--earth);
+      border-radius: 0 8px 8px 0;
+      padding: 1.2rem 1.4rem;
+      margin: 1rem 0;
+    }
+    .obs-box p {
+      font-size: .88rem !important;
+      margin: 0 !important;
+      color: var(--text-soft) !important;
+      line-height: 1.7 !important;
+    }
+
+    /* ══ NOTA DE CUIDADO ══ */
+    .nota-cuidado {
+      margin: 0 -5rem;
+      padding: 4rem 5rem;
+      background: linear-gradient(135deg, #F5F0E8 0%, #EDE6DA 100%);
+      border-top: 1px solid var(--line);
+    }
+    .nota-cuidado-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .nota-cuidado .label {
+      font-size: .65rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--cinnamon);
+      display: block;
+      margin-bottom: 1.2rem;
+    }
+    .nota-cuidado p {
+      font-size: .9rem;
+      color: var(--text-soft);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+    .nota-cuidado p:last-child { margin: 0; }
+    .nota-cuidado p strong { font-weight: 400; color: var(--text); }
+
+    /* ══ CTA VUELTA AL BLOG ══ */
+    .volver-section {
+      padding: 4rem 0 5rem;
+      text-align: center;
+    }
+    .volver-section p {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      color: var(--text-soft);
+      margin-bottom: 1.8rem;
+    }
+    .volver-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .7rem;
+      background: var(--sage);
+      color: var(--warm-white);
+      font-family: var(--font-body);
+      font-size: .78rem;
+      font-weight: 400;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 1rem 2.2rem;
+      border: 1px solid var(--sage);
+      transition: background .25s, color .25s;
+    }
+    .volver-btn:hover { background: transparent; color: var(--sage); }
+    .volver-btn svg { width: 14px; height: 14px; }
+
+    /* ══ FASE LABELS ══ */
+    .fase-label {
+      display: inline-block;
+      font-size: .62rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      padding: .18rem .6rem;
+      border-radius: 2px;
+      margin-bottom: .5rem;
+    }
+    .fase-prep    { background:rgba(118,136,110,.1); color:var(--sage); }
+    .fase-cuerpo  { background:rgba(217,182,169,.2); color:var(--cinnamon); }
+    .fase-imagen  { background:rgba(107,79,114,.1); color:#6B4F72; }
+    .fase-refuerzo{ background:rgba(46,43,40,.07); color:var(--text-soft); }
+    .fase-cierre  { background:rgba(118,136,110,.1); color:var(--sage); }
+
+    /* ══ RESPONSIVE ══ */
+    @media (max-width: 900px) {
+      .sidebar { transform:translateX(-100%); width:260px; }
+      .sidebar.open { transform:translateX(0); }
+      .menu-toggle { background:#c4a882; border:none; border-radius:4px; width:42px; height:42px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:5px; cursor:pointer; }
+      .practica-hero { padding:4rem 2rem 3rem; }
+      .practica-body { padding:0 2rem; }
+      .contexto { grid-template-columns:1fr; gap:1.5rem; }
+      .paso { grid-template-columns:44px 1fr; gap:1.2rem; }
+      .bilaterales { grid-template-columns:1fr; }
+      .nota-cuidado { margin:0 -2rem; padding:3rem 2rem; }
+      footer { flex-direction:column; gap:.5rem; text-align:center; padding:2rem; }
+    }
+    @media (max-width: 560px) {
+      .paso { grid-template-columns:1fr; }
+      .paso-num { flex-direction:row; }
+      .paso-linea { display:none; }
+    }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+    .hero-inner { animation:fadeUp .8s ease .1s both; }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-33PZ0L65JL"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-33PZ0L65JL');</script>
+</head>
+<body>
+
+  <!-- ── Sidebar ── -->
+    <aside class="sidebar" id="sidebar">
+    <div style="margin-bottom:3rem;">
+      <span style="font-family:'High Spirited',cursive;font-size:1.4rem;color:var(--text);display:block;margin-bottom:.3rem;line-height:1.2;">Karla Moraga Aguilera</span>
+      <span style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-soft);display:block;">Terapeuta Somática &amp; Docente</span>
+    </div>
+    <nav><ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="sobre-mi.html">Sobre mí</a></li>
+      <li><a href="mi-trabajo.html">Mi trabajo</a></li>
+      <li><a href="sesiones-individuales.html">Sesiones individuales</a></li>
+      <li><a href="programas.html">Programas</a></li>
+      <li><a href="masterclass-ansiedad-y-cuerpo.html" style="color:#9B8DC0;">Masterclass gratuita</a></li>
+      <li><a href="semillas-y-reflexiones.html">Semillas y reflexiones</a></li>
+      <li><a href="index.html#guias">Guías somáticas</a></li>
+      <li><a href="index.html#recursos">Recursos gratuitos</a></li>
+      <li><a href="https://wa.me/56956305069" target="_blank">Agendar</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul></nav>
+    <div class="sidebar-foot">© <span class="copy-year"></span> · Karla Moraga Aguilera</div>
+  </aside>
+
+  <main class="main">
+
+    <!-- Header fijo -->
+      <header class="topbar">
+    <a href="index.html" class="topbar-logo">
+      <span class="name">Karla Moraga</span>
+      <span class="title">Terapeuta Somática &amp; Docente</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+  </header>
+
+    <!-- ══ HERO ══ -->
+    <section class="practica-hero">
+      <div class="hero-inner">
+        <a href="chispa-de-vida.html" class="back-link">
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 7H1M6 2L1 7l5 5"/></svg>
+          Volver a la reflexión
+        </a>
+        <span class="hero-tag">Práctica somática · Recurso de regulación</span>
+        <h1>Reconexión corporal<br/>y <em>lugar seguro</em></h1>
+        <p class="hero-desc">Un ejercicio guiado para reconectar con una sensación corporal de calma o bienestar, y desde ahí construir un recurso interno de seguridad al que puedas volver cuando lo necesites.</p>
+        <div class="intencion-chips">
+          <span class="i-chip">Regulación</span>
+          <span class="i-chip">Estabilización</span>
+          <span class="i-chip">Recurso interno</span>
+          <span class="i-chip">Inspirado en EMDR</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CUERPO ══ -->
+    <div class="practica-body">
+
+      <!-- Contexto -->
+      <div class="contexto">
+        <div>
+          <p>Este ejercicio está inspirado en el recurso de <em style="font-family:var(--font-display);font-style:italic;">lugar seguro o lugar de calma</em> utilizado en EMDR, que se instala antes del reprocesamiento como una herramienta de estabilización.</p>
+          <p>La idea no es abrir recuerdos difíciles ni trabajar material traumático, sino fortalecer una experiencia interna de calma, sostén y seguridad. Puedes usarlo dentro de una sesión terapéutica o como práctica personal de regulación.</p>
+        </div>
+        <div class="contexto-badge">
+          <span class="badge-ico">🌿</span>
+          <p>No busca forzar la calma.<br/>Busca descubrirla donde ya existe.</p>
+        </div>
+      </div>
+
+      <!-- ══ PASOS ══ -->
+      <div class="pasos">
+
+        <!-- 1 -->
+        <div class="paso" data-fase="prep">
+          <div class="paso-num">
+            <div class="num-circle">1</div>
+            <div class="paso-linea"></div>
+          </div>
+          <div class="paso-contenido">
+            <span class="fase-label fase-prep">Preparación</span>
+            <h2>Preparar el cuerpo</h2>
+            <p>Comienza encontrando una posición cómoda. No tiene que ser una postura perfecta. Solo observa si hay algo que puedas ajustar para que tu cuerpo se sienta un poco más sostenido: la espalda, los pies, las manos, la mandíbula, los hombros.</p>
+            <p>Tómate un momento para notar el contacto de tu cuerpo con la superficie que te sostiene. Puede ser la silla, el sillón, la cama, el suelo o la ropa tocando tu piel.</p>
+            <div class="obs-box">
+              <p>No necesitas relajarte a la fuerza. Solo darte cuenta de que, en este momento, hay algo que te sostiene.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="paso" data-fase="cuerpo">
+          <div class="paso-num">
+            <div class="num-circle">2</div>
+            <div class="paso-linea"></div>
+          </div>
+          <div class="paso-contenido">
+            <span class="fase-label fase-cuerpo">Escaneo</span>
+            <h2>Buscar una zona neutra o <em>agradable</em></h2>
+            <p>Ahora lleva tu atención suavemente hacia tu cuerpo. Explora si hay alguna parte que se sienta neutra —que no esté especialmente tensa, incómoda o activada— o que se sienta agradable o cómoda.</p>
+            <p>Puede ser una mano tibia, los pies apoyados, la espalda sostenida, una zona en contacto con algo suave.</p>
+            <div class="obs-box">
+              <p>No tiene que ser una sensación intensa. Puede ser algo muy pequeño. Quizás solo una parte de tu cuerpo se siente "un poco menos incómoda" que las demás. Eso también sirve.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="paso" data-fase="cuerpo">
+          <div class="paso-num">
+            <div class="num-circle">3</div>
+            <div class="paso-linea"></div>
+          </div>
+          <div class="paso-contenido">
+            <span class="fase-label fase-cuerpo">Registro</span>
+            <h2>Permanecer ahí y registrar</h2>
+            <p>Cuando encuentres esa zona, quédate unos momentos ahí. Permite que tu atención descanse en esa sensación, como si la estuvieras escuchando desde adentro.</p>
+            <ul class="preguntas-lista">
+              <li>¿Qué sensación aparece?</li>
+              <li>¿Tiene temperatura, textura, peso o ligereza?</li>
+              <li>¿Tiene movimiento o quietud?</li>
+              <li>¿Tiene color, forma o tamaño?</li>
+              <li>¿Se siente profunda o superficial?</li>
+              <li>¿Se mantiene igual o cambia?</li>
+            </ul>
+            <p>No necesitas inventar nada. Solo registrar lo que aparece.</p>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="paso" data-fase="cuerpo">
+          <div class="paso-num">
+            <div class="num-circle">4</div>
+            <div class="paso-linea"></div>
+          </div>
+          <div class="paso-contenido">
+            <span class="fase-label fase-cuerpo">Expansión</span>
+            <h2>Dejar que la sensación se expanda</h2>
+            <p>Imagina que esa sensación de neutralidad, comodidad o calma puede expandirse poco a poco. No tienes que forzarla. Solo observa si puede ocupar un poco más de espacio en tu cuerpo: hacia el pecho, el abdomen, los brazos, las piernas o la respiración.</p>
+            <div class="obs-box">
+              <p>También puede quedarse exactamente donde está. Eso también está bien. La intención es reconocer que dentro del cuerpo también puede existir un lugar de apoyo, pausa o seguridad.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="paso" data-fase="imagen">
+          <div class="paso-num">
+            <div class="num-circle">5</div>
+            <div class="paso-linea"></div>
+          </div>
+          <div class="paso-contenido">
+            <span class="fase-label fase-imagen">Imagen</span>
+            <h2>Evocar una imagen agradable</h2>
+            <p>Desde esa sensación corporal, permite que aparezca una imagen, escena, objeto o lugar que evoque calma, seguridad o bienestar. Puede ser real o imaginario.</p>
+            <div class="ejemplos-lista">
+              <span class="ej-tag">una playa tranquila</span>
+              <span class="ej-tag">un bosque</span>
+              <span class="ej-tag">una habitación acogedora</span>
+              <span class="ej-tag">una manta suave</span>
+              <span class="ej-tag">una luz cálida</span>
+              <span class="ej-tag">un jardín</span>
+              <span class="ej-tag">una montaña</span>
+              <span class="ej-tag">un rincón de tu casa</span>
+              <span class="ej-tag">un objeto significativo</span>
+            </div>
+            <div class="obs-box">
+              <p>No tiene que ser perfecto. Solo necesita sentirse suficientemente seguro o agradable para ti.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="paso" data-fase="imagen">
+          <div class="paso-num">
+            <div class="num-circle">6</div>
+            <div class="paso-linea"></div>
+          </div>
+          <div class="paso-contenido">
+            <span class="fase-label fase-imagen">Construcción</span>
+            <h2>Construir el <em>lugar seguro</em></h2>
+            <p>Ahora enriquece esa imagen con detalles sensoriales. Permite que el lugar se construya a tu ritmo.</p>
+            <ul class="preguntas-lista">
+              <li>¿Qué ves? ¿Qué colores hay? ¿Hay luz, sombra, cielo, agua, árboles?</li>
+              <li>¿Qué sonidos aparecen? ¿Hay silencio, viento, pájaros, agua?</li>
+              <li>¿Hay algún olor?</li>
+              <li>¿Cómo es la temperatura?</li>
+              <li>¿Qué siente tu cuerpo estando ahí?</li>
+              <li>¿Hay algo que entregue sensación de protección o contención?</li>
+            </ul>
+            <div class="obs-box">
+              <p>Este lugar puede cambiar. No necesita ser definitivo. Lo importante es que tu sistema pueda reconocerlo como un espacio interno de calma o pausa.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="paso" data-fase="cuerpo">
+          <div class="paso-num">
+            <div class="num-circle">7</div>
+            <div class="paso-linea"></div>
+          </div>
+          <div class="paso-contenido">
+            <span class="fase-label fase-cuerpo">Anclaje</span>
+            <h2>Localizar la sensación corporal asociada</h2>
+            <p>Mientras imaginas ese lugar, vuelve a notar tu cuerpo. Pregúntate suavemente:</p>
+            <div class="obs-box">
+              <p><em style="font-family:var(--font-display);font-style:italic;">¿Dónde siento esta calma, seguridad o bienestar en mi cuerpo?</em></p>
+            </div>
+            <p>Quizás aparece en el pecho, el abdomen, las manos, la espalda, la respiración, la cara o en todo el cuerpo. Quédate unos momentos registrando esa sensación. Observa si tiene temperatura, forma, color, movimiento o textura.</p>
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="paso" data-fase="imagen">
+          <div class="paso-num">
+            <div class="num-circle">8</div>
+            <div class="paso-linea"></div>
+          </div>
+          <div class="paso-contenido">
+            <span class="fase-label fase-imagen">Palabra clave</span>
+            <h2>Elegir una palabra clave</h2>
+            <p>Elige una palabra breve que represente este lugar o esta sensación. Repite esa palabra internamente mientras vuelves a sentir el lugar y la sensación corporal asociada.</p>
+            <div class="palabras-clave">
+              <span class="pkey">calma</span>
+              <span class="pkey">refugio</span>
+              <span class="pkey">bosque</span>
+              <span class="pkey">luz</span>
+              <span class="pkey">tibieza</span>
+              <span class="pkey">hogar</span>
+              <span class="pkey">suavidad</span>
+              <span class="pkey">paz</span>
+              <span class="pkey">aquí</span>
+              <span class="pkey">segura</span>
+              <span class="pkey">sostén</span>
+            </div>
+            <p>Elige una que conecte naturalmente con tu experiencia.</p>
+          </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="paso" data-fase="refuerzo">
+          <div class="paso-num">
+            <div class="num-circle">9</div>
+            <div class="paso-linea"></div>
+          </div>
+          <div class="paso-contenido">
+            <span class="fase-label fase-refuerzo">Estimulación bilateral</span>
+            <h2>Reforzar con estimulación bilateral</h2>
+            <p>Cuando tengas clara la imagen, la sensación corporal y la palabra clave, puedes reforzar este recurso con estimulación bilateral lenta y breve. Elige una opción:</p>
+            <div class="bilaterales">
+              <div class="bilateral-card">
+                <span class="bil-ico">🦋</span>
+                <span class="bil-num">Opción 1</span>
+                <h3>Abrazo de la mariposa</h3>
+                <p>Cruza los brazos sobre el pecho. Da pequeños toques alternados: primero una mano, luego la otra. Ritmo suave, lento y amable.</p>
+                <p>Mantén presente la imagen, repite tu palabra clave y registra la sensación agradable.</p>
+                <span class="bil-pausa">→ Unos segundos · Detente · Respira</span>
+              </div>
+              <div class="bilateral-card">
+                <span class="bil-ico">🤲</span>
+                <span class="bil-num">Opción 2</span>
+                <h3>Golpecitos en las piernas</h3>
+                <p>Apoya ambas manos sobre tus muslos. Da golpecitos suaves y alternados: una mano, luego la otra. Ritmo lento y regulador.</p>
+                <p>Conecta con la imagen, la sensación y tu palabra clave.</p>
+                <span class="bil-pausa">→ Unos segundos · Detente · Respira</span>
+              </div>
+              <div class="bilateral-card">
+                <span class="bil-ico">🎧</span>
+                <span class="bil-num">Opción 3</span>
+                <h3>Música bilateral</h3>
+                <p>Usa música bilateral suave con audífonos, siempre que se sienta agradable y no invasiva.</p>
+                <p>Si notas incomodidad, mareo o activación, detén la música y vuelve al presente.</p>
+                <span class="bil-pausa">→ Breve · Detente · Observa</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="paso" data-fase="refuerzo">
+          <div class="paso-num">
+            <div class="num-circle">10</div>
+            <div class="paso-linea"></div>
+          </div>
+          <div class="paso-contenido">
+            <span class="fase-label fase-refuerzo">Observación</span>
+            <h2>Observar la respuesta del cuerpo</h2>
+            <p>Después de una ronda breve de estimulación bilateral, pregúntate:</p>
+            <ul class="preguntas-lista">
+              <li>¿La sensación se mantiene agradable?</li>
+              <li>¿Se siente más clara o más estable?</li>
+              <li>¿Aparece más calma, espacio o suavidad?</li>
+              <li>¿O aparece incomodidad, tensión, angustia o activación?</li>
+            </ul>
+            <div class="obs-box">
+              <p>Si la sensación sigue siendo agradable o suficientemente estable, puedes hacer una segunda ronda breve. Si aparece incomodidad, angustia, mareo o imágenes perturbadoras, detén la estimulación. Abre los ojos, mira alrededor y nombra mentalmente tres cosas que ves.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11 -->
+        <div class="paso" data-fase="cierre">
+          <div class="paso-num">
+            <div class="num-circle">11</div>
+            <div class="paso-linea"></div>
+          </div>
+          <div class="paso-contenido">
+            <span class="fase-label fase-cierre">Práctica autónoma</span>
+            <h2>Practicar el acceso autónomo</h2>
+            <p>Una vez construido tu lugar seguro, puedes practicar volver a él de forma breve. Para hacerlo, recuerda:</p>
+            <div class="obs-box">
+              <p><strong>imagen + palabra clave + sensación corporal</strong></p>
+            </div>
+            <p>Puedes cerrar los ojos o mantenerlos abiertos. Repite internamente tu palabra clave. Evoca la imagen de tu lugar seguro. Y nota dónde aparece en el cuerpo la sensación de calma o seguridad.</p>
+            <p>Con la práctica, este recurso puede transformarse en una herramienta portátil de regulación, disponible para usar dentro y fuera de sesión.</p>
+          </div>
+        </div>
+
+        <!-- 12 -->
+        <div class="paso" data-fase="cierre">
+          <div class="paso-num">
+            <div class="num-circle">12</div>
+          </div>
+          <div class="paso-contenido">
+            <span class="fase-label fase-cierre">Cierre</span>
+            <h2>Cierre del ejercicio</h2>
+            <p>Antes de terminar, observa cómo está tu cuerpo ahora. No busques una sensación perfecta. Solo nota si algo cambió, aunque sea mínimamente. Quizás hay un poco más de espacio, suavidad, calor, presencia o estabilidad.</p>
+            <p>Cuando estés lista, vuelve lentamente al entorno:</p>
+            <ul class="preguntas-lista">
+              <li>Mira alrededor. Nombra mentalmente tres cosas que ves.</li>
+              <li>Siente el contacto de tu cuerpo con la superficie que te sostiene.</li>
+              <li>Mueve suavemente las manos, los pies o el cuello.</li>
+            </ul>
+            <div class="obs-box">
+              <p>Recuerda que puedes volver a este lugar interno usando tu palabra clave cada vez que necesites una pausa, una sensación de sostén o un punto de reconexión.</p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /pasos -->
+
+      <!-- Nota de cuidado -->
+      <div class="nota-cuidado">
+        <div class="nota-cuidado-inner">
+          <span class="label">⚠ Nota de cuidado</span>
+          <p>La estimulación bilateral en este ejercicio debe ser <strong>lenta, breve y orientada a instalar un recurso</strong>, no a reprocesar recuerdos difíciles.</p>
+          <p>Si durante la práctica aparece angustia intensa, imágenes perturbadoras, desconexión, mareo o sensación de pérdida de control, detén el ejercicio y vuelve al presente a través de orientación externa: abre los ojos, mira el espacio, siente tus pies en el suelo y busca una señal concreta de seguridad en el aquí y ahora.</p>
+          <p>Este ejercicio no reemplaza un proceso terapéutico, pero puede ser una herramienta de apoyo para reconectar con el cuerpo, fortalecer recursos internos y volver gradualmente a una sensación de calma o estabilidad.</p>
+        </div>
+      </div>
+
+      <!-- Volver -->
+      <div class="volver-section">
+        <p>Si este ejercicio resonó contigo, te invito a conocer mi trabajo.</p>
+        <a href="chispa-de-vida.html" class="volver-btn">
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 7H1M6 2L1 7l5 5"/></svg>
+          Volver a la reflexión
+        </a>
+      </div>
+
+    </div><!-- /practica-body -->
+
+    <!-- Footer -->
+      <footer>
+    <div style="display:flex;flex-direction:column;gap:.5rem;">
+      <strong>Karla Moraga Aguilera · Terapeuta Somática &amp; Docente</strong>
+      <a href="https://instagram.com/lavozdelcuerpo.soma" target="_blank" style="display:inline-flex;align-items:center;gap:.5rem;color:rgba(255,255,255,.5);font-size:.72rem;letter-spacing:.06em;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='rgba(255,255,255,.8)'" onmouseout="this.style.color='rgba(255,255,255,.5)'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        @lavozdelcuerpo.soma
+      </a>
+    </div>
+    <span>© <span class="copy-year"></span> · Todos los derechos reservados</span>
+  </footer>
+
+  </main>
+
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    toggle.addEventListener('click',function(e){e.stopPropagation();sidebar.classList.toggle('open');});
+    function closeSidebar(){sidebar.classList.remove('open');}
+    document.addEventListener('click',function(e){if(sidebar.classList.contains('open')&&!sidebar.contains(e.target)&&!toggle.contains(e.target)){sidebar.classList.remove('open');}});
+  </script>
+  <script>document.querySelectorAll(".copy-year").forEach(e=>e.textContent=new Date().getFullYear());</script>
+</body>
+</html>

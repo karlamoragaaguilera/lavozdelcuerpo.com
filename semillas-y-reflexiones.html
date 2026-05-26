@@ -5,20 +5,21 @@
   <link rel="canonical" href="https://lavozdelcuerpo.com/semillas-y-reflexiones.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Semillas y reflexiones · Karla Moraga</title>
+  <meta name="description" content="Un espacio para compartir palabras sobre el cuerpo, el trauma, la sanación y el camino de volver a una misma." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Whisper&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
   <link rel="icon" type="image/png" href="favicon.png" />
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-33PZ0L65JL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-33PZ0L65JL');
-  </script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-33PZ0L65JL');</script>
+
   <style>
+    @font-face {
+      font-family: 'High Spirited';
+      src: url('High_Spirited.ttf') format('truetype');
+      font-weight: normal; font-style: normal;
+    }
     :root {
       --cream:      #FAF7F2;
       --warm-white: #FAF7F2;
@@ -26,164 +27,380 @@
       --earth-dark: #8C5042;
       --salvia:     #76886E;
       --beige:      #D9D3B8;
-      --gris-verde: #848C77;
       --text:       #2e2b28;
       --text-soft:  #6b6560;
       --text-muted: #9E9890;
       --line:       rgba(217,182,169,0.25);
-      --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-body:    'Jost', sans-serif;
+      --font-display:'Cormorant Garamond', Georgia, serif;
+      --font-body:   'Jost', sans-serif;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { background: var(--warm-white); color: var(--text); font-family: var(--font-body); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
-    a { color: inherit; text-decoration: none; }
-    ul { list-style: none; }
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { background:var(--warm-white); color:var(--text); font-family:var(--font-body); font-weight:300; line-height:1.7; overflow-x:hidden; }
+    a { color:inherit; text-decoration:none; }
+    ul { list-style:none; }
 
-    /* Sidebar */
-    .sidebar { position: fixed; top: 0; left: 0; width: 240px; height: 100vh; background: var(--cream); border-right: 1px solid var(--line); display: flex; flex-direction: column; padding: 2.5rem 2rem; z-index: 100; transform: translateX(-100%); transition: transform 0.4s ease; }
-    .sidebar.open { transform: translateX(0); }
-    .sidebar nav ul { display: flex; flex-direction: column; gap: 0.2rem; }
-    .sidebar nav a { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-soft); padding: 0.55rem 0; transition: color 0.2s; display: block; }
-    .sidebar nav a:hover { color: #8C5042; }
-    .sidebar-foot { font-size: 0.72rem; color: var(--text-muted); line-height: 1.6; margin-top: auto; }
-    .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 90; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 3rem; background: rgba(250,247,242,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
-    .topbar-logo .name { font-family: 'Whisper', cursive; font-size: 1.9rem; color: var(--text); display: block; }
-    .topbar-logo .title { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); display: block; }
-    .menu-toggle { background: transparent; border: 1px solid var(--line); width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 5px; cursor: pointer; }
-    .menu-toggle span { display: block; width: 20px; height: 1.5px; background: var(--text); }
-    .main { padding-top: 72px; }
+    /* ── Sidebar ── */
+    .sidebar { position:fixed; top:0; left:0; width:240px; height:100vh; background:var(--cream); border-right:1px solid var(--line); display:flex; flex-direction:column; padding:2.5rem 2rem; z-index:100; transform:translateX(-100%); transition:transform .4s ease; }
+    .sidebar.open { transform:translateX(0); }
+    .sidebar nav ul { display:flex; flex-direction:column; gap:.2rem; }
+    .sidebar nav a { font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; color:var(--text-soft); padding:.55rem 0; transition:color .2s; display:block; border-bottom:1px solid transparent; }
+    .sidebar nav a:hover, .sidebar nav a.active { color:var(--salvia); border-bottom-color:rgba(118,136,110,.3); }
+    .sidebar-foot { font-size:.72rem; color:var(--text-muted); line-height:1.6; margin-top:auto; }
 
-    /* Hero — próximamente */
+    /* ── Topbar ── */
+    .topbar { position:fixed; top:0; left:0; right:0; z-index:90; display:flex; justify-content:space-between; align-items:center; padding:1.2rem 3rem; background:linear-gradient(135deg,#F2E5DF 0%,#EDD9D0 100%); border-bottom:1px solid rgba(217,182,169,0.35); }
+    .topbar-logo .name { font-family:'Whisper',cursive; font-size:1.9rem; color:#5c3d30; display:block; }
+    .topbar-logo .title { font-size:.65rem; letter-spacing:.18em; text-transform:uppercase; color:#9E9890; display:block; }
+    .menu-toggle { background:#c4a882; border:none; border-radius:4px; width:42px; height:42px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:5px; cursor:pointer; }
+    .menu-toggle span { display:block; width:20px; height:1.5px; background:#fff8f2; }
+    .main { padding-top:72px; }
+
+    /* ── HERO ── */
     .hero {
-      min-height: 88vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 6rem 3rem;
+      padding: 5rem 5rem 4rem;
+      background: var(--cream);
+      border-bottom: 1px solid var(--line);
       position: relative;
       overflow: hidden;
-      background: var(--cream);
     }
-    /* Círculo decorativo de fondo */
     .hero::before {
       content: '';
       position: absolute;
-      width: 600px; height: 600px;
+      top: -100px; right: -100px;
+      width: 480px; height: 480px;
       border-radius: 50%;
-      border: 1px solid rgba(217,182,169,0.2);
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
+      border: 1px solid rgba(217,182,169,.15);
       pointer-events: none;
     }
     .hero::after {
       content: '';
       position: absolute;
-      width: 400px; height: 400px;
+      top: -40px; right: -40px;
+      width: 300px; height: 300px;
       border-radius: 50%;
-      border: 1px solid rgba(217,182,169,0.15);
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
+      border: 1px solid rgba(217,182,169,.1);
       pointer-events: none;
     }
-    .hero-inner { position: relative; z-index: 2; max-width: 580px; }
+    .hero-inner { max-width: 640px; position: relative; z-index: 1; }
     .hero-whisper {
       font-family: 'Whisper', cursive;
-      font-size: 5rem;
-      color: rgba(140,80,66,0.15);
+      font-size: 4rem;
+      color: rgba(140,80,66,.12);
       line-height: 1;
-      margin-bottom: 0.5rem;
       display: block;
+      margin-bottom: .2rem;
     }
-    .hero-label {
-      font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
-      color: var(--text-muted); margin-bottom: 2rem;
-    }
-    .hero-title {
+    .hero-label { font-size:.65rem; letter-spacing:.25em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.2rem; display:block; }
+    .hero h1 {
       font-family: var(--font-display);
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 300; line-height: 1.1;
-      color: var(--text); margin-bottom: 1.5rem;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: .8rem;
     }
-    .hero-title em { font-style: italic; color: #8C5042; }
-    .hero-divider {
-      width: 60px; height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(217,182,169,0.6), transparent);
-      margin: 0 auto 1.5rem;
-    }
-    .hero-body {
+    .hero h1 em { font-style:italic; color:var(--earth-dark); }
+    .hero-desc {
       font-family: var(--font-display);
-      font-size: 1.15rem; font-style: italic; font-weight: 300;
-      color: var(--text-soft); line-height: 1.7;
-      margin-bottom: 3rem;
-    }
-    /* Tarjeta próximamente */
-    .pronto-card {
-      display: inline-block;
-      background: var(--warm-white);
-      border: 1px solid rgba(217,182,169,0.35);
-      border-radius: 50% 50% 12px 12px / 8% 8% 0% 0%;
-      padding: 3rem 3.5rem 2.5rem;
-      margin-bottom: 3rem;
-    }
-    .pronto-badge {
-      font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase;
-      color: #8C5042; display: block; margin-bottom: 1rem;
-    }
-    .pronto-text {
-      font-family: var(--font-display);
-      font-size: 1.8rem; font-weight: 300; font-style: italic;
-      color: var(--text); line-height: 1.3;
-    }
-    /* Instagram CTA */
-    .ig-cta {
-      display: inline-flex; align-items: center; gap: 0.7rem;
-      font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+      font-style: italic;
+      font-size: 1.05rem;
       color: var(--text-soft);
-      border-bottom: 1px solid rgba(217,182,169,0.4);
-      padding-bottom: 0.15rem;
-      transition: color 0.2s, border-color 0.2s;
+      line-height: 1.7;
+      max-width: 50ch;
     }
-    .ig-cta:hover { color: #8C5042; border-color: #8C5042; }
 
-    /* Footer */
-    footer {
-      background: linear-gradient(135deg, #3A2820 0%, #2E2018 100%);
-      color: rgba(255,255,255,0.45);
-      padding: 2.5rem 6rem;
-      display: flex; justify-content: space-between; align-items: center;
-      font-size: 0.75rem; letter-spacing: 0.06em;
+    /* ── ZONA DE ENTRADAS ── */
+    .entradas-zona {
+      padding: 4rem 5rem 6rem;
     }
-    footer strong { color: rgba(255,255,255,0.85); font-family: var(--font-display); font-size: 1rem; font-weight: 300; }
-    footer a { color: rgba(217,182,169,0.8); }
 
-    @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-    .hero-whisper { animation: fadeUp 0.7s ease 0.1s both; }
-    .hero-label    { animation: fadeUp 0.7s ease 0.2s both; }
-    .hero-title    { animation: fadeUp 0.7s ease 0.3s both; }
-    .hero-divider  { animation: fadeUp 0.7s ease 0.4s both; }
-    .hero-body     { animation: fadeUp 0.7s ease 0.5s both; }
-    .pronto-card   { animation: fadeUp 0.7s ease 0.6s both; }
-    .ig-cta        { animation: fadeUp 0.7s ease 0.7s both; }
+    /* Filtros */
+    .filtros {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-bottom: 3rem;
+      align-items: center;
+    }
+    .filtros-label {
+      font-size: .65rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-right: .5rem;
+    }
+    .filtro-btn {
+      font-family: var(--font-body);
+      font-size: .72rem;
+      font-weight: 400;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      background: transparent;
+      border: 1px solid var(--line);
+      padding: .35rem 1rem;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: background .2s, color .2s, border-color .2s;
+    }
+    .filtro-btn:hover { border-color: var(--earth); color: var(--earth-dark); }
+    .filtro-btn.activo { background: var(--earth-dark); color: #FAF7F2; border-color: var(--earth-dark); }
 
-    @media (max-width: 768px) {
-      .hero { padding: 4rem 2rem; min-height: 80vh; }
-      .hero::before { width: 320px; height: 320px; }
-      .hero::after  { width: 200px; height: 200px; }
-      .pronto-card  { padding: 2rem 2rem 1.8rem; }
-      footer { flex-direction: column; gap: 0.6rem; text-align: center; padding: 2rem; }
-      .topbar { padding: 1rem 1.5rem; }
+    /* ── TARJETA DESTACADA (primera / más reciente) ── */
+    .tarjeta-destacada {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+      transition: box-shadow .3s;
+    }
+    .tarjeta-destacada:hover { box-shadow: 0 8px 32px rgba(46,43,40,.08); }
+
+    .td-visual {
+      min-height: 320px;
+      display: flex;
+      align-items: flex-end;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Color de fondo temático — se sobreescribe por entrada */
+    .td-visual.tema-trauma {
+      background: linear-gradient(160deg, #E8DDD4 0%, #C4A090 100%);
+    }
+    .td-num {
+      font-family: var(--font-display);
+      font-size: 7rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255,255,255,.25);
+      position: absolute;
+      top: 1rem; left: 1.5rem;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .td-categoria-visual {
+      font-size: .65rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.8);
+      background: rgba(0,0,0,.15);
+      padding: .3rem .7rem;
+      border-radius: 2px;
+    }
+
+    .td-texto {
+      padding: 2.8rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--warm-white);
+    }
+    .td-meta {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      margin-bottom: 1.1rem;
+    }
+    .tag-cat {
+      font-size: .62rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--earth-dark);
+      border: 1px solid rgba(140,80,66,.25);
+      padding: .2rem .6rem;
+      border-radius: 2px;
+    }
+    .tag-nuevo {
+      font-size: .62rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--salvia);
+      border: 1px solid rgba(118,136,110,.3);
+      padding: .2rem .6rem;
+      border-radius: 2px;
+    }
+    .td-titulo {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: .8rem;
+    }
+    .td-titulo em { font-style:italic; color:var(--earth-dark); }
+    .td-extracto {
+      font-size: .9rem;
+      color: var(--text-soft);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      max-width: 52ch;
+    }
+    .leer-mas {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--earth-dark);
+      border-bottom: 1px solid rgba(140,80,66,.3);
+      padding-bottom: .1rem;
+      transition: border-color .2s, gap .2s;
+      width: fit-content;
+    }
+    .leer-mas:hover { border-color: var(--earth-dark); gap: .8rem; }
+    .leer-mas svg { width:13px; height:13px; }
+
+    /* ── GRID DE TARJETAS NORMALES ── */
+    .grid-entradas {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .tarjeta {
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow .3s, transform .3s;
+    }
+    .tarjeta:hover { box-shadow: 0 8px 28px rgba(46,43,40,.07); transform: translateY(-3px); }
+
+    .t-visual {
+      height: 160px;
+      display: flex;
+      align-items: flex-end;
+      padding: 1.2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .t-visual.tema-trauma  { background: linear-gradient(160deg, #E8DDD4 0%, #C4A090 100%); }
+    .t-visual.tema-limites { background: linear-gradient(160deg, #D9D3E8 0%, #8A7BAA 100%); }
+    .t-visual.tema-cuerpo  { background: linear-gradient(160deg, #D3E8D9 0%, #6B886E 100%); }
+    .t-visual.tema-vinculos{ background: linear-gradient(160deg, #E8D9D3 0%, #AA8A7B 100%); }
+    .t-num-small {
+      font-family: var(--font-display);
+      font-size: 4.5rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255,255,255,.2);
+      position: absolute;
+      top: .5rem; left: 1rem;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .t-texto { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+    .t-meta { display:flex; align-items:center; gap:.6rem; margin-bottom:.7rem; }
+    .t-titulo {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: 1.25rem;
+      line-height: 1.25;
+      color: var(--text);
+      margin-bottom: .5rem;
+    }
+    .t-titulo em { font-style:italic; color:var(--earth-dark); }
+    .t-extracto { font-size:.82rem; color:var(--text-soft); line-height:1.75; margin-bottom:1.1rem; flex:1; }
+    .t-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      font-size: .68rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--earth-dark);
+      border-bottom: 1px solid rgba(140,80,66,.25);
+      padding-bottom: .1rem;
+      transition: gap .2s, border-color .2s;
+      width: fit-content;
+    }
+    .t-link:hover { gap:.65rem; border-color:var(--earth-dark); }
+    .t-link svg { width:11px; height:11px; }
+
+    /* ── SEPARADOR ── */
+    .sep {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin: 2.5rem 0;
+    }
+    .sep .linea { flex:1; height:1px; background:var(--line); }
+    .sep span { font-size:.75rem; color:rgba(217,182,169,.6); letter-spacing:.2em; }
+
+    /* ── VER MÁS ── */
+    .ver-mas-wrap {
+      text-align: center;
+      margin-top: 2.5rem;
+      display: none; /* visible solo cuando hay más entradas ocultas */
+    }
+    .ver-mas-btn {
+      font-family: var(--font-body);
+      font-size: .78rem;
+      font-weight: 400;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      background: transparent;
+      border: 1px solid var(--line);
+      padding: .9rem 2.5rem;
+      cursor: pointer;
+      transition: border-color .2s, color .2s;
+      border-radius: 2px;
+    }
+    .ver-mas-btn:hover { border-color: var(--earth); color: var(--earth-dark); }
+
+    /* ── ESTADO VACÍO (cuando filtro no tiene resultados) ── */
+    .vacio {
+      text-align: center;
+      padding: 4rem 2rem;
+      display: none;
+    }
+    .vacio p {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+    }
+
+    /* ── Footer ── */
+    footer { background:linear-gradient(135deg,#3A2820 0%,#2E2018 100%); color:rgba(255,255,255,.45); padding:2.5rem 6rem; display:flex; justify-content:space-between; align-items:center; font-size:.75rem; letter-spacing:.06em; }
+    footer strong { color:rgba(255,255,255,.85); font-family:var(--font-display); font-size:1rem; font-weight:300; }
+    footer a { color:rgba(217,182,169,.8); }
+
+    /* ── Animaciones ── */
+    @keyframes fadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
+    .hero-inner { animation:fadeUp .7s ease .1s both; }
+    .filtros    { animation:fadeUp .7s ease .2s both; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .hero { padding:4rem 2rem 3rem; }
+      .entradas-zona { padding:3rem 2rem 5rem; }
+      .tarjeta-destacada { grid-template-columns:1fr; }
+      .td-visual { min-height:220px; }
+      .grid-entradas { grid-template-columns:1fr 1fr; }
+      footer { flex-direction:column; gap:.6rem; text-align:center; padding:2rem; }
+      .topbar { padding:1rem 1.5rem; }
+    }
+    @media (max-width: 560px) {
+      .grid-entradas { grid-template-columns:1fr; }
     }
   </style>
 </head>
 <body>
 
-  <aside class="sidebar" id="sidebar">
+  <!-- ── Sidebar ── -->
+    <aside class="sidebar" id="sidebar">
     <div style="margin-bottom:3rem;">
-      <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:1.25rem; font-weight:400; font-style:italic; color:var(--text); display:block; margin-bottom:0.2rem;">Karla Moraga</span>
-      <span style="font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-soft);">Terapeuta Somática &amp; Docente</span>
+      <span style="font-family:'High Spirited',cursive;font-size:1.4rem;color:var(--text);display:block;margin-bottom:.3rem;line-height:1.2;">Karla Moraga Aguilera</span>
+      <span style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-soft);display:block;">Terapeuta Somática &amp; Docente</span>
     </div>
     <nav><ul>
       <li><a href="index.html">Inicio</a></li>
@@ -191,64 +408,201 @@
       <li><a href="mi-trabajo.html">Mi trabajo</a></li>
       <li><a href="sesiones-individuales.html">Sesiones individuales</a></li>
       <li><a href="programas.html">Programas</a></li>
+      <li><a href="masterclass-ansiedad-y-cuerpo.html" style="color:#9B8DC0;">Masterclass gratuita</a></li>
       <li><a href="semillas-y-reflexiones.html">Semillas y reflexiones</a></li>
       <li><a href="index.html#guias">Guías somáticas</a></li>
       <li><a href="index.html#recursos">Recursos gratuitos</a></li>
       <li><a href="https://wa.me/56956305069" target="_blank">Agendar</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
     </ul></nav>
-    <div class="sidebar-foot">© <span class="copy-year"></span> · Karla Moraga</div>
+    <div class="sidebar-foot">© <span class="copy-year"></span> · Karla Moraga Aguilera</div>
   </aside>
 
-  <header class="topbar">
-    <div class="topbar-logo">
+  <!-- ── Topbar ── -->
+    <header class="topbar">
+    <a href="index.html" class="topbar-logo">
       <span class="name">Karla Moraga</span>
       <span class="title">Terapeuta Somática &amp; Docente</span>
-    </div>
-    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
   </header>
 
   <main class="main">
+
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-inner">
         <span class="hero-whisper">semillas</span>
-        <p class="hero-label">Reflexiones · Escritura · Proceso</p>
-        <h1 class="hero-title">Semillas y<br/><em>reflexiones</em></h1>
-        <div class="hero-divider"></div>
-        <p class="hero-body">
-          Un espacio para compartir palabras sobre el cuerpo,<br/>
-          el trauma, la sanación y el camino de volver a una misma.
-        </p>
-
-        <div class="pronto-card">
-          <span class="pronto-badge">✦ Próximamente</span>
-          <div class="pronto-text">Este espacio está<br/>tomando forma.</div>
-        </div>
-
-        <br/>
-
-        <a href="https://www.instagram.com/lavozdelcuerpo.soma" target="_blank" class="ig-cta">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-          Mientras tanto, te espero en Instagram
-        </a>
+        <span class="hero-label">Reflexiones · Escritura · Proceso</span>
+        <h1>Semillas y <em>reflexiones</em></h1>
+        <p class="hero-desc">Un espacio para compartir palabras sobre el cuerpo, el trauma, la sanación y el camino de volver a una misma.</p>
       </div>
     </section>
+
+    <!-- ENTRADAS -->
+    <section class="entradas-zona">
+
+      <!-- Filtros -->
+      <div class="filtros">
+        <span class="filtros-label">Filtrar por</span>
+        <button class="filtro-btn activo" data-cat="todas">Todas</button>
+        <button class="filtro-btn" data-cat="trauma">Trauma</button>
+        <button class="filtro-btn" data-cat="cuerpo">Cuerpo</button>
+        <button class="filtro-btn" data-cat="limites">Límites</button>
+        <button class="filtro-btn" data-cat="vinculos">Vínculos</button>
+      </div>
+
+      <!-- ─ ENTRADA DESTACADA (la más reciente siempre aquí) ─ -->
+      <a href="chispa-de-vida.html" class="tarjeta-destacada" data-cats="trauma cuerpo">
+        <div class="td-visual tema-trauma">
+          <span class="td-num">01</span>
+          <span class="td-categoria-visual">Trauma · Resiliencia</span>
+        </div>
+        <div class="td-texto">
+          <div class="td-meta">
+            <span class="tag-cat">Trauma</span>
+            <span class="tag-nuevo">Nueva entrada</span>
+          </div>
+          <h2 class="td-titulo">La chispa <em>que permanece</em></h2>
+          <p class="td-extracto">Quienes lo han vivido saben que, después de una experiencia traumática, se pierde todo sentido de esperanza y de vitalidad. Pero siempre hay una chispa de vida, siempre. En ti, en tu cuerpo.</p>
+          <span class="leer-mas">
+            Leer reflexión
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- ─ SEPARADOR ─ -->
+      <div class="sep" id="sep-grid" style="display:none;">
+        <div class="linea"></div>
+        <span>· · ·</span>
+        <div class="linea"></div>
+      </div>
+
+      <!-- ─ GRID (aquí van las próximas entradas) ─ -->
+      <!--
+        ═══════════════════════════════════════════════════
+        CÓMO AGREGAR UNA NUEVA ENTRADA:
+        Copia el bloque <div class="tarjeta"> de abajo,
+        pégalo dentro de #grid-entradas,
+        y cambia: href, data-cats, tema-*, td-num, textos.
+        Categorías disponibles: trauma · cuerpo · limites · vinculos
+        ═══════════════════════════════════════════════════
+
+        <div class="tarjeta" data-cats="cuerpo">
+          <a href="nombre-pagina.html">
+            <div class="t-visual tema-cuerpo">
+              <span class="t-num-small">02</span>
+              <span class="td-categoria-visual" style="font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.8);background:rgba(0,0,0,.15);padding:.25rem .6rem;border-radius:2px;">Cuerpo</span>
+            </div>
+            <div class="t-texto">
+              <div class="t-meta"><span class="tag-cat">Cuerpo</span></div>
+              <h3 class="t-titulo">Título de la entrada</h3>
+              <p class="t-extracto">Extracto corto de 2-3 líneas que resume el tema central de la reflexión.</p>
+              <span class="t-link">Leer <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 7h12M8 2l5 5-5 5"/></svg></span>
+            </div>
+          </a>
+        </div>
+      -->
+
+      <div class="grid-entradas" id="grid-entradas">
+        <!-- Las próximas entradas van aquí -->
+      </div>
+
+      <!-- Estado vacío al filtrar -->
+      <div class="vacio" id="estado-vacio">
+        <p>Aún no hay entradas en esta categoría.<br/>Vuelve pronto.</p>
+      </div>
+
+      <!-- Ver más (aparece solo cuando hay más de 9 tarjetas en el grid) -->
+      <div class="ver-mas-wrap" id="ver-mas-wrap">
+        <button class="ver-mas-btn" id="ver-mas-btn">Ver más entradas</button>
+      </div>
+
+    </section>
+
   </main>
 
-  <footer>
-    <strong>Karla Moraga · Terapeuta Somática &amp; Docente</strong>
-    <a href="https://www.instagram.com/lavozdelcuerpo.soma" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-      @lavozdelcuerpo.soma
-    </a>
-    <a href="index.html">← Volver al inicio</a>
+    <footer>
+    <div style="display:flex;flex-direction:column;gap:.5rem;">
+      <strong>Karla Moraga Aguilera · Terapeuta Somática &amp; Docente</strong>
+      <a href="https://instagram.com/lavozdelcuerpo.soma" target="_blank" style="display:inline-flex;align-items:center;gap:.5rem;color:rgba(255,255,255,.5);font-size:.72rem;letter-spacing:.06em;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='rgba(255,255,255,.8)'" onmouseout="this.style.color='rgba(255,255,255,.5)'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        @lavozdelcuerpo.soma
+      </a>
+    </div>
+    <span>© <span class="copy-year"></span> · Todos los derechos reservados</span>
   </footer>
 
   <script>
-    const toggle = document.getElementById('menuToggle');
+    /* ── Sidebar ── */
+    const toggle  = document.getElementById('menuToggle');
     const sidebar = document.getElementById('sidebar');
     toggle.addEventListener('click', e => { e.stopPropagation(); sidebar.classList.toggle('open'); });
     document.addEventListener('click', e => { if (sidebar.classList.contains('open') && !sidebar.contains(e.target) && !toggle.contains(e.target)) sidebar.classList.remove('open'); });
+    sidebar.querySelectorAll('a').forEach(a => a.addEventListener('click', () => sidebar.classList.remove('open')));
+
+    /* ── Filtros ── */
+    const VISIBLE_POR_PAGINA = 9;
+    let categoriaActual = 'todas';
+    let mostrandoHasta  = VISIBLE_POR_PAGINA;
+
+    const destacada  = document.querySelector('.tarjeta-destacada');
+    const tarjetas   = Array.from(document.querySelectorAll('.tarjeta'));
+    const vacio      = document.getElementById('estado-vacio');
+    const sepGrid    = document.getElementById('sep-grid');
+    const verMasWrap = document.getElementById('ver-mas-wrap');
+
+    function actualizarVista() {
+      /* Filtrar tarjetas del grid */
+      const visibles = tarjetas.filter(t => {
+        const cats = t.getAttribute('data-cats') || '';
+        return categoriaActual === 'todas' || cats.includes(categoriaActual);
+      });
+
+      /* Mostrar/ocultar destacada */
+      if (destacada) {
+        const cats = destacada.getAttribute('data-cats') || '';
+        const mostrarDest = categoriaActual === 'todas' || cats.includes(categoriaActual);
+        destacada.style.display = mostrarDest ? '' : 'none';
+      }
+
+      /* Mostrar tarjetas del grid hasta el límite */
+      tarjetas.forEach((t, i) => {
+        const cats = t.getAttribute('data-cats') || '';
+        const enFiltro = categoriaActual === 'todas' || cats.includes(categoriaActual);
+        const dentroLimite = visibles.indexOf(t) < mostrandoHasta;
+        t.style.display = (enFiltro && dentroLimite) ? '' : 'none';
+      });
+
+      /* Estado vacío */
+      const hayAlgo = (destacada && destacada.style.display !== 'none') || visibles.length > 0;
+      vacio.style.display   = hayAlgo ? 'none' : 'block';
+      sepGrid.style.display = visibles.length > 0 ? '' : 'none';
+
+      /* Ver más */
+      verMasWrap.style.display = visibles.length > mostrandoHasta ? 'block' : 'none';
+    }
+
+    document.querySelectorAll('.filtro-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('activo'));
+        btn.classList.add('activo');
+        categoriaActual = btn.getAttribute('data-cat');
+        mostrandoHasta  = VISIBLE_POR_PAGINA;
+        actualizarVista();
+      });
+    });
+
+    document.getElementById('ver-mas-btn').addEventListener('click', () => {
+      mostrandoHasta += VISIBLE_POR_PAGINA;
+      actualizarVista();
+    });
+
+    actualizarVista();
+
+    /* ── Año ── */
+    document.querySelectorAll('.copy-year').forEach(e => e.textContent = new Date().getFullYear());
   </script>
-<script>document.querySelectorAll(".copy-year").forEach(e=>e.textContent=new Date().getFullYear());</script>
 </body>
 </html>

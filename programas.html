@@ -13,6 +13,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Whisper&display=swap" rel="stylesheet" />
   <style>
+    @font-face {
+      font-family: 'High Spirited';
+      src: url('High_Spirited.ttf') format('truetype');
+      font-weight: normal; font-style: normal;
+    }
     :root {
       --cream:      #FAF7F2;
       --warm-white: #FAF7F2;
@@ -50,13 +55,13 @@
     .sidebar-logo span { display: block; font-size: 0.72rem; font-family: var(--font-body); font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-soft); margin-top: 0.3rem; }
     .sidebar nav ul { display: flex; flex-direction: column; gap: 0.2rem; }
     .sidebar nav a { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-soft); padding: 0.55rem 0; border-bottom: 1px solid transparent; transition: color 0.2s; display: block; }
-    .sidebar nav a:hover { color: var(--sage-dark); }
+    .sidebar nav a:hover { color:#76886E; border-bottom-color:rgba(118,136,110,.3); }
     .sidebar-foot { font-size: 0.72rem; color: var(--text-muted); line-height: 1.6; }
-    .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 90; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 3rem; background: rgba(250,247,242,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
-    .topbar-logo .name { font-family: 'Whisper', cursive; font-size: 1.9rem; color: var(--text); display: block; }
-    .topbar-logo .title { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); display: block; }
-    .menu-toggle { background: transparent; border: 1px solid var(--line); width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 5px; cursor: pointer; }
-    .menu-toggle span { display: block; width: 20px; height: 1.5px; background: var(--text); }
+    .topbar { position:fixed; top:0; left:0; right:0; z-index:90; display:flex; justify-content:space-between; align-items:center; padding:1.2rem 3rem; background:linear-gradient(135deg,#F2E5DF 0%,#EDD9D0 100%); border-bottom:1px solid rgba(217,182,169,0.35); }
+    .topbar-logo .name { font-family:'Whisper',cursive; font-size:1.9rem; color:#5c3d30; display:block; }
+    .topbar-logo .title { font-size:.65rem; letter-spacing:.18em; text-transform:uppercase; color:#9E9890; display:block; }
+    .menu-toggle { background:#c4a882; border:none; border-radius:4px; width:42px; height:42px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:5px; cursor:pointer; }
+    .menu-toggle span { display:block; width:20px; height:1.5px; background:#fff8f2; }
     .main { padding-top: 72px; }
 
     .page-hero { padding: 5rem 8rem 4.5rem; border-bottom: 1px solid var(--line); position: relative; overflow: hidden; }
@@ -181,7 +186,7 @@
       .prog-detail-item { border-right: none; border-bottom: 1px solid var(--line); }
       .closing { padding: 4rem 2rem; }
       footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 2rem; }
-      .topbar { padding: 1rem 1.5rem; }
+      .topbar { padding:1rem 1.5rem; }
     }
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-33PZ0L65JL"></script>
@@ -194,33 +199,33 @@
 </head>
 <body>
 
-  <aside class="sidebar" id="sidebar">
-    <div class="sidebar-logo">
-      <span style="font-family:'Whisper', cursive; font-size:1.6rem; color:var(--text); display:block; margin-bottom:0.2rem;">Karla Moraga</span>
-      <span>Terapeuta Somática &amp; Docente</span>
+    <aside class="sidebar" id="sidebar">
+    <div style="margin-bottom:3rem;">
+      <span style="font-family:'High Spirited',cursive;font-size:1.4rem;color:var(--text);display:block;margin-bottom:.3rem;line-height:1.2;">Karla Moraga Aguilera</span>
+      <span style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-soft);display:block;">Terapeuta Somática &amp; Docente</span>
     </div>
     <nav><ul>
-      <li><a href="index.html" onclick="closeSidebar()">Inicio</a></li>
-      <li><a href="sobre-mi.html" onclick="closeSidebar()">Sobre mí</a></li>
-      <li><a href="mi-trabajo.html" onclick="closeSidebar()">Mi trabajo</a></li>
-      <li><a href="sesiones-individuales.html" onclick="closeSidebar()">Sesiones individuales</a></li>
-      <li><a href="programas.html" onclick="closeSidebar()">Programas</a></li>
-      <li><a href="semillas-y-reflexiones.html" onclick="closeSidebar()">Semillas y reflexiones</a></li>
-      <li><a href="index.html#guias" onclick="closeSidebar()">Guías somáticas</a></li>
-      <li><a href="index.html#recursos" onclick="closeSidebar()">Recursos gratuitos</a></li>
-      <li><a href="https://wa.me/56956305069" target="_blank" onclick="closeSidebar()">Agendar</a></li>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="sobre-mi.html">Sobre mí</a></li>
+      <li><a href="mi-trabajo.html">Mi trabajo</a></li>
+      <li><a href="sesiones-individuales.html">Sesiones individuales</a></li>
+      <li><a href="programas.html">Programas</a></li>
+      <li><a href="masterclass-ansiedad-y-cuerpo.html" style="color:#9B8DC0;">Masterclass gratuita</a></li>
+      <li><a href="semillas-y-reflexiones.html">Semillas y reflexiones</a></li>
+      <li><a href="index.html#guias">Guías somáticas</a></li>
+      <li><a href="index.html#recursos">Recursos gratuitos</a></li>
+      <li><a href="https://wa.me/56956305069" target="_blank">Agendar</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
     </ul></nav>
-    <div class="sidebar-foot">© <span class="copy-year"></span> · Karla Moraga</div>
+    <div class="sidebar-foot">© <span class="copy-year"></span> · Karla Moraga Aguilera</div>
   </aside>
 
-  <header class="topbar">
-    <div class="topbar-logo">
+    <header class="topbar">
+    <a href="index.html" class="topbar-logo">
       <span class="name">Karla Moraga</span>
       <span class="title">Terapeuta Somática &amp; Docente</span>
-    </div>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
-      <span></span><span></span><span></span>
-    </button>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
   </header>
 
   <main class="main">
@@ -422,13 +427,14 @@
 
   </main>
 
-  <footer>
-    <strong>Karla Moraga · Terapeuta Somática &amp; Docente</strong>
-    <a href="https://www.instagram.com/lavozdelcuerpo.soma" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;color:rgba(217,182,169,0.8);font-size:0.72rem;text-decoration:none;letter-spacing:0.06em;">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.8;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-      @lavozdelcuerpo.soma
-    </a>
-    <a href="index.html">← Volver al inicio</a>
+    <footer>
+    <div style="display:flex;flex-direction:column;gap:.5rem;">
+      <strong>Karla Moraga Aguilera · Terapeuta Somática &amp; Docente</strong>
+      <a href="https://instagram.com/lavozdelcuerpo.soma" target="_blank" style="display:inline-flex;align-items:center;gap:.5rem;color:rgba(255,255,255,.5);font-size:.72rem;letter-spacing:.06em;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='rgba(255,255,255,.8)'" onmouseout="this.style.color='rgba(255,255,255,.5)'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        @lavozdelcuerpo.soma
+      </a>
+    </div>
     <span>© <span class="copy-year"></span> · Todos los derechos reservados</span>
   </footer>
 
