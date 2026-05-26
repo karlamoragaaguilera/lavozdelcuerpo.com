@@ -17,9 +17,9 @@
     :root {
       --cream:      #FAF7F2;
       --warm-white: #FAF7F2;
-      --sage:       #a8c4a2;
-      --sage-light: #a8c4a2;
-      --sage-dark:  #5F7B5C;
+      --sage:       #D4A840;
+      --sage-light: #E8CB80;
+      --sage-dark:  #8C6820;
       --earth:      #C4956A;
       --earth-light:#dbb899;
       --text:       #2e2b28;
@@ -47,10 +47,10 @@
 
     /* ─── Topbar ── */
     .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 90; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 3rem; background: rgba(250,247,242,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
-    .topbar-logo .name { font-family: 'Whisper', cursive; font-size: 1.9rem; color: var(--text); display: block; }
+    .topbar-logo .name { font-family: 'Whisper', cursive; font-size: 1.9rem; color: #5c3d30; display: block; }
     .topbar-logo .title { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); display: block; }
-    .menu-toggle { background: transparent; border: 1px solid var(--line); width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 5px; cursor: pointer; }
-    .menu-toggle span { display: block; width: 20px; height: 1.5px; background: var(--text); }
+    .menu-toggle { background: #c4a882; border: none; border-radius: 4px; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 5px; cursor: pointer; }
+    .menu-toggle span { display: block; width: 20px; height: 1.5px; background: #fff8f2; }
     .main { padding-top: 72px; }
 
     /* ══════════════════════════════════
@@ -75,7 +75,7 @@
       position: absolute; inset: 0;
       background:
         radial-gradient(ellipse 80% 60% at 30% 30%, #C2B09A 0%, transparent 60%),
-        radial-gradient(ellipse 60% 70% at 80% 80%, #5F7B5C 0%, transparent 55%);
+        radial-gradient(ellipse 60% 70% at 80% 80%, rgba(201,160,60,.4) 0%, transparent 55%);
       opacity: 0.55;
     }
     .hero-photo-slot {
@@ -190,7 +190,7 @@
     }
     .historia-aside {
       background: #FAF7F2;
-      border: 3px solid #76886E;
+      border: 3px solid #8C6820;
       padding: 6rem 4rem 6rem 5.5rem;
       position: relative;
       overflow: hidden;
@@ -321,7 +321,7 @@
     }
     /* Pequeña stat/dato */
     .dato-box {
-      background: var(--sage-dark);
+      background: #8C6820;
       padding: 1.8rem;
       color: var(--warm-white);
     }
@@ -513,15 +513,18 @@
 <body>
 
   <aside class="sidebar" id="sidebar">
-    <div class="sidebar-logo">
-      <span style="font-family:'Cormorant Garamond',Georgia,serif; font-size:1.25rem; font-weight:400; font-style:italic; color:var(--text); display:block; margin-bottom:0.2rem;">Karla Moraga Aguilera</span>
-      <span>Terapeuta Somática &amp; Docente</span>
+    <div style="margin-bottom:3rem;">
+      <span style="font-family:'High Spirited',cursive;font-size:1.4rem;color:var(--text);display:block;margin-bottom:.3rem;line-height:1.2;">Karla Moraga Aguilera</span>
+      <span style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-soft);display:block;">Terapeuta Somática &amp; Docente</span>
     </div>
     <nav><ul>
       <li><a href="index.html">Inicio</a></li>
       <li><a href="sobre-mi.html" class="active">Sobre mí</a></li>
       <li><a href="mi-trabajo.html">Mi trabajo</a></li>
+      <li><a href="sesiones-individuales.html">Sesiones individuales</a></li>
       <li><a href="programas.html">Programas</a></li>
+      <li><a href="masterclass-ansiedad-y-cuerpo.html" style="color:#9B8DC0;">Masterclass gratuita</a></li>
+      <li><a href="semillas-y-reflexiones.html">Semillas y reflexiones</a></li>
       <li><a href="index.html#guias">Guías somáticas</a></li>
       <li><a href="index.html#recursos">Recursos gratuitos</a></li>
       <li><a href="https://wa.me/56956305069" target="_blank">Agendar</a></li>
@@ -561,13 +564,11 @@
         </div>
         <div>
           <p class="hero-label">Mi historia · Mi camino</p>
-          <h1 class="hero-title">
-            Karla<br/>
-            <em>Moraga</em>
+          <h1 style="margin-bottom:1.2rem;line-height:1.05;">
+            <span style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-style:italic;font-size:clamp(3.5rem,6vw,6rem);color:#5c3d30;display:block;line-height:1;letter-spacing:-.01em;">La Voz del Cuerpo</span>
           </h1>
-          <div class="hero-quote-block">
-            <p>Mi camino profesional nace, profundamente, de mi propio proceso de sanación.</p>
-          </div>
+          <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(1.3rem,2.2vw,1.7rem);color:var(--text-soft);margin-bottom:1.4rem;letter-spacing:.01em;">es Karla Moraga Aguilera</p>
+          <p style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(1rem,1.6vw,1.15rem);color:var(--text-soft);line-height:1.85;max-width:50ch;">Este proyecto y camino profesional nace profundamente de mi propio proceso de sanación y, como mi dharma, del deseo de compartir con otras lo que me ayudó a mí.</p>
         </div>
       </div>
     </section>

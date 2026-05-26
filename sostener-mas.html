@@ -49,7 +49,7 @@
     .sidebar { position: fixed; top: 0; left: 0; width: 240px; height: 100vh; background: var(--cream); border-right: 1px solid var(--line); display: flex; flex-direction: column; padding: 2.5rem 2rem; z-index: 100; transform: translateX(-100%); transition: transform 0.4s ease; }
     .sidebar.open { transform: translateX(0); }
     .sidebar-logo { line-height: 1.3; margin-bottom: 3rem; }
-    .sidebar-logo span { display: block; font-size: 0.72rem; font-family: var(--font-body); font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-soft); margin-top: 0.3rem; }
+    .sidebar-logo span { display: block; font-size: 0.72rem; font-family: var(--font-body); font-weight: 300; letter-spacing: 0.04em; text-transform: none; color: var(--text-soft); margin-top: 0.3rem; }
     .sidebar nav ul { display: flex; flex-direction: column; gap: 0.2rem; }
     .sidebar nav a { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-soft); padding: 0.55rem 0; border-bottom: 1px solid transparent; transition: color 0.2s; display: block; }
     .sidebar nav a:hover { color: var(--gold-dark); }
@@ -59,8 +59,8 @@
     .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 90; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 3rem; background: rgba(250,247,242,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
     .topbar-logo .name { font-family: 'Whisper', cursive; font-size: 1.9rem; color: var(--text); display: block; }
     .topbar-logo .title { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); display: block; }
-    .menu-toggle { background: transparent; border: 1px solid var(--line); width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 5px; cursor: pointer; }
-    .menu-toggle span { display: block; width: 20px; height: 1.5px; background: var(--text); }
+    .menu-toggle { background: #c4a882; border: none; border-radius: 4px; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 5px; cursor: pointer; }
+    .menu-toggle span { display: block; width: 20px; height: 1.5px; background: #fff8f2; }
 
     .main { padding-top: 72px; }
 
@@ -414,7 +414,7 @@
     ═══════════════════════════════ */
     .diff-section {
       padding: 6rem 6rem;
-      background: #1E0D08;
+      background: linear-gradient(140deg, #3A2418 0%, #6B4530 100%);
       color: var(--warm-white);
       position: relative;
       overflow: hidden;
@@ -438,7 +438,7 @@
       margin-bottom: 4rem;
       position: relative; z-index: 2;
     }
-    .diff-item { background: #1E0D08; padding: 2.2rem 2rem; transition: background 0.3s; }
+    .diff-item { background: rgba(0,0,0,.2); padding: 2.2rem 2rem; transition: background 0.3s; }
     .diff-item:hover { background: rgba(176,141,87,0.1); }
     .diff-num {
       font-family: var(--font-display);
@@ -662,21 +662,24 @@
 <body>
 
   <aside class="sidebar" id="sidebar">
-    <div class="sidebar-logo">
-      <span style="font-family:'Whisper', cursive; font-size:1.6rem; color:var(--text); display:block; margin-bottom:0.2rem;">Karla Moraga Aguilera</span>
-      <span>Terapeuta Somática &amp; Docente</span>
+    <div style="margin-bottom:3rem;">
+      <span style="font-family:'High Spirited',cursive;font-size:1.4rem;color:var(--text);display:block;margin-bottom:.3rem;line-height:1.2;">Karla Moraga Aguilera</span>
+      <span style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-soft);display:block;">Terapeuta Somática &amp; Docente</span>
     </div>
     <nav><ul>
-      <li><a href="index.html" onclick="closeSidebar()">Inicio</a></li>
-      <li><a href="index.html#sobre-mi" onclick="closeSidebar()">Sobre mí</a></li>
-      <li><a href="index.html#trabajo" onclick="closeSidebar()">Mi trabajo</a></li>
-      <li><a href="programas.html" onclick="closeSidebar()">Programas</a></li>
-      <li><a href="index.html#guias" onclick="closeSidebar()">Guías somáticas</a></li>
-      <li><a href="index.html#recursos" onclick="closeSidebar()">Recursos gratuitos</a></li>
-      <li><a href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20me%20interesa%20comenzar%20el%20programa%20de%20acompa%C3%B1amiento%20de%208%20sesiones%20%E2%80%9CSostener%20m%C3%A1s%E2%80%9D.%20%C2%BFPodr%C3%ADas%20darme%20informaci%C3%B3n%20para%20iniciar%20este%20camino%3F" target="_blank" onclick="closeSidebar()">Agendar</a></li>
-      <li><a href="index.html#contacto" onclick="closeSidebar()">Contacto</a></li>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="sobre-mi.html">Sobre mí</a></li>
+      <li><a href="mi-trabajo.html">Mi trabajo</a></li>
+      <li><a href="sesiones-individuales.html">Sesiones individuales</a></li>
+      <li><a href="programas.html">Programas</a></li>
+      <li><a href="masterclass-ansiedad-y-cuerpo.html" style="color:#9B8DC0;">Masterclass gratuita</a></li>
+      <li><a href="semillas-y-reflexiones.html">Semillas y reflexiones</a></li>
+      <li><a href="index.html#guias">Guías somáticas</a></li>
+      <li><a href="index.html#recursos">Recursos gratuitos</a></li>
+      <li><a href="https://wa.me/56956305069" target="_blank">Agendar</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
     </ul></nav>
-    <div class="sidebar-foot">© <span class="copy-year"></span> Karla Moraga<br/>Todos los derechos reservados</div>
+    <div class="sidebar-foot">© <span class="copy-year"></span> · Karla Moraga Aguilera</div>
   </aside>
 
   <header class="topbar">

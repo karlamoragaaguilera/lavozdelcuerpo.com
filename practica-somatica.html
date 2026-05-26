@@ -134,8 +134,9 @@
     .i-chip {
       font-size: .72rem;
       letter-spacing: .08em;
-      color: var(--sage);
-      border: 1px solid rgba(118,136,110,.3);
+      color: #7a4a2e;
+      background: rgba(217,182,169,.25);
+      border: 1px solid rgba(217,182,169,.5);
       padding: .3rem .85rem;
       border-radius: 2px;
     }
@@ -165,7 +166,7 @@
       padding: 1.6rem 1.4rem;
       text-align: center;
     }
-    .contexto-badge .badge-ico { font-size: 1.8rem; display: block; margin-bottom: .6rem; }
+    .contexto-badge .badge-ico { display: block; margin-bottom: .8rem; line-height: 1; }
     .contexto-badge p {
       font-family: var(--font-display);
       font-style: italic;
@@ -196,26 +197,22 @@
       padding-top: .2rem;
     }
     .num-circle {
-      width: 44px; height: 44px;
+      width: 48px; height: 48px;
       border-radius: 50%;
-      border: 1px solid var(--line);
-      background: var(--cream);
+      border: none;
+      background: var(--earth);
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: var(--font-display);
       font-style: italic;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       font-weight: 300;
-      color: var(--text-soft);
+      color: #fff;
       flex-shrink: 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,.1);
     }
-    /* Color por fase */
-    .paso[data-fase="prep"] .num-circle    { border-color:rgba(118,136,110,.4); color:var(--sage); }
-    .paso[data-fase="cuerpo"] .num-circle  { border-color:rgba(217,182,169,.5); color:var(--cinnamon); }
-    .paso[data-fase="imagen"] .num-circle  { border-color:rgba(107,79,114,.3); color:#6B4F72; }
-    .paso[data-fase="refuerzo"] .num-circle{ border-color:rgba(217,179,169,.5); color:var(--text-soft); }
-    .paso[data-fase="cierre"] .num-circle  { border-color:rgba(118,136,110,.4); color:var(--sage); }
+    /* Color progresivo por paso — se aplica inline */
 
     .paso-linea {
       width: 1px;
@@ -250,9 +247,9 @@
       gap: .7rem;
       font-family: var(--font-display);
       font-style: italic;
-      font-size: 1rem;
+      font-size: 1.12rem;
       color: var(--text-soft);
-      line-height: 1.6;
+      line-height: 1.75;
     }
     .preguntas-lista li::before {
       content: '·';
@@ -271,11 +268,11 @@
     .ej-tag {
       font-family: var(--font-display);
       font-style: italic;
-      font-size: .85rem;
-      color: var(--text-soft);
-      background: var(--cream);
-      border: 1px solid var(--line);
-      padding: .25rem .75rem;
+      font-size: .98rem;
+      color: #3d5c40;
+      background: rgba(118,136,110,.12);
+      border: 1px solid rgba(118,136,110,.3);
+      padding: .32rem .9rem;
       border-radius: 4px;
     }
 
@@ -289,11 +286,11 @@
     .pkey {
       font-family: var(--font-display);
       font-style: italic;
-      font-size: .88rem;
-      color: var(--sage);
-      background: rgba(118,136,110,.07);
-      border: 1px solid rgba(118,136,110,.2);
-      padding: .25rem .75rem;
+      font-size: 1rem;
+      color: #4a6644;
+      background: rgba(118,136,110,.1);
+      border: 1px solid rgba(118,136,110,.25);
+      padding: .3rem .85rem;
       border-radius: 4px;
     }
 
@@ -312,9 +309,9 @@
     .bilateral-card:nth-child(1) { background: #F7F2EC; }
     .bilateral-card:nth-child(2) { background: #EFF2ED; }
     .bilateral-card:nth-child(3) { background: #F0EBF4; }
-    .bil-ico { font-size: 1.5rem; display: block; margin-bottom: .6rem; }
+    .bil-ico { display: block; margin-bottom: .8rem; line-height: 1; }
     .bil-num {
-      font-size: .65rem;
+      font-size: .72rem;
       letter-spacing: .2em;
       text-transform: uppercase;
       color: var(--text-muted);
@@ -323,12 +320,12 @@
     }
     .bilateral-card h3 {
       font-family: var(--font-display);
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: 400;
       color: var(--text);
       margin-bottom: .5rem;
     }
-    .bilateral-card p { font-size: .95rem; color: var(--text-soft); line-height: 1.75; }
+    .bilateral-card p { font-size: 1.02rem; color: var(--text-soft); line-height: 1.75; }
     .bilateral-card p + p { margin-top: .5rem; }
     .bil-pausa {
       display: inline-block;
@@ -387,7 +384,7 @@
     .cta-final {
       margin: 0 -5rem;
       padding: 5rem 5rem;
-      background: linear-gradient(135deg, #3a2e28 0%, #4d3d31 100%);
+      background: linear-gradient(135deg, #6B4A38 0%, #8C6248 50%, #A87858 100%);
       position: relative;
       overflow: hidden;
     }
@@ -435,7 +432,7 @@
       transition: background .25s, border-color .25s, transform .2s;
     }
     .cta-card:hover { background:rgba(255,255,255,.1); border-color:rgba(217,182,169,.45); transform:translateY(-2px); }
-    .cta-card .cc-ico { font-size: 1.4rem; }
+    .cta-card .cc-ico { display: block; margin-bottom: .3rem; line-height: 1; }
     .cta-card .cc-label {
       font-size: .65rem;
       letter-spacing: .18em;
@@ -476,11 +473,11 @@
       border-radius: 2px;
       margin-bottom: .5rem;
     }
-    .fase-prep    { background:rgba(118,136,110,.1); color:var(--sage); }
-    .fase-cuerpo  { background:rgba(217,182,169,.2); color:var(--cinnamon); }
-    .fase-imagen  { background:rgba(107,79,114,.1); color:#6B4F72; }
-    .fase-refuerzo{ background:rgba(46,43,40,.07); color:var(--text-soft); }
-    .fase-cierre  { background:rgba(118,136,110,.1); color:var(--sage); }
+    .fase-prep    { background:rgba(118,136,110,.18); color:#4a6644; }
+    .fase-cuerpo  { background:rgba(217,182,169,.35); color:#7a3a28; }
+    .fase-imagen  { background:rgba(107,79,114,.18); color:#5a3d62; }
+    .fase-refuerzo{ background:rgba(184,135,74,.18); color:#7a5a1e; }
+    .fase-cierre  { background:rgba(118,136,110,.18); color:#4a6644; }
 
     /* ══ RESPONSIVE ══ */
     @media (max-width: 900px) {
@@ -574,7 +571,17 @@
           <p>La idea no es abrir recuerdos difíciles ni trabajar material traumático, sino fortalecer una experiencia interna de calma, sostén y seguridad. Puedes usarlo dentro de una sesión terapéutica o como práctica personal de regulación.</p>
         </div>
         <div class="contexto-badge">
-          <span class="badge-ico">🌿</span>
+          <span class="badge-ico"><svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+  <circle cx="36" cy="36" r="34" fill="rgba(118,136,110,.08)" stroke="rgba(118,136,110,.25)" stroke-width="1.2"/>
+  <circle cx="36" cy="36" r="12" fill="none" stroke="rgba(118,136,110,.35)" stroke-width="1.2"/>
+  <circle cx="36" cy="24" r="12" fill="none" stroke="rgba(118,136,110,.25)" stroke-width="1"/>
+  <circle cx="36" cy="48" r="12" fill="none" stroke="rgba(118,136,110,.25)" stroke-width="1"/>
+  <circle cx="25.6" cy="30" r="12" fill="none" stroke="rgba(118,136,110,.25)" stroke-width="1"/>
+  <circle cx="46.4" cy="30" r="12" fill="none" stroke="rgba(118,136,110,.25)" stroke-width="1"/>
+  <circle cx="25.6" cy="42" r="12" fill="none" stroke="rgba(118,136,110,.25)" stroke-width="1"/>
+  <circle cx="46.4" cy="42" r="12" fill="none" stroke="rgba(118,136,110,.25)" stroke-width="1"/>
+  <circle cx="36" cy="36" r="4" fill="rgba(118,136,110,.4)" stroke="rgba(118,136,110,.6)" stroke-width="1"/>
+</svg></span>
           <p>No busca forzar la calma.<br/>Busca descubrirla donde ya existe.</p>
         </div>
       </div>
@@ -585,7 +592,7 @@
         <!-- 1 -->
         <div class="paso" data-fase="prep">
           <div class="paso-num">
-            <div class="num-circle">1</div>
+            <div class="num-circle" style="background:#5B7A52;">1</div>
             <div class="paso-linea"></div>
           </div>
           <div class="paso-contenido">
@@ -602,7 +609,7 @@
         <!-- 2 -->
         <div class="paso" data-fase="cuerpo">
           <div class="paso-num">
-            <div class="num-circle">2</div>
+            <div class="num-circle" style="background:#6B8A5E;">2</div>
             <div class="paso-linea"></div>
           </div>
           <div class="paso-contenido">
@@ -619,7 +626,7 @@
         <!-- 3 -->
         <div class="paso" data-fase="cuerpo">
           <div class="paso-num">
-            <div class="num-circle">3</div>
+            <div class="num-circle" style="background:#8A9A5A;">3</div>
             <div class="paso-linea"></div>
           </div>
           <div class="paso-contenido">
@@ -641,7 +648,7 @@
         <!-- 4 -->
         <div class="paso" data-fase="cuerpo">
           <div class="paso-num">
-            <div class="num-circle">4</div>
+            <div class="num-circle" style="background:#A89A50;">4</div>
             <div class="paso-linea"></div>
           </div>
           <div class="paso-contenido">
@@ -657,7 +664,7 @@
         <!-- 5 -->
         <div class="paso" data-fase="imagen">
           <div class="paso-num">
-            <div class="num-circle">5</div>
+            <div class="num-circle" style="background:#C8A840;">5</div>
             <div class="paso-linea"></div>
           </div>
           <div class="paso-contenido">
@@ -684,7 +691,7 @@
         <!-- 6 -->
         <div class="paso" data-fase="imagen">
           <div class="paso-num">
-            <div class="num-circle">6</div>
+            <div class="num-circle" style="background:#C89050;">6</div>
             <div class="paso-linea"></div>
           </div>
           <div class="paso-contenido">
@@ -708,7 +715,7 @@
         <!-- 7 -->
         <div class="paso" data-fase="cuerpo">
           <div class="paso-num">
-            <div class="num-circle">7</div>
+            <div class="num-circle" style="background:#C87848;">7</div>
             <div class="paso-linea"></div>
           </div>
           <div class="paso-contenido">
@@ -725,7 +732,7 @@
         <!-- 8 -->
         <div class="paso" data-fase="imagen">
           <div class="paso-num">
-            <div class="num-circle">8</div>
+            <div class="num-circle" style="background:#B86040;">8</div>
             <div class="paso-linea"></div>
           </div>
           <div class="paso-contenido">
@@ -752,7 +759,7 @@
         <!-- 9 -->
         <div class="paso" data-fase="refuerzo">
           <div class="paso-num">
-            <div class="num-circle">9</div>
+            <div class="num-circle" style="background:#A05038;">9</div>
             <div class="paso-linea"></div>
           </div>
           <div class="paso-contenido">
@@ -761,7 +768,7 @@
             <p>Cuando tengas clara la imagen, la sensación corporal y la palabra clave, puedes reforzar este recurso con estimulación bilateral lenta y breve. Elige una opción:</p>
             <div class="bilaterales">
               <div class="bilateral-card">
-                <span class="bil-ico">🦋</span>
+                <span class="bil-ico"><svg width="52" height="44" viewBox="0 0 52 44" fill="none"><path d="M26 22 C20 12 6 8 6 18 C6 26 16 28 26 22Z" fill="#E8C4A0" stroke="#8C5042" stroke-width="1.4"/><path d="M26 22 C32 12 46 8 46 18 C46 26 36 28 26 22Z" fill="#E8C4A0" stroke="#8C5042" stroke-width="1.4"/><path d="M26 22 C21 30 8 34 10 26 C12 20 20 24 26 22Z" fill="#D4A882" stroke="#8C5042" stroke-width="1.4"/><path d="M26 22 C31 30 44 34 42 26 C40 20 32 24 26 22Z" fill="#D4A882" stroke="#8C5042" stroke-width="1.4"/><path d="M14 14 C16 16 18 18 20 19" stroke="#C4845A" stroke-width="1" opacity=".6"/><path d="M38 14 C36 16 34 18 32 19" stroke="#C4845A" stroke-width="1" opacity=".6"/><ellipse cx="26" cy="22" rx="2.5" ry="4" fill="#8C5042"/><path d="M24 18 C22 14 20 10 22 8" stroke="#5c3d30" stroke-width="1.2" stroke-linecap="round"/><path d="M28 18 C30 14 32 10 30 8" stroke="#5c3d30" stroke-width="1.2" stroke-linecap="round"/><circle cx="22" cy="7.5" r="1.2" fill="#5c3d30"/><circle cx="30" cy="7.5" r="1.2" fill="#5c3d30"/></svg></span>
                 <span class="bil-num">Opción 1</span>
                 <h3>Abrazo de la mariposa</h3>
                 <p>Cruza los brazos sobre el pecho. Da pequeños toques alternados: primero una mano, luego la otra. Ritmo suave, lento y amable.</p>
@@ -769,7 +776,7 @@
                 <span class="bil-pausa">→ Unos segundos · Detente · Respira</span>
               </div>
               <div class="bilateral-card">
-                <span class="bil-ico">🤲</span>
+                <span class="bil-ico"><svg width="52" height="44" viewBox="0 0 52 44" fill="none"><rect x="3" y="5" width="20" height="32" rx="10" fill="#C8D8C4" stroke="#4a6644" stroke-width="1.4"/><rect x="29" y="7" width="20" height="32" rx="10" fill="#B8C8B4" stroke="#4a6644" stroke-width="1.4"/><line x1="3" y1="20" x2="23" y2="20" stroke="#4a6644" stroke-width="1" opacity=".4"/><line x1="3" y1="26" x2="23" y2="26" stroke="#4a6644" stroke-width="1" opacity=".4"/><line x1="29" y1="22" x2="49" y2="22" stroke="#4a6644" stroke-width="1" opacity=".4"/><line x1="29" y1="28" x2="49" y2="28" stroke="#4a6644" stroke-width="1" opacity=".4"/><circle cx="13" cy="13" r="3" fill="rgba(74,102,68,.2)" stroke="#4a6644" stroke-width="1"/><circle cx="39" cy="15" r="3" fill="rgba(74,102,68,.2)" stroke="#4a6644" stroke-width="1"/></svg></span>
                 <span class="bil-num">Opción 2</span>
                 <h3>Golpecitos en las piernas</h3>
                 <p>Apoya ambas manos sobre tus muslos. Da golpecitos suaves y alternados: una mano, luego la otra. Ritmo lento y regulador.</p>
@@ -777,7 +784,7 @@
                 <span class="bil-pausa">→ Unos segundos · Detente · Respira</span>
               </div>
               <div class="bilateral-card">
-                <span class="bil-ico">🎧</span>
+                <span class="bil-ico"><svg width="52" height="48" viewBox="0 0 52 48" fill="none"><path d="M10 26V22C10 13.16 17.16 6 26 6C34.84 6 42 13.16 42 22V26" stroke="#6B4F72" stroke-width="2" stroke-linecap="round" fill="none"/><rect x="6" y="24" width="10" height="14" rx="5" fill="#C4B4D4" stroke="#6B4F72" stroke-width="1.5"/><rect x="36" y="24" width="10" height="14" rx="5" fill="#C4B4D4" stroke="#6B4F72" stroke-width="1.5"/><circle cx="11" cy="31" r="2" fill="#6B4F72" opacity=".5"/><circle cx="41" cy="31" r="2" fill="#6B4F72" opacity=".5"/><path d="M26 6 C26 6 24 4 22 5" stroke="#6B4F72" stroke-width="1.2" stroke-linecap="round" opacity=".5"/></svg></span>
                 <span class="bil-num">Opción 3</span>
                 <h3>Música bilateral</h3>
                 <p>Usa música bilateral suave con audífonos, siempre que se sienta agradable y no invasiva.</p>
@@ -791,7 +798,7 @@
         <!-- 10 -->
         <div class="paso" data-fase="refuerzo">
           <div class="paso-num">
-            <div class="num-circle">10</div>
+            <div class="num-circle" style="background:#8C4030;">10</div>
             <div class="paso-linea"></div>
           </div>
           <div class="paso-contenido">
@@ -813,7 +820,7 @@
         <!-- 11 -->
         <div class="paso" data-fase="cierre">
           <div class="paso-num">
-            <div class="num-circle">11</div>
+            <div class="num-circle" style="background:#7A3838;">11</div>
             <div class="paso-linea"></div>
           </div>
           <div class="paso-contenido">
@@ -831,7 +838,7 @@
         <!-- 12 -->
         <div class="paso" data-fase="cierre">
           <div class="paso-num">
-            <div class="num-circle">12</div>
+            <div class="num-circle" style="background:#6B4870;">12</div>
           </div>
           <div class="paso-contenido">
             <span class="fase-label fase-cierre">Cierre</span>
@@ -868,28 +875,60 @@
           <p>El cuerpo tiene mucho más para decirte. Aquí tienes algunos caminos para seguir.</p>
           <div class="cta-grid">
             <a href="chispa-de-vida.html" class="cta-card">
-              <span class="cc-ico">✍️</span>
+              <span class="cc-ico"><svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+  <circle cx="26" cy="26" r="24" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
+  <g transform="translate(26,26)">
+    <ellipse rx="5" ry="11" fill="rgba(255,255,255,.22)" stroke="rgba(250,247,242,.85)" stroke-width="1.3"/>
+    <ellipse rx="5" ry="11" transform="rotate(45)" fill="rgba(255,255,255,.18)" stroke="rgba(250,247,242,.75)" stroke-width="1.3"/>
+    <ellipse rx="5" ry="11" transform="rotate(90)" fill="rgba(255,255,255,.22)" stroke="rgba(250,247,242,.85)" stroke-width="1.3"/>
+    <ellipse rx="5" ry="11" transform="rotate(135)" fill="rgba(255,255,255,.18)" stroke="rgba(250,247,242,.75)" stroke-width="1.3"/>
+  </g>
+  <circle cx="26" cy="26" r="4" fill="rgba(250,247,242,.5)" stroke="rgba(250,247,242,.9)" stroke-width="1.2"/>
+</svg></span>
               <span class="cc-label">Reflexión</span>
               <span class="cc-title">Volver a la reflexión</span>
               <span class="cc-desc">Lee el texto que acompaña a esta práctica sobre la chispa que permanece.</span>
               <span class="cc-arrow">← Volver</span>
             </a>
             <a href="https://wa.me/56956305069?text=Hola%20Karla%20🌿%20quiero%20agendar%20una%20sesión" target="_blank" class="cta-card">
-              <span class="cc-ico">🌿</span>
+              <span class="cc-ico"><svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+  <circle cx="26" cy="26" r="24" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
+  <!-- 6 círculos de pétalo centrados en vértices de hexágono r=9 -->
+  <circle cx="26" cy="17"    r="9" fill="rgba(255,255,255,.12)" stroke="rgba(250,247,242,.7)" stroke-width="1.3"/>
+  <circle cx="33.8" cy="21.5" r="9" fill="rgba(255,255,255,.12)" stroke="rgba(250,247,242,.7)" stroke-width="1.3"/>
+  <circle cx="33.8" cy="30.5" r="9" fill="rgba(255,255,255,.12)" stroke="rgba(250,247,242,.7)" stroke-width="1.3"/>
+  <circle cx="26" cy="35"    r="9" fill="rgba(255,255,255,.12)" stroke="rgba(250,247,242,.7)" stroke-width="1.3"/>
+  <circle cx="18.2" cy="30.5" r="9" fill="rgba(255,255,255,.12)" stroke="rgba(250,247,242,.7)" stroke-width="1.3"/>
+  <circle cx="18.2" cy="21.5" r="9" fill="rgba(255,255,255,.12)" stroke="rgba(250,247,242,.7)" stroke-width="1.3"/>
+  <!-- Círculo central -->
+  <circle cx="26" cy="26" r="9" fill="rgba(255,255,255,.08)" stroke="rgba(250,247,242,.9)" stroke-width="1.4"/>
+  <!-- Punto central -->
+  <circle cx="26" cy="26" r="2.5" fill="rgba(250,247,242,.7)"/>
+</svg></span>
               <span class="cc-label">Agendar</span>
               <span class="cc-title">Trabaja con Karla</span>
               <span class="cc-desc">Si sientes que necesitas acompañamiento, agenda una primera sesión individual.</span>
               <span class="cc-arrow">Agendar →</span>
             </a>
             <a href="programas.html" class="cta-card">
-              <span class="cc-ico">🌱</span>
+              <span class="cc-ico"><svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+  <circle cx="26" cy="26" r="24" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
+  <circle cx="20" cy="23" r="10" fill="rgba(255,255,255,.1)" stroke="rgba(250,247,242,.7)" stroke-width="1.4"/>
+  <circle cx="32" cy="23" r="10" fill="rgba(255,255,255,.1)" stroke="rgba(250,247,242,.7)" stroke-width="1.4"/>
+  <circle cx="26" cy="32" r="10" fill="rgba(255,255,255,.1)" stroke="rgba(250,247,242,.7)" stroke-width="1.4"/>
+  <circle cx="26" cy="26" r="3" fill="rgba(250,247,242,.35)" stroke="rgba(250,247,242,.6)" stroke-width="1"/>
+</svg></span>
               <span class="cc-label">Programas grupales</span>
               <span class="cc-title">Procesos de grupo</span>
               <span class="cc-desc">Programas de 8 sesiones para trabajar ansiedad, codependencia y vínculos desde el cuerpo.</span>
               <span class="cc-arrow">Ver programas →</span>
             </a>
             <a href="mi-trabajo.html" class="cta-card">
-              <span class="cc-ico">🫀</span>
+              <span class="cc-ico"><svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+  <circle cx="26" cy="26" r="24" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
+  <path d="M26 40C26 40 9 29 9 18C9 12.48 13.48 8 19 8C22.2 8 25 9.6 26 12C27 9.6 29.8 8 33 8C38.52 8 43 12.48 43 18C43 29 26 40 26 40Z" fill="rgba(255,255,255,.18)" stroke="rgba(250,247,242,.9)" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M17 15 C19 12 23 11 25 13" stroke="rgba(255,255,255,.5)" stroke-width="1.2" stroke-linecap="round"/>
+</svg></span>
               <span class="cc-label">Mi enfoque</span>
               <span class="cc-title">Conoce mi trabajo</span>
               <span class="cc-desc">Aprende sobre el enfoque somático y cómo trabajo con el sistema nervioso y el cuerpo.</span>

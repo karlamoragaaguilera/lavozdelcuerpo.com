@@ -40,15 +40,15 @@
     /* SIDEBAR */
     .sidebar{position:fixed;top:0;left:0;width:240px;height:100vh;background:var(--cream);border-right:1px solid var(--line);display:flex;flex-direction:column;padding:2.5rem 2rem;z-index:100;transform:translateX(-100%);transition:transform 0.4s ease;}
     .sidebar.open{transform:translateX(0);}
-    .sidebar nav ul{display:flex;flex-direction:column;gap:0.2rem;}
-    .sidebar nav a{font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-soft);padding:0.55rem 0;transition:color 0.2s;display:block;}
-    .sidebar nav a:hover{color:var(--sage-dark);}
+    .sidebar nav ul{display:flex;flex-direction:column;gap:0.2rem;list-style:none;padding:0;margin:0;}
+    .sidebar nav a{font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-soft);padding:0.55rem 0;border-bottom:1px solid transparent;transition:color 0.2s,border-color 0.2s;display:block;}
+    .sidebar nav a:hover{color:#76886E;border-bottom-color:rgba(118,136,110,.3);}
     .sidebar-foot{font-size:0.72rem;color:var(--text-muted);line-height:1.6;margin-top:auto;}
     .topbar{position:fixed;top:0;left:0;right:0;z-index:90;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;background:rgba(250,247,242,0.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
-    .topbar-logo .name{font-family:'Whisper',cursive;font-size:1.9rem;color:var(--text);display:block;}
+    .topbar-logo .name{font-family:'Whisper',cursive;font-size:1.9rem;color:#5c3d30;display:block;}
     .topbar-logo .title{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);display:block;}
-    .menu-toggle{background:transparent;border:1px solid var(--line);width:42px;height:42px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px;cursor:pointer;}
-    .menu-toggle span{display:block;width:20px;height:1.5px;background:var(--text);}
+    .menu-toggle{background:#c4a882;border:none;border-radius:4px;width:42px;height:42px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px;cursor:pointer;}
+    .menu-toggle span{display:block;width:20px;height:1.5px;background:#fff8f2;}
     .main{padding-top:72px;}
 
     /* HERO */
@@ -121,7 +121,7 @@
       .cards{grid-template-columns:1fr;}
       .bridge{flex-direction:column;}
       footer{flex-direction:column;gap:0.5rem;text-align:center;padding:2rem;}
-      .topbar{padding:1.2rem 1.5rem;}
+      .topbar{position:fixed;top:0;left:0;right:0;z-index:90;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;background:rgba(250,247,242,0.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
     }
   </style>
 </head>
@@ -129,23 +129,23 @@
 
   <aside class="sidebar" id="sidebar">
     <div style="margin-bottom:3rem;">
-      <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.25rem;font-weight:400;font-style:italic;color:var(--text);display:block;margin-bottom:0.2rem;">Karla Moraga</span>
-      <span style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-soft);">Terapeuta Somática &amp; Docente</span>
+      <span style="font-family:'High Spirited',cursive;font-size:1.4rem;color:var(--text);display:block;margin-bottom:.3rem;line-height:1.2;">Karla Moraga Aguilera</span>
+      <span style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-soft);display:block;">Terapeuta Somática &amp; Docente</span>
     </div>
     <nav><ul>
       <li><a href="index.html">Inicio</a></li>
       <li><a href="sobre-mi.html">Sobre mí</a></li>
       <li><a href="mi-trabajo.html">Mi trabajo</a></li>
-      <li><a href="programas.html">Programas</a></li>
       <li><a href="sesiones-individuales.html">Sesiones individuales</a></li>
-      <li><a href="tre-trauma-los-angeles.html">TRE</a></li>
-      <li><a href="flores-de-bach-los-angeles.html">Flores de Bach</a></li>
+      <li><a href="programas.html">Programas</a></li>
+      <li><a href="masterclass-ansiedad-y-cuerpo.html" style="color:#9B8DC0;">Masterclass gratuita</a></li>
+      <li><a href="semillas-y-reflexiones.html">Semillas y reflexiones</a></li>
       <li><a href="index.html#guias">Guías somáticas</a></li>
       <li><a href="index.html#recursos">Recursos gratuitos</a></li>
       <li><a href="https://wa.me/56956305069" target="_blank">Agendar</a></li>
       <li><a href="index.html#contacto">Contacto</a></li>
     </ul></nav>
-    <div class="sidebar-foot">© <span class="copy-year"></span> · Karla Moraga</div>
+    <div class="sidebar-foot">© <span class="copy-year"></span> · Karla Moraga Aguilera</div>
   </aside>
 
   <header class="topbar">
