@@ -53,7 +53,7 @@
     .sidebar nav a { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-soft); padding: 0.55rem 0; transition: color 0.2s; display: block; }
     .sidebar nav a:hover { color:#76886E; border-bottom-color:rgba(118,136,110,.3); }
     .sidebar-foot { font-size: 0.72rem; color: var(--text-muted); line-height: 1.6; margin-top: auto; }
-    .topbar { position:fixed; top:0; left:0; right:0; z-index:90; display:flex; justify-content:space-between; align-items:center; padding:1.2rem 3rem; background:linear-gradient(135deg,#F2E5DF 0%,#EDD9D0 100%); border-bottom:1px solid rgba(217,182,169,0.35); }
+    .topbar { position:fixed; top:0; left:0; right:0; z-index:90; display:flex; justify-content:space-between; align-items:center; padding:1.2rem 3rem; background:rgba(250,247,242,0.94); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
     .topbar-logo .name { font-family:'Whisper',cursive; font-size:1.9rem; color:#5c3d30; display:block; }
     .topbar-logo .title { font-size:.65rem; letter-spacing:.18em; text-transform:uppercase; color:#9E9890; display:block; }
     .menu-toggle { background:#c4a882; border:none; border-radius:4px; width:42px; height:42px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:5px; cursor:pointer; }
@@ -259,13 +259,13 @@
     .cta-body { font-size: 0.93rem; color: rgba(255,255,255,0.7); max-width: 44ch; margin: 0 auto 2.5rem; line-height: 1.85; }
     .btn-cta {
       display: inline-flex; align-items: center; gap: 0.8rem;
-      background: var(--warm-white); color: var(--sage-dark);
+      background: var(--warm-white); color: #7a4a2e;
       font-family: var(--font-body); font-size: 0.75rem; font-weight: 400;
       letter-spacing: 0.14em; text-transform: uppercase;
       padding: 1.1rem 2.6rem; border: 1px solid var(--warm-white);
       transition: background 0.25s, color 0.25s;
     }
-    .btn-cta:hover { background: transparent; color: var(--warm-white); }
+    .btn-cta:hover { background: transparent; color: var(--warm-white); border-color: var(--warm-white); }
 
     footer { background: linear-gradient(135deg, #3A2820 0%, #2E2018 100%); color: rgba(255,255,255,0.45); padding: 2.5rem 6rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; letter-spacing: 0.06em; }
     footer strong { color: rgba(255,255,255,0.85); font-family: var(--font-display); font-size: 1rem; font-weight: 300; }

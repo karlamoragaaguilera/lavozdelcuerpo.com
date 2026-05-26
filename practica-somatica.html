@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&family=Whisper&display=swap" rel="stylesheet" />
 
   <style>
     @font-face { font-family:'High Spirited'; src:url('High_Spirited.ttf') format('truetype'); }
@@ -39,6 +39,13 @@
     html { scroll-behavior:smooth; font-size:16px; }
     body { background:var(--warm-white); color:var(--text); font-family:var(--font-body); font-weight:300; line-height:1.7; overflow-x:hidden; }
     a { color:inherit; text-decoration:none; }
+    ul { list-style:none; }
+
+    /* ── Topbar ── */
+    .topbar { position:fixed; top:0; left:0; right:0; z-index:90; display:flex; justify-content:space-between; align-items:center; padding:1.2rem 3rem; background:rgba(250,247,242,0.94); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
+    .topbar-logo { text-decoration:none; }
+    .topbar-logo .name { font-family:'Whisper',cursive; font-size:1.9rem; color:#5c3d30; display:block; }
+    .topbar-logo .title { font-size:.65rem; letter-spacing:.18em; text-transform:uppercase; color:#9E9890; display:block; }
 
     /* ── Sidebar ── */
     .sidebar { position:fixed; top:0; left:0; width:var(--side-w); height:100vh; background:var(--cream); border-right:1px solid var(--line); display:flex; flex-direction:column; padding:2.5rem 2rem; z-index:100; transform:translateX(-100%); transition:transform .4s ease; }
@@ -62,7 +69,7 @@
 
     /* ══ HERO ══ */
     .practica-hero {
-      background: linear-gradient(160deg, #EDF0EB 0%, #E6ECE4 100%);
+      background: linear-gradient(160deg, #F7EDD8 0%, #EDD9B4 100%);
       border-bottom: 1px solid var(--line);
       padding: 5rem 5rem 4rem;
       position: relative;
@@ -74,7 +81,7 @@
       bottom: -60px; right: -60px;
       width: 360px; height: 360px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(118,136,110,.12) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(184,135,74,.15) 0%, transparent 70%);
       pointer-events: none;
     }
     .back-link {
@@ -110,12 +117,12 @@
       color: var(--text);
       margin-bottom: .9rem;
     }
-    .practica-hero h1 em { font-style: italic; color: var(--sage); }
+    .practica-hero h1 em { font-style: italic; color: var(--cinnamon); }
     .hero-desc {
-      font-size: .93rem;
+      font-size: 1.05rem;
       color: var(--text-soft);
-      line-height: 1.8;
-      max-width: 58ch;
+      line-height: 1.85;
+      max-width: 62ch;
       margin-bottom: 1.5rem;
     }
     /* Chips de intención */
@@ -135,7 +142,7 @@
 
     /* ══ CONTENIDO ══ */
     .practica-body {
-      max-width: 860px;
+      max-width: 1140px;
       margin: 0 auto;
       padding: 0 5rem;
     }
@@ -149,7 +156,7 @@
       gap: 3.5rem;
       align-items: center;
     }
-    .contexto p { font-size: .93rem; color: var(--text-soft); line-height: 1.85; margin-bottom: 1rem; }
+    .contexto p { font-size: 1.02rem; color: var(--text-soft); line-height: 1.9; margin-bottom: 1rem; }
     .contexto p:last-child { margin: 0; }
     .contexto-badge {
       background: linear-gradient(135deg, rgba(118,136,110,.1), rgba(118,136,110,.04));
@@ -162,7 +169,7 @@
     .contexto-badge p {
       font-family: var(--font-display);
       font-style: italic;
-      font-size: .92rem;
+      font-size: 1rem;
       color: var(--sage);
       line-height: 1.55;
       margin: 0;
@@ -173,7 +180,7 @@
 
     .paso {
       display: grid;
-      grid-template-columns: 60px 1fr;
+      grid-template-columns: 70px 1fr;
       gap: 2rem;
       padding: 2.5rem 0;
       border-bottom: 1px solid var(--line);
@@ -221,13 +228,13 @@
     .paso-contenido h2 {
       font-family: var(--font-display);
       font-weight: 400;
-      font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+      font-size: clamp(1.25rem, 2vw, 1.55rem);
       color: var(--text);
       margin-bottom: .7rem;
       line-height: 1.3;
     }
     .paso-contenido h2 em { font-style: italic; color: var(--cinnamon); }
-    .paso-contenido > p { font-size: .92rem; color: var(--text-soft); line-height: 1.85; margin-bottom: .9rem; }
+    .paso-contenido > p { font-size: 1.02rem; color: var(--text-soft); line-height: 1.9; margin-bottom: 1rem; }
     .paso-contenido > p:last-child { margin: 0; }
 
     /* Lista de preguntas */
@@ -243,7 +250,7 @@
       gap: .7rem;
       font-family: var(--font-display);
       font-style: italic;
-      font-size: .92rem;
+      font-size: 1rem;
       color: var(--text-soft);
       line-height: 1.6;
     }
@@ -321,7 +328,7 @@
       color: var(--text);
       margin-bottom: .5rem;
     }
-    .bilateral-card p { font-size: .82rem; color: var(--text-soft); line-height: 1.7; }
+    .bilateral-card p { font-size: .95rem; color: var(--text-soft); line-height: 1.75; }
     .bilateral-card p + p { margin-top: .5rem; }
     .bil-pausa {
       display: inline-block;
@@ -342,7 +349,7 @@
       margin: 1rem 0;
     }
     .obs-box p {
-      font-size: .88rem !important;
+      font-size: 1rem !important;
       margin: 0 !important;
       color: var(--text-soft) !important;
       line-height: 1.7 !important;
@@ -356,7 +363,7 @@
       border-top: 1px solid var(--line);
     }
     .nota-cuidado-inner {
-      max-width: 680px;
+      max-width: 900px;
       margin: 0 auto;
     }
     .nota-cuidado .label {
@@ -368,7 +375,7 @@
       margin-bottom: 1.2rem;
     }
     .nota-cuidado p {
-      font-size: .9rem;
+      font-size: 1rem;
       color: var(--text-soft);
       line-height: 1.85;
       margin-bottom: 1rem;
@@ -376,35 +383,88 @@
     .nota-cuidado p:last-child { margin: 0; }
     .nota-cuidado p strong { font-weight: 400; color: var(--text); }
 
-    /* ══ CTA VUELTA AL BLOG ══ */
-    .volver-section {
-      padding: 4rem 0 5rem;
-      text-align: center;
+    /* ══ CTA FINAL ══ */
+    .cta-final {
+      margin: 0 -5rem;
+      padding: 5rem 5rem;
+      background: linear-gradient(135deg, #3a2e28 0%, #4d3d31 100%);
+      position: relative;
+      overflow: hidden;
     }
-    .volver-section p {
+    .cta-final::before {
+      content:'';
+      position:absolute;
+      top:-80px; right:-80px;
+      width:300px; height:300px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(217,182,169,.1),transparent 70%);
+    }
+    .cta-final-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative; z-index:1;
+    }
+    .cta-final h2 {
       font-family: var(--font-display);
-      font-style: italic;
-      font-size: clamp(1rem, 1.8vw, 1.2rem);
-      color: var(--text-soft);
-      margin-bottom: 1.8rem;
+      font-weight: 300;
+      font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+      color: #FAF7F2;
+      margin-bottom: .7rem;
+      line-height: 1.2;
     }
-    .volver-btn {
+    .cta-final > .cta-final-inner > p {
+      font-size: 1rem;
+      color: rgba(250,247,242,.65);
+      margin-bottom: 2.5rem;
+      line-height: 1.75;
+    }
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .cta-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(217,182,169,.2);
+      border-radius: 10px;
+      padding: 1.6rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      text-decoration: none;
+      transition: background .25s, border-color .25s, transform .2s;
+    }
+    .cta-card:hover { background:rgba(255,255,255,.1); border-color:rgba(217,182,169,.45); transform:translateY(-2px); }
+    .cta-card .cc-ico { font-size: 1.4rem; }
+    .cta-card .cc-label {
+      font-size: .65rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--earth);
+      opacity: .8;
+    }
+    .cta-card .cc-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: #FAF7F2;
+      line-height: 1.3;
+    }
+    .cta-card .cc-desc {
+      font-size: .85rem;
+      color: rgba(250,247,242,.55);
+      line-height: 1.6;
+    }
+    .cta-card .cc-arrow {
+      margin-top: .5rem;
+      font-size: .68rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--earth);
       display: inline-flex;
       align-items: center;
-      gap: .7rem;
-      background: var(--sage);
-      color: var(--warm-white);
-      font-family: var(--font-body);
-      font-size: .78rem;
-      font-weight: 400;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      padding: 1rem 2.2rem;
-      border: 1px solid var(--sage);
-      transition: background .25s, color .25s;
+      gap: .4rem;
     }
-    .volver-btn:hover { background: transparent; color: var(--sage); }
-    .volver-btn svg { width: 14px; height: 14px; }
 
     /* ══ FASE LABELS ══ */
     .fase-label {
@@ -434,6 +494,8 @@
       .bilaterales { grid-template-columns:1fr; }
       .nota-cuidado { margin:0 -2rem; padding:3rem 2rem; }
       footer { flex-direction:column; gap:.5rem; text-align:center; padding:2rem; }
+      .cta-final { margin:0 -2rem; padding:3.5rem 2rem; }
+      .cta-grid { grid-template-columns:1fr; }
     }
     @media (max-width: 560px) {
       .paso { grid-template-columns:1fr; }
@@ -799,13 +861,42 @@
         </div>
       </div>
 
-      <!-- Volver -->
-      <div class="volver-section">
-        <p>Si este ejercicio resonó contigo, te invito a conocer mi trabajo.</p>
-        <a href="chispa-de-vida.html" class="volver-btn">
-          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 7H1M6 2L1 7l5 5"/></svg>
-          Volver a la reflexión
-        </a>
+      <!-- CTA final -->
+      <div class="cta-final">
+        <div class="cta-final-inner">
+          <h2>¿Este ejercicio resonó contigo?</h2>
+          <p>El cuerpo tiene mucho más para decirte. Aquí tienes algunos caminos para seguir.</p>
+          <div class="cta-grid">
+            <a href="chispa-de-vida.html" class="cta-card">
+              <span class="cc-ico">✍️</span>
+              <span class="cc-label">Reflexión</span>
+              <span class="cc-title">Volver a la reflexión</span>
+              <span class="cc-desc">Lee el texto que acompaña a esta práctica sobre la chispa que permanece.</span>
+              <span class="cc-arrow">← Volver</span>
+            </a>
+            <a href="https://wa.me/56956305069?text=Hola%20Karla%20🌿%20quiero%20agendar%20una%20sesión" target="_blank" class="cta-card">
+              <span class="cc-ico">🌿</span>
+              <span class="cc-label">Agendar</span>
+              <span class="cc-title">Trabaja con Karla</span>
+              <span class="cc-desc">Si sientes que necesitas acompañamiento, agenda una primera sesión individual.</span>
+              <span class="cc-arrow">Agendar →</span>
+            </a>
+            <a href="programas.html" class="cta-card">
+              <span class="cc-ico">🌱</span>
+              <span class="cc-label">Programas grupales</span>
+              <span class="cc-title">Procesos de grupo</span>
+              <span class="cc-desc">Programas de 8 sesiones para trabajar ansiedad, codependencia y vínculos desde el cuerpo.</span>
+              <span class="cc-arrow">Ver programas →</span>
+            </a>
+            <a href="mi-trabajo.html" class="cta-card">
+              <span class="cc-ico">🫀</span>
+              <span class="cc-label">Mi enfoque</span>
+              <span class="cc-title">Conoce mi trabajo</span>
+              <span class="cc-desc">Aprende sobre el enfoque somático y cómo trabajo con el sistema nervioso y el cuerpo.</span>
+              <span class="cc-arrow">Conocer más →</span>
+            </a>
+          </div>
+        </div>
       </div>
 
     </div><!-- /practica-body -->
