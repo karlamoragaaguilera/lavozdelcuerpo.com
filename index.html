@@ -765,6 +765,8 @@
       .cards { grid-template-columns: 1fr !important; gap: 1.2rem !important; }
       .cards > div { min-height: auto !important; border-radius: 80px 80px 16px 16px !important; }
       .guides-grid { grid-template-columns: 1fr 1fr; }
+      .pack-card { flex-direction: column !important; }
+      .pack-card img { max-width: 100% !important; max-height: 260px !important; width: 100% !important; object-fit: cover !important; }
       .resources-list { grid-template-columns: 1fr; }
 
       /* ¿Esto es para ti? — 2 columnas en móvil */
@@ -1254,7 +1256,7 @@
       </div>
 
       <!-- Pack todas las guías -->
-      <a href="pack-guias.html" class="guide-card" style="display:flex; align-items:stretch; cursor:pointer; margin-top:1.2rem; border:1px solid var(--line); background:linear-gradient(135deg, #F5EFE8 0%, #EDE3D8 100%); text-decoration:none; overflow:hidden; gap:0;">
+      <a href="pack-guias.html" class="guide-card pack-card" style="display:flex; align-items:stretch; cursor:pointer; margin-top:1.2rem; border:1px solid var(--line); background:linear-gradient(135deg, #F5EFE8 0%, #EDE3D8 100%); text-decoration:none; overflow:hidden; gap:0;">
         <img src="pack-guias-coleccion.png" alt="Pack de 4 guías somáticas" style="display:block; max-height:380px; width:auto; flex-shrink:0; max-width:45%;">
         <div style="padding:1.8rem 2rem; display:flex; flex-direction:column; justify-content:center; align-items:flex-start; gap:0.8rem; flex:1;">
           <p style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--earth);">Pack completo</p>
