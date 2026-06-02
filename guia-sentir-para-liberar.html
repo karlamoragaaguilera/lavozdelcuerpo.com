@@ -67,18 +67,13 @@
       overflow: hidden;
     }
     .hero-cover {
-      background: var(--accent);
+      background: #F0EBE3;
       position: relative;
       overflow: hidden;
       display: flex; align-items: center; justify-content: center;
+      padding: 3rem 2rem;
     }
-    .hero-cover::before {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 80% 70% at 20% 20%, rgba(168,184,160,0.5) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 80% at 85% 85%, rgba(45,65,43,0.6) 0%, transparent 55%);
-    }
+    .hero-cover::before { display: none; }
     .cover-inner {
       position: relative; z-index: 2;
       text-align: center; padding: 3rem;
@@ -340,18 +335,7 @@
   <main class="main">
     <section class="hero" style="padding:0;">
       <div class="hero-cover">
-        <div class="cover-inner">
-          <div class="cover-eyebrow">Guía somática · Material digital</div>
-          <div class="cover-title">Sentir para<br/>liberar<br/>emociones</div>
-          <div class="cover-divider"></div>
-          <div class="cover-sub">Karla Moraga · Terapia Somática</div>
-          <div class="cover-price-badge">
-            <div class="badge-original">$22.000 CLP</div>
-            <div class="badge-price">$11.000</div>
-            <div class="badge-label">CLP · 50% descuento</div>
-          </div>
-        </div>
-        <div class="cover-deco">01</div>
+        <img src="guia-sentir-para-liberar.png" alt="guia-sentir-para-liberar" style="max-height:82vh; width:auto; max-width:100%; object-fit:contain; box-shadow:0 24px 64px rgba(0,0,0,0.18);">
       </div>
 
       <div class="hero-info">
