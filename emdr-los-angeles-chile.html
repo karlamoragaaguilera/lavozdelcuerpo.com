@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="canonical" href="https://lavozdelcuerpo.com/emdr-los-angeles-chile.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EMDR Los Ángeles y EMDR Online Chile | Trauma y reprocesamiento · Karla Moraga</title>
+  <meta name="description" content="EMDR en Los Ángeles, Chile, y EMDR online Chile para procesar recuerdos difíciles y experiencias traumáticas, integrado con un enfoque somático." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Whisper&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-33PZ0L65JL"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-33PZ0L65JL');</script>
+  <style>
+    :root {
+      --cream:      #FAF7F2;
+      --warm-white: #FAF7F2;
+      --sage-light: #a8c4a2;
+      --sage-dark:  #5F7B5C;
+      --earth:      #C4956A;
+      --earth-light:#dbb899;
+      --text:       #2e2b28;
+      --text-soft:  #6b6560;
+      --text-muted: #B7B0B0;
+      --line:       rgba(196,149,106,0.2);
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Jost', sans-serif;
+      /* page accent: dusty rose */
+      --accent:     #B07A6E;
+      --accent-bg:  rgba(176,122,110,0.07);
+      /* violet, for dark panel — replaces off-palette teal */
+      --violet:     #7A6088;
+      --violet-panel:#3D2E48;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--warm-white);color:var(--text);font-family:var(--font-body);font-weight:300;line-height:1.7;overflow-x:hidden;}
+    a{color:inherit;text-decoration:none;}
+    ul{list-style:none;}
+
+    /* SIDEBAR */
+    .sidebar{position:fixed;top:0;left:0;width:240px;height:100vh;background:var(--cream);border-right:1px solid var(--line);display:flex;flex-direction:column;padding:2.5rem 2rem;z-index:100;transform:translateX(-100%);transition:transform 0.4s ease;}
+    .sidebar.open{transform:translateX(0);}
+    .sidebar nav ul{display:flex;flex-direction:column;gap:0.2rem;list-style:none;padding:0;margin:0;}
+    .sidebar nav a{font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-soft);padding:0.55rem 0;border-bottom:1px solid transparent;transition:color 0.2s,border-color 0.2s;display:block;}
+    .sidebar nav a:hover{color:#76886E;border-bottom-color:rgba(118,136,110,.3);}
+    .sidebar-foot{font-size:0.72rem;color:var(--text-muted);line-height:1.6;margin-top:auto;}
+    .topbar{position:fixed;top:0;left:0;right:0;z-index:90;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;background:rgba(250,247,242,0.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+    .topbar-logo .name{font-family:'Whisper',cursive;font-size:1.9rem;color:#5c3d30;display:block;}
+    .topbar-logo .title{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);display:block;}
+    .menu-toggle{background:#c4a882;border:none;border-radius:4px;width:42px;height:42px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px;cursor:pointer;}
+    .menu-toggle span{display:block;width:20px;height:1.5px;background:#fff8f2;}
+    .main{padding-top:72px;}
+
+    /* HERO */
+    .hero{padding:6rem 6rem 5rem;background:var(--cream);position:relative;overflow:hidden;border-bottom:1px solid var(--line);}
+    .hero::after{content:'EMDR';position:absolute;right:3rem;bottom:-2rem;font-family:var(--font-display);font-size:11rem;font-weight:300;font-style:italic;color:rgba(176,122,110,0.05);line-height:1;pointer-events:none;white-space:nowrap;}
+    .hero-deco{position:absolute;right:8%;top:1.5rem;width:64px;height:64px;opacity:0.35;pointer-events:none;}
+    .breadcrumb{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:2.5rem;display:flex;align-items:center;gap:0.6rem;}
+    .breadcrumb a{color:var(--earth);}
+    .hero-label{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem;display:flex;align-items:center;gap:0.5rem;}
+    .hero-title{font-family:var(--font-display);font-size:clamp(2.4rem,4.5vw,4.5rem);font-weight:300;line-height:1;color:var(--text);margin-bottom:1.2rem;letter-spacing:-0.02em;}
+    .hero-title em{font-style:italic;color:var(--accent);display:block;}
+    .hero-sub{font-family:var(--font-display);font-size:1.2rem;font-style:italic;font-weight:300;color:var(--text-soft);line-height:1.55;padding-left:1.2rem;border-left:2px solid var(--earth-light);max-width:52ch;margin-bottom:2rem;}
+    .btn-primary{display:inline-flex;align-items:center;gap:0.8rem;background:#B07A6E;color:var(--warm-white);font-family:var(--font-body);font-size:0.75rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;padding:1.1rem 2.4rem;border:1px solid #B07A6E;transition:background 0.25s,color 0.25s;}
+    .btn-primary:hover{background:transparent;color:#B07A6E;}
+    .btn-outline{display:inline-flex;align-items:center;gap:0.8rem;background:transparent;color:#B07A6E;font-family:var(--font-body);font-size:0.75rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;padding:1.1rem 2.4rem;border:1px solid #B07A6E;transition:background 0.25s,color 0.25s;}
+    .btn-outline:hover{background:#B07A6E;color:var(--warm-white);}
+
+    /* SECTIONS */
+    .section{padding:5rem 6rem;position:relative;}
+    .section-label{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--earth);margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;}
+    .section-title{font-family:var(--font-display);font-size:clamp(1.8rem,2.8vw,2.6rem);font-weight:300;line-height:1.15;color:var(--text);margin-bottom:1.5rem;}
+    .section-title em{font-style:italic;color:#B07A6E;}
+    .prose{font-size:0.95rem;color:var(--text-soft);line-height:1.9;max-width:62ch;}
+    .prose p{margin-bottom:1.1rem;}
+    .highlight-box{background:var(--accent-bg);border-left:3px solid var(--accent);padding:1.4rem 1.6rem;font-family:var(--font-display);font-size:1.05rem;font-style:italic;color:var(--text);line-height:1.65;margin:1.8rem 0;max-width:62ch;}
+    .warning-box{background:rgba(140,80,66,0.06);border-left:3px solid #8C5042;padding:1.4rem 1.6rem;font-size:0.9rem;color:var(--text-soft);line-height:1.75;margin:1.8rem 0;max-width:62ch;}
+    .warning-box strong{color:var(--text);font-weight:400;}
+
+    /* LIST */
+    .item-list{display:flex;flex-direction:column;gap:0.9rem;margin-top:1.5rem;}
+    .item{display:flex;gap:1rem;align-items:flex-start;}
+    .item-dot{width:6px;height:6px;background:var(--accent);border-radius:50%;flex-shrink:0;margin-top:0.55rem;}
+    .item-text{font-size:0.9rem;color:var(--text-soft);line-height:1.65;}
+
+    /* GRID CARDS */
+    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem;max-width:680px;}
+    .card{background:var(--cream);border:1px solid var(--line);border-left:3px solid var(--accent);padding:1.5rem 1.6rem;}
+    .card-title{font-family:var(--font-display);font-size:1rem;font-weight:400;color:var(--text);margin-bottom:0.35rem;display:flex;align-items:center;gap:0.5rem;}
+    .card-body{font-size:0.83rem;color:var(--text-soft);line-height:1.65;}
+
+    /* MODALIDADES */
+    .modalidades{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem;max-width:760px;}
+    .modalidad{background:var(--cream);border:1px solid var(--line);padding:2rem;}
+    .modalidad-title{font-family:var(--font-display);font-size:1.3rem;font-style:italic;color:var(--text);margin-bottom:0.6rem;}
+    .modalidad-body{font-size:0.86rem;color:var(--text-soft);line-height:1.75;}
+
+    /* FREE RESOURCES */
+    .resources{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2rem;max-width:760px;}
+    .resource-card{background:var(--warm-white);border:1px solid var(--line);padding:1.6rem 1.7rem;transition:border-color 0.2s;}
+    .resource-card:hover{border-color:var(--accent);}
+    .resource-emoji{font-size:1.5rem;margin-bottom:0.6rem;display:block;}
+    .resource-title{font-family:var(--font-display);font-size:1.05rem;color:var(--text);margin-bottom:0.4rem;}
+    .resource-body{font-size:0.83rem;color:var(--text-soft);line-height:1.6;margin-bottom:0.8rem;}
+    .resource-link{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);}
+
+    /* DECORATIVE FLOURISH DIVIDER */
+    .flourish{display:flex;align-items:center;justify-content:center;padding:2.5rem 0;background:var(--cream);}
+    .flourish svg{width:46px;height:46px;color:var(--accent);opacity:0.55;}
+
+    /* BRIDGE BANNER */
+    .bridge{padding:3.5rem 6rem;background:#F5E8E3;border-top:1px solid rgba(217,182,169,0.4);border-bottom:1px solid rgba(217,182,169,0.4);display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+
+    /* DARK IMPORTANT SECTION — violet, matches palette */
+    .important-section{padding:5rem 6rem;background:var(--violet-panel);position:relative;overflow:hidden;}
+    .important-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 20% 80%,rgba(122,96,136,0.35) 0%,transparent 60%);}
+    .important-inner{position:relative;z-index:2;}
+
+    /* CTA */
+    .cta-section{padding:6rem;background:linear-gradient(135deg,#8C5042 0%,#A0604E 50%,#B87060 100%);text-align:center;position:relative;overflow:hidden;}
+    .cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(168,196,162,0.15) 0%,transparent 65%);}
+    .cta-inner{position:relative;z-index:2;}
+    .cta-label{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:1.2rem;}
+    .cta-title{font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3rem);font-weight:300;color:var(--warm-white);margin-bottom:1rem;line-height:1.15;}
+    .cta-title em{font-style:italic;color:#F2D5C8;}
+    .cta-body{font-size:0.93rem;color:rgba(255,255,255,0.7);max-width:44ch;margin:0 auto 2.5rem;line-height:1.85;}
+    .btn-cta{display:inline-flex;align-items:center;gap:0.8rem;background:var(--warm-white);color:#B07A6E;font-family:var(--font-body);font-size:0.75rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;padding:1.1rem 2.6rem;border:1px solid var(--warm-white);transition:background 0.25s,color 0.25s;}
+    .btn-cta:hover{background:transparent;color:var(--warm-white);}
+
+    footer{background:linear-gradient(135deg,#3A2820 0%,#2E2018 100%);color:rgba(255,255,255,0.45);padding:2.5rem 6rem;display:flex;justify-content:space-between;align-items:center;font-size:0.75rem;letter-spacing:0.06em;}
+    footer strong{color:rgba(255,255,255,0.85);font-family:var(--font-display);font-size:1rem;font-weight:300;}
+    footer a{color:rgba(217,182,169,0.8);}
+
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+    .hero-label{animation:fadeUp 0.7s ease 0.1s both;}
+    .hero-title{animation:fadeUp 0.8s ease 0.2s both;}
+    .hero-sub{animation:fadeUp 0.8s ease 0.32s both;}
+
+    @media(max-width:900px){
+      .hero,.section,.bridge,.cta-section,.important-section{padding:4rem 2rem !important;}
+      .cards,.modalidades,.resources{grid-template-columns:1fr;}
+      .bridge{flex-direction:column;}
+      .hero-deco{display:none;}
+      footer{flex-direction:column;gap:0.5rem;text-align:center;padding:2rem;}
+      .topbar{position:fixed;top:0;left:0;right:0;z-index:90;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;background:rgba(250,247,242,0.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+    }
+  </style>
+</head>
+<body>
+  <script src="sidebar.js"></script>
+
+  <header class="topbar">
+    <a href="index.html" class="topbar-logo">
+      <span class="name">Karla Moraga</span>
+      <span class="title">Terapeuta Somática &amp; Docente</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+  </header>
+
+  <main class="main">
+
+    <!-- HERO -->
+    <section class="hero">
+      <!-- decorative flower -->
+      <svg class="hero-deco" viewBox="0 0 64 64" fill="none" stroke="#B07A6E" stroke-width="1.2">
+        <circle cx="32" cy="32" r="7"/>
+        <ellipse cx="32" cy="14" rx="7" ry="12"/>
+        <ellipse cx="32" cy="50" rx="7" ry="12"/>
+        <ellipse cx="14" cy="32" rx="12" ry="7"/>
+        <ellipse cx="50" cy="32" rx="12" ry="7"/>
+      </svg>
+      <div class="breadcrumb">
+        <a href="index.html">← Inicio</a><span>/</span><a href="sesiones-individuales.html">Sesiones individuales</a><span>/</span><span>EMDR</span>
+      </div>
+      <p class="hero-label">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        EMDR Los Ángeles · EMDR online Chile
+      </p>
+      <h1 class="hero-title">
+        EMDR: procesar el trauma<br/>
+        <em>desde el cuerpo y la mente</em>
+      </h1>
+      <p class="hero-sub">
+        Un enfoque para reprocesar recuerdos difíciles y experiencias traumáticas que siguen activas en tu presente. Presencial en Los Ángeles, Chile, u online desde cualquier lugar del país.
+      </p>
+      <a href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20quisiera%20saber%20m%C3%A1s%20sobre%20el%20EMDR%20y%20c%C3%B3mo%20lo%20trabajas%20en%20sesi%C3%B3n."
+         target="_blank"
+         onclick="gtag('event','clic_agendar',{'event_category':'EMDR','event_label':'Hero CTA'})"
+         class="btn-primary" style="margin-top:1rem;">
+        Agendar sesión
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+      </a>
+    </section>
+
+    <!-- QUÉ ES -->
+    <section class="section" style="background:var(--warm-white);">
+      <p class="section-label">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        ¿Qué es?
+      </p>
+      <h2 class="section-title">¿Qué es <em>EMDR?</em></h2>
+      <div class="prose">
+        <p>EMDR (Eye Movement Desensitization and Reprocessing, o Desensibilización y Reprocesamiento por Movimientos Oculares) es un enfoque terapéutico desarrollado por la psicóloga Francine Shapiro para trabajar con recuerdos que quedaron "atascados" en el sistema nervioso tras una experiencia difícil o traumática.</p>
+        <p>A través de estimulación bilateral —movimientos oculares, sonidos o golpecitos alternados— se activa la capacidad natural del cerebro para reprocesar esos recuerdos, permitiendo que dejen de sentirse tan presentes, intensos o perturbadores en el día a día.</p>
+      </div>
+      <div class="highlight-box">
+        No se trata de olvidar lo que pasó, sino de que el recuerdo deje de doler de la misma forma.
+      </div>
+    </section>
+
+    <!-- flourish -->
+    <div class="flourish">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2">
+        <circle cx="24" cy="24" r="4"/>
+        <ellipse cx="24" cy="10" rx="4.5" ry="8"/>
+        <ellipse cx="24" cy="38" rx="4.5" ry="8"/>
+        <ellipse cx="10" cy="24" rx="8" ry="4.5"/>
+        <ellipse cx="38" cy="24" rx="8" ry="4.5"/>
+      </svg>
+    </div>
+
+    <!-- PARA QUÉ SIRVE -->
+    <section class="section" style="background:var(--cream); border-top:1px solid var(--line);">
+      <p class="section-label">Aplicaciones</p>
+      <h2 class="section-title">¿Para qué <em>sirve?</em></h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:1rem;">
+        <div class="item-list">
+          <div class="item"><div class="item-dot"></div><div class="item-text">Recuerdos traumáticos que siguen activos en el presente</div></div>
+          <div class="item"><div class="item-dot"></div><div class="item-text">Experiencias de la infancia que dejaron huella</div></div>
+          <div class="item"><div class="item-dot"></div><div class="item-text">Duelos, pérdidas y experiencias difíciles no resueltas</div></div>
+        </div>
+        <div class="item-list">
+          <div class="item"><div class="item-dot"></div><div class="item-text">Fobias específicas y miedos intensos</div></div>
+          <div class="item"><div class="item-dot"></div><div class="item-text">Flashbacks, hipervigilancia y activación constante</div></div>
+          <div class="item"><div class="item-dot"></div><div class="item-text">Creencias negativas sobre ti misma que se repiten</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EN QUÉ TE PUEDE AYUDAR - CARDS -->
+    <section class="section" style="background:var(--warm-white);">
+      <p class="section-label">Un enfoque integrado</p>
+      <h2 class="section-title">EMDR junto a un <em>trabajo somático</em></h2>
+      <div class="prose">
+        <p>Lo que distingue mi forma de trabajar EMDR es que no lo aplico como protocolo aislado, sino integrado con el trabajo corporal, IFS y regulación del sistema nervioso que ya forman parte de mi enfoque. Antes de reprocesar un recuerdo, es clave que tu cuerpo cuente con suficientes recursos internos de estabilización y seguridad.</p>
+      </div>
+      <div class="cards">
+        <div class="card" style="display:flex; gap:1rem; align-items:flex-start;">
+          <div style="flex-shrink:0; width:32px; height:32px; background:rgba(176,122,110,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B07A6E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 6 6 10 6 13a6 6 0 0 0 12 0c0-3-2-7-6-11z"/></svg>
+          </div>
+          <div>
+            <p class="card-title">Estabilización primero</p>
+            <p class="card-body">Trabajamos recursos de regulación antes de acercarnos a material traumático.</p>
+          </div>
+        </div>
+        <div class="card" style="display:flex; gap:1rem; align-items:flex-start;">
+          <div style="flex-shrink:0; width:32px; height:32px; background:rgba(176,122,110,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B07A6E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <div>
+            <p class="card-title">Cuerpo presente</p>
+            <p class="card-body">Acompañamos las sensaciones corporales que emergen durante el reprocesamiento.</p>
+          </div>
+        </div>
+        <div class="card" style="display:flex; gap:1rem; align-items:flex-start;">
+          <div style="flex-shrink:0; width:32px; height:32px; background:rgba(176,122,110,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B07A6E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3h4a1 1 0 0 1 1 1v2.5a1.5 1.5 0 0 0 3 0V4a1 1 0 0 1 1-1 2.5 2.5 0 0 1 0 5 1 1 0 0 0-1 1v4a1 1 0 0 1-1 1h-2.5a1.5 1.5 0 0 0 0 3H20a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-2.5a1.5 1.5 0 0 0-3 0V20a1 1 0 0 1-1 1 2.5 2.5 0 0 1 0-5 1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2.5a1.5 1.5 0 0 0 0-3H10a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/></svg>
+          </div>
+          <div>
+            <p class="card-title">Partes internas</p>
+            <p class="card-body">Integramos IFS cuando aparecen partes protectoras que necesitan ser escuchadas.</p>
+          </div>
+        </div>
+        <div class="card" style="display:flex; gap:1rem; align-items:flex-start;">
+          <div style="flex-shrink:0; width:32px; height:32px; background:rgba(176,122,110,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B07A6E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg>
+          </div>
+          <div>
+            <p class="card-title">Ritmo propio</p>
+            <p class="card-body">El proceso avanza según lo que tu sistema nervioso puede sostener en cada sesión.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODALIDADES -->
+    <section class="section" style="background:var(--cream); border-top:1px solid var(--line);">
+      <p class="section-label">¿Cómo nos encontramos?</p>
+      <h2 class="section-title">EMDR Los Ángeles <em>y EMDR online Chile</em></h2>
+      <div class="prose">
+        <p>Puedes trabajar EMDR conmigo de forma presencial en Los Ángeles, Chile, o de forma online desde cualquier ciudad del país. EMDR online funciona igual de bien que presencial cuando se trabaja con seguridad y buen acompañamiento.</p>
+      </div>
+      <div class="modalidades">
+        <div class="modalidad">
+          <p class="modalidad-title">Presencial</p>
+          <p class="modalidad-body">En un espacio privado y seguro en Los Ángeles, Chile. El encuentro presencial permite un trabajo corporal más directo durante el reprocesamiento.</p>
+        </div>
+        <div class="modalidad">
+          <p class="modalidad-title">Online</p>
+          <p class="modalidad-body">Por videollamada, desde donde estés en Chile. EMDR online usa las mismas fases y estimulación bilateral adaptada a pantalla.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPORTANTE / DARK SECTION -->
+    <section class="important-section">
+      <div class="important-inner">
+        <p style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(122,96,136,0.9);margin-bottom:1rem;">Esto importa</p>
+        <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,2.8vw,2.6rem);font-weight:300;line-height:1.15;color:var(--warm-white);margin-bottom:1.5rem;">Por qué es importante<br/><em style="font-style:italic;color:#C9AED9;">hacerlo acompañada</em></h2>
+        <p style="font-size:0.95rem;color:rgba(255,255,255,0.65);line-height:1.9;max-width:62ch;margin-bottom:1.2rem;">EMDR trabaja directamente con material sensible del sistema nervioso. Por eso requiere ser guiado por una terapeuta formada, capaz de leer cómo va respondiendo tu cuerpo y de ajustar el proceso en el momento.</p>
+        <p style="font-size:0.95rem;color:rgba(255,255,255,0.65);line-height:1.9;max-width:62ch;">La seguridad del proceso no depende solo de la técnica, sino de que exista un vínculo terapéutico sólido que sostenga lo que va apareciendo, sesión a sesión.</p>
+      </div>
+    </section>
+
+    <!-- CÓMO LO TRABAJO -->
+    <section class="section" style="background:var(--warm-white); border-top:1px solid var(--line);">
+      <p class="section-label">Mi forma de trabajarlo</p>
+      <h2 class="section-title">Cómo lo integro <em>en sesión</em></h2>
+      <div class="prose">
+        <p>Integro EMDR dentro de procesos terapéuticos individuales, nunca como una técnica aislada. Antes de reprocesar cualquier recuerdo, dedicamos el tiempo necesario a construir seguridad, vínculo y recursos de regulación.</p>
+        <p>Algunas personas llegan sabiendo exactamente qué recuerdo quieren trabajar. Otras lo descubren en el proceso, a medida que el cuerpo va mostrando lo que está listo para ser mirado. En ambos casos, el ritmo lo marca lo que tu sistema nervioso puede sostener.</p>
+      </div>
+      <div class="warning-box">
+        <strong>No reemplaza atención médica ni psiquiátrica cuando esta es necesaria.</strong> EMDR requiere una evaluación previa para asegurarnos de que es el momento adecuado para trabajarlo, especialmente si existe alta desregulación, disociación intensa u otros procesos en curso. Escríbeme para conversar tu caso y ver si es el momento indicado para ti.
+      </div>
+    </section>
+
+    <!-- flourish -->
+    <div class="flourish">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2">
+        <path d="M8 30c6-4 10-12 16-12s10 8 16 12"/>
+        <path d="M8 18c6 4 10 12 16 12s10-8 16-12"/>
+      </svg>
+    </div>
+
+    <!-- RECURSOS GRATUITOS -->
+    <section class="section" style="background:var(--cream); border-top:1px solid var(--line);">
+      <p class="section-label">Antes de agendar</p>
+      <h2 class="section-title">Empieza con estos <em>recursos gratuitos</em></h2>
+      <div class="prose">
+        <p>Estos dos recursos usan estimulación bilateral —el mismo principio detrás de EMDR— y son un buen primer paso para sentir cómo trabaja tu cuerpo con este tipo de herramientas, sin costo.</p>
+      </div>
+      <div class="resources">
+        <a href="recurso-abrazo-mariposa.html" class="resource-card">
+          <span class="resource-emoji">🦋</span>
+          <p class="resource-title">Abrazo de la mariposa</p>
+          <p class="resource-body">Autorregulación y contención con estimulación bilateral, para momentos de ansiedad o activación.</p>
+          <span class="resource-link">Descargar guía gratis →</span>
+        </a>
+        <a href="recurso-carta-bilateral.html" class="resource-card">
+          <span class="resource-emoji">🎧</span>
+          <p class="resource-title">Carta bilateral</p>
+          <p class="resource-body">Escritura terapéutica con música bilateral, para procesar recuerdos y emociones.</p>
+          <span class="resource-link">Descargar guía gratis →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- BRIDGE -->
+    <div class="bridge">
+      <div>
+        <p style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.5rem;">¿Quieres saber más?</p>
+        <p style="font-family:var(--font-display);font-size:1.4rem;font-weight:300;font-style:italic;color:var(--text);line-height:1.3;">EMDR forma parte de un acompañamiento más completo.<br/>Las sesiones individuales son el lugar donde sucede.</p>
+      </div>
+      <a href="sesiones-individuales.html" class="btn-outline" style="white-space:nowrap;">
+        Ver sesiones individuales
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+      </a>
+    </div>
+
+    <!-- CTA FINAL -->
+    <section class="cta-section">
+      <div class="cta-inner">
+        <p class="cta-label">¿Lista para comenzar?</p>
+        <h2 class="cta-title">Ese recuerdo puede<br/><em>dejar de doler</em></h2>
+        <p class="cta-body">Escríbeme y conversamos si EMDR puede tener un lugar en tu proceso terapéutico.</p>
+        <a href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20quisiera%20saber%20m%C3%A1s%20sobre%20el%20EMDR%20y%20c%C3%B3mo%20lo%20trabajas%20en%20sesi%C3%B3n."
+           target="_blank" class="btn-cta"
+           onclick="gtag('event','clic_agendar',{'event_category':'EMDR','event_label':'CTA final'})">
+          Agendar sesión por WhatsApp
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div style="display:flex;flex-direction:column;gap:0.4rem;">
+      <strong>Karla Moraga · Terapeuta Somática &amp; Docente</strong>
+      <a href="https://www.instagram.com/lavozdelcuerpo.soma" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        @lavozdelcuerpo.soma
+      </a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.3rem;">
+      <a href="index.html">← Volver al inicio</a>
+      <span>© <span class="copy-year"></span> · Todos los derechos reservados</span>
+    </div>
+  </footer>
+
+  <script>
+    const toggle=document.getElementById('menuToggle');
+    const sidebar=document.getElementById('sidebar');
+    toggle.addEventListener('click',function(e){e.stopPropagation();sidebar.classList.toggle('open');});
+    document.addEventListener('click',function(e){if(sidebar.classList.contains('open')&&!sidebar.contains(e.target)&&!toggle.contains(e.target))sidebar.classList.remove('open');});
+  </script>
+  <script>document.querySelectorAll(".copy-year").forEach(e=>e.textContent=new Date().getFullYear());</script>
+</body>
+</html>
