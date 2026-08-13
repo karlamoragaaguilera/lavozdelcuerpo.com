@@ -15,7 +15,6 @@
           <li><a href="sobre-mi.html" onclick="closeSidebar()">Sobre mí</a></li>
           <li><a href="mi-trabajo.html" onclick="closeSidebar()">Mi trabajo</a></li>
           <li><a href="programas.html" onclick="closeSidebar()">Programas</a></li>
-          <li><a href="emdr-los-angeles-chile.html" onclick="closeSidebar()">EMDR</a></li>
           <!-- Para mostrar la Masterclass, descomenta la línea de abajo. Para ocultarla, coméntala. -->
           <li><a href="masterclass-ansiedad-y-cuerpo.html" onclick="closeSidebar()" style="color:#9B8DC0;">Masterclass gratuita</a></li>
           <li><a href="semillas-y-reflexiones.html" onclick="closeSidebar()">Semillas y reflexiones</a></li>
