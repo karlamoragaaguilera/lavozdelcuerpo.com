@@ -273,86 +273,6 @@
       box-shadow: 0 6px 24px rgba(118,136,110,0.3);
     }
 
-    /* ── Taller destacado ── */
-    .link-card.taller {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.75rem;
-      padding: 1.7rem 1.5rem 1.5rem;
-      background: linear-gradient(155deg, #3D2E48 0%, #5A3F66 100%);
-      border-color: #3D2E48;
-      color: #fff;
-      margin-bottom: 1.4rem;
-      box-shadow: 0 10px 32px rgba(61,46,72,0.28);
-      animation: fadeUp 0.5s ease 0.32s both;
-    }
-    .link-card.taller::before { display: none; }
-    .link-card.taller:hover {
-      background: linear-gradient(155deg, #4A3857 0%, #6B4F72 100%);
-      border-color: #6B4F72;
-      box-shadow: 0 14px 36px rgba(61,46,72,0.38);
-    }
-    .taller-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #D9B6A9;
-    }
-    .taller-dot {
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: #D9B6A9;
-      animation: tallerPulse 2s ease-in-out infinite;
-    }
-    @keyframes tallerPulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50%      { opacity: 0.35; transform: scale(1.6); }
-    }
-    @media (prefers-reduced-motion: reduce) { .taller-dot { animation: none; } }
-    .taller-title {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-weight: 300;
-      font-size: 1.8rem;
-      line-height: 1.12;
-      color: #fff;
-    }
-    .taller-sub {
-      font-family: var(--font-display);
-      font-size: 1.02rem;
-      color: rgba(255,255,255,0.75);
-      line-height: 1.3;
-    }
-    .taller-meta {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.45rem 1.1rem;
-      width: 100%;
-      padding-top: 0.85rem;
-      border-top: 1px solid rgba(217,182,169,0.3);
-      font-size: 0.74rem;
-      letter-spacing: 0.06em;
-      color: rgba(255,255,255,0.88);
-    }
-    .taller-meta span { display: inline-flex; align-items: center; gap: 0.4rem; }
-    .taller-cta {
-      align-self: stretch;
-      text-align: center;
-      background: #D9B6A9;
-      color: #3D2E48;
-      font-size: 0.74rem;
-      font-weight: 400;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      padding: 0.95rem 1rem;
-      transition: background 0.2s;
-    }
-    .link-card.taller:hover .taller-cta { background: #fff; }
-
     /* ── Footer ── */
     .footer {
       margin-top: 3rem;
@@ -418,38 +338,12 @@
 
     <div class="divider"><span class="divider-dot">✦ ✦ ✦</span></div>
 
-    <!-- TALLER ONLINE — destacado -->
-    <p class="section-label">Próximo taller online</p>
-
-    <a href="https://wa.me/56956305069?text=%C2%A1Hola%2C%20Karla!%20Me%20interesa%20participar%20en%20tu%20taller%20online%20y%20quisiera%20recibir%20m%C3%A1s%20informaci%C3%B3n%20para%20inscribirme.%20%F0%9F%8C%BF" target="_blank" rel="noopener"
-       class="link-card taller"
-       onclick="gtag('event','clic_links',{'event_category':'Bio links','event_label':'Taller online - Inscripciones'})">
-      <span class="taller-badge"><span class="taller-dot"></span>Inscripciones abiertas</span>
-      <div class="taller-title">¿Cómo volver a confiar en una relación sana?</div>
-      <div class="taller-sub">Cuando el amor sano se siente inseguro</div>
-      <div class="taller-meta">
-        <span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D9B6A9" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
-          Sáb 7 de noviembre
-        </span>
-        <span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D9B6A9" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-          10:00 hrs (Chile) · 2 horas
-        </span>
-        <span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D9B6A9" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
-          Online
-        </span>
-      </div>
-      <span class="taller-cta">Inscribirme por WhatsApp →</span>
-    </a>
-
     <!-- AGENDAR — destacado -->
     <p class="section-label">Trabaja conmigo</p>
 
     <a href="https://wa.me/56956305069?text=Hola%20Karla%20%F0%9F%8C%BF%20llegu%C3%A9%20a%20tu%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20agendar%20una%20sesi%C3%B3n%20contigo.%20%C2%BFPodr%C3%ADas%20contarme%20sobre%20disponibilidad%2C%20modalidad%20y%20valor%3F" target="_blank"
        class="link-card featured"
-       onclick="gtag('event','clic_links',{'event_category':'Bio links','event_label':'Agendar sesión'})">
+       onclick="gtag('event','clic_links','{'event_category':'Bio links','event_label':'Agendar sesión'})">
       <div class="link-icon green"><svg width="26" height="26" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M20 20 C14 16 6 10 5 6 C4 2 8 1 12 4 C16 7 19 14 20 20Z" fill="rgba(255,255,255,0.35)" stroke="rgba(255,255,255,0.7)" stroke-width="1"/>
           <path d="M20 20 C26 16 34 10 35 6 C36 2 32 1 28 4 C24 7 21 14 20 20Z" fill="rgba(255,255,255,0.35)" stroke="rgba(255,255,255,0.7)" stroke-width="1"/>
